@@ -33,7 +33,10 @@ pat = re.compile('{{(.*?)}}', flags=re.DOTALL + re.MULTILINE)
 
 def translate(m):
     # print(m)
-    return translation_dict.get(m.group(1), m.group(1))
+    trans = translation_dict.get(m.group(1), m.group(1))
+    if not trans:
+        trans = m.group(1)
+    return trans
 
 
 def replace_in_file(file_path, translation, base_path=BASE_PATH):
@@ -49,8 +52,8 @@ def replace_in_file(file_path, translation, base_path=BASE_PATH):
 
         trans = pat.sub(translate, ori_mark)
 
-        # print('ori_content', ori_content)
-        # print('trans', trans)
+        print('ori_content', ori_content)
+        print('11111trans', trans)
 
         content = content.replace(ori_content, trans)
 
@@ -1102,7 +1105,7 @@ translation = [
     '{{Save & close}} ',
     '{{Ctrl+Enter}}<',
     '{{Delete}}<',
-    # 
+    #
     "{{Label detail}}",
     "{{Label definition detail}}",
     "{{Relation detail}}",
