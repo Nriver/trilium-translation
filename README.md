@@ -5,6 +5,9 @@ Currently, I have translated Trilium Notes into Chinese. Tested with trilium ver
 
 If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 
+![20210606135851579_1868988429](https://user-images.githubusercontent.com/6752679/120914251-65009900-c6cf-11eb-9b38-dd9554657372.png)
+
+
 # How to use
 1. Download from the latest release that suit your computer system.
 2. Unzip and execute(trilium for Linux, trilium.sh for Linux sever, trilium.exe for Windows, trilium.app for macOS).
