@@ -52,8 +52,8 @@ def replace_in_file(file_path, translation, base_path=BASE_PATH):
 
         trans = pat.sub(translate, ori_mark)
 
-        print('ori_content', ori_content)
-        print('11111trans', trans)
+        # print('ori_content', ori_content)
+        # print('11111trans', trans)
 
         content = content.replace(ori_content, trans)
 
@@ -2104,6 +2104,11 @@ translation = [
     '''"Widget toolbar":"{{Widget toolbar}}"''',
     '''Width:"{{Width}}"''',
     '''Yellow:"{{Yellow}}"''',
+    '"{{Include note}}"',
+    '"{{Insert math}}"',
+    '"{{Insert equation in TeX format.}}"',
+    '"{{Display mode}}"',
+    '"{{Equation preview}}"',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
