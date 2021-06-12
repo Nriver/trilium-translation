@@ -1,6 +1,8 @@
 # Trilium Translation
 我把这个牛逼的笔记软件[Trilium Notes](https://github.com/zadam/trilium)做了中文翻译.
 
+如果你觉得不错, 可以留下一个star, 谢谢 ^_^
+
 如果你是老用户, 使用前最好备份数据以防万一.
 
 # 使用方法
