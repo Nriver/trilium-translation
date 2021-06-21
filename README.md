@@ -11,10 +11,21 @@ If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 
 
 # How to use
+
+## Just run it
 1. Download from the latest release that suit your computer system.
 2. Unzip and execute(trilium for Linux, trilium.sh for Linux sever, trilium.exe for Windows, trilium.app for macOS).
 3. Enjoy :)
 
+## How to run server with docker
+For Trilium Notes server, you can run it with docker simply by executing:
+```
+docker-compose up -d
+```
+
+It will download the Chinese version of Trilium I built on [Docker Hub](https://hub.docker.com/repository/docker/nriver/trilium-cn).
+
+Open http://127.0.0.1:8080 in your browser.
 
 # How to translate
 If you would like to check the code (my codes comes with Chinese and English comments, check it) and compile it by yourself. Here is some information may be useful.

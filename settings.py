@@ -12,12 +12,12 @@ BASE_FOLDER = '/Users/nate/soft/trilium/trilium-trans/'
 
 # PATCH_FOLDER 是输出补丁的目录
 # PATCH_FOLDER is the output for patch
-# PATCH_FOLDER = '/home/nate/soft/trilium-trans-patch/'
+# PATCH_FOLDER = '/home/nate/soft/trilium/trilium-trans-patch/'
 PATCH_FOLDER = '/Users/nate/soft/trilium/trilium-trans-patch/'
 
 # TRANS_RELEASE_FOLDER 是翻译好的客户端发布的路径
 # TRANS_RELEASE_FOLDER is the release directory for translated clients
-# TRANS_RELEASE_FOLDER = '/home/nate/soft/trilium-trans-release/'
+# TRANS_RELEASE_FOLDER = '/home/nate/soft/trilium/trilium-trans-release/'
 TRANS_RELEASE_FOLDER = '/Users/nate/soft/trilium/trilium-trans-release/'
 
 # release文件名后缀

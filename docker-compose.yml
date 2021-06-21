@@ -1,0 +1,10 @@
+version: '3'
+services:
+  trilium-cn:
+    image: nriver/trilium-cn
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      # modify these path to yours
+      - ./trilium-data:/root/trilium-data
