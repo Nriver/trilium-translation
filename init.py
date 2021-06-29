@@ -143,9 +143,12 @@ def decompress_source_package(file_name):
 
 
 if __name__ == '__main__':
-    if not os.path.exists(BASE_FOLDER):
-        os.makedirs(BASE_FOLDER)
-
+    if os.path.exists(BASE_FOLDER):
+        if not (input(f'BASE_FOLDER exists! DELETE {BASE_FOLDER}, continue?(y)')).lower() in ['y', 'yes']:
+            exit()
+        os.system(f'rm -rf {BASE_FOLDER}')
+    os.makedirs(BASE_FOLDER)
+    print('BASE_FOLDER', BASE_FOLDER)
     os.chdir(BASE_FOLDER)
     version_info = get_latest_version()
     print(version_info)
