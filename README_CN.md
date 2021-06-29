@@ -6,12 +6,11 @@
 如果你是老用户, 使用前最好备份数据以防万一.
 
 # 使用方法
-## 直接运行
 1. Release里下载对应客户端
 2. 解压运行(Linux桌面运行trilium, Linux服务端运行trilium.sh, Windows 运行trilium.exe, macOS 运行trilium.app, ).
 3. 玩去吧 :)
 
-## 在Docker里运行服务端
+# 在Docker里运行服务端
 Trilium Notes的服务端可以用我构建好的docker镜像运行.
 ```
 docker-compose up -d
@@ -19,7 +18,7 @@ docker-compose up -d
 
 它会从[Docker Hub](https://hub.docker.com/repository/docker/nriver/trilium-cn)直接拉镜像运行.
 
-浏览器里访问 http://127.0.0.1:8080 就行.
+浏览器打开 http://127.0.0.1:8080 访问服务端.
 
 ## (太长, 别看) 自己编译
 如果你想自己检查代码(代码都有中英双语注释)再自己编译, 可以看看下面的东西.
