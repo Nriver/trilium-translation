@@ -8,3 +8,5 @@ services:
     volumes:
       # modify these path to yours
       - ./trilium-data:/root/trilium-data
+    environment:
+      - TRILIUM_DATA_DIR=/root/trilium-data
