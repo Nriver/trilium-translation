@@ -6,7 +6,7 @@
 如果你是老用户, 使用前最好备份数据以防万一.
 
 # 使用方法
-1. Release里下载对应客户端
+1. [Release](https://github.com/Nriver/trilium-translation/releases)里下载对应客户端
 2. 解压运行(Linux桌面运行trilium, Linux服务端运行trilium.sh, Windows 运行trilium.exe, macOS 运行trilium.app, ).
 3. 玩去吧 :)
 
