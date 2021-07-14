@@ -7,6 +7,12 @@
 
 ![20210606135851579_1868988429](https://user-images.githubusercontent.com/6752679/120914251-65009900-c6cf-11eb-9b38-dd9554657372.png)
 
+
+Trilium Notes 交流qq群 686232370
+
+![image](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png)
+
+
 # 使用方法
 1. [Release](https://github.com/Nriver/trilium-translation/releases)里下载对应客户端
 2. 解压运行(Linux桌面运行trilium, Linux服务端运行trilium.sh, Windows 运行trilium.exe, macOS 运行trilium.app, ).
