@@ -1,0 +1,37 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <base target="_parent">
+  </head>
+  
+  <body class="ck-content">
+     <h1>Trilium 扩展</h1>
+
+    <p><strong>扩展Trilium的各种功能</strong>
+
+    </p>
+    <p>Trilium 里面只要笔记的属性`Owned attrs`里面有一些特殊的属性就能变成功能扩展插件
+      <br />笔记可以放在任何位置, 不一定要放在根目录, 只要对应的属性正确就行</p>
+    <p> </p>
+    <p><strong>笔记渲染 Render Note</strong>
+
+      <br />首先需要一个`HTML`类型的笔记作为渲染模板</p>
+    <p>笔记可以设置为`Render Note`, 通过添加relation, 设置`renderNote`属性关联上面的模板</p>
+    <p>如果模板是包含js的, 则js必须设置为`JS frontend`类型的笔记, 并且要移动到模板页面的目录下, 否则不会生效</p>
+    <p>具体可以参考自带的统计功能</p>
+    <p> </p>
+    <p><strong>主题</strong>
+
+      <br />可以自定义主题样式
+      <br />只要文件有`#appTheme`的属性就行</p>
+    <p>主题名称是文件的名称, 给appTheme赋值也没用</p>
+    <p> </p>
+    <p><strong>统计</strong>
+
+      <br />自带的统计功能</p>
+  </body>
+
+</html>

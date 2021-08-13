@@ -2,7 +2,9 @@ import os
 import re
 from translations import translation_dict
 import shutil
-from settings import BASE_FOLDER, PATCH_FOLDER, TRANSLATOR, TRANSLATOR_URL
+from settings import BASE_FOLDER, PATCH_FOLDER, TRANSLATOR, TRANSLATOR_URL, LANG
+
+script_path = os.path.dirname(os.path.abspath(__file__))
 
 BASE_PATH = f'{BASE_FOLDER}trilium-src/'
 CLIENT_PATH = f'{BASE_FOLDER}trilium-linux-x64/'
@@ -2308,5 +2310,18 @@ src_path = f'{CLIENT_PATH}resources/app/libraries/ckeditor/ckeditor.js'
 dest_path = f'{PATCH_FOLDER}/libraries/ckeditor/ckeditor.js'
 os.makedirs(os.path.dirname(dest_path), exist_ok=True)
 shutil.copy(src_path, dest_path)
+
+if LANG == 'cn':
+    # 内置文档
+    # built-in demo notes
+    os.chdir(script_path)
+    if os.path.exists('demo-cn.zip'):
+        os.system('rm -f demo-cn.zip')
+    os.system('cd demo-cn && zip -r demo-cn.zip ./* && mv demo-cn.zip ../')
+    src_path = f'demo-cn.zip'
+    dest_path = f'{PATCH_FOLDER}/db/demo.zip'
+    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+    shutil.copy(src_path, dest_path)
+
 
 print('finished!')

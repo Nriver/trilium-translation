@@ -1,0 +1,42 @@
+<form id="myForm" action="#" method="post">
+  <div>
+    <label for="say">secret</label>
+    <input name="secret" id="secret" value="supertrilium">
+  </div>
+  <div>
+    <label for="to">title</label>
+    <input name="title" id="title" value="ss">
+  </div>
+  <div>
+    <label for="to">url</label>
+    <input name="url" id="url" value="https://www.baidu.com">
+  </div>  
+  <div>
+    <label for="to">content</label>
+    <input name="content" id="content" value="ssssss">
+  </div>
+
+  <div>
+    <input type="button" onclick="sendReq()" value="Send">
+  </div>
+</form>
+
+<script>
+    function sendReq(){
+        var formData = JSON.stringify($("#myForm").serializeArray());
+        console.log(formData);
+        $.ajax({
+          type: "POST",
+          url: "https://nriver.top/trilium/custom/create-note",
+          data: {
+             secret: "supertrilium",
+             title: 'ss',
+             content: 'ssssss'   
+          },
+          success: function(){},
+          // dataType: "json",
+          dataType : "jsonp",
+          contentType : "application/json"
+        });
+    }
+</script>
