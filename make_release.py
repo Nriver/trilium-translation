@@ -173,7 +173,7 @@ def patch_linux(file_name):
 def patch_linux_server(file_name):
 
     if not file_name.endswith('.tar.xz'):
-        print('linux sever 文件名有问题')
+        print('linux server 文件名有问题')
         print('linux server wrong file name')
         exit()
 
@@ -189,7 +189,7 @@ def patch_linux_server(file_name):
 
     # 打zip包
     # make zip package
-    new_name = 'trilium-cn-linux-x64-sever.zip'
+    new_name = 'trilium-cn-linux-x64-server.zip'
     print('new_name', new_name)
     os.system(f'rm -f {new_name}')
     patched_root_folder = 'trilium-linux-x64-server'

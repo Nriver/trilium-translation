@@ -12,7 +12,7 @@ If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 
 # How to use
 1. Download from the latest [Release](https://github.com/Nriver/trilium-translation/releases) that suit your computer system.
-2. Unzip and execute(trilium for Linux, trilium.sh for Linux sever, trilium.exe for Windows, trilium.app for macOS).
+2. Unzip and execute(trilium for Linux, trilium.sh for Linux server, trilium.exe for Windows, trilium.app for macOS).
 3. Enjoy :)
 
 # How to run server with docker
