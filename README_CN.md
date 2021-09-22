@@ -73,3 +73,7 @@ Trilium Notes的文字是硬编码的, 所以没法切换语言.
 翻译是修改代码, 如果把代码改坏了, 你的数据有可能丢失, 所以做好备份.
 
 如果真改坏了, Trilium Notes启动不了, 或者翻译错了, 就要用`init.py`重新下载Trilium Notes.
+
+# 感谢
+
+[![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)

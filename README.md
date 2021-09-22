@@ -70,3 +70,7 @@ The translation is hard-coded in the frontend/backend source code, so you can no
 If there were some mistakes in the translation, Trilium Notes may not function correctly. Therefore, please back up your data before use.
 
 If you break Trilium Notes somehow, you need to redownload everything with `init.py`.
+
+# Thanks
+
+[![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
