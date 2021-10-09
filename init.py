@@ -1,4 +1,4 @@
-from settings import BASE_FOLDER, USE_PROXY, PROXIES
+from settings import BASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info
 import os
 import re
 import shutil
@@ -150,7 +150,12 @@ if __name__ == '__main__':
     os.makedirs(BASE_FOLDER)
     print('BASE_FOLDER', BASE_FOLDER)
     os.chdir(BASE_FOLDER)
-    version_info = get_latest_version()
+
+    if VERSION_INFO_OVERRIDE:
+        version_info = force_version_info
+    else:
+        version_info = get_latest_version()
+
     print(version_info)
     stop_service()
 

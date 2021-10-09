@@ -43,3 +43,23 @@ PROXIES = {
     "http": "socks5://127.0.0.1:10808",
     "https": "socks5://127.0.0.1:10808"
 }
+
+# 避免兼容性问题，强制使用某个版本的trilium
+# To avoid compatibility issue, force to use certain version of trilium
+VERSION_INFO_OVERRIDE = True
+# 0.47
+force_version_info = {
+    'name': 'v0.47.8 release',
+    'zipball_url': 'https://api.github.com/repos/zadam/trilium/zipball/v0.47.8',
+    'browser_download_url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-linux-x64-0.47.8.tar.xz'
+}
+
+force_version_info_full = {
+    'name': 'v0.47.8 release',
+    'releases': {
+        'linux': {'name': 'trilium-linux-x64-0.47.8.tar.xz', 'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-linux-x64-0.47.8.tar.xz'},
+        'linux-server': {'name': 'trilium-linux-x64-server-0.47.8.tar.xz', 'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-linux-x64-server-0.47.8.tar.xz'},
+        'mac': {'name': 'trilium-mac-x64-0.47.8.zip', 'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-mac-x64-0.47.8.zip'},
+        'windows': {'name': 'trilium-windows-x64-0.47.8.zip', 'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-windows-x64-0.47.8.zip'}
+    }
+}

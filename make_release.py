@@ -1,4 +1,4 @@
-from settings import PATCH_FOLDER, LANG, TRANS_RELEASE_FOLDER, USE_PROXY, PROXIES
+from settings import PATCH_FOLDER, LANG, TRANS_RELEASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info_full
 import os
 import re
 import shutil
@@ -322,7 +322,10 @@ if __name__ == '__main__':
 
     # 获取更新
     # get update info
-    version_info = get_latest_version()
+    if VERSION_INFO_OVERRIDE:
+        version_info = force_version_info_full
+    else:
+        version_info = get_latest_version()
     print('version_info', version_info)
 
     # 下载
