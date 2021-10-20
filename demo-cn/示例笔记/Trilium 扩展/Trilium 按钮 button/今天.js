@@ -1,6 +1,6 @@
 api.addButtonToToolbar({
     title: '今天',
-    icon: 'calendar',
+    icon: 'calendar-star',
     // 快捷键
     shortcut: 'alt+t',
     // 触发的异步函数

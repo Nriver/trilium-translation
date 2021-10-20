@@ -1,12 +1,12 @@
 async function getChartData() {
-    const days = await api.runOnServer(async () => {
+    const days = await api.runOnServer(() => {
         const label_name = '体重';
-        const notes = await api.getNotesWithLabel(label_name);
+        const notes = api.getNotesWithLabel(label_name);
         const days = [];
 
         for (const note of notes) {
-            const date = await note.getLabelValue('dateNote');
-            const weight = parseFloat(await note.getLabelValue(label_name));
+            const date = note.getLabelValue('dateNote');
+            const weight = parseFloat(note.getLabelValue(label_name));
 
             if (date && weight) {
                 days.push({ date, weight });
