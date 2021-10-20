@@ -1,4 +1,4 @@
-from settings import BASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info
+from settings import BASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info, VERSION_INFO_OVERRIDE_BETA, force_version_info_beta
 import os
 import re
 import shutil
@@ -152,7 +152,10 @@ if __name__ == '__main__':
     os.chdir(BASE_FOLDER)
 
     if VERSION_INFO_OVERRIDE:
-        version_info = force_version_info
+        if VERSION_INFO_OVERRIDE_BETA:
+            version_info = force_version_info_beta
+        else:
+            version_info = force_version_info
     else:
         version_info = get_latest_version()
 

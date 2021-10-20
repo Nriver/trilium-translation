@@ -1,4 +1,4 @@
-from settings import PATCH_FOLDER, LANG, TRANS_RELEASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info_full
+from settings import DEBUG, PATCH_FOLDER, LANG, TRANS_RELEASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info_full, VERSION_INFO_OVERRIDE_BETA, force_version_info_full_beta
 import os
 import re
 import shutil
@@ -89,6 +89,9 @@ def download_latest(url, file_name=None):
 
 def download_releases(releases):
     for package_type in releases:
+        if DEBUG:
+            if package_type != 'linux':
+                continue
         release = releases[package_type]
         download_latest(release['url'], TRANS_RELEASE_FOLDER + release['name'])
 
@@ -148,26 +151,27 @@ def patch_linux(file_name):
     # remove unpacked files
     os.system(f'rm -rf {asar_folder}/app/')
 
-    # 打zip包
-    # make zip
-    new_name = f'trilium-{LANG}-linux-x64.zip'
-    print('new_name', new_name)
-    os.system(f'rm -f {new_name}')
-    patched_root_folder = 'trilium-linux-x64'
-    os.chdir(TRANS_RELEASE_FOLDER)
+    if not DEBUG:
+        # 打zip包
+        # make zip
+        new_name = f'trilium-{LANG}-linux-x64.zip'
+        print('new_name', new_name)
+        os.system(f'rm -f {new_name}')
+        patched_root_folder = 'trilium-linux-x64'
+        os.chdir(TRANS_RELEASE_FOLDER)
 
-    if COMPRESS_TOOL == '7z':
-        cmd = f'7z a {new_name} -r {patched_root_folder}'
-    else:
-        cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} {patched_root_folder}'
+        if COMPRESS_TOOL == '7z':
+            cmd = f'7z a {new_name} -r {patched_root_folder}'
+        else:
+            cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} {patched_root_folder}'
 
-    print(cmd)
-    os.system(cmd)
+        print(cmd)
+        os.system(cmd)
 
-    if DO_DELETE:
-        os.system('rm -rf trilium-linux-x64')
+        if DO_DELETE:
+            os.system('rm -rf trilium-linux-x64')
 
-    return new_name
+        return new_name
 
 
 def patch_linux_server(file_name):
@@ -323,7 +327,10 @@ if __name__ == '__main__':
     # 获取更新
     # get update info
     if VERSION_INFO_OVERRIDE:
-        version_info = force_version_info_full
+        if VERSION_INFO_OVERRIDE_BETA:
+            version_info = force_version_info_full_beta
+        else:
+            version_info = force_version_info_full
     else:
         version_info = get_latest_version()
     print('version_info', version_info)
@@ -339,11 +346,12 @@ if __name__ == '__main__':
     # linux
     patch_linux(releases['linux']['name'])
 
-    # linux-server
-    patch_linux_server(releases['linux-server']['name'])
+    if not DEBUG:
+        # linux-server
+        patch_linux_server(releases['linux-server']['name'])
 
-    # windows
-    patch_windows(releases['windows']['name'])
+        # windows
+        patch_windows(releases['windows']['name'])
 
-    # mac
-    patch_mac(releases['mac']['name'])
+        # mac
+        patch_mac(releases['mac']['name'])
