@@ -32,6 +32,8 @@ TRANSLATE_NOTE_TAG = True
 
 pat = re.compile('{{(.*?)}}', flags=re.DOTALL + re.MULTILINE)
 
+missing_files = []
+
 
 def translate(m):
     # print(m)
@@ -44,6 +46,9 @@ def translate(m):
 def replace_in_file(file_path, translation, base_path=BASE_PATH):
 
     file_full_path = os.path.join(base_path, file_path)
+    if not os.path.exists(file_full_path):
+        missing_files.append(file_full_path)
+        return
 
     with open(file_full_path, 'r') as f:
         content = f.read()
@@ -116,6 +121,7 @@ translation = [
     '>{{Theme}}<',
     '>{{white}}<',
     '>{{dark}}<',
+    '>{{light}}<',
     '>{{black}}<',
     '>{{Theme can be later changed in Options -> Appearance.}}<',
     '>{{Back}}<',
@@ -162,8 +168,8 @@ translation = [
     'title: `{{Cut}}',
     'title: `{{Copy}}',
     'title: `{{Copy link}}`',
-    'title: `{{Paste}}',
     'title: `{{Paste as plain text}}',
+    'title: `{{Paste}}',
     'title: `{{Search for "${shortenedSelection}" with DuckDuckGo}}`',
 ]
 replace_in_file(file_path, translation)
@@ -243,6 +249,7 @@ translation = [
     '>{{Cancel}}<',
     '>{{OK}}<',
     '    {{delete also all clones}}',
+    '''title="{{Normal (soft) deletion only marks the notes as deleted and they can be undeleted (in recent changes dialog) within a period of time. Checking this option will erase the notes immediatelly and it won't be possible to undelete the notes.}}"''',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
@@ -310,6 +317,7 @@ translation = [
     '>{{Ctrl+K}}<',
     '>{{ - create / edit external link}}<',
     '>{{ - create internal link}}<',
+    '>{{ - follow link under cursor}}<',
     '>{{ - insert current date and time at caret position}}<',
     '>{{ - jump away to the tree pane and scroll to active note}}<',
     '>{{Markdown-like autoformatting}}<',
@@ -572,6 +580,21 @@ translation = [
     "title: '{{Black}}'",
     '>{{Plain}}<',
     '>{{Markdown-style}}<',
+    '>{{Underline}}<',
+    '>{{Override theme fonts}}<',
+    '>{{Fonts}}<',
+    '>{{Main font}}<',
+    '>{{Font family}}<',
+    '>{{Size}}<',
+    '>{{%}}<',
+    '>{{Note tree font}}<',
+    '>{{Note detail font}}<',
+    '>{{Monospace font}}<',
+    '>{{Not all listed fonts may be available on your system.}}<',
+    '>{{reload frontend}}<',
+    "title: '{{Light}}",
+    '"{{Theme defined}}"',
+    '        {{To apply font changes, click on}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -637,7 +660,7 @@ translation = [
     "showMessage('{{Note revision has been restored.}}'",
     "showMessage('{{Note revision has been deleted.}}'",
     "showMessage('{{Note revisions has been deleted.}}'",
-
+    '"{{No revisions for this note yet...}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -707,6 +730,10 @@ translation = [
     '>. {{Changes to the spell check options will take effect after application restart.}}<',
     'showMessage("{{Options change have been saved.}}"',
     'showMessage("{{Deleted notes have been erased.}}"',
+    '>{{Automatic readonly size}}<',
+    '>{{Automatic readonly note size is the size after which notes will be displayed in a readonly mode (for performance reasons).}}<',
+    '>{{Automatic readonly size (text notes)}}<',
+    '>{{Automatic readonly size (code notes)}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -806,6 +833,17 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+# 0.48
+file_path = 'src/public/app/layouts/desktop_layout.js'
+translation = [
+    'title("{{New note}}")',
+    'title("{{Search}}")',
+    'title("{{Jump to note}}")',
+    'title("{{Show recent changes}}")',
+    'title("{{Note Revisions}}")',
+]
+replace_in_file(file_path, translation)
+
 
 file_path = 'src/public/app/services/app_context.js'
 translation = [
@@ -836,6 +874,28 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/services/froca.js'
+translation = [
+    'throw new Error(`{{Search note ${note.noteId} failed: ${searchResultNoteIds}}}`',
+    'throw new Error("{{Empty noteId}}"',
+    '    logError(`{{Not existing branch ${branchId}}}`',
+    '    logError(`{{Could not find branchId for parent=${parentNoteId}, child=${childNoteId} since child does not exist}}`',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/services/froca_updater.js'
+translation = [
+    'throw new Error(`{{Unknown entityName ${ec.entityName}}}`',
+    """throw new Error(`{{Can't process entity ${JSON.stringify(ec)} with error ${e.message} ${e.stack}}}`""",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/services/frontend_script_api.js'
+translation = [
+    'throw new Error("{{server error: }}"',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/services/frontend_script_api.js'
 translation = [
     '"{{Shortcut}} "',
@@ -856,6 +916,12 @@ translation = [
     '"{{Sync failed}}: "',
     '"{{Note added to sync queue.}}"',
     'message: "{{No connection to sync server.}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/services/tab_manager.js'
+translation = [
+    """throw new Error(`{{Cannot find noteContext id='${ntxId}'}}`""",
 ]
 replace_in_file(file_path, translation)
 
@@ -933,6 +999,14 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/services/link_context_menu.js'
+translation = [
+    'title: "{{Open note in a new tab}}"',
+    'title: "{{Open note in a new split}}"',
+    'title: "{{Open note in a new window}}"',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/services/entrypoints.js'
 translation = [
     "title: '{{new note}}",
@@ -977,12 +1051,18 @@ file_path = 'src/public/app/services/note_content_renderer.js'
 translation = [
     '>{{Download}}<',
     '>{{Open}}<',
+    '>{{The diagram could not displayed.}}<',
     '>{{ Enter protected session}}<',
     '>{{This note is protected and to access it you need to enter password.}}<',
     '>{{Content of this note cannot be displayed in the book format}}<',
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/services/note_context.js'
+translation = [
+    '    logError(`{{Cannot resolve note path ${inputNotePath}}}`',
+]
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/services/note_list_renderer.js'
 translation = [
@@ -1036,8 +1116,10 @@ translation = [
     'title: "{{Code}}"',
     'title: "{{Saved search}}"',
     'title: "{{Relation Map}}"',
+    'title: "{{Note Map}}"',
     'title: "{{Render HTML note}}"',
     'title: "{{Book}}"',
+    'title: "{{Mermaid diagram}}"',
     'title: "{{Advanced}}"',
     'title: "{{Force note sync}}"',
     'title: "{{Protect subtree}}"',
@@ -1046,6 +1128,7 @@ translation = [
     'title: "{{Import into note}}"',
     # special
     "title: '{{Open in a new tab }}",
+    "title: '{{Open in a new split}}",
     "title: '{{Open in a new window}}",
     "title: '{{Insert note after }}",
     "title: '{{Insert child note }}",
@@ -1152,6 +1235,19 @@ translation = [
 replace_in_file(file_path, translation)
 
 
+file_path = 'src/public/app/widgets/buttons/close_pane_button.js'
+translation = [
+    '"{{Close this pane}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/create_pane_button.js'
+translation = [
+    '"{{Create new split}}"',
+]
+replace_in_file(file_path, translation)
+
+
 file_path = 'src/public/app/widgets/attribute_widgets/attribute_editor.js'
 translation = [
     'title: "{{Add new label definition}}"',
@@ -1168,6 +1264,97 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/bookmark_switch.js'
+translation = [
+    'title="{{Bookmark this note to the left side panel}}"',
+    'title="{{Remove bookmark}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/calendar.js'
+translation = [
+    'super("bx-calendar", "{{Calendar}}"',
+    '>{{Mon}}<',
+    '>{{Tue}}<',
+    '>{{Wed}}<',
+    '>{{Thu}}<',
+    '>{{Fri}}<',
+    '>{{Sat}}<',
+    '>{{Sun}}<',
+    '    alert("{{Cannot find day note}}"',
+    "'{{January}}',",
+    "'{{Febuary}}',",
+    "'{{March}}',",
+    "'{{April}}',",
+    "'{{May}}',",
+    "'{{June}}',",
+    "'{{July}}',",
+    "'{{August}}',",
+    "'{{September}}',",
+    "'{{October}}',",
+    "'{{November}}',",
+    "'{{December}}'",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/edit_button.js'
+translation = [
+    '{{Edit this note}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/global_menu.js'
+translation = [
+    'title="{{Menu}}"',
+    '            {{Options}}',
+    '            {{Open new window}}',
+    '            {{Open Dev Tools}}',
+    '            {{Open SQL Console}}',
+    '            {{Show backend log}}',
+    '            {{Reload frontend}}',
+    'title="{{Reload can help with some visual glitches without restarting the whole app.}}"',
+    '            {{Toggle fullscreen}}',
+    '            {{Show Help}}',
+    '            {{About Trilium Notes}}',
+    '            {{Logout}}',
+]
+replace_in_file(file_path, translation)
+
+
+file_path = 'src/public/app/widgets/buttons/note_actions.js'
+translation = [
+    '>{{ Re-render note}}<',
+    '>{{Search in note }}<',
+    '>{{ Note source}}<',
+    '>{{ Open note externally}}<',
+    '>{{Import files}}<',
+    '>{{Export note}}<',
+    '>{{ Print note}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/protected_session_status.js'
+translation = [
+    '{{Protected session is active. Click to leave protected session.}}',
+    '{{Click to enter protected session}}',
+
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/left_pane_toggle.js'
+translation = [
+    '"{{Hide sidebar.}}"',
+    '"{{Open sidebar.}}"',
+
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/show_note_source.js'
+translation = [
+    'title("{{Show Note Source}}")',
+
+]
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/collapsible_widgets/calendar.js'
 translation = [
@@ -1468,6 +1655,24 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/bookmark_switch.js'
+translation = [
+    '        {{Bookmark}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/editability_select.js'
+translation = [
+    '>{{auto}}<',
+    """>{{Note is editable if it's not too long.}}<""",
+    '>{{Note is read-only, but can be edited with a button click.}}<',
+    '>{{Note is always editable, regardless of its length.}}<',
+    '            {{Auto}}',
+    '            {{Read-only}}',
+    '            {{Always editable}}',
+
+]
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/global_menu.js'
 translation = [
@@ -1494,6 +1699,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/mermaid.js'
+translation = [
+    '>{{The diagram could not displayed. See }}<',
+    '>{{help and examples}}<',
+]
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/note_actions.js'
 translation = [
@@ -1514,6 +1725,11 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/note_detail.js'
+translation = [
+    'throw new Error("{{Could not find typeWidget for type: }}"',
+]
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/note_icon.js'
 translation = [
@@ -1521,6 +1737,13 @@ translation = [
     '>{{Search:}}<',
     '>{{Reset to default icon}}<',
     'title="{{Change note icon}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/note_map.js'
+translation = [
+    'title="{{Link Map}}"',
+    'title="{{Tree map}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -1581,6 +1804,7 @@ translation = [
     'title: "{{Relation Map}}"',
     'title: "{{Render Note}}"',
     'title: "{{Book}}"',
+    'title: "{{Mermaid Diagram}}"',
     'title: "{{Code}}"',
     '    {{Type:}} <span',
     'confirmDialog.confirm("{{It is not recommended to change note type when note content is not empty. Do you want to continue anyway?}}"',
@@ -1597,10 +1821,21 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/protected_note_switch.js'
+translation = [
+    'title="{{Note is not protected, click to make it protected}}"',
+    'title="{{Note is protected, click to make it unprotected}}"',
+    '        {{Protect the note}}',
+    '        {{Unprotect the note}}',
+]
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/quick_search.js'
 translation = [
+    # 0.47
     '>{{Searching ...}}<',
+    # 0.48
+    '>{{ Searching ...}}<',
     '>{{No results found}}<',
     '>{{... and ${resultNoteIds.length - MAX_DISPLAYED_NOTES} more results.}}<',
     '>{{Show in full search}}<',
@@ -1608,6 +1843,143 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/ribbon_widgets/basic_properties.js'
+translation = [
+    '>{{Note type:}}<',
+    '>{{Editable:}}<',
+    "title: '{{Basic Properties}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/book_properties.js'
+translation = [
+    '>{{View type:&nbsp; &nbsp;}}<',
+    '>{{Grid}}<',
+    '>{{List}}<',
+    'title="{{Collapse all notes}}"',
+    'title="{{Expand all children}}"',
+    "title: '{{Book Properties}}",
+    'throw new Error(`{{Invalid view type ${type}}}`',
+]
+replace_in_file(file_path, translation)
+
+
+file_path = 'src/public/app/widgets/ribbon_widgets/edited_notes.js'
+translation = [
+    '>{{No edited notes on this day yet ...}}<',
+    "title: '{{Edited Notes}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/file_properties.js'
+translation = [
+    '>{{Note ID:}}<',
+    '>{{Original file name:}}<',
+    '>{{File type:}}<',
+    '>{{File size:}}<',
+    '>{{Download}}<',
+    '>{{Open}}<',
+    '>{{Upload new revision}}<',
+    "title: '{{File}}",
+    'showMessage("{{New file revision has been uploaded.}}"',
+    'showError("{{Upload of a new file revision failed.}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/image_properties.js'
+translation = [
+    '>{{Original file name:}}<',
+    '>{{File type:}}<',
+    '>{{File size:}}<',
+    '>{{Download}}<',
+    '>{{Open}}<',
+    '>{{Copy to clipboard}}<',
+    '>{{Upload new revision}}<',
+    "title: '{{Image}}",
+    'showMessage("{{New image revision has been uploaded.}}"',
+    'showError("{{Upload of a new image revision failed: }}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/inherited_attribute_list.js'
+translation = [
+    'title: "{{Inherited attributes}}"',
+    '"{{No inherited attributes.}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/note_info_widget.js'
+translation = [
+    '>{{Note ID:}}<',
+    '>{{Created}}:<',
+    '>{{Modified}}:<',
+    '>{{Type:}}<',
+    '>{{Note size}}:<',
+    '</span> {{calculate}}',
+    '''title="{{Note size provides rough estimate of storage requirements for this note. It takes into account note's content and content of its note revisions.}}"''',
+    "title: '{{Note Info}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/note_map.js'
+translation = [
+    'title="{{Open full}}"',
+    'title="{{Collapse to normal size}}"',
+    "title: '{{Note Map}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/note_paths.js'
+translation = [
+    '>{{Clone note to new location...}}<',
+    'title="{{This path is outside of hoisted note and you would have to unhoist.}}"',
+    'title="{{Archived}}"',
+    'title="{{Search}}"',
+    "title: '{{Note Paths}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/note_properties.js'
+translation = [
+    "title: '{{Info}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/owned_attribute_list.js'
+translation = [
+    'title: "{{Owned attributes}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/promoted_attributes.js'
+translation = [
+    'title: "{{Promoted attributes}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/search_definition.js'
+translation = [
+    '>{{Add search option:}}<',
+    '>{{enter}}<',
+    'title="{{Fast search option disables full text search of note contents which might speed up searching in large databases.}}"',
+    'title="{{Archived notes are by default excluded from search results, with this option they will be included.}}"',
+    'title="{{Limit number of results}}"',
+    'title="{{Debug will print extra debugging information into the console to aid in debugging complex queries}}"',
+    "title: '{{Search parameters}}",
+    'showMessage("{{Search note has been saved into }}"',
+    "showMessage('{{Actions have been executed.}}'",
+    '    logError(`{{Unknown search option ${searchOptionName}}}`',
+    """    logError(`{{Parsing of attribute: '${actionAttr.value}' failed with error: ${e.message}}}`""",
+    """    logError(`{{No action class for '${actionDef.name}' found.}}`""",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/ribbon_widgets/similar_notes.js'
+translation = [
+    "title: '{{Similar Notes}}",
+    '"{{No similar notes found.}}"',
+]
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/search_actions/abstract_search_action.js'
 translation = [
@@ -1811,6 +2183,13 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/type_widgets/book.js'
 translation = [
     """{{This note of type Book doesn't have any child notes so there's nothing to display. See <a href="https://github.com/zadam/trilium/wiki/Book-note">wiki</a> for details.}}""",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/editable_code.js'
+translation = [
+    'title="{{Open Trilium API docs}}"',
+    'showMessage("{{SQL Console note has been saved into }}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -2271,9 +2650,20 @@ file_path = 'src/routes/api/date_notes.js'
 translation = [
     "title: '{{Search:}} '",
 ]
-
 replace_in_file(file_path, translation, TARGET_PATH)
 
+
+# 0.48
+file_path = 'src/services/special_notes.js'
+translation = [
+    "title: '{{hidden}}',",
+    "title: '{{search}}',",
+    "title: '{{singles}}'",
+    "title: '{{Global Note Map}}'",
+    "title: '{{SQL Console}}'",
+    "title: '{{Search}}: '",
+]
+replace_in_file(file_path, translation, TARGET_PATH)
 
 # 应用补丁
 # apply patch
@@ -2323,5 +2713,9 @@ if LANG == 'cn':
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
     shutil.copy(src_path, dest_path)
 
+if missing_files:
+    print('missing_files!')
+    for x in missing_files:
+        print(x)
 
 print('finished!')
