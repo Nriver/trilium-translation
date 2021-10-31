@@ -2756,7 +2756,8 @@ if LANG == 'cn':
     os.chdir(script_path)
     if os.path.exists('demo-cn.zip'):
         os.system('rm -f demo-cn.zip')
-    os.system('cd demo-cn && zip -r demo-cn.zip ./* && mv demo-cn.zip ../')
+    # trilium需要读取unicode格式的zip文件名, 否则会出现乱码
+    os.system('cd demo-cn && 7z -scsutf-8 a demo-cn.zip ./* && mv demo-cn.zip ../')
     src_path = f'demo-cn.zip'
     dest_path = f'{PATCH_FOLDER}/db/demo.zip'
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
