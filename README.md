@@ -9,7 +9,7 @@ If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 
 ![20210606135851579_1868988429](https://user-images.githubusercontent.com/6752679/120914251-65009900-c6cf-11eb-9b38-dd9554657372.png)
 
-
+---
 # How to use
 1. Download from the latest [Release](https://github.com/Nriver/trilium-translation/releases) that suit your computer system.
 2. Unzip and execute(trilium for Linux, trilium.sh for Linux server, trilium.exe for Windows, trilium.app for macOS).
@@ -25,6 +25,7 @@ It will download the Chinese version of Trilium I built on [Docker Hub](https://
 
 Open http://127.0.0.1:8080 in your browser to access the server page.
 
+---
 # How to translate
 If you would like to check the code (my codes comes with Chinese and English comments, check it) and compile it by yourself. Here is some information may be useful.
 
@@ -65,12 +66,14 @@ If you'd like to translate more text, mark each text in the file that you want t
 
 Put everything between double brackets into the dict in `translations.py` and translate to the language you like. (Some text were ended with `}`. Try to avoid triple brackets by change from `${xxx}}}'` to something like `${xxx}'}}` )
 
+---
 # Limitations
 The translation is hard-coded in the frontend/backend source code, so you can not switch between languages.
 If there were some mistakes in the translation, Trilium Notes may not function correctly. Therefore, please back up your data before use.
 
 If you break Trilium Notes somehow, you need to redownload everything with `init.py`.
 
+---
 # Thanks
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)

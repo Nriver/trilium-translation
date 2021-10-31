@@ -18,6 +18,7 @@ Trilium Notes 交流qq群 686232370
 2. 解压运行(Linux桌面运行trilium, Linux服务端运行trilium.sh, Windows 运行trilium.exe, macOS 运行trilium.app, ).
 3. 玩去吧 :)
 
+---
 # 在Docker里运行服务端
 Trilium Notes的服务端可以用我构建好的docker镜像运行.
 ```
@@ -68,12 +69,59 @@ npm install -g webpack-cli
 
 把双括号里面的东西放到 `translations.py` 来做翻译. (要避免有些用花括号`}`结尾的文字, 可以把类似 `${xxx}}}'` 的改成`${xxx}'}}` )
 
+---
+# 常见问题
+下面是一些我觉得有代表性的问题
+
+## 笔记数据库在哪?
+默认路径
+
+win C:\Users\用户名\AppData\Roaming\trilium-data
+
+linux /home/用户名/.local/share/trilium-data
+
+mac /Users/用户名/Library/ApplicationSupport/trilium-data
+
+## 如何修改数据库位置？
+可以参考客户端自带的`trilium-portable.sh`或者`trilium-portable.bat`以绿色版的方式运行。改数据库位置只要修改文件里的数据库路径即可。
+
+如果你想体验原版最新的特性，建议使用这种方式运行。
+
+## 为什么用中文版的自带文档还是英文的?
+你运行过原版的Trilium程序, 你的笔记数据库已经按照英文的文档初始化过了。想要中文文档可以直接把项目中的demo-cn.zip导入到笔记中，或者删掉旧数据库(数据自行备份)，用中文版启动，重新进行初始化。
+
+## 为什么程序打不开?
+低版本的Trilium无法打开高版本的Trilium创建的数据，会导致程序无法启动。我发布中文版程序不会跟着原版每个版本都更新，版本号肯定是滞后的。
+
+---
+# 0.47 升级到 0.48 的一些问题
+首先要说，追求稳定的话，不建议升级，因为改动很大，潜在问题比较多。
+
+## 前端js报错
+原版程序变化很大，有一些api改变了，如果是从旧版本升级上来的，js代码有些不兼容。
+
+大部分js问题加个 async 就能解决
+
+比如
+```
+const notes = await api.runOnBackend(() => {
+```
+改成
+```
+const notes = await api.runOnBackend(async () => {
+```
+
+### 第三方主题不生效
+前端变化太大，旧的第三方主题基本全部失效，先用内置的主题吧。
+
+---
 # 限制
 Trilium Notes的文字是硬编码的, 所以没法切换语言.
 翻译是修改代码, 如果把代码改坏了, 你的数据有可能丢失, 所以做好备份.
 
 如果真改坏了, Trilium Notes启动不了, 或者翻译错了, 就要用`init.py`重新下载Trilium Notes.
 
+---
 # 感谢
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
