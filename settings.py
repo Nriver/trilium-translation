@@ -7,6 +7,7 @@
 
 import platform
 
+# DEBUG = False
 DEBUG = False
 
 if platform.system() == 'Linux':
@@ -48,7 +49,8 @@ PROXIES = {
 
 # 避免兼容性问题，强制使用某个版本的trilium
 # To avoid compatibility issue, force to use certain version of trilium
-VERSION_INFO_OVERRIDE = True
+#VERSION_INFO_OVERRIDE = True
+VERSION_INFO_OVERRIDE = False
 # 0.47
 force_version_info = {
     'name': 'v0.47.8 release',
@@ -66,7 +68,8 @@ force_version_info_full = {
     }
 }
 
-VERSION_INFO_OVERRIDE_BETA = True
+# VERSION_INFO_OVERRIDE_BETA = True
+VERSION_INFO_OVERRIDE_BETA = False
 # 0.48-beta
 force_version_info_beta = {
     'name': 'v0.48-beta release',

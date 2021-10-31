@@ -450,9 +450,11 @@ file_path = 'src/views/dialogs/options.ejs'
 translation = [
     '>{{Options}}<',
     '>{{Appearance}}<',
+    '>{{Shortcuts}}<'
     '>{{Keyboard shortcuts}}<',
     '>{{Code notes}}<',
     '>{{Username & password}}<',
+    '>{{Backup}}<'
     '>{{Sync}}<',
     '>{{Other}}<',
     '>{{Advanced}}<',
@@ -598,6 +600,20 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/dialogs/options/backup.js'
+translation = [
+    '>{{Automatic backup}}<',
+    '>{{Trilium can back up the database automatically:}}<',
+    '>{{Enable daily backup}}<',
+    '>{{Enable weekly backup}}<',
+    '>{{Enable monthly backup}}<',
+    '''>{{It's recommended to keep the backup turned on, but this can make application startup slow with large databases and/or slow storage devices.}}<''',
+    '>{{Backup now}}<',
+    '>{{Backup database now}}<',
+    'showMessage("{{Database has been backed up to }}"',
+    'showMessage("{{Options change have been saved.}}"',
+]
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/dialogs/recent_changes.js'
 translation = [
@@ -734,6 +750,21 @@ translation = [
     '>{{Automatic readonly note size is the size after which notes will be displayed in a readonly mode (for performance reasons).}}<',
     '>{{Automatic readonly size (text notes)}}<',
     '>{{Automatic readonly size (code notes)}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/dialogs/options/shortcuts.js'
+translation = [
+    '>{{Keyboard shortcuts}}<',
+    '>{{Multiple shortcuts for the same action can be separated by comma.}}<',
+    '>{{Action name}}<',
+    '>{{Shortcuts}}<',
+    '>{{Default shortcuts}}<',
+    '>{{Description}}<',
+    '>{{Reload app to apply changes}}<',
+    '>{{Set all shortcuts to the default}}<',
+    'confirmDialog.confirm("{{Do you really want to reset all keyboard shortcuts to the default?}}"',
+    '{{Type text to filter shortcuts...}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -1247,6 +1278,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/buttons/left_pane_toggle.js'
+translation = [
+    '"{{Hide panel.}}"',
+    '"{{Open panel.}}"',
+]
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/attribute_widgets/attribute_editor.js'
 translation = [
@@ -2490,6 +2527,18 @@ translation = [
     '"{{Insert equation in TeX format.}}"',
     '"{{Display mode}}"',
     '"{{Equation preview}}"',
+    ':"{{Find and replace}}"',
+    ':"{{Find in text…}}"',
+    ':"{{Text to find must not be empty.}}"',
+    ':"{{Find}}"',
+    ':"{{Previous result}}"',
+    ':"{{Next result}}"',
+    ':"{{Replace with…}}"',
+    ':"{{Show options}}"',
+    ':"{{Match case}}"',
+    ':"{{Whole words only}}"',
+    ':"{{Replace}}"',
+    ':"{{Replace all}}"',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
