@@ -450,11 +450,11 @@ file_path = 'src/views/dialogs/options.ejs'
 translation = [
     '>{{Options}}<',
     '>{{Appearance}}<',
-    '>{{Shortcuts}}<'
+    '>{{Shortcuts}}<',
     '>{{Keyboard shortcuts}}<',
     '>{{Code notes}}<',
     '>{{Username & password}}<',
-    '>{{Backup}}<'
+    '>{{Backup}}<',
     '>{{Sync}}<',
     '>{{Other}}<',
     '>{{Advanced}}<',
@@ -597,6 +597,10 @@ translation = [
     "title: '{{Light}}",
     '"{{Theme defined}}"',
     '        {{To apply font changes, click on}}',
+    '>{{Content width}}<',
+    '>{{Trilium by default limits max content width to improve readability for maximized screens on wide screens.}}<',
+    '>{{Max content width in pixels}}<',
+    '        {{To content width changes, click on}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -1837,6 +1841,7 @@ translation = [
     'title: "{{File}}"',
     'title: "{{Image}}"',
     'title: "{{Saved search}}"',
+    'title: "{{Note Map}}"',
     'title: "{{Text}}"',
     'title: "{{Relation Map}}"',
     'title: "{{Render Note}}"',

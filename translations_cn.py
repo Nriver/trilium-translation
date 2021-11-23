@@ -1267,5 +1267,9 @@ translation_dict = {
     'Type text to filter shortcuts...': '输入关键字过滤快捷键...',
     'Shortcuts': '快捷键',
     'Backup': '备份',
+    'Content width': '内容宽度',
+    'Trilium by default limits max content width to improve readability for maximized screens on wide screens.': 'Trilium默认会限制内容的最大宽度以提高在宽屏中全屏时的可读性.',
+    'Max content width in pixels': '内容最大宽度(像素)',
+    'To content width changes, click on': '修改宽度后, 请点击',
     '': '',
 }
