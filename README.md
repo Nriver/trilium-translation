@@ -16,7 +16,8 @@ If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 3. Enjoy :)
 
 # How to run server with docker
-For Trilium Notes server, you can run it with docker simply by executing:
+For Trilium Notes server, you can download my [docker-compose.yml](https://github.com/Nriver/trilium-translation/blob/main/docker-compose.yml)
+Then run it with docker simply by executing:
 ```
 docker-compose up -d
 ```

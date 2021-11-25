@@ -20,7 +20,8 @@ Trilium Notes 交流qq群 686232370
 
 ---
 # 在Docker里运行服务端
-Trilium Notes的服务端可以用我构建好的docker镜像运行.
+Trilium Notes的服务端可以用我构建好的docker镜像运行. 直接下载 [docker-compose.yml](https://github.com/Nriver/trilium-translation/blob/main/docker-compose.yml).
+运行
 ```
 docker-compose up -d
 ```
@@ -28,6 +29,8 @@ docker-compose up -d
 它会从[Docker Hub](https://hub.docker.com/repository/docker/nriver/trilium-cn)直接拉镜像运行.
 
 浏览器打开 http://127.0.0.1:8080 访问服务端.
+
+(docker镜像存了一个0.47.5的旧版本备份，需要的可以自己拿)
 
 ## (太长, 别看) 自己编译
 如果你想自己检查代码(代码都有中英双语注释)再自己编译, 可以看看下面的东西.
