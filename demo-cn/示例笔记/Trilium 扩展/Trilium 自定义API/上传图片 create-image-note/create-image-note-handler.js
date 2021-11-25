@@ -1,5 +1,5 @@
-
 return
+var SECRET_PASSWORD = '你的密码';
 
 const {req, res} = api;
 const {secret, title, content, type, target} = req.body;
@@ -27,7 +27,7 @@ var imageData = Buffer.from(content, 'base64');
 
 
 // 这里加了一个secret作为验证密码 防止匿名调用
-if (req.method == 'POST' && secret === 'supertrilium') {
+if (req.method == 'POST' && secret === SECRET_PASSWORD) {
     var targetParentNoteId;
     if (target === 'today'){
         targetParentNoteId = await api.getTodayNote().noteId;

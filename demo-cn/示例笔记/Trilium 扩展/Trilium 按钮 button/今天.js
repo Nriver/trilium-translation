@@ -1,3 +1,5 @@
+// 今天按钮, 在日记下新增一个今天的笔记
+
 api.addButtonToToolbar({
     title: '今天',
     icon: 'calendar-star',

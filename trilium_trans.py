@@ -157,7 +157,12 @@ translation = [
     'placeholder="{{Username}}"',
     'placeholder="{{Password}}"',
     '{{Outstanding sync items}}:',
-
+    '{{Open your desktop instance of Trilium Notes.}}',
+    '>{{From the Trilium Menu, click Options.}}<',
+    '>{{Click on Sync tab.}}<',
+    '>{{Change server instance address to: }}<',
+    '>{{Click "Test sync" button to verify connection is successfull.}}<',
+    ">{{Once you've completed these steps, click }}<",
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
@@ -250,6 +255,7 @@ translation = [
     '>{{OK}}<',
     '    {{delete also all clones}}',
     '''title="{{Normal (soft) deletion only marks the notes as deleted and they can be undeleted (in recent changes dialog) within a period of time. Checking this option will erase the notes immediatelly and it won't be possible to undelete the notes.}}"''',
+    '''        {{erase notes permanently (can't be undone). This will force application reload.}}''',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
@@ -2544,6 +2550,9 @@ translation = [
     ':"{{Whole words only}}"',
     ':"{{Replace}}"',
     ':"{{Replace all}}"',
+    '"In line":"{{In line}}",',
+    '"Toggle caption off":"{{Toggle caption off}}"',
+    '"Toggle caption on":"{{Toggle caption on}}",',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 

@@ -11,62 +11,58 @@
      <h1>标签</h1>
 
     <p><strong>一些比较有用的笔记属性标签</strong>
-
     </p>
-    <p> </p>
-    <p>1. 闭自动只读 <code>#autoReadOnlyDisabled</code>
-
+    <p>&nbsp;</p>
+    <p>1. 关闭自动只读 <code>#autoReadOnlyDisabled</code>
     </p>
     <p>Trilium打开一些笔记（比如内容很长很长的笔记）会自动进入只读模式，这个时候要编辑必须手动点击笔记内容右上角的编辑按钮。如果是需要经常修改的笔记，每次手动点击会很不方便，可以在笔记属性里加上这个 <code>#autoReadOnlyDisabled</code> 就会关闭自动只读，自动进入编辑模式。（参考
       <a
       href="https://github.com/zadam/trilium/issues/1858">https://github.com/zadam/trilium/issues/1858</a>）</p>
-    <p> </p>
+    <p>&nbsp;</p>
     <p>2. 字数统计 <code>#字数统计</code>
-
     </p>
-    <p>给笔记加上字数统计功能，只要在笔记属性加上   <code>#字数统计</code> 。在笔记的下方就会有字数统计了。</p>
+    <p>给笔记加上字数统计功能，只要在笔记属性加上 &nbsp;&nbsp;<code>#字数统计</code> 。在笔记的下方就会有字数统计了。</p>
     <p>这里我给它做了汉化，你如果不喜欢可以修改<a class="reference-link" href="../Trilium%20%E7%BB%84%E4%BB%B6%20widget/word%20count%20%E5%AD%97%E6%95%B0%E7%BB%9F%E8%AE%A1%E7%BB%84%E4%BB%B6.js"
-      data-note-path="root/0BmZLK24Z0QL">word count 字数统计组件</a>，找到 <code>!note.hasLabel('字数统计')</code> ，
+      data-note-path="root/iwtsLLzTupGV">word count 字数统计组件</a>，找到 <code>!note.hasLabel('字数统计')</code> ，
       把里面的 字数统计 改成你喜欢的任意字符，比如 wordCount。 之后就能用 <code>#wordCount</code> 标签开启字数统计功能了。（如果你喜欢，改成 <code>#wc</code>也可以，哈哈）</p>
-    <p> </p>
+    <p>&nbsp;</p>
     <p>3.标记待办和已完成任务</p>
-    <p><code>#cssClass=todo</code>  和 <code>#cssClass=done</code> 可以用来标记待办任务和已完成任务</p>
-    <p> </p>
+    <p><code>#cssClass=todo</code> &nbsp;和 <code>#cssClass=done</code> 可以用来标记待办任务和已完成任务</p>
+    <p>&nbsp;</p>
     <p>4.标记CSS笔记</p>
     <p><code>#appCss</code> 可以用来标记CSS笔记, 会影响Trilium的样式.</p>
-    <p> </p>
+    <p>&nbsp;</p>
     <p><strong>以下标签涉及到一些编程知识，仅供有兴趣的用户研究</strong>
-
     </p>
-    <p> </p>
-    <p>自定义组件 <code>#widget </code>
-
+    <p>&nbsp;</p>
+    <p>自定义组件 <code>#widget&nbsp;</code>
     </p>
-    <p>Trilium的组件是可以自己自定义的，比如上面提到的 <code>#字数统计</code>  就是这么来的。组件的写法可以参考  <a class="reference-link"
-      href="../Trilium%20%E7%BB%84%E4%BB%B6%20widget.html" data-note-path="root/iKx5hNuXPEMZ">Trilium 组件 widget</a> 。</p>
-    <p> </p>
+    <p>Trilium的组件是可以自己自定义的，比如上面提到的 <code>#字数统计</code> &nbsp;就是这么来的。组件的写法可以参考&nbsp;&nbsp;
+      <a
+      class="reference-link" href="../Trilium%20%E7%BB%84%E4%BB%B6%20widget.html"
+      data-note-path="root/Xh8Jhg90AZeQ">Trilium 组件 widget</a>&nbsp;。</p>
+    <p>&nbsp;</p>
     <p>自定义请求处理 <code>#customRequestHandler</code>
-
     </p>
-    <p>你可以给笔记加上 <code>#customRequestHandler</code> 来给Trilium加上自定义的api接口。（参考 
+    <p>你可以给笔记加上 <code>#customRequestHandler</code> 来给Trilium加上自定义的api接口。（参考&nbsp;&nbsp;
       <a
       class="reference-link" href="../Trilium%20%E8%87%AA%E5%AE%9A%E4%B9%89API.html"
-      data-note-path="root/TDSqkJvhvYYR">Trilium 自定义API</a> ）</p>
-    <p> </p>
+      data-note-path="root/nP72RMZG0v8r">Trilium 自定义API</a>&nbsp;）</p>
+    <p>&nbsp;</p>
     <p>启动后运行 <code>#run=frontendStartup</code>
-
     </p>
-    <p>在Trilium中你可以自己定义功能按钮。你看看界面右上的 ”今天“ 按钮，它不在Trilium的源码里面，而是启动之后再根据  <a class="reference-link"
-      href="../Trilium%20%E6%8C%89%E9%92%AE%20button/%E4%BB%8A%E5%A4%A9.js" data-note-path="root/0ioO0mdyhidg">今天</a> 这个笔记里的代码添加到界面上的。</p>
-    <p> </p>
-    <p>自定义主题 <code>#appTheme=xxx </code>
-
+    <p>在Trilium中你可以自己定义功能按钮。你看看界面右上的 ”今天“ 按钮，它不在Trilium的源码里面，而是启动之后再根据&nbsp;&nbsp;
+      <a
+      class="reference-link" href="../Trilium%20%E6%8C%89%E9%92%AE%20button/%E4%BB%8A%E5%A4%A9.js"
+      data-note-path="root/GIRjfzNodXmT">今天</a>&nbsp;这个笔记里的代码添加到界面上的。</p>
+    <p>&nbsp;</p>
+    <p>自定义主题 <code>#appTheme=xxx&nbsp;</code>
     </p>
-    <p>给css类型的笔记加上 <code>#appTheme=xxx</code>  的标签就能变成Trilium的主题，在Trilium的设置里面就可以用了。（参考 
+    <p>给css类型的笔记加上 <code>#appTheme=xxx</code> &nbsp;的标签就能变成Trilium的主题，在Trilium的设置里面就可以用了。（参考&nbsp;&nbsp;
       <a
       class="reference-link" href="../Trilium%20%E4%B8%BB%E9%A2%98%20theme.html"
-      data-note-path="root/tsVNXO5lIG1c">Trilium 主题 theme</a>）</p>
-    <p> </p>
+      data-note-path="root/oLRWXvvJMrfG">Trilium 主题 theme</a>）</p>
+    <p>&nbsp;</p>
   </body>
 
 </html>

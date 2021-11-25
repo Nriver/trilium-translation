@@ -1,4 +1,4 @@
-const notes = await api.runOnBackend(() => {
+const notes = await api.runOnBackend(async () => {
     return api.sql.getRows(`
         SELECT
             notes.noteId,
