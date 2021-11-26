@@ -1,7 +1,7 @@
 # Trilium Translation
 [中文说明](README_CN.md)
 This repo provides a translation for the awesome [Trilium Notes](https://github.com/zadam/trilium).
-Currently, I have translated Trilium Notes into Chinese. Tested with trilium version 0.47.2 - 0.47.4.
+Currently, I have translated Trilium Notes into Chinese. Tested with trilium version 0.47.2 - 0.48.7.
 
 Star this repo if you like it, thx :)
 
@@ -25,6 +25,8 @@ docker-compose up -d
 It will download the Chinese version of Trilium I built on [Docker Hub](https://hub.docker.com/repository/docker/nriver/trilium-cn).
 
 Open http://127.0.0.1:8080 in your browser to access the server page.
+
+Your note data will be in the same directory of the docker-compose.yml file.
 
 ---
 # How to translate
