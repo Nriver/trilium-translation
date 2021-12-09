@@ -1281,5 +1281,7 @@ translation_dict = {
     'In line': '行内显示',
     'Toggle caption off': '隐藏说明文字',
     'Toggle caption on': '显示说明文字',
-    '': '',
+    'Save to note': '保存到笔记',
+    'This note is placed into the following paths:': '这个笔记已被放到以下路径中:',
+    'This note is not yet placed into the note tree.': '这个笔记还没有被放到笔记树中.',
 }

@@ -1984,6 +1984,8 @@ translation = [
     'title="{{Archived}}"',
     'title="{{Search}}"',
     "title: '{{Note Paths}}",
+    '{{This note is placed into the following paths:}}',
+    '{{This note is not yet placed into the note tree.}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -2019,6 +2021,27 @@ translation = [
     '    logError(`{{Unknown search option ${searchOptionName}}}`',
     """    logError(`{{Parsing of attribute: '${actionAttr.value}' failed with error: ${e.message}}}`""",
     """    logError(`{{No action class for '${actionDef.name}' found.}}`""",
+    '    {{Search & Execute actions}}',
+    '    {{Save to note}}',
+    '    {{search string}}',
+    '    {{search script}}',
+    '    {{ancestor}}',
+    '    {{fast search}}',
+    '    {{include archived}}',
+    '    {{order by}}',
+    '    {{limit}}',
+    '    {{debug}}',
+    '    {{action}}',
+    '    {{Delete note}}<',
+    '    {{Delete note revisions}}<',
+    '    {{Delete label}}<',
+    '    {{Delete relation}}<',
+    '    {{Rename label}}<',
+    '    {{Rename relation}}<',
+    '    {{Set label value}}<',
+    '    {{Set relation target}}<',
+    '    {{Execute script}}<',
+    '        {{Search}}\n',
 ]
 replace_in_file(file_path, translation)
 
@@ -2234,12 +2257,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/type_widgets/editable_code.js'
-translation = [
-    'title="{{Open Trilium API docs}}"',
-    'showMessage("{{SQL Console note has been saved into }}"',
-]
-replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/deleted.js'
 translation = [
@@ -2247,11 +2264,16 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+
 file_path = 'src/public/app/widgets/type_widgets/editable_code.js'
 translation = [
+    'title="{{Open Trilium API docs}}"',
+    'showMessage("{{SQL Console note has been saved into }}"',
     '{{Execute}} <k',
+    '{{Save to note}}</k',
 ]
 replace_in_file(file_path, translation)
+
 
 file_path = 'src/public/app/widgets/type_widgets/editable_text.js'
 translation = [
