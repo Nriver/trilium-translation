@@ -1,6 +1,8 @@
 # Trilium Translation
 我把这个牛逼的笔记软件[Trilium Notes](https://github.com/zadam/trilium)做了中文翻译.
 
+如果你想把Trilium翻译成其它语言，可以参考[这里](https://github.com/Nriver/trilium-translation/blob/main/README_CN.md#%E5%A4%AA%E9%95%BF-%E5%88%AB%E7%9C%8B-%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91)
+
 如果你觉得不错, 可以留下一个star, 谢谢 ^_^
 
 如果你是老用户, 使用前最好备份数据以防万一.
@@ -12,6 +14,12 @@ Trilium Notes 交流qq群 686232370
 
 ![image](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png)
 
+# 关于汉化版的内置文档
+内置的文档有做汉化，不过我做了些修改，删掉了一些我认为用处不大的内容。比如Trilium自带有TODO，所以我把不太好用的任务管理删了。另外增加了一些实用的示例，比如自定义api接口等。
+
+原版的示例没有仔细分类，有些内容又在英文wiki上，我第一次看觉得一头雾水。所以我修改了示例文档的笔记结构，给不同功能的笔记进行分类。
+
+里面的内容完全按照我个人口味添加，你可以随意修改。但是请注意！千万不要随意修改`日记`笔记的结构和笔记属性，你想移动可以移走整个日记笔记。不要动里面的结构，不然这个功能很容易被玩坏，所以除非你知道你在做什么，别去动这个笔记的结构！
 
 # 使用方法
 1. [Release](https://github.com/Nriver/trilium-translation/releases)里下载对应客户端

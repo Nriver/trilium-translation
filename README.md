@@ -1,6 +1,7 @@
 # Trilium Translation
 [中文说明](README_CN.md)
 This repo provides a translation for the awesome [Trilium Notes](https://github.com/zadam/trilium).
+If you'd like to translate Trilium Notes into any language you like, please follow [this guide](https://github.com/Nriver/trilium-translation#how-to-translate).
 Currently, I have translated Trilium Notes into Chinese. Tested with trilium version 0.47.2 - 0.48.7.
 
 Star this repo if you like it, thx :)
