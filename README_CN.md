@@ -147,6 +147,13 @@ Trilium Notes的文字是硬编码的, 所以没法切换语言.
 如果真改坏了, Trilium Notes启动不了, 或者翻译错了, 就要用`init.py`重新下载Trilium Notes.
 
 ---
+# Stargazers 数据
+
+统计图使用 [caarlos0/starcharts](https://github.com/caarlos0/starcharts) 项目生成.
+
+[![Stargazers over time](https://starchart.cc/Nriver/trilium-translation.svg)](https://starchart.cc/Nriver/trilium-translation)
+
+---
 # 感谢
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
