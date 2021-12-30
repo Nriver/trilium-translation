@@ -167,6 +167,13 @@ translation = [
 replace_in_file(file_path, translation, TARGET_PATH)
 
 
+file_path = 'src/views/share/404.ejs'
+translation = [
+    '>{{Not found}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+
 file_path = 'src/public/app/desktop.js'
 translation = [
     'title: `{{Add "${params.misspelledWord}" to dictionary}}`',
@@ -621,7 +628,7 @@ translation = [
     '>{{Backup now}}<',
     '>{{Backup database now}}<',
     'showMessage("{{Database has been backed up to }}"',
-    'showMessage("{{Options change have been saved.}}"',
+    'showMessage("{{Options changed have been saved.}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -739,8 +746,9 @@ translation = [
     '>{{Changes to the spell check options will take effect after application restart}}<',
     '>{{Available language codes: }}<',
     '>{{Image compression}}<',
+    '>{{Enable image compression}}<',
     '>{{Max width / height of an image in pixels (image will be resized if it exceeds this setting).}}<',
-    '>{{JPEG quality (0 - worst quality, 100 best quality, 50 - 85 is recommended)}}<',
+    '>{{JPEG quality (10 - worst quality, 100 best quality, 50 - 85 is recommended)}}<',
     '>{{Note erasure timeout}}<',
     '>{{Erase notes after X seconds}}<',
     '>{{You can also trigger erasing manually:}}<',
@@ -754,7 +762,7 @@ translation = [
     "{{Protected session timeout is a time period after which the protected session is wiped from\n        the browser's memory. This is measured from the last interaction with protected notes. See}}",
     '{{for more info.}}',
     '>. {{Changes to the spell check options will take effect after application restart.}}<',
-    'showMessage("{{Options change have been saved.}}"',
+    'showMessage("{{Options changed have been saved.}}"',
     'showMessage("{{Deleted notes have been erased.}}"',
     '>{{Automatic readonly size}}<',
     '>{{Automatic readonly note size is the size after which notes will be displayed in a readonly mode (for performance reasons).}}<',
@@ -791,7 +799,7 @@ translation = [
     '>{{Sync test}}<',
     ">{{This will test the connection and handshake to the sync server. If the sync server isn't initialized, this will set it up to sync with the local document.}}<",
     '>{{Test sync}}<',
-    'showMessage("{{Options change have been saved.}}"',
+    'showMessage("{{Options changed have been saved.}}"',
     '"{{Sync server handshake failed, error:}} "',
 ]
 replace_in_file(file_path, translation)
@@ -1213,10 +1221,10 @@ translation = [
     '>{{Inverse relation:}}<',
     '>{{Inheritable:}}<',
     '>{{Other notes with this label}}<',
-    '>{{frontendStartup - when Trilium frontend starts up (or is refreshed).}}<',
-    '>{{backendStartup - when Trilium backend starts up}}<',
-    '>{{hourly - run once an hour. You can use additional label <code>runAtHour</code> to specify at which hour.}}<',
-    '>{{daily - run once a day}}<',
+    '- {{when Trilium frontend starts up (or is refreshed).}}<',
+    '- {{when Trilium backend starts up}}<',
+    '- {{run once an hour. You can use additional label <code>runAtHour</code> to specify at which hour.}}<',
+    '- {{run once a day}}<',
     '>{{Custom request handler}}<',
     'title="{{Cancel changes and close}}"',
     'title="{{Attribute name can be composed of alphanumeric characters, colon and underscore only}}"',
@@ -2080,6 +2088,20 @@ translation = [
     """{{this.note.title.startsWith('Search: ')}}""",
     '{{fulltext keywords, #tag = value ...}}',
 
+]
+replace_in_file(file_path, translation)
+
+
+file_path = 'src/public/app/widgets/shared_info.js'
+translation = [
+    '>. {{For help visit}} <',
+]
+replace_in_file(file_path, translation)
+
+
+file_path = 'src/public/app/widgets/switch.js'
+translation = [
+    'title="{{Open help page}}"',
 ]
 replace_in_file(file_path, translation)
 
