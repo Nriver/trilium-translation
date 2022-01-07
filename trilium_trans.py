@@ -178,6 +178,7 @@ translation = [
     '>{{This note was originally clipped from }}<',
     '>{{This note has no content.}}<',
     '>{{Child notes: }}<',
+    '    {{parent: }}<'
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
@@ -2742,6 +2743,7 @@ translation = [
     'separator: "{{Dialogs}}"',
     'separator: "{{Text note operations}}"',
     'separator: "{{Attributes (labels & relations)}}"',
+    'separator: "{{Ribbon tabs}}"',
     'separator: "{{Other}}"',
     """description: '{{Open "Jump to note" dialog}}'""",
     '''description: "{{Search for notes in the active note's subtree}}"''',
@@ -2765,6 +2767,7 @@ translation = [
     'description: "{{Duplicate subtree}}"',
     'description: "{{Opens new tab}}"',
     'description: "{{Closes active tab}}"',
+    'description: "{{Repoens the last closed tab}}"',
     'description: "{{Activates tab on the right}}"',
     'description: "{{Activates tab on the left}}"',
     'description: "{{Open new empty window}}"',
@@ -2778,17 +2781,37 @@ translation = [
     'description: "{{Shows Backend Log dialog}}"',
     'description: "{{Shows built-in Help / cheatsheet}}"',
     'description: "{{Open dialog to add link to the text}}"',
+    'description: "{{Follow link within which the caret is placed}}"',
+    'description: "{{Insert current date & time into text}}"',
     'description: "{{Pastes Markdown from clipboard into text note}}"',
     'description: "{{Cuts the selection from the current note and creates subnote with the selected text}}"',
     'description: "{{Opens the dialog to include a note}}"',
     'description: "{{Put focus into attribute editor}}"',
     'description: "{{Create new label}}"',
     'description: "{{Create new relation}}"',
+    'description: "{{Toggle Basic Properties}}"',
+    'description: "{{Toggle Book Properties}}"',
+    'description: "{{Toggle File Properties}}"',
+    'description: "{{Toggle Image Properties}}"',
+    'description: "{{Toggle Owned Attributes}}"',
+    'description: "{{Toggle Inherited Attributes}}"',
+    'description: "{{Toggle Promoted Attributes}}"',
+    'description: "{{Toggle Link Map}}"',
+    'description: "{{Toggle Note Info}}"',
+    'description: "{{Toggle Note Paths}}"',
+    'description: "{{Toggle Similar Notes}}"',
     'description: "{{Open note as a file with default application}}"',
     'description: "{{Render (re-render) active note}}"',
     'description: "{{Run active JavaScript (frontend/backend) code note}}"',
     'description: "{{Toggles note hoisting of active note}}"',
     'description: "{{Unhoist from anywhere}}"',
+    'description: "{{Reload frontend App}}"',
+    'description: "{{Open dev tools}}"',
+    'description: "{{Toggle left (note tree) panel}}"',
+    'description: "{{Toggle full screen}}"',
+    'description: "{{Zoom Out}}"',
+    'description: "{{Zoom In}}"',
+    'description: "{{Copy selected text without formatting}}"',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
@@ -2808,7 +2831,9 @@ translation = [
     "title: '{{Global Note Map}}'",
     "title: '{{SQL Console}}'",
     "title: '{{Search}}: '",
+    "title: '{{Shared notes}}',",
 ]
+replace_in_file(file_path, translation)
 replace_in_file(file_path, translation, TARGET_PATH)
 
 # 应用补丁
