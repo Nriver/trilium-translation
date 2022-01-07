@@ -596,6 +596,7 @@ translation_dict = {
     'Minimize/maximize widget': '',
     'Hide': '',
     'Show': '',
+    'Quit': '',
     'Edited notes on this day': '',
     'No edited notes on this day yet ...': '',
     'This contains a list of notes created or updated on this day.': '',

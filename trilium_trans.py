@@ -866,6 +866,16 @@ translation = [
 replace_in_file(file_path, translation, TARGET_PATH)
 
 
+file_path = 'src/services/tray.js'
+translation = [
+    '{{Cannot move root note.}}',
+    "? '{{Hide}}'",
+    ": '{{Show}}'",
+    "label: '{{Quit}}',",
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+
 file_path = 'src/services/tree.js'
 translation = [
     '{{Cannot move root note.}}',
