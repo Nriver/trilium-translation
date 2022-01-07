@@ -1150,6 +1150,9 @@ translation = [
     'showError("{{Wrong password.}}"',
     '" {{in progress:}} "',
     '" {{finished successfully.}}"',
+    '+ " {{status}}",',
+    '"{{Protecting}}"',
+    '"{{Unprotecting}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -1748,6 +1751,9 @@ translation = [
     '            {{Auto}}',
     '            {{Read-only}}',
     '            {{Always editable}}',
+    '"auto": "{{Auto}}",',
+    '"readOnly": "{{Read-only}}",',
+    '"autoReadOnlyDisabled": "{{Always Editable}}"',
 
 ]
 replace_in_file(file_path, translation)

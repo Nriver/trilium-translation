@@ -1182,6 +1182,7 @@ translation_dict = {
     'auto': '',
     'Read-only': '',
     'Always editable': '',
+    'Always Editable': '',
     "Note is editable if it's not too long.": '',
     'Note is read-only, but can be edited with a button click.': '',
     'Note is always editable, regardless of its length.': '',
@@ -1313,4 +1314,7 @@ translation_dict = {
     'Copy selected text without formatting': '',
     'Shared notes': '',
     'parent: ': '',
+    'status': '',
+    'Protecting': '',
+    'Unprotecting': '',
 }
