@@ -173,6 +173,13 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
+file_path = 'src/views/share/page.ejs'
+translation = [
+    '>{{This note was originally clipped from }}<',
+    '>{{This note has no content.}}<',
+    '>{{Child notes: }}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
 
 file_path = 'src/public/app/desktop.js'
 translation = [
@@ -694,13 +701,18 @@ translation = [
     "showMessage('{{Note revision has been deleted.}}'",
     "showMessage('{{Note revisions has been deleted.}}'",
     '"{{No revisions for this note yet...}}"',
+    '.text("{{File size:}}")',
+    '.text("{{Preview}}:")',
 ]
 replace_in_file(file_path, translation)
 
 
 file_path = 'src/public/app/dialogs/options/code_notes.js'
 translation = [
+    '>{{Use vim keybindings in CodeNotes (no ex mode)}}<',
+    '>{{Enable Vim Keybindings}}<',
     '>{{Available MIME types in the dropdown}}<',
+    'showMessage("{{Options change have been saved.}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -1323,6 +1335,10 @@ file_path = 'src/public/app/widgets/bookmark_switch.js'
 translation = [
     'title="{{Bookmark this note to the left side panel}}"',
     'title="{{Remove bookmark}}"',
+    # 0.49
+    '.text("{{Bookmark}}")',
+    '.attr("title", "{{Bookmark this note to the left side panel}}")',
+    '.attr("title", "{{Remove bookmark}}")',
 ]
 replace_in_file(file_path, translation)
 
@@ -1408,6 +1424,12 @@ file_path = 'src/public/app/widgets/buttons/show_note_source.js'
 translation = [
     'title("{{Show Note Source}}")',
 
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/update_available.js'
+translation = [
+    'title="{{Update available}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -1854,6 +1876,7 @@ file_path = 'src/public/app/widgets/note_type.js'
 translation = [
     'title: "{{File}}"',
     'title: "{{Image}}"',
+    # dirty
     'title: "{{Saved search}}"',
     'title: "{{Note Map}}"',
     'title: "{{Text}}"',
@@ -1879,12 +1902,13 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/protected_note_switch.js'
 translation = [
-    'title="{{Note is not protected, click to make it protected}}"',
-    'title="{{Note is protected, click to make it unprotected}}"',
-    '        {{Protect the note}}',
-    '        {{Unprotect the note}}',
+    '"title", "{{Note is not protected, click to make it protected}}"',
+    '"title", "{{Note is protected, click to make it unprotected}}"',
+    '"{{Protect the note}}"',
+    '"{{Unprotect the note}}"',
 ]
 replace_in_file(file_path, translation)
+replace_in_file(file_path, translation, TARGET_PATH)
 
 file_path = 'src/public/app/widgets/quick_search.js'
 translation = [
@@ -1974,6 +1998,9 @@ translation = [
     '</span> {{calculate}}',
     '''title="{{Note size provides rough estimate of storage requirements for this note. It takes into account note's content and content of its note revisions.}}"''',
     "title: '{{Note Info}}",
+    '({{subtree size}}: ',
+    '{{in ${subTreeResp.subTreeNoteCount} notes}})',
+
 ]
 replace_in_file(file_path, translation)
 
@@ -2095,6 +2122,18 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/shared_info.js'
 translation = [
     '>. {{For help visit}} <',
+    '"{{This note is shared publicly on}}"',
+    '"{{This note is shared locally on}}"',
+]
+replace_in_file(file_path, translation)
+
+
+file_path = 'src/public/app/widgets/shared_switch.js'
+translation = [
+    '.text("{{Shared}}")',
+    '.attr("title", "{{Share the note}}")',
+    '.attr("title", "{{Unshare the note}}")',
+    '.attr("title", "{{Note cannot be unshared here because it is shared through inheritance from an ancestor.}}")',
 ]
 replace_in_file(file_path, translation)
 
