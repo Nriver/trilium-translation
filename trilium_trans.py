@@ -2717,8 +2717,8 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/services/note_autocomplete.js'
 translation = [
-    '`{{Create and link child note "${term}"}}`',
-    '`{{Insert external link to "${term}"}}`',
+    '`{{Create and link child note "${utils.escapeHtml(term)}"}}`',
+    '`{{Insert external link to "${utils.escapeHtml(term)}"}}`',
     '"{{Clear text field}}"',
     '"{{Show recent notes}}"',
 ]
