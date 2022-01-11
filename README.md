@@ -101,7 +101,15 @@ Wechat Pay:
 # Thanks
 Thank you for your support, it fills me with determination.
 
-Thanks tr**one for donating 20.00 CNY
+Thanks `tr**one` for donating 20.00 CNY!
+
+Thanks `1*0` for donating 8.00 CNY for a MXBC milk tea!
+
+Thanks `**钧` for donating 38.00 CNY for a cup of coffee!
+
+Thanks `*风` for donating 25.00 CNY!
+
+Thanks `**进` for donating 25.00 CNY!
 
 Thanks for the greate IDE Pycharm from Jetbrains.
 
