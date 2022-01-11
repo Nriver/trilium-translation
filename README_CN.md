@@ -43,6 +43,32 @@ docker-compose up -d
 
 (docker镜像存了一个0.47.5的旧版本备份，需要的可以自己拿)
 
+
+# 更新版本
+注意Trilium更新需要同时更新服务端与客户端, 版本必须一致. 更新前以防万一请备份好数据.
+
+## Docker服务端版本更新
+cd到docker-compose.yml所在目录
+
+先停止trilium
+```
+docker-compose down
+```
+
+拉取最新镜像
+```
+docker-compose pull
+```
+
+运行
+```
+docker-compose up -d
+```
+
+## 其它版本更新
+直接去[Release](https://github.com/Nriver/trilium-translation/releases)里下载对应最新版客户端
+
+
 ## (太长, 别看) 自己编译
 如果你想自己检查代码(代码都有中英双语注释)再自己编译, 可以看看下面的东西.
 
@@ -102,6 +128,8 @@ win C:\Users\用户名\AppData\Roaming\trilium-data
 linux /home/用户名/.local/share/trilium-data
 
 mac /Users/用户名/Library/ApplicationSupport/trilium-data
+
+docker 在docker-compose.yml同目录的`trilium-data`文件夹里
 
 ## 如何修改数据库位置？
 可以参考客户端自带的`trilium-portable.sh`或者`trilium-portable.bat`以绿色版的方式运行。改数据库位置只要修改文件里的数据库路径即可。
