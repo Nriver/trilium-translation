@@ -194,10 +194,10 @@ Trilium Notes的文字是硬编码的, 所以没法切换语言.
 # 捐赠
 如果你觉得我做的翻译对你有帮助, 欢迎捐赠, 这对我来说是莫大的鼓励!
 
-支付宝:
+支付宝:  
 ![Alipay](docs/alipay.png)
 
-微信:
+微信:  
 ![Wechat Pay](docs/wechat_pay.png)
 
 
