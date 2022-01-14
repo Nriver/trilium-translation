@@ -1,8 +1,9 @@
 import os
 import re
-from translations import translation_dict
 import shutil
-from settings import BASE_FOLDER, PATCH_FOLDER, TRANSLATOR, TRANSLATOR_URL, LANG
+
+from settings import BASE_FOLDER, PATCH_FOLDER, TRANSLATOR_URL, LANG
+from translations import translation_dict
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -44,7 +45,6 @@ def translate(m):
 
 
 def replace_in_file(file_path, translation, base_path=BASE_PATH):
-
     file_full_path = os.path.join(base_path, file_path)
     if not os.path.exists(file_full_path):
         missing_files.append(file_full_path)
@@ -54,7 +54,6 @@ def replace_in_file(file_path, translation, base_path=BASE_PATH):
         content = f.read()
 
     for ori_mark in translation:
-
         ori_content = ori_mark.replace('{{', '').replace('}}', '')
 
         trans = pat.sub(translate, ori_mark)
@@ -75,10 +74,10 @@ about_file_path = f'{TARGET_PATH}src/views/dialogs/about.ejs'
 with open(about_file_path, 'r') as f:
     content = f.read()
     if TRANSLATOR_LABEL not in content:
-        content = content.replace('                </table>', f'\n                    <tr>\n                        <th>{TRANSLATOR_LABEL}:</th>\n                        <td><a href="{TRANSLATOR_URL}" class="external">{TRANSLATOR_URL}</a></td>\n                    </tr>\n                </table>')
+        content = content.replace('                </table>',
+                                  f'\n                    <tr>\n                        <th>{TRANSLATOR_LABEL}:</th>\n                        <td><a href="{TRANSLATOR_URL}" class="external">{TRANSLATOR_URL}</a></td>\n                    </tr>\n                </table>')
 with open(about_file_path, 'w') as f:
     f.write(content)
-
 
 # 下面一堆是正则匹配规则, 读代码的时候下面这一段可以跳过, 直接看最后面几行
 # TL;DR, the following codes are regex matches, you can jump to the last few lines.
@@ -166,7 +165,6 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 file_path = 'src/views/share/404.ejs'
 translation = [
     '>{{Not found}}<',
@@ -194,7 +192,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/views/dialogs/about.ejs'
 translation = [
     '>{{About Trilium Notes}}<',
@@ -220,14 +217,12 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 file_path = 'src/views/dialogs/backend_log.ejs'
 translation = [
     '>{{Backend log}}<',
     '>{{Refresh}}<',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
-
 
 file_path = 'src/views/dialogs/branch_prefix.ejs'
 translation = [
@@ -237,7 +232,6 @@ translation = [
     'title="{{Help on Tree prefix}}"',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
-
 
 file_path = 'src/views/dialogs/clone_to.ejs'
 translation = [
@@ -300,7 +294,7 @@ translation = [
     '>{{LEFT}}<',
     '>{{RIGHT}}<',
     '>{{ - collapse/expand node}}<',
-    # short cuts place holder string. DO NOT MODIFY!
+    # shortcuts placeholder string. DO NOT MODIFY!
     # 这个 not set 是快捷键占位符, 千万别改!
     # '>not set<',
     '>{{ - go back / forwards in the history}}<',
@@ -399,7 +393,6 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 file_path = 'src/views/dialogs/jump_to_note.ejs'
 translation = [
     '>{{Jump to note}}<',
@@ -482,7 +475,6 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 file_path = 'src/views/dialogs/prompt.ejs'
 translation = [
     '>{{Prompt}}<',
@@ -522,13 +514,11 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 file_path = 'src/public/app/dialogs/add_link.js'
 translation = [
     '    logError("{{No link to add.}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/dialogs/clone_to.js'
 translation = [
@@ -552,7 +542,6 @@ translation = [
 
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/dialogs/options/advanced.js'
 translation = [
@@ -654,7 +643,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/dialogs/export.js'
 translation = [
     'title: "{{Export status}}"',
@@ -665,13 +653,11 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/dialogs/include_note.js'
 translation = [
     '    logError("{{No noteId to include.}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/dialogs/markdown_import.js'
 translation = [
@@ -679,14 +665,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/dialogs/move_to.js'
 translation = [
     'showMessage({{`Selected notes have been moved into ${parentNote.title}`}}',
     '    logError("{{No path to move to.}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/dialogs/note_revisions.js'
 translation = [
@@ -707,7 +691,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/dialogs/options/code_notes.js'
 translation = [
     '>{{Use vim keybindings in CodeNotes (no ex mode)}}<',
@@ -716,7 +699,6 @@ translation = [
     'showMessage("{{Options change have been saved.}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/dialogs/options/credentials.js'
 translation = [
@@ -732,7 +714,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/dialogs/options/keyboard_shortcuts.js'
 translation = [
     '>{{Keyboard shortcuts}}<',
@@ -747,7 +728,6 @@ translation = [
     'confirmDialog.confirm("{{Do you really want to reset all keyboard shortcuts to the default?}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/dialogs/options/other.js'
 translation = [
@@ -817,13 +797,11 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/services/change_password.js'
 translation = [
     '''message: "{{Given current password doesn't match hash}}"''',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
-
 
 file_path = 'src/services/search/expressions/ancestor.js'
 translation = [
@@ -838,13 +816,11 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 # no need for translate for now
 file_path = 'src/services/search/services/search.js'
 translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
-
 
 file_path = 'src/services/sql_init.js'
 translation = [
@@ -858,13 +834,11 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 file_path = 'src/services/cloning.js'
 translation = [
     '{{Note is deleted.}}',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
-
 
 file_path = 'src/services/tray.js'
 translation = [
@@ -874,7 +848,6 @@ translation = [
     "label: '{{Quit}}',",
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
-
 
 file_path = 'src/services/tree.js'
 translation = [
@@ -888,7 +861,6 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 # new note title
 file_path = 'src/public/app/services/note_create.js'
 translation = [
@@ -896,7 +868,6 @@ translation = [
     '`{{Note "${origNote.title}" has been duplicated}}`',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/entities/note_short.js'
 translation = [
@@ -915,7 +886,6 @@ translation = [
     'title("{{Note Revisions}}")',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/app_context.js'
 translation = [
@@ -937,7 +907,6 @@ translation = [
     'throwError("{{Unrecognized clipboard mode=}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/entrypoints.js'
 translation = [
@@ -974,13 +943,11 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/services/script_context.js'
 translation = [
     'throw new Error("{{Could not find module note }}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/sync.js'
 translation = [
@@ -1004,7 +971,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/services/toast.js'
 translation = [
     '"{{Info}}"',
@@ -1027,7 +993,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/setup.js'
 translation = [
     '''showAlert("{{Username can't be empty}}"''',
@@ -1038,13 +1003,11 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/services/hoisted_note.js'
 translation = [
     'confirmDialog.confirm("{{Requested note is outside of hoisted note subtree and you must unhoist to access the note. Do you want to proceed with unhoisting?}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/import.js'
 translation = [
@@ -1054,14 +1017,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/services/keyboard_actions.js'
 translation = [
     """throw new Error(`{{Cannot find keyboard action '${actionName}'}}`""",
     'throw new Error({{`Cannot find action ${actionName}`}}',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/link.js'
 translation = [
@@ -1086,7 +1047,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/services/glob.js'
 translation = [
     '>{{Search tips}}<',
@@ -1105,7 +1065,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/services/mime_types.js'
 translation = [
     'title: "{{Plain text}}"',
@@ -1117,7 +1076,6 @@ translation = [
     "title: '{{JS backend}}",
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/note_content_renderer.js'
 translation = [
@@ -1146,13 +1104,11 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/services/note_tooltip.js'
 translation = [
     '>{{Note has been deleted.}}<',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/protected_session.js'
 translation = [
@@ -1165,7 +1121,6 @@ translation = [
     '"{{Unprotecting}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/tree.js'
 translation = [
@@ -1181,7 +1136,6 @@ translation = [
     '    logError(`{{Could not find branchId for parent=${parentNoteId}, child=${childNoteId} since child does not exist}}`',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/tree_context_menu.js'
 translation = [
@@ -1226,7 +1180,6 @@ translation = [
     "title: `{{Duplicate subtree}}",
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/attribute_widgets/attribute_detail.js'
 translation = [
@@ -1308,7 +1261,6 @@ translation = [
     "'{{see}} <",
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/buttons/close_pane_button.js'
 translation = [
@@ -1404,7 +1356,6 @@ translation = [
     '            {{Logout}}',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/buttons/note_actions.js'
 translation = [
@@ -1535,7 +1486,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/mobile_widgets/mobile_detail_menu.js'
 translation = [
     'title: "{{Insert child note}}"',
@@ -1558,7 +1508,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/search_actions/delete_label.js'
 translation = [
     'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
@@ -1571,7 +1520,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/search_actions/delete_note_revisions.js'
 translation = [
     '    {{Delete note revisions}}',
@@ -1579,14 +1527,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/search_actions/delete_relation.js'
 translation = [
     'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
     '{{Delete relation:}}',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/search_actions/execute_script.js'
 translation = [
@@ -1596,7 +1542,6 @@ translation = [
     "{{More complex example would be deleting all matched note's attributes:}}",
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/search_actions/rename_label.js'
 translation = [
@@ -1637,7 +1582,6 @@ translation = [
     ">{{create given relation if note doesn't have one yet}}<",
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/search_options/ancestor.js'
 translation = [
@@ -1734,11 +1678,8 @@ translation = [
     '    {{Search script:}}',
     '{{search for note by its name}}',
 
-
-
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/containers/flex_container.js'
 translation = [
@@ -1858,7 +1799,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/note_tree.js'
 translation = [
     '>{{Save & apply changes}}<',
@@ -1888,7 +1828,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/note_type.js'
 translation = [
     'title: "{{File}}"',
@@ -1906,7 +1845,6 @@ translation = [
     'confirmDialog.confirm("{{It is not recommended to change note type when note content is not empty. Do you want to continue anyway?}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/note_update_status.js'
 translation = [
@@ -1959,7 +1897,6 @@ translation = [
     'throw new Error(`{{Invalid view type ${type}}}`',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/ribbon_widgets/edited_notes.js'
 translation = [
@@ -2111,14 +2048,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/search_options/abstract_search_option.js'
 translation = [
     '{{Remove this search option}}',
     '    logError({{`Failed rendering search option: ${JSON.stringify(this.attribute.dto)} with error: ${e.message} ${e.stack}`}}',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/search_options/search_string.js'
 translation = [
@@ -2135,7 +2070,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/shared_info.js'
 translation = [
     '>. {{For help visit}} <',
@@ -2143,7 +2077,6 @@ translation = [
     '"{{This note is shared locally on}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/shared_switch.js'
 translation = [
@@ -2154,13 +2087,11 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/switch.js'
 translation = [
     'title="{{Open help page}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/side_pane_toggles.js'
 translation = [
@@ -2169,14 +2100,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/similar_notes.js'
 translation = [
     r'''{{`${similarNotes.length} similar note${similarNotes.length === 1 ? '': "s"}`}}''',
     'title="{{This list contains notes which might be similar to the current note based on textual similarity of note title, its labels and relations.}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/standard_top_widget.js'
 translation = [
@@ -2209,7 +2138,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/type_property_widgets/file_properties.js'
 translation = [
     '>{{Note ID:}}<',
@@ -2240,7 +2168,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/type_property_widgets/inherited_attribute_list.js'
 translation = [
     '`{{Inherited attrs}} (',
@@ -2248,14 +2175,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/type_property_widgets/note_properties.js'
 translation = [
     "title: '{{Info}}",
     '{{This note was originally taken from}}: <',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/type_property_widgets/owned_attribute_list.js'
 translation = [
@@ -2268,7 +2193,6 @@ translation = [
     '`{{Promoted attrs}} (',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/type_property_widgets/search_definition.js'
 translation = [
@@ -2308,14 +2232,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/search_result.js'
 translation = [
     '{{No notes have been found for given search parameters.}}',
     '{{Search has not been executed yet. Click on "Search" button above to see the results.}}',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/tab_row.js'
 translation = [
@@ -2328,20 +2250,17 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/type_widgets/book.js'
 translation = [
     """{{This note of type Book doesn't have any child notes so there's nothing to display. See <a href="https://github.com/zadam/trilium/wiki/Book-note">wiki</a> for details.}}""",
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/type_widgets/deleted.js'
 translation = [
     '{{This note has been deleted.}}',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/type_widgets/editable_code.js'
 translation = [
@@ -2352,13 +2271,11 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/widgets/type_widgets/editable_text.js'
 translation = [
     'placeholder: "{{Type the content of your note here ...}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/type_widgets/empty.js'
 translation = [
@@ -2367,7 +2284,6 @@ translation = [
     '{{Enter workspace}} ',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/type_widgets/file.js'
 translation = [
@@ -2381,7 +2297,6 @@ translation = [
     '    toastService.showAndLogError("{{Could not copy the image to clipboard.}}"',
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/widgets/type_widgets/protected_session.js'
 translation = [
@@ -2434,7 +2349,6 @@ translation = [
     """>{{Render HTML note type is used for <a class="external" href="https://github.com/zadam/trilium/wiki/Scripts">scripting</a>. In short, you have a HTML code note (optionally with some JavaScript) and this note will render it. To make it work, you need to define a <a class="external" href="https://github.com/zadam/trilium/wiki/Attributes">relation</a> called "renderNote" pointing to the HTML note to render.}}<""",
 ]
 replace_in_file(file_path, translation)
-
 
 #  ckeditor
 file_path = 'libraries/ckeditor/ckeditor.js'
@@ -2662,20 +2576,17 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 file_path = 'src/services/export/zip.js'
 translation = [
     r'''`<p>{{This is a clone of a note. Go to its <a href="${targetUrl}">primary location</a>.}}</p>`''',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 file_path = 'src/services/window.js'
 translation = [
     "title: '{{Trilium Notes Setup}}",
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
-
 
 file_path = 'src/public/app/services/attribute_parser.js'
 translation = [
@@ -2689,9 +2600,7 @@ translation = [
 if TRANSLATE_NOTE_TAG:
     translation.extend(["=== '{{inheritable}}'", ])
 
-
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/attribute_renderer.js'
 translation = [
@@ -2699,9 +2608,7 @@ translation = [
 if TRANSLATE_NOTE_TAG:
     translation.extend([' `({{inheritable}})` ', ])
 
-
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/services/branches.js'
 translation = [
@@ -2748,7 +2655,6 @@ translation = [
     "'{{December}}'",
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
-
 
 file_path = 'src/services/keyboard_actions.js'
 translation = [
@@ -2836,7 +2742,6 @@ translation = [
     "title: '{{Search:}} '",
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
-
 
 # 0.48
 file_path = 'src/services/special_notes.js'

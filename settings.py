@@ -7,8 +7,8 @@
 
 import platform
 
-# DEBUG = False
 DEBUG = False
+# DEBUG = False
 
 if platform.system() == 'Linux':
     # BASE_PATH 是工作目录
@@ -27,7 +27,6 @@ else:
     BASE_FOLDER = '/Users/nate/soft/trilium/trilium-trans/'
     PATCH_FOLDER = '/Users/nate/soft/trilium/trilium-trans-patch/'
     TRANS_RELEASE_FOLDER = '/Users/nate/soft/trilium/trilium-trans-release/'
-
 
 # release文件名后缀
 # release file name suffix
@@ -61,10 +60,14 @@ force_version_info = {
 force_version_info_full = {
     'name': 'v0.47.8 release',
     'releases': {
-        'linux': {'name': 'trilium-linux-x64-0.47.8.tar.xz', 'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-linux-x64-0.47.8.tar.xz'},
-        'linux-server': {'name': 'trilium-linux-x64-server-0.47.8.tar.xz', 'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-linux-x64-server-0.47.8.tar.xz'},
-        'mac': {'name': 'trilium-mac-x64-0.47.8.zip', 'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-mac-x64-0.47.8.zip'},
-        'windows': {'name': 'trilium-windows-x64-0.47.8.zip', 'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-windows-x64-0.47.8.zip'}
+        'linux': {'name': 'trilium-linux-x64-0.47.8.tar.xz',
+                  'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-linux-x64-0.47.8.tar.xz'},
+        'linux-server': {'name': 'trilium-linux-x64-server-0.47.8.tar.xz',
+                         'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-linux-x64-server-0.47.8.tar.xz'},
+        'mac': {'name': 'trilium-mac-x64-0.47.8.zip',
+                'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-mac-x64-0.47.8.zip'},
+        'windows': {'name': 'trilium-windows-x64-0.47.8.zip',
+                    'url': 'https://github.com/zadam/trilium/releases/download/v0.47.8/trilium-windows-x64-0.47.8.zip'}
     }
 }
 
@@ -80,9 +83,13 @@ force_version_info_beta = {
 force_version_info_full_beta = {
     'name': 'v0.49.1-beta release',
     'releases': {
-        'linux': {'name': 'trilium-linux-x64-v0.49.1-beta.tar.xz', 'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-linux-x64-0.49.1-beta.tar.xz'},
-        'linux-server': {'name': 'trilium-linux-x64-server-v0.49.1-beta.tar.xz', 'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-linux-x64-server-0.49.1-beta.tar.xz'},
-        'mac': {'name': 'trilium-mac-x64-v0.49.1-beta.zip', 'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-mac-x64-0.49.1-beta.zip'},
-        'windows': {'name': 'trilium-windows-x64-v0.49.1-beta.zip', 'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-windows-x64-0.49.1-beta.zip'}
+        'linux': {'name': 'trilium-linux-x64-v0.49.1-beta.tar.xz',
+                  'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-linux-x64-0.49.1-beta.tar.xz'},
+        'linux-server': {'name': 'trilium-linux-x64-server-v0.49.1-beta.tar.xz',
+                         'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-linux-x64-server-0.49.1-beta.tar.xz'},
+        'mac': {'name': 'trilium-mac-x64-v0.49.1-beta.zip',
+                'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-mac-x64-0.49.1-beta.zip'},
+        'windows': {'name': 'trilium-windows-x64-v0.49.1-beta.zip',
+                    'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-windows-x64-0.49.1-beta.zip'}
     }
 }

@@ -1,11 +1,15 @@
-from settings import BASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info, VERSION_INFO_OVERRIDE_BETA, force_version_info_beta
 import os
 import re
 import shutil
-import requests
 from zipfile import ZipFile
+
+import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
-# disable warning if use proxy
+
+from settings import BASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info, \
+    VERSION_INFO_OVERRIDE_BETA, force_version_info_beta
+
+# disable warning if we use proxy
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 CLIENT_FOLDER = BASE_FOLDER + 'trilium-linux-x64'
@@ -17,11 +21,11 @@ SOURCE_CODE_NAME_PATTERN = 'trilium-linux-x64-.*?.tar.xz'
 CMD_STOP_SERVICE = """pkill -9 trilium"""
 
 # 是否从GitHub下载文件
-# whethere download files from GitHub
+# whether download files from GitHub
 DO_DOWNLOAD = True
 
 # 是否删除临时文件
-# whethere delete template files
+# whether delete template files
 # DO_DELETE = False
 DO_DELETE = True
 
@@ -31,7 +35,7 @@ def requests_get(url):
     try:
         ret = requests.get(url, proxies=PROXIES, verify=not USE_PROXY)
     except Exception as e:
-        print('If github is not avaliable, you can set USE_PROXY to True and set PROXIES to your proxy.')
+        print('If github is not available, you can set USE_PROXY to True and set PROXIES to your proxy.')
         print('Exception', e)
     return ret
 
@@ -61,36 +65,20 @@ def get_latest_version():
 
 
 def backup_old_service():
-    BACKUP_SUFFIX = '_old'
-    backup_dir = CLIENT_FOLDER + BACKUP_SUFFIX
+    backup_suffix = '_old'
+    backup_dir = CLIENT_FOLDER + backup_suffix
     if os.path.exists(backup_dir):
         shutil.rmtree(backup_dir)
     os.mkdir(backup_dir)
 
     if os.path.exists(CLIENT_FOLDER):
-        os.system(f'mv {CLIENT_FOLDER} {CLIENT_FOLDER}{BACKUP_SUFFIX}')
-        print(f'old version is moved to {CLIENT_FOLDER}{BACKUP_SUFFIX}')
+        os.system(f'mv {CLIENT_FOLDER} {CLIENT_FOLDER}{backup_suffix}')
+        print(f'old version is moved to {CLIENT_FOLDER}{backup_suffix}')
 
 
-def download_latest(url, file_name=None):
-    """download latest release"""
-    print('download latest tarball')
-    if not file_name:
-        file_name = url.split('/')[-1]
-
-    print('downloading ...')
-    if DO_DOWNLOAD:
-        with requests.get(url, proxies=PROXIES, verify=False, stream=True) as r:
-            r.raise_for_status()
-            with open(file_name, 'wb') as f:
-                for chunk in r.iter_content(chunk_size=8192):
-                    f.write(chunk)
-    print(f'download complete, file saved as {file_name}')
-    return file_name
-
-
-def download_source(url, file_name=None):
-    print('download source', url)
+def download_file(url, file_name=None):
+    """download file"""
+    print('download file')
     if not file_name:
         file_name = url.split('/')[-1]
     print('downloading ...')
@@ -109,7 +97,7 @@ def stop_service():
         os.system(CMD_STOP_SERVICE)
 
 
-def clean_cahce():
+def clean_cache():
     os.system('rm -rf ~/.config/Trilium Notes/Cache/')
     os.system('rm -rf ~/.config/Trilium Notes/Code Cache/')
     os.system('rm -rf ~/.config/Trilium Notes/GPUCache/')
@@ -129,11 +117,10 @@ def decompress_package(file_name):
 
 def decompress_source_package(file_name):
     if file_name.endswith('.zip'):
-        extracted_folder = ''
         with ZipFile(file_name, 'r') as zip:
             # printing all the contents of the zip file
             extracted_folder = zip.namelist()[0].split('/')[0]
-        if extracted_folder:  
+        if extracted_folder:
             os.system(f'unzip -o {file_name}')
             os.system('pwd')
             if DO_DELETE:
@@ -164,18 +151,18 @@ if __name__ == '__main__':
 
     # 翻译不生效可以尝试删除缓存
     # If the translation doesn't work, clean the cache files may help
-    clean_cahce()
+    clean_cache()
     # backup_old_service()
 
     # 下载release
     # get release file
-    file_name = download_latest(version_info['browser_download_url'])
+    file_name = download_file(version_info['browser_download_url'])
     print(f'file_name {file_name}')
     decompress_package(file_name)
 
     # 下载源码
     # get source code
-    file_name = download_source(version_info['zipball_url'], 'trilium-src.zip')
+    file_name = download_file(version_info['zipball_url'], 'trilium-src.zip')
     file_name = 'trilium-src.zip'
     print(f'file_name {file_name}')
     decompress_source_package(file_name)

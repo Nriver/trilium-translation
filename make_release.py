@@ -1,11 +1,13 @@
-from settings import DEBUG, PATCH_FOLDER, LANG, TRANS_RELEASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info_full, VERSION_INFO_OVERRIDE_BETA, force_version_info_full_beta
 import os
 import re
-import shutil
+
 import requests
-from zipfile import ZipFile
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
-# disable warning if use proxy
+
+from settings import DEBUG, PATCH_FOLDER, LANG, TRANS_RELEASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, \
+    force_version_info_full, VERSION_INFO_OVERRIDE_BETA, force_version_info_full_beta
+
+# disable warning if we use proxy
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 COMPRESS_TOOL = '7z'
@@ -18,13 +20,15 @@ REPO_NAME = 'zadam/trilium'
 
 
 # 是否从GitHub下载文件
-# whethere download files from GitHub
+# whether download files from GitHub
 DO_DOWNLOAD = True
 # DO_DOWNLOAD = False
 
 # 是否删除临时文件
-# whethere delete template files
+# whether delete template files
 DO_DELETE = True
+
+
 # DO_DELETE = False
 
 
@@ -33,7 +37,7 @@ def requests_get(url):
     try:
         ret = requests.get(url, proxies=PROXIES, verify=not USE_PROXY)
     except Exception as e:
-        print('If github is not avaliable, you can set USE_PROXY to True and set PROXIES.')
+        print('If github is not available, you can set USE_PROXY to True and set PROXIES.')
         print('Exception', e)
     return ret
 
@@ -44,11 +48,10 @@ def get_latest_version():
     url = f'https://api.github.com/repos/{REPO_NAME}/releases/latest'
     print(url)
     res = requests_get(url)
-    version_info = {}
+    version_info = {'name': res.json()['name']}
 
     # zipball_url 就是源码
     # version_info['zipball_url'] = res.json()['zipball_url']
-    version_info['name'] = res.json()['name']
 
     patterns = {
         'linux': r'trilium-linux-x64-[0-9\.]+.tar.xz',
@@ -70,12 +73,11 @@ def get_latest_version():
     return version_info
 
 
-def download_latest(url, file_name=None):
-    """download latest release"""
-    print('download latest tarball')
+def download_file(url, file_name=None):
+    """download file"""
+    print('download file')
     if not file_name:
         file_name = url.split('/')[-1]
-
     print('downloading ...')
     if DO_DOWNLOAD:
         with requests.get(url, proxies=PROXIES, verify=False, stream=True) as r:
@@ -93,7 +95,7 @@ def download_releases(releases):
             if package_type != 'linux':
                 continue
         release = releases[package_type]
-        download_latest(release['url'], TRANS_RELEASE_FOLDER + release['name'])
+        download_file(release['url'], TRANS_RELEASE_FOLDER + release['name'])
 
 
 def decompress_package(file_name):
@@ -120,7 +122,6 @@ def decompress_package(file_name):
 
 
 def patch_linux(file_name):
-
     if not file_name.endswith('.tar.xz'):
         print('linux客户端文件名有问题')
         print('linux client wrong file name')
@@ -175,7 +176,6 @@ def patch_linux(file_name):
 
 
 def patch_linux_server(file_name):
-
     if not file_name.endswith('.tar.xz'):
         print('linux server 文件名有问题')
         print('linux server wrong file name')
@@ -212,7 +212,6 @@ def patch_linux_server(file_name):
 
 
 def patch_windows(file_name):
-
     if not file_name.endswith('.zip'):
         print('windows 文件名有问题')
         exit()
@@ -262,7 +261,6 @@ def patch_windows(file_name):
 
 
 def patch_mac(file_name):
-
     if not file_name.endswith('.zip'):
         print('windows 文件名有问题')
         exit()
@@ -316,7 +314,7 @@ def patch_mac(file_name):
 
 if __name__ == '__main__':
 
-    a = input(f'Delete folder {TRANS_RELEASE_FOLDER}, contunue?(y)')
+    a = input(f'Delete folder {TRANS_RELEASE_FOLDER}, continue?(y)')
     if a not in ['y', ]:
         exit()
 
