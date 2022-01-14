@@ -6,7 +6,8 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      # modify these path to yours
+      # 把同文件夹下的 trilium-data 目录映射到容器内
       - ./trilium-data:/root/trilium-data
     environment:
+      # 环境变量表示容器内笔记数据的存储路径
       - TRILIUM_DATA_DIR=/root/trilium-data
