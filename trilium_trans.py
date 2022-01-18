@@ -1297,6 +1297,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/backlinks.js'
+translation = [
+    "{{`${resp.count} backlink`\n            + (resp.count === 1 ? '' : 's')}}",
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/bookmark_switch.js'
 translation = [
     'title="{{Bookmark this note to the left side panel}}"',
@@ -2708,6 +2714,7 @@ translation = [
     'description: "{{Pastes Markdown from clipboard into text note}}"',
     'description: "{{Cuts the selection from the current note and creates subnote with the selected text}}"',
     'description: "{{Opens the dialog to include a note}}"',
+    'description: "{{Edit a read-only note}}"',
     'description: "{{Put focus into attribute editor}}"',
     'description: "{{Create new label}}"',
     'description: "{{Create new relation}}"',

@@ -1318,4 +1318,8 @@ translation_dict = {
     'status': '',
     'Protecting': '',
     'Unprotecting': '',
+    'Edit a read-only note': '',
+    'Ribbon tabs': '',
+    "`${resp.count} backlink`
+            + (resp.count === 1 ? '' : 's')": '',
 }
