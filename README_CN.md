@@ -154,6 +154,13 @@ docker 在docker-compose.yml同目录的`trilium-data`文件夹里
 1. 不用国内的加速镜像, 它们的数据有可能不是最新的. 去掉加速镜像后再尝试pull.
 2. (危险操作, 注意) 停掉trilium, 使用 `docker system prune -a` 来清理掉所有没有在使用的docker镜像和容器等再重新pull.
 
+## 为什么`trilium-portable.bat`提示禁止执行?
+0.50之后的windows客户端的portable模式改成了用powershell运行, 部分电脑上可能默认不允许运行`.ps1`格式的文件. 可以尝试在命令行输入以下命令解除限制. 请一行一行地执行.
+
+```
+powershell
+set-executionpolicy remotesigned
+```
 
 ---
 # 0.47 升级到 0.48 的一些问题
