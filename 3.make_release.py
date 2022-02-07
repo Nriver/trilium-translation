@@ -344,7 +344,9 @@ if __name__ == '__main__':
     # linux
     patch_linux(releases['linux']['name'])
 
-    if not DEBUG:
+    if DEBUG:
+        os.system(f'xdg-open {TRANS_RELEASE_FOLDER}')
+    else:
         # linux-server
         patch_linux_server(releases['linux-server']['name'])
 

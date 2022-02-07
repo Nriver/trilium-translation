@@ -107,6 +107,16 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
+file_path = 'src/views/set_password.ejs'
+translation = [
+    '>{{Login}}<',
+    '>{{Set password}}<',
+    '>{{Before you can start using Trilium from web, you need to set a password first. You will then use this password to login.}}<',
+    '>{{Password}}<',
+    '>{{Password confirmation}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
 file_path = 'src/views/setup.ejs'
 translation = [
     '>{{Setup}}<',
@@ -147,9 +157,9 @@ translation = [
     ">{{Sync has been correctly set up. It will take some time for the initial sync to finish. Once it's done, you'll be redirected to the login page.}}<",
     '>{{N/A}}<',
     '{{Username and / or password are incorrect. Please try again.}}',
-    "{{I'm a new user and I want to create new Trilium document for my notes}}",
-    '{{I have desktop instance already and I want to setup sync with it}}',
-    '{{I have server instance already and I want to setup sync with it}}',
+    "{{I'm a new user, and I want to create new Trilium document for my notes}}",
+    '{{I have desktop instance already, and I want to set up sync with it}}',
+    '{{I have server instance already, and I want to set up sync with it}}',
     "{{You're almost done with the setup. The last thing is to choose username and password using which you'll login to the application.}}",
     '{{This password is also used for generating encryption key which encrypts protected notes.}}',
     'placeholder="{{Choose alphanumeric username}}"',
@@ -467,11 +477,20 @@ translation = [
     '>{{Shortcuts}}<',
     '>{{Keyboard shortcuts}}<',
     '>{{Code notes}}<',
-    '>{{Username & password}}<',
+    # removed from 0.50
+    # '>{{Username & password}}<',
+    '>{{Password}}<',
+    '>{{ETAPI}}<',
     '>{{Backup}}<',
     '>{{Sync}}<',
     '>{{Other}}<',
     '>{{Advanced}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/views/dialogs/password_not_set.ejs'
+translation = [
+    '>{{Password is not set}}<',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
@@ -548,6 +567,9 @@ translation = [
     '>{{Sync}}<',
     '>{{Force full sync}}<',
     '>{{Fill entity changes records}}<',
+    '>{{Database integrity check}}<',
+    '>{{This will check that the database is not corrupted on the SQLite level. It might take some time, depending on the DB size.}}<',
+    '>{{Check database integrity}}<',
     '>{{Consistency checks}}<',
     '>{{Find and fix consistency issues}}<',
     '>{{Anonymize database}}<',
@@ -567,6 +589,8 @@ translation = [
     'showMessage("{{Database has been vacuumed}}"',
     'showMessage("{{Consistency issues should be fixed.}}"',
     'showError("{{Could not create anonymized database, check backend logs for details}}"',
+    'showMessage("{{Integrity check succeeded - no problems found.}}"',
+    'showMessage("{{Integrity check failed: }}"',
     'showMessage({{`Created anonymized database in ${resp.anonymizedFilePath}`}}',
 
 ]
@@ -700,6 +724,29 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/dialogs/options/etapi.js'
+translation = [
+    '{{ETAPI is a REST API used to access Trilium instance programmatically, without UI.}}',
+    """{{See more details on <a href="https://github.com/zadam/trilium/wiki/ETAPI">wiki</a> and <a onclick="window.open('etapi/etapi.openapi.yaml')" href="etapi/etapi.openapi.yaml">ETAPI OpenAPI spec</a>.}}""",
+    '>{{Create new ETAPI token}}<',
+    '>{{Existing tokens}}<',
+    '>{{There are no tokens yet. Click on the button above to create one.}}<',
+    '>{{Token name}}<',
+    '>{{Created}}<',
+    '>{{Actions}}<',
+    'title: "{{New ETAPI token}}"',
+    'title: "{{ETAPI token created}}"',
+    '{{Copy the created token into clipboard. Trilium stores the token hashed and this is the last time you see it.}}',
+    'title: "{{Rename token}}"',
+    'title="{{Rename this token}}"',
+    'title="{{Delete / deactive this token}}"',
+    '''message: "{{Please enter new token's name}}"''',
+    '''defaultValue: "{{new token}}"''',
+    '''    alert("{{Token name can't be empty}}"''',
+    '{{Are you sure you want to delete ETAPI token}}',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/dialogs/options/credentials.js'
 translation = [
     '>{{Username}}<',
@@ -763,6 +810,26 @@ translation = [
     '>{{Automatic readonly size (code notes)}}<',
 ]
 replace_in_file(file_path, translation)
+
+
+file_path = 'src/public/app/dialogs/options/password.js'
+translation = [
+    '>{{click here to reset it}}<',
+    '>{{Old password}}<',
+    '>{{New password}}<',
+    '>{{New password Confirmation}}<',
+    '>{{Change password}}<',
+    '    alert("{{Password has been reset. Please set new password}}"',
+    '    alert("{{New passwords are not the same.}}"',
+    '    alert("{{Password has been changed. Trilium will be reloaded after you press OK.}}"',
+    '{{Please take care to remember your new password. Password is used to encrypt protected notes. }}',
+    '{{If you forget your password, then all your protected notes are forever lost.}}',
+    '{{In case you did forget your password}}',
+    '"{{By resetting the password you will forever lose access to all your existing protected notes. Do you really want to reset the password?}}"',
+    "'{{Change password}}' : '{{Set password}}')",
+]
+replace_in_file(file_path, translation)
+
 
 file_path = 'src/public/app/dialogs/options/shortcuts.js'
 translation = [
@@ -2329,6 +2396,7 @@ translation = [
     'title: "{{Open in new tab}}"',
     'title: "{{Remove note}}"',
     'title: "{{Edit title}}"',
+    'title: "{{Rename note}}"',
     'title: "{{Remove relation}}"',
     'title="{{Create new child note and add it into this relation map}}"',
     'title="{{Reset pan & zoom to initial coordinates and magnification}}"',
