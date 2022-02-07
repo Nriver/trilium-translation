@@ -62,13 +62,13 @@ npm install -g webpack-cli
 1. Modify configurations in `settings.py` by the comments.
 2. Do translate in `translations.py`. (See `translations_cn.py`. There are over 1000 lines to translate, be patient :) )
 3. Run `python3 init.py` to download latest Trilium Notes.
-4. Run `python3 trilium_trans.py` to make a translation patch.
+4. Run `python3 trans.py` to make a translation patch.
 4. Run `python3 make_release.py` to apply patch to releases for all platforms.
 
 Note: In `translations.py` there are some texts begin or ends with quotes were made on purpose for regex match, do not remove them in your translation. There are some text like '${xxxx}' in the translation, these are the placeholder in the original Trilium Notes source code, do not modify them unless you know what you are doing.
 
 ### More text to translate
-If you'd like to translate more text, mark each text in the file that you want to translate with double brackets`{{}}` like I did in `trilium_trans.py`.
+If you'd like to translate more text, mark each text in the file that you want to translate with double brackets`{{}}` like I did in `trans.py`.
 
 Put everything between double brackets into the dict in `translations.py` and translate to the language you like. (Some text were ended with `}`. Try to avoid triple brackets by change from `${xxx}}}'` to something like `${xxx}'}}` )
 

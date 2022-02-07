@@ -99,13 +99,13 @@ npm install -g webpack-cli
 1. 根据注释修改 `settings.py` 里的配置.
 2. 翻译 `translations.py`. (参照 `translations_cn.py`. 大概有一千多行要翻译, 耐心点 :) )
 3. 运行 `python3 init.py` 来下载最新的 Trilium Notes.
-4. 运行 `python3 trilium_trans.py` 来生成翻译补丁.
+4. 运行 `python3 trans.py` 来生成翻译补丁.
 4. 运行 `python3 make_release.py` 来发布翻译后的程序.
 
 注意: `translations.py` 有一些开头和结尾引号是用来做正则匹配的, 翻译的时候别删了. 有些类似 '${xxxx}' 的字符串是 Trilium Notes 的占位符, 别动它们.
 
 ### 没翻译到的文字
-参考 `trilium_trans.py` 写的, 用双花括号 '{{}}' 把要翻译的文字括起来.
+参考 `trans.py` 写的, 用双花括号 '{{}}' 把要翻译的文字括起来.
 
 把双括号里面的东西放到 `translations.py` 来做翻译. (要避免有些用花括号`}`结尾的文字, 可以把类似 `${xxx}}}'` 的改成`${xxx}'}}` )
 
