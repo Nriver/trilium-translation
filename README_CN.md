@@ -65,7 +65,13 @@ Trilium Notes 交流qq群 686232370
 
 ---
 # 在Docker里运行服务端
-Trilium Notes的服务端可以用我构建好的docker镜像运行. 直接下载 [docker-compose.yml](https://github.com/Nriver/trilium-translation/blob/main/docker-compose.yml).
+Trilium Notes的服务端可以用我构建好的docker镜像运行. 直接下载 [docker-compose.yml](https://raw.githubusercontent.com/Nriver/trilium-translation/main/docker-compose.yml).
+
+下载docker-compose配置文件
+```
+wget https://raw.githubusercontent.com/Nriver/trilium-translation/main/docker-compose.yml
+```
+
 运行
 ```
 docker-compose up -d
