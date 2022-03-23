@@ -1353,4 +1353,6 @@ translation_dict = {
     'Password has been reset. Please set new password': '',
     'By resetting the password you will forever lose access to all your existing protected notes. Do you really want to reset the password?': '',
     'Rename note': '',
+    'Only in desktop (electron build)': '',
+    'in tree pane will switch from tree pane into note title. Enter from note title will switch focus to text editor.': '',
 }

@@ -361,6 +361,8 @@ translation = [
     '>{{ - focus on quick search input}}<',
     '>{{ - in page search}}<',
     '- {{edit <a class="external" href="https://github.com/zadam/trilium/wiki/Tree concepts#prefix">prefix</a> of active note clone}}<',
+    '{{Only in desktop (electron build)}}:',
+    '{{in tree pane will switch from tree pane into note title. Enter from note title will switch focus to text editor.}}',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 

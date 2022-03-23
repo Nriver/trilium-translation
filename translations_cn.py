@@ -1344,5 +1344,7 @@ translation_dict = {
     'Rename note': '重命名笔记',
     'Change password': '修改密码',
     'Set password': '设置密码',
+    'Only in desktop (electron build)': '仅桌面客户端有效 (electron 编译版)',
+    'in tree pane will switch from tree pane into note title. Enter from note title will switch focus to text editor.': '从笔记树切换到笔记标题, 或者从笔记标题切换到笔记内容.',
     '': '',
 }
