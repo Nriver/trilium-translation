@@ -7,19 +7,19 @@
 
 如果你是老用户, 使用前最好备份数据以防万一.
 
-![20210606135851579_1868988429](https://user-images.githubusercontent.com/6752679/120914251-65009900-c6cf-11eb-9b38-dd9554657372.png)
-
 <a href="https://count.getloli.com"><img align="center" src="https://count.getloli.com/get/@Nriver_trilium-translation"></a><br>
 
 Trilium Notes 交流qq群 686232370
 
 ![image](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png)
 
+
 # 目录导航
 <!--ts-->
 * [Trilium Translation](#trilium-translation)
 * [目录导航](#目录导航)
 * [关于汉化版的内置文档](#关于汉化版的内置文档)
+* [界面截图](#界面截图)
 * [使用方法](#使用方法)
 * [在Docker里运行服务端](#在docker里运行服务端)
 * [更新版本](#更新版本)
@@ -57,6 +57,20 @@ Trilium Notes 交流qq群 686232370
 原版的示例没有仔细分类，有些内容又在英文wiki上，我第一次看觉得一头雾水。所以我修改了示例文档的笔记结构，给不同功能的笔记进行分类。
 
 里面的内容完全按照我个人口味添加，你可以随意修改。但是请注意！千万不要随意修改`日记`笔记的结构和笔记属性，你想移动可以移走整个日记笔记。不要动里面的结构，不然这个功能很容易被玩坏，所以除非你知道你在做什么，别去动这个笔记的结构！
+
+# 界面截图
+
+原版的黑暗主题
+
+![dark](docs/screenshot_theme_dark.png)
+
+原版的明亮主题
+
+![light](docs/screenshot_theme_light.png)
+
+我做的Nier主题 :)
+
+![nier](docs/screenshot_theme_nier.png)
 
 # 使用方法
 1. [Release](https://github.com/Nriver/trilium-translation/releases)里下载对应客户端

@@ -8,8 +8,6 @@ Star this repo if you like it, thx :)
 
 If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 
-![20210606135851579_1868988429](https://user-images.githubusercontent.com/6752679/120914251-65009900-c6cf-11eb-9b38-dd9554657372.png)
-
 <a href="https://count.getloli.com"><img align="center" src="https://count.getloli.com/get/@Nriver_trilium-translation"></a><br>
 
 
@@ -17,6 +15,7 @@ If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 <!--ts-->
 * [Table of Contents](#table-of-contents)
 * [Trilium Translation](#trilium-translation)
+* [Screenshots](#Screenshots)
 * [How to use](#how-to-use)
 * [How to run server with docker](#how-to-run-server-with-docker)
 * [How to translate](#how-to-translate)
@@ -29,6 +28,21 @@ If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 * [Donation](#donation)
 * [Thanks](#thanks)
 <!--te-->
+
+---
+# Screenshots
+
+Original dark theme
+
+![dark](docs/screenshot_theme_dark.png)
+
+Original light theme
+
+![light](docs/screenshot_theme_light.png)
+
+Nier theme made by me :)
+
+![nier](docs/screenshot_theme_nier.png)
 
 ---
 # How to use
