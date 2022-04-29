@@ -1355,4 +1355,6 @@ translation_dict = {
     'Rename note': '',
     'Only in desktop (electron build)': '',
     'in tree pane will switch from tree pane into note title. Enter from note title will switch focus to text editor.': '',
+    "link title mirrors the note's current title": '',
+    'link title can be changed arbitrarily': '',
 }

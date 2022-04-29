@@ -1307,7 +1307,7 @@ translation_dict = {
     'Before you can start using Trilium from web, you need to set a password first. You will then use this password to login.': '从web访问Trilium之前，您需要先设置密码. 之后请用这个密码来登录.',
     'Password confirmation': '确认密码',
     'Database integrity check': '数据库完整性检查',
-    'This will check that the database is not corrupted on the SQLite level. It might take some time, depending on the DB size.': '检查SQLite数据库是否未损坏. 根据数据库大小, 可能会需要一些时间.',
+    'This will check that the database is not corrupted on the SQLite level. It might take some time, depending on the DB size.': '检查SQLite数据库是否损坏. 根据数据库大小, 可能会需要一些时间.',
     'Check database integrity': '检查数据库完整性',
     'Integrity check succeeded - no problems found.': '完整性检查成功 - 未发现问题.',
     'Integrity check failed: ': '完整性检查失败:',
@@ -1346,5 +1346,7 @@ translation_dict = {
     'Set password': '设置密码',
     'Only in desktop (electron build)': '仅桌面客户端有效 (electron 编译版)',
     'in tree pane will switch from tree pane into note title. Enter from note title will switch focus to text editor.': '从笔记树切换到笔记标题, 或者从笔记标题切换到笔记内容.',
+    "link title mirrors the note's current title": '链接标题跟随笔记标题变化',
+    'link title can be changed arbitrarily': '链接标题可随意修改',
     '': '',
 }

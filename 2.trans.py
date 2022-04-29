@@ -224,6 +224,8 @@ translation = [
     '>{{enter}}<',
     'title="{{Help on links}}"',
     '{{search for note by its name}}',
+    "{{link title mirrors the note's current title}}",
+    '{{link title can be changed arbitrarily}}',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
