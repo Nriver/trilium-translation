@@ -577,6 +577,12 @@ translation = [
     '>{{Consistency checks}}<',
     '>{{Find and fix consistency issues}}<',
     '>{{Anonymize database}}<',
+    '>{{Full anonymization}}<',
+    '>{{Save fully anonymized database}}<',
+    '>{{Light anonymization}}<',
+    '>{{This action will create a new copy of the database and do a light anonymization on it - specifically only content of all notes will be removed, but titles and attributes will remaing. Additionally, custom JS frontend/backend script notes and custom widgets will remain. This provides more context to debug the issues.}}<',
+    '>{{You can decide yourself if you want to provide fully or lightly anonymized database. Even fully anonymized DB is very useful, however in some cases lightly anonymized database can speed up the process of bug identification and fixing.}}<',
+    '>{{Save lightly anonymized database}}<',
     '>{{Save anonymized database}}<',
     '>{{Backup database}}<',
     '>{{Trilium has automatic backup (daily, weekly, monthly), but you can also trigger a manual backup here.}}<',
@@ -587,6 +593,8 @@ translation = [
     '{{This action will create a new copy of the database and anonymize it}}',
     '{{remove all note content and leave only structure and some non-sensitive metadata}}',
     '{{for sharing online for debugging purposes without fear of leaking your personal data.}}',
+    'showMessage(`{{Created fully anonymized database in ${resp.anonymizedFilePath}}}`',
+    'showMessage(`{{Created lightly anonymized database in ${resp.anonymizedFilePath}}}`',
     'showMessage("{{Full sync triggered}}"',
     'showMessage("{{Sync rows filled successfully}}"',
     'showMessage("{{Database has been backed up to }}"',
@@ -1617,6 +1625,17 @@ translation = [
     '{{You can execute simple scripts on the matched notes.}}',
     "{{For example to append a string to a note's title, use this small script:}}",
     "{{More complex example would be deleting all matched note's attributes:}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/search_actions/move_note.js'
+translation = [
+    '>{{Move note}}<',
+    '>{{to}}<',
+    '>{{On all matched notes:}}<',
+    '>{{move note to the new parent if note has only one parent (i.e. the old placement is removed and new placement into the new parent is created)}}<',
+    ">{{clone note to the new parent if note has multiple clones/placements (it's not clear which placement should be removed)}} <",
+    '>{{nothing will happen if note cannot be moved to the target note (i.e. this would create a tree cycle)}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -2822,6 +2841,14 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
+file_path = 'src/routes/api/sync.js'
+translation = [
+    'message: "{{Sync server host is not configured. Please configure sync first.}}"',
+    'message: "{{Sync server handshake has been successful, sync has been started.}}"',
+    'throw new Error(`{{Partial request ${requestId}, index ${pageIndex} of ${pageCount} of pages does not have expected record.}}`',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
 # 0.48
 file_path = 'src/services/special_notes.js'
 translation = [
@@ -2869,7 +2896,7 @@ shutil.copytree(f'{CLIENT_PATH}resources/app/src/routes/', f'{PATCH_FOLDER}/src/
 # ckeditor
 src_path = f'{CLIENT_PATH}resources/app/libraries/ckeditor/ckeditor.js'
 dest_path = f'{PATCH_FOLDER}/libraries/ckeditor/ckeditor.js'
-os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+os.makedirs(os.path.dirname(dest_path), exist_ok = True)
 shutil.copy(src_path, dest_path)
 
 if LANG == 'cn':
@@ -2882,7 +2909,7 @@ if LANG == 'cn':
     os.system('cd demo-cn && 7z -scsutf-8 a demo-cn.zip ./* && mv demo-cn.zip ../')
     src_path = f'demo-cn.zip'
     dest_path = f'{PATCH_FOLDER}/db/demo.zip'
-    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+    os.makedirs(os.path.dirname(dest_path), exist_ok = True)
     shutil.copy(src_path, dest_path)
 
 if missing_files:
