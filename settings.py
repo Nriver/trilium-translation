@@ -48,8 +48,8 @@ PROXIES = {
 
 # 避免兼容性问题，强制使用某个版本的trilium
 # To avoid compatibility issue, force to use certain version of trilium
-# VERSION_INFO_OVERRIDE = True
-VERSION_INFO_OVERRIDE = False
+VERSION_INFO_OVERRIDE = True
+# VERSION_INFO_OVERRIDE = False
 # 0.47
 force_version_info = {
     'name': 'v0.47.8 release',
@@ -71,25 +71,25 @@ force_version_info_full = {
     }
 }
 
-# VERSION_INFO_OVERRIDE_BETA = True
-VERSION_INFO_OVERRIDE_BETA = False
+VERSION_INFO_OVERRIDE_BETA = True
+# VERSION_INFO_OVERRIDE_BETA = False
 # beta
 force_version_info_beta = {
-    'name': 'v0.49.1-beta release',
-    'zipball_url': 'https://github.com/zadam/trilium/archive/refs/tags/v0.49.1-beta.zip',
-    'browser_download_url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-linux-x64-0.49.1-beta.tar.xz'
+    'name': 'v0.52.0-beta release',
+    'zipball_url': 'https://github.com/zadam/trilium/archive/refs/tags/v0.52.0-beta.zip',
+    'browser_download_url': 'https://github.com/zadam/trilium/releases/download/v0.52.0-beta/trilium-linux-x64-0.52.0-beta.tar.xz'
 }
 
 force_version_info_full_beta = {
-    'name': 'v0.49.1-beta release',
+    'name': 'v0.52.0-beta release',
     'releases': {
-        'linux': {'name': 'trilium-linux-x64-v0.49.1-beta.tar.xz',
-                  'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-linux-x64-0.49.1-beta.tar.xz'},
-        'linux-server': {'name': 'trilium-linux-x64-server-v0.49.1-beta.tar.xz',
-                         'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-linux-x64-server-0.49.1-beta.tar.xz'},
-        'mac': {'name': 'trilium-mac-x64-v0.49.1-beta.zip',
-                'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-mac-x64-0.49.1-beta.zip'},
-        'windows': {'name': 'trilium-windows-x64-v0.49.1-beta.zip',
-                    'url': 'https://github.com/zadam/trilium/releases/download/v0.49.1-beta/trilium-windows-x64-0.49.1-beta.zip'}
+        'linux': {'name': 'trilium-linux-x64-v0.52.0-beta.tar.xz',
+                  'url': 'https://github.com/zadam/trilium/releases/download/v0.52.0-beta/trilium-linux-x64-0.52.0-beta.tar.xz'},
+        'linux-server': {'name': 'trilium-linux-x64-server-v0.52.0-beta.tar.xz',
+                         'url': 'https://github.com/zadam/trilium/releases/download/v0.52.0-beta/trilium-linux-x64-server-0.52.0-beta.tar.xz'},
+        'mac': {'name': 'trilium-mac-x64-v0.52.0-beta.zip',
+                'url': 'https://github.com/zadam/trilium/releases/download/v0.52.0-beta/trilium-mac-x64-0.52.0-beta.zip'},
+        'windows': {'name': 'trilium-windows-x64-v0.52.0-beta.zip',
+                    'url': 'https://github.com/zadam/trilium/releases/download/v0.52.0-beta/trilium-windows-x64-0.52.0-beta.zip'}
     }
 }
