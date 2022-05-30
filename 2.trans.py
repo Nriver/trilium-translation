@@ -827,7 +827,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-
 file_path = 'src/public/app/dialogs/options/password.js'
 translation = [
     '>{{click here to reset it}}<',
@@ -845,7 +844,6 @@ translation = [
     "'{{Change password}}' : '{{Set password}}')",
 ]
 replace_in_file(file_path, translation)
-
 
 file_path = 'src/public/app/dialogs/options/shortcuts.js'
 translation = [
@@ -2883,7 +2881,6 @@ translation = [
 replace_in_file(file_path, translation)
 replace_in_file(file_path, translation, TARGET_PATH)
 
-
 # 0.52
 # 使用 Excalidraw 内置的语言文件
 # use Excalidraw built-in language file
@@ -2899,7 +2896,6 @@ else:
         content = content.replace('ref: excalidrawRef,', 'ref: excalidrawRef,\n                    langCode: "zh-CN",')
     with open(file_full_path, 'w') as f:
         f.write(content)
-
 
 # 应用补丁
 # apply patch
@@ -2934,7 +2930,14 @@ shutil.copytree(f'{CLIENT_PATH}resources/app/src/routes/', f'{PATCH_FOLDER}/src/
 # ckeditor
 src_path = f'{CLIENT_PATH}resources/app/libraries/ckeditor/ckeditor.js'
 dest_path = f'{PATCH_FOLDER}/libraries/ckeditor/ckeditor.js'
-os.makedirs(os.path.dirname(dest_path), exist_ok = True)
+os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+shutil.copy(src_path, dest_path)
+
+# excalidraw 自定义字体
+# excalidraw custom font
+src_path = f'{script_path}/font/muyao-shouxie.ttf'
+dest_path = f'{PATCH_FOLDER}/node_modules/@excalidraw/excalidraw/dist/excalidraw-assets/Virgil.woff2'
+os.makedirs(os.path.dirname(dest_path), exist_ok=True)
 shutil.copy(src_path, dest_path)
 
 if LANG == 'cn':
@@ -2947,7 +2950,7 @@ if LANG == 'cn':
     os.system('cd demo-cn && 7z -scsutf-8 a demo-cn.zip ./* && mv demo-cn.zip ../')
     src_path = f'demo-cn.zip'
     dest_path = f'{PATCH_FOLDER}/db/demo.zip'
-    os.makedirs(os.path.dirname(dest_path), exist_ok = True)
+    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
     shutil.copy(src_path, dest_path)
 
 if missing_files:

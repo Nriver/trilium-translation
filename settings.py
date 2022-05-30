@@ -4,11 +4,17 @@
 
 # 路径结尾的斜杠不能省略
 # ending slash in folders can NOT be omitted
-
+import os
 import platform
+
+script_path = os.path.dirname(os.path.abspath(__file__))
 
 DEBUG = False
 # DEBUG = False
+
+# excalidraw 自定义字体
+# excalidraw custom font
+excalidraw_font = f'{script_path}/font/muyao-shouxie.ttf'
 
 if platform.system() == 'Linux':
     # BASE_PATH 是工作目录

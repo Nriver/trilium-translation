@@ -45,6 +45,7 @@ Trilium Notes 交流qq群 686232370
    * [前端js报错](#前端js报错)
    * [第三方主题不生效](#第三方主题不生效)
    * [初始化慢，同步数据慢](#初始化慢同步数据慢)
+* [关于本项目使用的字体](#关于本项目使用的字体)
 * [限制](#限制)
 * [Stargazers 数据](#stargazers-数据)
 * [捐赠](#捐赠)
@@ -246,6 +247,16 @@ const notes = await api.runOnBackend(async () => {
 
 如果是0.47升级上来，同步数据可能会特别慢。尝试直接把客户端的数据库移走，重新初始化客户端数据会快一点。
 
+
+---
+# 关于本项目使用的字体
+
+本项目使用的字体文件为免费字体.
+
+`font/muyao-shouxie.ttf` 沐瑶随心手写体来自 [这里](https://www.maoken.com/freefonts/1323.html)
+`font/muyao-softbrush.ttf` 沐瑶软笔手写体 [这里](https://www.maoken.com/freefonts/1309.html)
+
+感谢 [https://www.zcool.com.cn/u/402511](https://www.zcool.com.cn/u/402511) 发布的这两款免费字体！
 
 ---
 # 限制
