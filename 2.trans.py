@@ -495,6 +495,7 @@ replace_in_file(file_path, translation, TARGET_PATH)
 file_path = 'src/views/dialogs/password_not_set.ejs'
 translation = [
     '>{{Password is not set}}<',
+    '{{Protected notes are encrypted using a user password, but password has not been set yet.}}',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
@@ -797,6 +798,9 @@ translation = [
     '>{{Multiple languages can be separated by comma, e.g. }}<',
     '>{{Changes to the spell check options will take effect after application restart}}<',
     '>{{Available language codes: }}<',
+    '>{{Images}}<',
+    '>{{Download images automatically for offline use.}}<',
+    '>{{(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)}}<',
     '>{{Image compression}}<',
     '>{{Enable image compression}}<',
     '>{{Max width / height of an image in pixels (image will be resized if it exceeds this setting).}}<',
@@ -1228,6 +1232,7 @@ translation = [
     'title: "{{Render HTML note}}"',
     'title: "{{Book}}"',
     'title: "{{Mermaid diagram}}"',
+    'title: "{{Canvas}}"',
     'title: "{{Advanced}}"',
     'title: "{{Force note sync}}"',
     'title: "{{Protect subtree}}"',
@@ -1948,6 +1953,7 @@ translation = [
     'title: "{{Text}}"',
     'title: "{{Relation Map}}"',
     'title: "{{Render Note}}"',
+    'title: "{{Canvas}}"',
     'title: "{{Book}}"',
     'title: "{{Mermaid Diagram}}"',
     'title: "{{Code}}"',
@@ -2876,6 +2882,24 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 replace_in_file(file_path, translation, TARGET_PATH)
+
+
+# 0.52
+# 使用 Excalidraw 内置的语言文件
+# use Excalidraw built-in language file
+# https://github.com/excalidraw/excalidraw/blob/master/src/packages/excalidraw/README.md#langCode
+file_path = 'src/public/app/widgets/type_widgets/canvas.js'
+file_full_path = os.path.join(BASE_PATH, file_path)
+if not os.path.exists(file_full_path):
+    missing_files.append(file_full_path)
+else:
+    with open(file_full_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    if not 'langCode' in content:
+        content = content.replace('ref: excalidrawRef,', 'ref: excalidrawRef,\n                    langCode: "zh-CN",')
+    with open(file_full_path, 'w') as f:
+        f.write(content)
+
 
 # 应用补丁
 # apply patch

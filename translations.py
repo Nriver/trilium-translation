@@ -1386,4 +1386,11 @@ translation_dict = {
     "CSS note which will be injected into the share page. CSS note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree' and 'shareOmitDefaultCss' as well.": '',
     "JavaScript note which will be injected into the share page. JS note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree'.": '',
     "Favicon note to be set in the shared page. Typically you want to set it to share root and make it inheritable. Favicon note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree'.": '',
+    'Canvas': '',
+    'Download images automatically for offline use.': '',
+    'Images': '',
+    '(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)': '',
+    'Protected notes are encrypted using a user password, but password has not been set yet.': '',
+    'To be able to protect notes, <a id="open-password-options-button" href="javascript:">
+                    click here to open the Options dialog</a> and set your password.': '',
 }

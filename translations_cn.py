@@ -1380,5 +1380,11 @@ translation_dict = {
     "CSS note which will be injected into the share page. CSS note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree' and 'shareOmitDefaultCss' as well.": "会被注入到分享页面的CSS笔记. CSS笔记必须也在共享笔记的子树范围内. 请考同时使用 'shareHiddenFromTree' 和 'shareOmitDefaultCss' 标签.",
     "JavaScript note which will be injected into the share page. JS note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree'.": "会被注入到分享页面的JS笔记. JS笔记必须也在共享笔记的子树范围内. 请考同时使用 'shareHiddenFromTree' 标签.",
     "Favicon note to be set in the shared page. Typically you want to set it to share root and make it inheritable. Favicon note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree'.": "设置为共享页面 Favicon 的笔记. 一般把它放到共享笔记的根目录, 同时让它设置为可继承的. Favicon 笔记必须也在共享笔记的子树范围内. 请考虑同时使用 'shareHiddenFromTree' 标签",
+    'Canvas': '画布',
+    'Download images automatically for offline use.': '自动下载图片以便于离线使用.',
+    'Images': '图片',
+    '(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)': '(粘贴的HTML可能包含在线图片的引用, Trilium会找到并下载这些图片用于离线使用)',
+    'Protected notes are encrypted using a user password, but password has not been set yet.': '受保护的笔记使用用户密码进行加密，但是目前没有设置密码.',
+    'To be able to protect notes, <a id="open-password-options-button" href="javascript:">\n                    click here to open the Options dialog</a> and set your password.': '想要保护笔记<a id="open-password-options-button" href="javascript:">点击这里打开设置窗口</a>并设置你的密码.',
     '': '',
 }
