@@ -48,15 +48,15 @@ TRANSLATOR_URL = 'https://github.com/Nriver/trilium-translation'
 # USE_PROXY = True
 USE_PROXY = False
 PROXIES = {
-    "http": "socks5://127.0.0.1:10808",
-    "https": "socks5://127.0.0.1:10808"
+    "http": "http://127.0.0.1:10809",
+    "https": "http://127.0.0.1:10809"
 }
 
 # 避免兼容性问题，强制使用某个版本的trilium
 # To avoid compatibility issue, force to use certain version of trilium
-VERSION_INFO_OVERRIDE = True
-# VERSION_INFO_OVERRIDE = False
-# 0.47
+# VERSION_INFO_OVERRIDE = True
+VERSION_INFO_OVERRIDE = False
+
 force_version_info = {
     'name': 'v0.47.8 release',
     'zipball_url': 'https://api.github.com/repos/zadam/trilium/zipball/v0.47.8',
@@ -77,8 +77,8 @@ force_version_info_full = {
     }
 }
 
-VERSION_INFO_OVERRIDE_BETA = True
-# VERSION_INFO_OVERRIDE_BETA = False
+# VERSION_INFO_OVERRIDE_BETA = True
+VERSION_INFO_OVERRIDE_BETA = False
 # beta
 force_version_info_beta = {
     'name': 'v0.52.0-beta release',

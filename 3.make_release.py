@@ -148,11 +148,11 @@ def patch_linux(file_name):
     # asar pack
     os.system('asar pack app/ app.asar')
 
-    # 删除解包文件
-    # remove unpacked files
-    os.system(f'rm -rf {asar_folder}/app/')
-
     if not DEBUG:
+        # 删除解包文件
+        # remove unpacked files
+        os.system(f'rm -rf {asar_folder}/app/')
+
         # 打zip包
         # make zip
         new_name = f'trilium-{LANG}-linux-x64.zip'
@@ -355,3 +355,5 @@ if __name__ == '__main__':
 
         # mac
         patch_mac(releases['mac']['name'])
+
+    print('finished')

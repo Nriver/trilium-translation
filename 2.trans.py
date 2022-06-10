@@ -1345,6 +1345,9 @@ translation = [
     "{{executes when note is created on backend}}",
     "{{executes when note title is changed (includes note creation as well)}}",
     "{{executes when note is changed (includes note creation as well)}}",
+    "{{executes when note is being deleted}}",
+    "{{executes when a branch is created. Branch is a link between parent note and child note and is created e.g. when cloning or moving note.}}",
+    "{{executes when a branch is deleted. Branch is a link between parent note and child note and is deleted e.g. when moving note (old branch/link is deleted).}}",
     "{{executes when new note is created under this note}}",
     "{{executes when new attribute is created under this note}}",
     "{{executes when attribute is changed under this note}}",
@@ -1354,6 +1357,10 @@ translation = [
     "{{CSS note which will be injected into the share page. CSS note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree' and 'shareOmitDefaultCss' as well.}}",
     "{{JavaScript note which will be injected into the share page. JS note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree'.}}",
     "{{Favicon note to be set in the shared page. Typically you want to set it to share root and make it inheritable. Favicon note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree'.}}",
+    '{{default title of notes created as children of this note. The value is evaluated as JavaScript string \n                        and thus can be enriched with dynamic content via the injected <code>now</code> and <code>parentNote</code> variables. Examples:}}',
+    "{{<code>\${parentNote.getLabelValue('authorName')}'s literary works</code>}}",
+    "{{<code>Log for \${now.format('YYYY-MM-DD HH:mm:ss')}</code>}}",
+    '{{See <a href="https://github.com/zadam/trilium/wiki/Default-note-title">wiki with details</a>, API docs for <a href="https://zadam.github.io/trilium/backend_api/Note.html">parentNote</a> and <a href="https://day.js.org/docs/en/display/format">now</a> for details.}}',
     "'{{see}} <",
 ]
 replace_in_file(file_path, translation)
@@ -2856,6 +2863,17 @@ replace_in_file(file_path, translation, TARGET_PATH)
 file_path = 'src/routes/api/date_notes.js'
 translation = [
     "title: '{{Search:}} '",
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/routes/api/login.js'
+translation = [
+    '''message: "{{DB schema does not exist, can't sync.}}"''',
+    '''message: "{{Sync login credentials are incorrect. It looks like you're trying to sync two different initialized documents which is not possible.}}"''',
+    '''message: "{{Given current password doesn't match hash}}"''',
+    """message: '{{Auth request time is out of sync, please check that both client and server have correct time.}}'""",
+    'message: `{{Non-matching sync versions, local is version ${appInfo.syncVersion}, remote is ${syncVersion}. It is recommended to run same version of Trilium on both sides of sync.}}`',
+    '{{Incorrect password}}',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 

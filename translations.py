@@ -1393,4 +1393,17 @@ translation_dict = {
     'Protected notes are encrypted using a user password, but password has not been set yet.': '',
     'To be able to protect notes, <a id="open-password-options-button" href="javascript:">
                     click here to open the Options dialog</a> and set your password.': '',
+    "DB schema does not exist, can't sync.": '',
+    "Sync login credentials are incorrect. It looks like you're trying to sync two different initialized documents which is not possible.": '',
+    'Auth request time is out of sync, please check that both client and server have correct time.': '',
+    'Non-matching sync versions, local is version ${appInfo.syncVersion}, remote is ${syncVersion}. It is recommended to run same version of Trilium on both sides of sync.': '',
+    'Incorrect password': '',
+    'default title of notes created as children of this note. The value is evaluated as JavaScript string 
+                        and thus can be enriched with dynamic content via the injected <code>now</code> and <code>parentNote</code> variables. Examples:': '',
+    "<code>\${parentNote.getLabelValue('authorName')}'s literary works</code>": '',
+    "<code>Log for \${now.format('YYYY-MM-DD HH:mm:ss')}</code>": '',
+    'See <a href="https://github.com/zadam/trilium/wiki/Default-note-title">wiki with details</a>, API docs for <a href="https://zadam.github.io/trilium/backend_api/Note.html">parentNote</a> and <a href="https://day.js.org/docs/en/display/format">now</a> for details.': '',
+    'executes when note is being deleted': '',
+    'executes when a branch is created. Branch is a link between parent note and child note and is created e.g. when cloning or moving note.': '',
+    'executes when a branch is deleted. Branch is a link between parent note and child note and is deleted e.g. when moving note (old branch/link is deleted).': '',
 }
