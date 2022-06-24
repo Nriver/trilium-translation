@@ -1406,4 +1406,6 @@ translation_dict = {
     'executes when note is being deleted': '',
     'executes when a branch is created. Branch is a link between parent note and child note and is created e.g. when cloning or moving note.': '',
     'executes when a branch is deleted. Branch is a link between parent note and child note and is deleted e.g. when moving note (old branch/link is deleted).': '',
+    'case sensitive': '',
+    'match words': '',
 }
