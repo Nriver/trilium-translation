@@ -1829,6 +1829,13 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/find.js'
+translation = [
+    '                {{case sensitive}}',
+    '                {{match words}}',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/global_menu.js'
 translation = [
     '    {{Options}}',
