@@ -75,7 +75,7 @@ Trilium Notes 交流qq群 686232370
 
 # 使用方法
 1. [Release](https://github.com/Nriver/trilium-translation/releases)里下载对应客户端
-2. 解压运行(Linux桌面运行trilium, Linux服务端运行trilium.sh, Windows 运行trilium.exe, macOS 运行trilium.app, ).
+2. 解压运行(Linux桌面运行trilium, Linux服务端运行trilium.sh, Windows 运行trilium.exe, macOS 运行trilium.app).
 3. 玩去吧 :)
 
 ---
@@ -177,7 +177,10 @@ npm install -g webpack-cli
 
 
 # 常见问题
-下面是一些我觉得有代表性的问题
+下面是一些我觉得有代表性的问题，群友反复问，我总结一下吧。
+
+## 你用的是什么服务器跑的Trilium Notes?
+我目前用的是[搬瓦工](https://bandwagonhost.com/aff.php?aff=33173)，很稳定。Trilium笔记数据很重要，搬瓦工自带自动备份的功能，不用担心数据问题。由于我是电信网络，用[cn2 gia-e线路](https://bandwagonhost.com/aff.php?aff=33173&pid=87)的这款速度会快，能满足我的需求，就是价格挺贵。你也可以选择其它的VPS提供商，不过要记得备份数据，以防万一。
 
 ## 笔记数据库在哪?
 默认路径
@@ -195,6 +198,12 @@ docker 在docker-compose.yml同目录的`trilium-data`文件夹里
 
 如果你想体验原版最新的特性，建议使用这种方式运行。
 
+## 如何备份数据库?
+请先停止Trilium，然后找到对应的trilium-data
+
+## 配置反向代理之后部分功能不正常了?
+直接用ip访问服务正常，用了反向代理之后一些功能用不了了，应该是反向代理的websocket配置的不对。请参考[官方反向代理的说明](https://github.com/zadam/trilium/wiki/Server-installation)进行配置。
+
 ## 为什么用中文版的自带文档还是英文的?
 你运行过原版的Trilium程序, 你的笔记数据库已经按照英文的文档初始化过了。想要中文文档可以直接把项目中的demo-cn.zip导入到笔记中，或者删掉旧数据库(数据自行备份)，用中文版启动，重新进行初始化。
 
@@ -203,7 +212,6 @@ docker 在docker-compose.yml同目录的`trilium-data`文件夹里
 
 ## 为什么程序打开之后是空白一片?
 可能是GPU驱动不兼容，请尝试关闭gpu加速。增加启动运行参数，使用 `trilium --disable-gpu` 来启动。
-
 
 ## 日记笔记跑到别的目录下了
 如果你创建日记笔记的时候笔记跑到别的地方去了，可以在`日记`这个笔记里加一个 `#calendarRoot` 的属性，再把错位的日记手动移到正常的笔记位置就行。如果还是不行，请手动搜索有没有其它笔记有 `#calendarRoot`，如果有就请删掉。  
@@ -220,6 +228,11 @@ docker 在docker-compose.yml同目录的`trilium-data`文件夹里
 powershell
 set-executionpolicy remotesigned
 ```
+
+## 提示 `error 401 Unauthorized` 是什么问题？
+一种可能是服务端和客户端的版本不一致，请使用相同版本的Trilium来避免出现各种问题。
+还可能是服务端或客户端的系统时间不对导致的，请修改一下系统时间，保持两边时间一样就行。
+
 
 ---
 # 0.47 升级到 0.48 的一些问题
