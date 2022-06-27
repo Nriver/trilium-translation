@@ -1408,4 +1408,5 @@ translation_dict = {
     'executes when a branch is deleted. Branch is a link between parent note and child note and is deleted e.g. when moving note (old branch/link is deleted).': '',
     'case sensitive': '',
     'match words': '',
+    'This note was originally taken from:': '',
 }

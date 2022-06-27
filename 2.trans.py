@@ -2109,6 +2109,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/ribbon_widgets/note_properties.js'
 translation = [
     "title: '{{Info}}",
+    "{{This note was originally taken from:}}",
 ]
 replace_in_file(file_path, translation)
 

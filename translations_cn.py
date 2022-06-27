@@ -1401,5 +1401,6 @@ translation_dict = {
     'executes when a branch is deleted. Branch is a link between parent note and child note and is deleted e.g. when moving note (old branch/link is deleted).': '在分支删除时执行. 分支是父笔记和子笔记之间的连接, 会在比如移动笔记(旧分支/连接删除)时删除.',
     'case sensitive': '区分大小写',
     'match words': '全字匹配',
+    'This note was originally taken from:': '笔记来源:',
     '': '',
 }
