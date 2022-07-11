@@ -473,6 +473,13 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/dialogs/note_type_chooser.js'
+translation = [
+    '>{{Choose note type}}<',
+    '>{{Dropdown trigger}}<',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/dialogs/options.js'
 translation = [
     '>{{Options}}<',
@@ -593,13 +600,19 @@ translation = [
     '{{This action will create a new copy of the database and anonymize it}}',
     '{{remove all note content and leave only structure and some non-sensitive metadata}}',
     '{{for sharing online for debugging purposes without fear of leaking your personal data.}}',
-    'showMessage(`{{Created fully anonymized database in ${resp.anonymizedFilePath}}}`',
-    'showMessage(`{{Created lightly anonymized database in ${resp.anonymizedFilePath}}}`',
+    'showMessage({{`Created fully anonymized database in ${resp.anonymizedFilePath}`}}',
+    'showMessage({{`Created lightly anonymized database in ${resp.anonymizedFilePath}`}}',
     'showMessage("{{Full sync triggered}}"',
+    'showMessage("{{Filling entity changes rows...}}"',
     'showMessage("{{Sync rows filled successfully}}"',
     'showMessage("{{Database has been backed up to }}"',
+    'showMessage("{{Creating fully anonymized database...}}"',
+    'showMessage("{{Creating lightly anonymized database...}}"',
+    'showMessage("{{Vacuuming database...}}"',
     'showMessage("{{Database has been vacuumed}}"',
+    'showMessage("{{Finding and fixing consistency issues...}}"',
     'showMessage("{{Consistency issues should be fixed.}}"',
+    'showMessage("{{Checking database integrity...}}"',
     'showError("{{Could not create anonymized database, check backend logs for details}}"',
     'showMessage("{{Integrity check succeeded - no problems found.}}"',
     'showMessage("{{Integrity check failed: }}"',
