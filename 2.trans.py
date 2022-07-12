@@ -1230,6 +1230,7 @@ translation = [
     'title: "{{Unprotect subtree}}"',
     'title: "{{Export}}"',
     'title: "{{Import into note}}"',
+    'title: "{{Apply bulk actions}}"',
     # special
     "title: '{{Open in a new tab }}",
     "title: '{{Open in a new split}}",
@@ -1355,6 +1356,165 @@ translation = [
     "{{<code>Log for \${now.format('YYYY-MM-DD HH:mm:ss')}</code>}}",
     '{{See <a href="https://github.com/zadam/trilium/wiki/Default-note-title">wiki with details</a>, API docs for <a href="https://zadam.github.io/trilium/backend_api/Note.html">parentNote</a> and <a href="https://day.js.org/docs/en/display/format">now</a> for details.}}',
     "'{{see}} <",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/abstract_bulk_action.js'
+translation = [
+    '{{Remove this search action}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/execute_script.js'
+translation = [
+    '        {{Execute script}}:',
+    '"{{Execute script}}"',
+    '{{You can execute simple scripts on the matched notes.}}',
+    "{{For example to append a string to a note's title, use this small script:}}",
+    "{{More complex example would be deleting all matched note's attributes:}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/label/add_label.js'
+translation = [
+    '"{{Add label}}"',
+    '>{{Add label}}<',
+    '>{{to value}}<',
+    '>{{On all matched notes:}}<',
+    ">{{create given label if note doesn't have one yet}}<",
+    '>{{or change value of the existing label}}<',
+    '>{{You can also call this method without value, in such case label will be assigned to the note without value.}}<',
+    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
+    'placeholder="{{label name}}"',
+    'placeholder="{{new value}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/label/delete_label.js'
+translation = [
+    '        {{Delete label}}:',
+    '"{{Delete label}}"',
+    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
+    'placeholder="{{label name}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/label/rename_label.js'
+translation = [
+    '"{{Rename label}}"',
+    '>{{Rename label from:}}<',
+    '>{{To:}}<',
+    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
+    'placeholder="{{old name}}"',
+    'placeholder="{{new name}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/label/update_label_value.js'
+translation = [
+    '"{{Update label value}}"',
+    '>{{Update label value}}<',
+    '>{{to value}}<',
+    '>{{On all matched notes, change value of the existing label.}}<',
+    '>{{You can also call this method without value, in such case label will be assigned to the note without value.}}<',
+    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
+    'placeholder="{{label name}}"',
+    'placeholder="{{new value}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/note/delete_note.js'
+translation = [
+    '"{{Delete note}}"',
+    '>{{This will delete matched notes.}}<',
+    ">{{After the deletion, it's possible to undelete them from }}<",
+    '>{{ Recent Notes dialog.}}<',
+    '>{{To erase notes permanently, you can go after the deletion to the Option -> Other and click the "Erase deleted notes now" button.}}<',
+    '        {{Delete matched notes}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/note/delete_note_revisions.js'
+translation = [
+    '"{{Delete note revisions}}"',
+    '        {{Delete note revisions}}',
+    "{{All past note revisions of matched notes will be deleted. Note itself will be fully preserved. In other terms, note's history will be removed.}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/note/move_note.js'
+translation = [
+    '"{{Move note}}"',
+    '>{{Move note}}<',
+    '>{{to}}<',
+    '>{{On all matched notes:}}<',
+    '>{{move note to the new parent if note has only one parent (i.e. the old placement is removed and new placement into the new parent is created)}}<',
+    ">{{clone note to the new parent if note has multiple clones/placements (it's not clear which placement should be removed)}}<",
+    '>{{nothing will happen if note cannot be moved to the target note (i.e. this would create a tree cycle)}}<',
+    'placeholder="{{target parent note}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/note/rename_note.js'
+translation = [
+    '"{{Rename note}}"',
+    '>{{Rename note title to:}}<',
+    '>{{The given value is evaluated as JavaScript string and thus can be enriched with dynamic content via the injected }}<',
+    '>{{note}}<',
+    '>{{ variable (note being renamed). Examples:}}<',
+    '>{{Note}}<',
+    '>{{ - all matched notes are renamed to "Note"}}<',
+    '>{{ - matched notes titles are prefixed with "NEW: "}}<',
+    ">{{ - matched notes are prefixed with note's creation month-date}}<",
+    '{{See API docs for <a href="https://zadam.github.io/trilium/backend_api/Note.html">note</a> and its <a href="https://day.js.org/docs/en/display/format">dateCreatedObj / utcDateCreatedObj properties</a> for details.}}',
+    'title="{{Click help icon on the right to see all the options}}"',
+    'placeholder="{{new note title}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/relation/add_relation.js'
+translation = [
+    '"{{Add relation}}"',
+    '>{{Add relation}}<',
+    '>{{to}}<',
+    '>{{On all matched notes create given relation.}}<',
+    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
+    'placeholder="{{relation name}}"',
+    'placeholder="{{target note}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/relation/delete_relation.js'
+translation = [
+    '        {{Delete relation}}:',
+    '"{{Delete relation}}"',
+    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
+    'placeholder="{{relation name}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/relation/rename_relation.js'
+translation = [
+    '"{{Rename relation}}"',
+    '>{{Rename relation from:}}<',
+    '>{{To:}}<',
+    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
+    'placeholder="{{old name}}"',
+    'placeholder="{{new name}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/bulk_actions/relation/update_relation_target.js'
+translation = [
+    '"{{Update relation target}}"',
+    '>{{Update relation}}<',
+    '>{{to}}<',
+    '>{{On all matched notes:}}<',
+    ">{{create given relation if note doesn't have one yet}}<",
+    '>{{or change target note of the existing relation}}<',
+    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
+    'placeholder="{{relation name}}"',
+    'placeholder="{{target note}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -1944,6 +2104,7 @@ translation = [
     '    logError(`{{Cannot parse ${jsonStr} into notes for drop}}`',
     '    logError({{`Cannot find branch=${branchId}`}}',
     '    logError("{{Could not find run path for notePath:}}"',
+    '"{{Apply bulk actions on selected notes}}"',
 
 ]
 replace_in_file(file_path, translation)
@@ -2257,6 +2418,12 @@ translation = [
     '"{{Sync with the server is in progress.}}"',
     'title: "{{Sync status}}"',
     'message: "{{Sync update in progress}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/toc.js'
+translation = [
+    '"{{Table of Contents}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -2742,6 +2909,15 @@ translation = [
     "    alert('{{Cannot move notes before root note.}}'",
     "    alert('{{Cannot move notes after root note.}}'",
     '"{{Undeleting notes in progress:}} "',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/services/bulk_action.js'
+translation = [
+    "title: '{{Labels}}',",
+    "title: '{{Relations}}',",
+    "title: '{{Notes}}',",
+    "title: '{{Other}}',",
 ]
 replace_in_file(file_path, translation)
 
