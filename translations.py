@@ -1458,4 +1458,5 @@ translation_dict = {
     'Labels': '',
     'Relations': '',
     'Notes': '',
+    'Web View': '',
 }

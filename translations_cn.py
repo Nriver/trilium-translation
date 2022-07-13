@@ -1453,5 +1453,6 @@ translation_dict = {
     'Labels': '标签',
     'Relations': '关系',
     'Notes': '笔记',
+    'Web View': '网页视图',
     '': '',
 }

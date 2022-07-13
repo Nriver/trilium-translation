@@ -1198,6 +1198,21 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/services/note_types.js'
+translation = [
+    'title: "{{Text}}"',
+    'title: "{{Code}}"',
+    'title: "{{Saved Search}}"',
+    'title: "{{Relation Map}}"',
+    'title: "{{Note Map}}"',
+    'title: "{{Render Note}}"',
+    'title: "{{Book}}"',
+    'title: "{{Mermaid Diagram}}"',
+    'title: "{{Canvas}}"',
+    'title: "{{Web View}}"',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/services/protected_session.js'
 translation = [
     'showMessage("{{Protected session has been started.}}"',
@@ -2135,6 +2150,7 @@ translation = [
     'title: "{{Render Note}}"',
     'title: "{{Canvas}}"',
     'title: "{{Book}}"',
+    'title: "{{Web View}}"',
     'title: "{{Mermaid Diagram}}"',
     'title: "{{Code}}"',
     '    {{Type:}} <span',
