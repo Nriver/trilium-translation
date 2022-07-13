@@ -1459,4 +1459,8 @@ translation_dict = {
     'Relations': '',
     'Notes': '',
     'Web View': '',
+    'Note of type Web View allow you to embed websites into Trilium.': '',
+    'To start, please create a label with a URL address you want to embed, e.g. <code>#webViewSrc="http://www.google.com"</code>': '',
+    'Disclaimer on the experimental status': '',
+    'Web View is an experimental note type, and it might be removed or substantially changed in the future. Web View works also only in the desktop build.': '',
 }
