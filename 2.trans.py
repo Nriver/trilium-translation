@@ -82,6 +82,29 @@ with open(about_file_path, 'r') as f:
 with open(about_file_path, 'w') as f:
     f.write(content)
 
+# 修复flex布局下部分界面中文自动换行的问题
+# 选项界面
+file_path = 'src/public/app/widgets/dialogs/options.js'
+with open(file_path, 'r') as f:
+    content = f.read()
+    target_element = '<ul class="nav nav-tabs flex-column">'
+    if target_element in content:
+        content = content.replace('<ul class="nav nav-tabs flex-column">',
+                                  '<ul class="nav nav-tabs flex-column" style="white-space: nowrap;">')
+with open(file_path, 'w') as f:
+    f.write(content)
+
+# 升级属性
+file_path = 'src/public/app/widgets/ribbon_widgets/promoted_attributes.js'
+with open(file_path, 'r') as f:
+    content = f.read()
+    target_element = '<div class="promoted-attribute-cell">'
+    new_element = '<div class="promoted-attribute-cell" style="white-space: nowrap;">'
+    if target_element in content:
+        content = content.replace(target_element, new_element)
+with open(file_path, 'w') as f:
+    f.write(content)
+
 # 下面一堆是正则匹配规则, 读代码的时候下面这一段可以跳过, 直接看最后面几行
 # TL;DR, the following codes are regex matches, you can jump to the last few lines.
 
