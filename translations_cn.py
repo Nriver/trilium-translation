@@ -435,6 +435,7 @@ translation_dict = {
     'Text': '文本',
     'Code': '代码',
     'Saved search': '保存的搜索',
+    'Saved Search': '保存的搜索',
     'Relation Map': '关系图',
     'Render HTML note': '渲染HTML笔记',
     'Book': '书',

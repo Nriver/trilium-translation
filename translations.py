@@ -445,6 +445,7 @@ translation_dict = {
     'Text': '',
     'Code': '',
     'Saved search': '',
+    'Saved Search': '',
     'Relation Map': '',
     'Render HTML note': '',
     'Book': '',

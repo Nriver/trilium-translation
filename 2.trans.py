@@ -2127,8 +2127,8 @@ file_path = 'src/public/app/widgets/note_type.js'
 translation = [
     'title: "{{File}}"',
     'title: "{{Image}}"',
-    # dirty
-    'title: "{{Saved search}}"',
+    # capital letter!
+    'title: "{{Saved Search}}"',
     'title: "{{Note Map}}"',
     'title: "{{Text}}"',
     'title: "{{Relation Map}}"',
