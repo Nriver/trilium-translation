@@ -248,6 +248,20 @@ translation = [
     '>{{Prefix}}: <',
     '>{{Save}}<',
     'title="{{Help on Tree prefix}}"',
+    'showMessage("{{Branch prefix has been saved.}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/bulk_actions.js'
+translation = [
+    '>{{Bulk assign attributes}}<',
+    '>{{Affected notes: }}<',
+    '                        {{Include descendants of the selected notes}}',
+    '>{{Available actions}}<',
+    '>{{Chosen actions}}<',
+    '>{{Execute bulk actions}}<',
+    '>{{None yet ... add an action by clicking one of the available ones above.}}<',
+    'showMessage("{{Bulk actions have been executed successfully.}}"',
 ]
 replace_in_file(file_path, translation)
 
