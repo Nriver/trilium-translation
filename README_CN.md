@@ -385,6 +385,8 @@ Trilium Notes的文字是硬编码的, 所以没法切换语言.
 
 感谢 `**逸` 赞助的10元!
 
+感谢 `**恩` 赞助的30元!
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
