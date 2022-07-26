@@ -301,6 +301,16 @@ update notes set `type` = 'canvas' where noteId = '你的笔记ID'
 
 点击下方的运行. 然后关闭客户端, 重启服务端, 画布笔记就回来了.
 
+## 导入文档结果标题显示乱码怎么办？
+
+这个问题一般出现在中文Windows系统上, Windows系统默认使用GBK编码, 而Trilium需要UTF-8编码. 一个简单的解决办法是使用Bandizip, 设置使用UTF-8文件名对文件进行压缩,
+这样就能被Trilium正常识别.
+
+设置可以参考[Bandizip的官方文档](https://cn.bandisoft.com/bandizip/help/utf8/). 在Bandizip的 `选项-设置-压缩设置`
+里勾上 `在Zip文件中使用Unicode文件名(UTF-8)`的选项即可.
+
+[这里](docs/中文测试.zip)有个UTF-8格式的压缩包例子, 你可以导入试试, 中文文件名可以正常显示.
+
 ---
 
 # 0.47 升级到 0.48 的一些问题
