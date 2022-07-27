@@ -326,12 +326,12 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/dialogs/export.js'
 translation = [
     '>{{Export note "}}<',
-    '>{{this note and all of its descendants}}<',
-    '>{{HTML in ZIP archive - this is recommended since this preserves all the formatting.}}<',
-    '>{{OPML v1.0 - plain text only}}<',
-    '>{{OMPL v2.0 - allows also HTML}}<',
-    '>{{only this note without its descendants}}<',
-    '>{{HTML - this is recommended since this preserves all the formatting.}}<',
+    '    {{this note and all of its descendants}}',
+    '    {{HTML in ZIP archive - this is recommended since this preserves all the formatting.}}',
+    '    {{OPML v1.0 - plain text only}}',
+    '    {{OMPL v2.0 - allows also HTML}}',
+    '    {{only this note without its descendants}}',
+    '    {{HTML - this is recommended since this preserves all the formatting.}}',
     '>{{Export}}<',
     '{{this preserves most of the formatting.}}',
     '{{outliner interchange format for text only. Formatting, images and files are not included.}}',
