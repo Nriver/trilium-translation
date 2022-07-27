@@ -1458,5 +1458,6 @@ translation_dict = {
     'To start, please create a label with a URL address you want to embed, e.g. <code>#webViewSrc="http://www.google.com"</code>': '首先, 请创建一个带有您要嵌入的 URL 地址的标签, 例如<code>#webViewSrc="https://www.baidu.com"</code>',
     'Disclaimer on the experimental status': '实验性功能免责声明',
     'Web View is an experimental note type, and it might be removed or substantially changed in the future. Web View works also only in the desktop build.': '网页视图是一种实验性笔记类型, 将来可能会被删除或大幅更改. 网页视图只在桌面端有效',
+    'Type the content of your code note here...': '在此处输入代码笔记的内容...',
     '': '',
 }
