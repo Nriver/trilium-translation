@@ -299,6 +299,8 @@ translation = [
     'title="{{Help on links}}"',
     'title="{{Cloned note will be shown in note tree with given prefix}}"',
     '{{search for note by its name}}',
+    'showMessage({{`Note "${clonedNote.title}" has been cloned into ${targetNote.title}`}}',
+    '    logError("{{No path to clone to.}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -523,6 +525,7 @@ translation = [
     '>{{Appearance}}<',
     '>{{Shortcuts}}<',
     '>{{Keyboard shortcuts}}<',
+    '>{{Text notes}}<',
     '>{{Code notes}}<',
     # removed from 0.50
     # '>{{Username & password}}<',
@@ -571,6 +574,7 @@ translation = [
     '>{{Sort children by ...}}<',
     '>{{Sorting criteria}}<',
     '>{{Sorting direction}}<',
+    '>{{Folders}}<',
     '>{{Sort }}<',
     '>{{enter}}<',
     '    {{title}}',
@@ -854,6 +858,8 @@ translation = [
     '>{{Automatic readonly note size is the size after which notes will be displayed in a readonly mode (for performance reasons).}}<',
     '>{{Automatic readonly size (text notes)}}<',
     '>{{Automatic readonly size (code notes)}}<',
+    '>{{Network connections}}<',
+    '>{{Check for updates automatically}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -908,6 +914,19 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/dialogs/options/text_notes.js'
+translation = [
+    '>{{Settings on this options tab are saved automatically after each change.}}<',
+    '>{{Heading style}}<',
+    '>{{Plain}}<',
+    '>{{Underline}}<',
+    '>{{Markdown-style}}<',
+    '>{{Table of contents}}<',
+    '>{{You can also use this option to effectively disable TOC by setting a very high number.}}<',
+    '{{Table of contents will appear in text notes when the note has more than a defined number of headings. You can customize this number:}}',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/services/change_password.js'
 translation = [
     '''message: "{{Given current password doesn't match hash}}"''',
@@ -927,6 +946,18 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
+file_path = 'src/services/search/expressions/note_content_fulltext.js'
+translation = [
+    'throw new Error(`{{Note content can be searched only with operators: }}`',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/services/search/services/handle_parens.js'
+translation = [
+    'throw new Error("{{Did not find matching right parenthesis.}}"',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
 # no need for translate for now
 file_path = 'src/services/search/services/search.js'
 translation = [
@@ -936,6 +967,13 @@ replace_in_file(file_path, translation, TARGET_PATH)
 file_path = 'src/services/sql_init.js'
 translation = [
     "title: '{{root}}",
+    'throw new Error("{{DB is already initialized}}"',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/services/setup.js'
+translation = [
+    'throw new Error(`{{Could not setup sync since local sync protocol version is ${appInfo.syncVersion} while remote is ${response.syncVersion}. To fix this issue, use same Trilium version on all instances.}}`',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
@@ -1333,6 +1371,7 @@ translation = [
     '- {{run once an hour. You can use additional label <code>runAtHour</code> to specify at which hour.}}<',
     '- {{run once a day}}<',
     '>{{Custom request handler}}<',
+    '>{{ will force the Table of Contents to be shown, }}<',
     'title="{{Cancel changes and close}}"',
     'title="{{Attribute name can be composed of alphanumeric characters, colon and underscore only}}"',
     'title="{{Relation is a named connection between source note and target note.}}"',
@@ -1386,6 +1425,7 @@ translation = [
     "{{marks note which is served on /share root.}}",
     "{{note will be served in its raw format, without HTML wrapper}}",
     "{{will forbid robot indexing of this note via <code>X-Robots-Tag: noindex</code> header}}",
+    "{{require credentials to access this shared note. Value is expected to be in format 'username:password'. Don't forget to make this inheritable to apply to child-notes/images.}}",
     "{{comma delimited names of relations which should be displayed. All other ones will be hidden.}}",
     "{{comma delimited names of relations which should be hidden. All other ones will be displayed.}}",
     "{{executes when note is created on backend}}",
@@ -1800,6 +1840,21 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/floating_buttons/relation_map_buttons.js'
+translation = [
+    'title="{{Create new child note and add it into this relation map}}"',
+    'title="{{Reset pan & zoom to initial coordinates and magnification}}"',
+    'title="{{Zoom In}}"',
+    'title="{{Zoom Out}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/floating_buttons/mermaid_export_button.js'
+translation = [
+    'title="{{Export Mermaid diagram as SVG}}"',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/mobile_widgets/mobile_detail_menu.js'
 translation = [
     'title: "{{Insert child note}}"',
@@ -1813,6 +1868,8 @@ file_path = 'src/public/app/widgets/mobile_widgets/mobile_global_buttons.js'
 translation = [
     '>{{No plugin buttons loaded yet.}}<',
     '> {{Switch to desktop version}}<',
+    '>{{ Enter protected session}}<',
+    '>{{ Leave protected session}}<',
     '> {{Logout}}<',
     'title="{{New note}}"',
     'title="{{Collapse note tree}}"',
@@ -3104,6 +3161,12 @@ replace_in_file(file_path, translation, TARGET_PATH)
 file_path = 'src/routes/api/date_notes.js'
 translation = [
     "title: '{{Search:}} '",
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/routes/api/image.js'
+translation = [
+    'message: "{{Unknown image type: }}"',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
