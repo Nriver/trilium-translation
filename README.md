@@ -195,3 +195,8 @@ Thanks `**恩` for donating 30.00 CNY!
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
