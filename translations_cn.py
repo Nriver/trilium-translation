@@ -1476,5 +1476,10 @@ translation_dict = {
     'Network connections': '网络连接',
     'Check for updates automatically': '自动检查更新',
     "require credentials to access this shared note. Value is expected to be in format 'username:password'. Don't forget to make this inheritable to apply to child-notes/images.": "需要身份验证才能访问此共享笔记. 值的格式'用户名:密码'. 别忘了设置为可继承来对所有子笔记和图片生效.",
+    """To be able to protect notes, <a class="open-password-options-button" href="javascript:">\n                    click here to open the Options dialog</a> and set your password.""": """要保护笔记, 请<a class="open-password-options-button" href="javascript:">点击这里打开设置界面</a>并设置密码.""",
+    'Choose note type / template of the new note:': '请选择新笔记的类型/模板:',
+    'Zoom': '缩放',
+    'Zoom out': '缩小',
+    'Zoom in': '放大',
     '': '',
 }

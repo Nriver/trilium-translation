@@ -1481,4 +1481,10 @@ translation_dict = {
     'Network connections': '',
     'Check for updates automatically': '',
     "require credentials to access this shared note. Value is expected to be in format 'username:password'. Don't forget to make this inheritable to apply to child-notes/images.": '',
+    'To be able to protect notes, <a class="open-password-options-button" href="javascript:">
+                    click here to open the Options dialog</a> and set your password.': '',
+    'Choose note type / template of the new note:': '',
+    'Zoom': '',
+    'Zoom out': '',
+    'Zoom in': '',
 }

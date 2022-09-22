@@ -94,6 +94,28 @@ with open(file_path, 'r') as f:
 with open(file_path, 'w') as f:
     f.write(content)
 
+# 修复受保护的会话输入密码框样式
+file_path = 'src/public/app/widgets/dialogs/protected_session_password.js'
+with open(file_path, 'r') as f:
+    content = f.read()
+    target_element = '                    <div class="form-group">\n                        <label>'
+    if target_element in content:
+        content = content.replace('                    <div class="form-group">\n                        <label>',
+                                  '                    <div class="form-group">\n                        <label style="width: -webkit-fill-available">')
+with open(file_path, 'w') as f:
+    f.write(content)
+
+# 修复设置界面样式
+file_path = 'src/public/app/widgets/dialogs/options.js'
+with open(file_path, 'r') as f:
+    content = f.read()
+    target_element = '                    <br/>\n                    <div class="tab-content">'
+    if target_element in content:
+        content = content.replace('                    <br/>\n                    <div class="tab-content">',
+                                  '                    <br/>\n                    <div class="tab-content" style="width: -webkit-fill-available">')
+with open(file_path, 'w') as f:
+    f.write(content)
+
 # 升级属性
 file_path = 'src/public/app/widgets/ribbon_widgets/promoted_attributes.js'
 with open(file_path, 'r') as f:
@@ -515,6 +537,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/dialogs/note_type_chooser.js'
 translation = [
     '>{{Choose note type}}<',
+    '{{Choose note type / template of the new note:}}',
     '>{{Dropdown trigger}}<',
 ]
 replace_in_file(file_path, translation)
@@ -542,6 +565,7 @@ file_path = 'src/public/app/widgets/dialogs/password_not_set.js'
 translation = [
     '>{{Password is not set}}<',
     '{{Protected notes are encrypted using a user password, but password has not been set yet.}}',
+    '''{{To be able to protect notes, <a class="open-password-options-button" href="javascript:">\n                    click here to open the Options dialog</a> and set your password.}}''',
 ]
 replace_in_file(file_path, translation)
 
@@ -556,7 +580,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/dialogs/protected_session_password.js'
 translation = [
     '>{{Protected session}}<',
-    '>{{To proceed with requested action you need to start protected session by entering password:}}<',
+    '{{To proceed with requested action you need to start protected session by entering password:}}',
     '>{{Start protected session }}<',
     '>{{enter}}<',
     'title="{{Help on Protected notes}}"',
@@ -1704,6 +1728,9 @@ translation = [
     '            {{Show backend log}}',
     '            {{Reload frontend}}',
     'title="{{Reload can help with some visual glitches without restarting the whole app.}}"',
+    '    {{Zoom}}',
+    'title="{{Zoom out}}"',
+    'title="{{Zoom in}}"',
     '            {{Toggle fullscreen}}',
     '            {{Show Help}}',
     '            {{About Trilium Notes}}',
@@ -1719,6 +1746,7 @@ translation = [
     '>{{ Open note externally}}<',
     '>{{Import files}}<',
     '>{{Export note}}<',
+    '>{{Delete note}}<',
     '>{{ Print note}}<',
 ]
 replace_in_file(file_path, translation)
