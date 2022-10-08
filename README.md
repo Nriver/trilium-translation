@@ -192,6 +192,10 @@ Thanks `**逸` for donating 10.00 CNY!
 
 Thanks `**恩` for donating 30.00 CNY!
 
+Thanks `*记` for donating 10.00 CNY!
+
+Thanks `*建` for donating 200.00 CNY!
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
