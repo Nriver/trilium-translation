@@ -2691,11 +2691,16 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/editable_code.js'
 translation = [
+    'placeholder: "{{Type the content of your code note here...}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/editable_code_buttons.js'
+translation = [
     'title="{{Open Trilium API docs}}"',
     'showMessage("{{SQL Console note has been saved into }}"',
     '{{Execute}} <k',
     '{{Save to note}}</k',
-    'placeholder: "{{Type the content of your code note here...}}"',
 ]
 replace_in_file(file_path, translation)
 
