@@ -1669,7 +1669,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/backlinks.js'
+file_path = 'src/public/app/widgets/floating_buttons/zpetne_odkazy.js'
 translation = [
     "{{`${resp.count} backlink`\n            + (resp.count === 1 ? '' : 's')}}",
 ]
