@@ -102,6 +102,8 @@ Mermaid.js 流程图
 2. 解压运行(Linux桌面运行trilium, Linux服务端运行trilium.sh, Windows 运行trilium.exe, macOS 运行trilium.app).
 3. 玩去吧 :)
 
+注: Trilium的服务端可以直接通过浏览器访问单独使用。同时也可以作为同步服务器和桌面客户端进行数据同步。
+
 ---
 
 # 在Docker里运行服务端
@@ -220,26 +222,40 @@ Notes 的占位符, 别动它们.
 Note的笔记数据, 需要自行建立 Trilium Notes 服务端, 让 Trilium
 来处理同步, 这是目前唯一受支持的同步方式.
 
+---
+
 # 常见问题
 
 下面是一些我觉得有代表性的问题，群友反复问，我总结一下吧。
 
-## 你用的是什么服务器跑的Trilium Notes服务端?
+## 你用的是什么VPS服务器跑的Trilium Notes服务端?
 
-我目前用的是[搬瓦工](https://bandwagonhost.com)
-，很稳定。Trilium笔记数据很重要，搬瓦工自带自动备份的功能，不用担心数据问题。由于我是电信网络，只能用CN2-GIA线路才会快，~~就是太贵,
-续费不起了,
-到期换别的~~。你也可以选择其它的VPS提供商，不过要记得备份数据，以防万一。
+~~之前用的是搬瓦工，就是太贵, 用不起了。群友之前问我推荐我都不敢说，哈哈哈哈~~
+
+目前用的是Racknerd, 相对来说很便宜，搞活动的时候能有很多优惠。我现在用的是双十一的优惠机器，用来做Trilium的服务器绰绰有余。
+
+现在有黑五优惠，有需要的话可以试试。链接带有aff，不喜欢的可以去掉。买最便宜的就够用了，一年不到100块。如果觉得硬盘不够大，可以买贵一档的，也就100出头。再贵就没有必要了。
+
+| 内存 | CPU | SSD | 流量 | 价格    | 购买                                                     |
+| ---- | --- | --- | ----- | --------- |--------------------------------------------------------|
+| 768M | 1核 | 10G | 1T/月 | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
+| 1.5G | 1核 | 30G | 3T/月 | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
+
+你也可以选择其它的VPS提供商，不过要记得备份数据，数据是无价的。做好备份以防万一，切记。
 
 ## 笔记数据库在哪?
 
-默认路径
+### 客户端数据库默认路径
 
 win C:\Users\用户名\AppData\Roaming\trilium-data
 
 linux /home/用户名/.local/share/trilium-data
 
 mac /Users/用户名/Library/ApplicationSupport/trilium-data
+
+### 服务端数据库默认路径
+
+linux-server 在 /home/用户名/trilium-data
 
 docker 在docker-compose.yml同目录的`trilium-data`文件夹里
 
@@ -252,6 +268,13 @@ docker 在docker-compose.yml同目录的`trilium-data`文件夹里
 ## 如何备份数据库?
 
 Trilium有自动备份功能，软件内可以左上角设置里可以设定自动备份频率。如果需要手动备份，请务必先停止Trilium，然后找到对应的trilium-data目录进行备份。
+
+注意，服务端和客户端的数据库文件是不能互相替换的，我之前尝试过，替换之后无法启动。但是客户端之间的数据库是可以直接复制粘贴的，比如可以把linux桌面客户端的数据直接拷贝给windows桌面客户端。
+
+## Trilium有开放接口调用吗？
+
+有的，Trilium有叫做ETAPI的接口可供调用。我把接口用python进行了封装，有兴趣的可以移步到我的另一个项目[Trilium-py](https://github.com/Nriver/trilium-py)
+查看。
 
 ## 配置反向代理之后部分功能不正常了?
 
