@@ -640,6 +640,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/dialogs/options/advanced.js'
 translation = [
+    'return "{{Advanced}}"',
     '>{{Sync}}<',
     '>{{Force full sync}}<',
     '>{{Fill entity changes records}}<',
@@ -688,6 +689,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/dialogs/options/appearance.js'
 translation = [
+    'return "{{Appearance}}"',
     '>{{Theme}}<',
     '{{Settings on this options tab are saved automatically after each change.}}',
     '>{{Zoom factor (desktop build only)}}<',
@@ -720,16 +722,17 @@ translation = [
     '>{{reload frontend}}<',
     "title: '{{Light}}",
     '"{{Theme defined}}"',
-    '        {{To apply font changes, click on}}',
     '>{{Content width}}<',
     '>{{Trilium by default limits max content width to improve readability for maximized screens on wide screens.}}<',
     '>{{Max content width in pixels}}<',
-    '        {{To content width changes, click on}}',
+    '{{To content width changes, click on}}',
+    '{{To apply font changes, click on}}',
 ]
 replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/dialogs/options/backup.js'
 translation = [
+    'return "{{Backup}}"',
     '>{{Automatic backup}}<',
     '>{{Trilium can back up the database automatically:}}<',
     '>{{Enable daily backup}}<',
@@ -740,6 +743,167 @@ translation = [
     '>{{Backup database now}}<',
     'showMessage("{{Database has been backed up to }}"',
     'showMessage("{{Options changed have been saved.}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/code_notes.js'
+translation = [
+    'return "{{Code notes}}"',
+    '>{{Use vim keybindings in code notes (no ex mode)}}<',
+    '>{{Enable Vim Keybindings}}<',
+    '>{{Available MIME types in the dropdown}}<',
+    'showMessage("{{Options change have been saved.}}"',
+    '>{{Automatic readonly size}}<',
+    '>{{Automatic readonly note size is the size after which notes will be displayed in a readonly mode (for performance reasons).}}<',
+    '>{{Automatic readonly size (text notes)}}<',
+    '>{{Automatic readonly size (code notes)}}<',
+    '>{{Wrap lines in code notes}}<',
+    '{{Enable Line Wrap (change might need a frontend reload to take effect)}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/etapi.js'
+translation = [
+    '{{ETAPI is a REST API used to access Trilium instance programmatically, without UI.}}',
+    """{{See more details on <a href="https://github.com/zadam/trilium/wiki/ETAPI">wiki</a> and <a onclick="window.open('etapi/etapi.openapi.yaml')" href="etapi/etapi.openapi.yaml">ETAPI OpenAPI spec</a>.}}""",
+    '>{{Create new ETAPI token}}<',
+    '>{{Existing tokens}}<',
+    '>{{There are no tokens yet. Click on the button above to create one.}}<',
+    '>{{Token name}}<',
+    '>{{Created}}<',
+    '>{{Actions}}<',
+    'title: "{{New ETAPI token}}"',
+    'title: "{{ETAPI token created}}"',
+    '{{Copy the created token into clipboard. Trilium stores the token hashed and this is the last time you see it.}}',
+    'title: "{{Rename token}}"',
+    'title="{{Rename this token}}"',
+    'title="{{Delete / deactive this token}}"',
+    '''message: "{{Please enter new token's name}}"''',
+    '''defaultValue: "{{new token}}"''',
+    '''    alert("{{Token name can't be empty}}"''',
+    '{{Are you sure you want to delete ETAPI token}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/images.js'
+translation = [
+    'return "{{Images}}"',
+    '>{{Images}}<',
+    '>{{Download images automatically for offline use.}}<',
+    '>{{(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)}}<',
+    '>{{Image compression}}<',
+    '>{{Enable image compression}}<',
+    '>{{Max width / height of an image in pixels (image will be resized if it exceeds this setting).}}<',
+    '>{{JPEG quality (10 - worst quality, 100 best quality, 50 - 85 is recommended)}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/other.js'
+translation = [
+    'return "{{Other}}"',
+    '>{{Tray}}<',
+    '>{{Enable tray (Trilium needs to be restarted for this change to take effect)}}<',
+    '>{{Note erasure timeout}}<',
+    '>{{Erase notes after X seconds}}<',
+    '>{{You can also trigger erasing manually:}}<',
+    '>{{Erase deleted notes now}}<',
+    '>{{Note revisions snapshot interval}}<',
+    '>{{Note revision snapshot time interval is time in seconds after which a new note revision will be created for the note. See }}<',
+    '>{{Note revision snapshot time interval (in seconds)}}<',
+    '>{{Deleted notes (and attributes, revisions...) are at first only marked as deleted and it is possible to recover them \n    from Recent Notes dialog. After a period of time, deleted notes are "erased" which means \n    their content is not recoverable anymore. This setting allows you to configure the length \n    of the period between deleting and erasing the note.}}<',
+    'showMessage("{{Options changed have been saved.}}"',
+    'showMessage("{{Deleted notes have been erased.}}"',
+    '>{{Network connections}}<',
+    '>{{Check for updates automatically}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/password.js'
+translation = [
+    'return "{{Password}}"',
+    '>{{click here to reset it}}<',
+    '>{{Old password}}<',
+    '>{{New password}}<',
+    '>{{New password Confirmation}}<',
+    '>{{Change password}}<',
+    '    alert("{{Password has been reset. Please set new password}}"',
+    '    alert("{{New passwords are not the same.}}"',
+    '    alert("{{Password has been changed. Trilium will be reloaded after you press OK.}}"',
+    '{{Please take care to remember your new password. Password is used for logging into the web interface and\n      to encrypt protected notes.}}',
+    '{{If you forget your password, then all your protected notes are forever lost.}}',
+    '{{In case you did forget your password}}',
+    '"{{By resetting the password you will forever lose access to all your existing protected notes. Do you really want to reset the password?}}"',
+    "'{{Change password}}' : '{{Set password}}')",
+    '>{{Protected session timeout}}<',
+    "{{Protected session timeout is a time period after which the protected session is wiped from\n        the browser's memory. This is measured from the last interaction with protected notes. See}}",
+    '{{for more info.}}',
+    '>{{Protected session timeout (in seconds)}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/shortcuts.js'
+translation = [
+    'return "{{Shortcuts}}"',
+    '>{{Keyboard shortcuts}}<',
+    '{{Multiple shortcuts for the same action can be separated by comma.}}',
+    '{{See <a href="https://www.electronjs.org/docs/latest/api/accelerator">Electron documentation</a> for available modifiers and key codes.}}',
+    '>{{Action name}}<',
+    '>{{Shortcuts}}<',
+    '>{{Default shortcuts}}<',
+    '>{{Description}}<',
+    '>{{Reload app to apply changes}}<',
+    '>{{Set all shortcuts to the default}}<',
+    '{{Do you really want to reset all keyboard shortcuts to the default?}}',
+    '{{Type text to filter shortcuts...}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/spellcheck.js'
+translation = [
+    'return "{{Spellcheck}}"',
+    '>{{Spell check}}<',
+    '>{{These options apply only for desktop builds, browsers will use their own native spell check. App restart is required after change.}}<',
+    '>{{Enable spellcheck}}<',
+    '>{{Language code(s)}}<',
+    '>{{Multiple languages can be separated by comma, e.g. }}<',
+    '>{{Available language codes: }}<',
+    '>. {{Changes to the spell check options will take effect after application restart.}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/sync.js'
+translation = [
+    'return "{{Sync}}"',
+    '>{{Sync configuration}}<',
+    '>{{Server instance address}}<',
+    '>{{Sync timeout (milliseconds)}}<',
+    '>{{Sync proxy server (optional)}}<',
+    '>{{Note:}}<',
+    '> {{If you leave the proxy setting blank, the system proxy will be used (applies to desktop/electron build only)}}<',
+    '>{{Save}}<',
+    '>{{Help}}<',
+    '>{{Sync test}}<',
+    ">{{This will test the connection and handshake to the sync server. If the sync server isn't initialized, this will set it up to sync with the local document.}}<",
+    '>{{Test sync}}<',
+    'showMessage("{{Options changed have been saved.}}"',
+    '"{{Sync server handshake failed, error:}} "',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/text_notes.js'
+translation = [
+    'return "{{Text notes}}"',
+    '>{{Settings on this options tab are saved automatically after each change.}}<',
+    '>{{Heading style}}<',
+    '>{{Plain}}<',
+    '>{{Underline}}<',
+    '>{{Markdown-style}}<',
+    '>{{Table of contents}}<',
+    '>{{You can also use this option to effectively disable TOC by setting a very high number.}}<',
+    '{{Table of contents will appear in text notes when the note has more than a defined number of headings. You can customize this number:}}',
+    '>{{Automatic readonly size}}<',
+    '>{{Automatic readonly note size is the size after which notes will be displayed in a readonly mode (for performance reasons).}}<',
+    '>{{Automatic readonly size (text notes)}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -783,171 +947,6 @@ file_path = 'src/public/app/dialogs/move_to.js'
 translation = [
     'showMessage({{`Selected notes have been moved into ${parentNote.title}`}}',
     '    logError("{{No path to move to.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/options/code_notes.js'
-translation = [
-    '>{{Use vim keybindings in CodeNotes (no ex mode)}}<',
-    '>{{Enable Vim Keybindings}}<',
-    '>{{Available MIME types in the dropdown}}<',
-    'showMessage("{{Options change have been saved.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/options/etapi.js'
-translation = [
-    '{{ETAPI is a REST API used to access Trilium instance programmatically, without UI.}}',
-    """{{See more details on <a href="https://github.com/zadam/trilium/wiki/ETAPI">wiki</a> and <a onclick="window.open('etapi/etapi.openapi.yaml')" href="etapi/etapi.openapi.yaml">ETAPI OpenAPI spec</a>.}}""",
-    '>{{Create new ETAPI token}}<',
-    '>{{Existing tokens}}<',
-    '>{{There are no tokens yet. Click on the button above to create one.}}<',
-    '>{{Token name}}<',
-    '>{{Created}}<',
-    '>{{Actions}}<',
-    'title: "{{New ETAPI token}}"',
-    'title: "{{ETAPI token created}}"',
-    '{{Copy the created token into clipboard. Trilium stores the token hashed and this is the last time you see it.}}',
-    'title: "{{Rename token}}"',
-    'title="{{Rename this token}}"',
-    'title="{{Delete / deactive this token}}"',
-    '''message: "{{Please enter new token's name}}"''',
-    '''defaultValue: "{{new token}}"''',
-    '''    alert("{{Token name can't be empty}}"''',
-    '{{Are you sure you want to delete ETAPI token}}',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/options/credentials.js'
-translation = [
-    '>{{Username}}<',
-    '>{{Your username is}} <',
-    '>{{Change password}}<',
-    '>{{Old password}}<',
-    '>{{New password}}<',
-    '>{{New password Confirmation}}<',
-    '{{Please take care to remember your new password. Password is used to encrypt protected notes. If you forget your password, then all your protected notes are forever lost with no recovery options.}}',
-    '"{{New passwords are not the same.}}"',
-    '{{Password has been changed. Trilium will be reloaded after you press OK.}}',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/options/keyboard_shortcuts.js'
-translation = [
-    '>{{Keyboard shortcuts}}<',
-    '>{{Multiple shortcuts for the same action can be separated by comma.}}<',
-    '>{{Action name}}<',
-    '>{{Shortcuts}}<',
-    '>{{Default shortcuts}}<',
-    '>{{Description}}<',
-    '>{{Reload app to apply changes}}<',
-    '>{{Set all shortcuts to the default}}<',
-    'placeholder="{{Type text to filter shortcuts...}}"',
-    'confirmDialog.confirm("{{Do you really want to reset all keyboard shortcuts to the default?}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/options/other.js'
-translation = [
-    '>{{Spell check}}<',
-    '>{{These options apply only for desktop builds, browsers will use their own native spell check. App restart is required after change.}}<',
-    '>{{Enable spellcheck}}<',
-    '>{{Language code(s)}}<',
-    '>{{Multiple languages can be separated by comma, e.g. }}<',
-    '>{{Changes to the spell check options will take effect after application restart}}<',
-    '>{{Available language codes: }}<',
-    '>{{Images}}<',
-    '>{{Download images automatically for offline use.}}<',
-    '>{{(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)}}<',
-    '>{{Image compression}}<',
-    '>{{Enable image compression}}<',
-    '>{{Max width / height of an image in pixels (image will be resized if it exceeds this setting).}}<',
-    '>{{JPEG quality (10 - worst quality, 100 best quality, 50 - 85 is recommended)}}<',
-    '>{{Note erasure timeout}}<',
-    '>{{Erase notes after X seconds}}<',
-    '>{{You can also trigger erasing manually:}}<',
-    '>{{Erase deleted notes now}}<',
-    '>{{Protected session timeout}}<',
-    '>{{Protected session timeout (in seconds)}}<',
-    '>{{Note revisions snapshot interval}}<',
-    '>{{Note revision snapshot time interval is time in seconds after which a new note revision will be created for the note. See }}<',
-    '>{{Note revision snapshot time interval (in seconds)}}<',
-    '>{{Deleted notes (and attributes, revisions...) are at first only marked as deleted and it is possible to recover them \n    from Recent Notes dialog. After a period of time, deleted notes are "erased" which means \n    their content is not recoverable anymore. This setting allows you to configure the length \n    of the period between deleting and erasing the note.}}<',
-    "{{Protected session timeout is a time period after which the protected session is wiped from\n        the browser's memory. This is measured from the last interaction with protected notes. See}}",
-    '{{for more info.}}',
-    '>. {{Changes to the spell check options will take effect after application restart.}}<',
-    'showMessage("{{Options changed have been saved.}}"',
-    'showMessage("{{Deleted notes have been erased.}}"',
-    '>{{Automatic readonly size}}<',
-    '>{{Automatic readonly note size is the size after which notes will be displayed in a readonly mode (for performance reasons).}}<',
-    '>{{Automatic readonly size (text notes)}}<',
-    '>{{Automatic readonly size (code notes)}}<',
-    '>{{Network connections}}<',
-    '>{{Check for updates automatically}}<',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/options/password.js'
-translation = [
-    '>{{click here to reset it}}<',
-    '>{{Old password}}<',
-    '>{{New password}}<',
-    '>{{New password Confirmation}}<',
-    '>{{Change password}}<',
-    '    alert("{{Password has been reset. Please set new password}}"',
-    '    alert("{{New passwords are not the same.}}"',
-    '    alert("{{Password has been changed. Trilium will be reloaded after you press OK.}}"',
-    '{{Please take care to remember your new password. Password is used to encrypt protected notes. }}',
-    '{{If you forget your password, then all your protected notes are forever lost.}}',
-    '{{In case you did forget your password}}',
-    '"{{By resetting the password you will forever lose access to all your existing protected notes. Do you really want to reset the password?}}"',
-    "'{{Change password}}' : '{{Set password}}')",
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/options/shortcuts.js'
-translation = [
-    '>{{Keyboard shortcuts}}<',
-    '>{{Multiple shortcuts for the same action can be separated by comma.}}<',
-    '>{{Action name}}<',
-    '>{{Shortcuts}}<',
-    '>{{Default shortcuts}}<',
-    '>{{Description}}<',
-    '>{{Reload app to apply changes}}<',
-    '>{{Set all shortcuts to the default}}<',
-    'confirmDialog.confirm("{{Do you really want to reset all keyboard shortcuts to the default?}}"',
-    '{{Type text to filter shortcuts...}}',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/options/sync.js'
-translation = [
-    '>{{Sync configuration}}<',
-    '>{{Server instance address}}<',
-    '>{{Sync timeout (milliseconds)}}<',
-    '>{{Sync proxy server (optional)}}<',
-    '>{{Note:}}<',
-    '> {{If you leave the proxy setting blank, the system proxy will be used (applies to desktop/electron build only)}}<',
-    '>{{Save}}<',
-    '>{{Help}}<',
-    '>{{Sync test}}<',
-    ">{{This will test the connection and handshake to the sync server. If the sync server isn't initialized, this will set it up to sync with the local document.}}<",
-    '>{{Test sync}}<',
-    'showMessage("{{Options changed have been saved.}}"',
-    '"{{Sync server handshake failed, error:}} "',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/options/text_notes.js'
-translation = [
-    '>{{Settings on this options tab are saved automatically after each change.}}<',
-    '>{{Heading style}}<',
-    '>{{Plain}}<',
-    '>{{Underline}}<',
-    '>{{Markdown-style}}<',
-    '>{{Table of contents}}<',
-    '>{{You can also use this option to effectively disable TOC by setting a very high number.}}<',
-    '{{Table of contents will appear in text notes when the note has more than a defined number of headings. You can customize this number:}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -3188,6 +3187,7 @@ translation = [
     'description: "{{Zoom Out}}"',
     'description: "{{Zoom In}}"',
     'description: "{{Copy selected text without formatting}}"',
+    'description: "{{Force creating / saving new note revision of the active note}}",',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
