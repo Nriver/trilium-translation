@@ -14,6 +14,16 @@ Trilium Notes 交流qq群 686232370
 
 ![image](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png)
 
+# 声明
+
+Trilium Notes 汉化版目前只通过以下渠道发布:
+
+Trilium Notes 汉化版 Github代码仓库
+https://github.com/Nriver/trilium-translation
+
+Trilium Notes 汉化版 Docker镜像
+https://hub.docker.com/r/nriver/trilium-cn
+
 # 目录导航
 
 <!--ts-->
