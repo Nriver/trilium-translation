@@ -1494,4 +1494,12 @@ translation_dict = {
     'Enable Line Wrap (change might need a frontend reload to take effect)': '',
     'Tray': '',
     'Enable tray (Trilium needs to be restarted for this change to take effect)': '',
+    'Note revision has been created.': '',
+    'Switching to desktop version': '',
+    'Switching to mobile version': '',
+    'Options status': '',
+    'can be undone in recent changes': '',
+    "erase notes permanently (can't be undone), including all clones. This will force application reload.": '',
+    'No note will be deleted (only clones).': '',
+    ' (to be deleted) is referenced by relation <code>${attr.name}</code> originating from ': '',
 }

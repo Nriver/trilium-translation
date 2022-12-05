@@ -344,6 +344,11 @@ translation = [
     '    {{delete also all clones}}',
     '''title="{{Normal (soft) deletion only marks the notes as deleted and they can be undeleted (in recent changes dialog) within a period of time. Checking this option will erase the notes immediatelly and it won't be possible to undelete the notes.}}"''',
     '''        {{erase notes permanently (can't be undone). This will force application reload.}}''',
+    '{{can be undone in recent changes}}',
+    "{{erase notes permanently (can't be undone), including all clones. This will force application reload.}}",
+    '{{No note will be deleted (only clones).}}',
+    '.append(`{{Note}} `)',
+    '.append(`{{ (to be deleted) is referenced by relation <code>${attr.name}</code> originating from }}`)',
 ]
 replace_in_file(file_path, translation)
 
@@ -590,6 +595,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/dialogs/recent_changes.js'
 translation = [
     '>{{Recent changes}}<',
+    '{{Erase deleted notes now}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -815,6 +821,13 @@ translation = [
     'showMessage("{{Deleted notes have been erased.}}"',
     '>{{Network connections}}<',
     '>{{Check for updates automatically}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/dialogs/options/options_tab.js'
+translation = [
+    'title: "{{Options status}}"',
+    'message: "{{Options change have been saved.}}",',
 ]
 replace_in_file(file_path, translation)
 
@@ -1084,6 +1097,9 @@ file_path = 'src/public/app/services/entrypoints.js'
 translation = [
     "title: '{{new note}}",
     'showMessage("{{Note executed}}"',
+    '{{Note revision has been created.}}',
+    '"{{Switching to desktop version}}"',
+    '"{{Switching to mobile version}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -1209,13 +1225,6 @@ translation = [
     'title: "{{Open note in a new tab}}"',
     'title: "{{Open note in a new split}}"',
     'title: "{{Open note in a new window}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/services/entrypoints.js'
-translation = [
-    "title: '{{new note}}",
-    'showMessage("{{Note executed}}"',
 ]
 replace_in_file(file_path, translation)
 
