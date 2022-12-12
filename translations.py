@@ -1502,4 +1502,9 @@ translation_dict = {
     "erase notes permanently (can't be undone), including all clones. This will force application reload.": '',
     'No note will be deleted (only clones).': '',
     ' (to be deleted) is referenced by relation <code>${attr.name}</code> originating from ': '',
+    'Switch to mobile version': '',
+    'List properties': '',
+    'Start at': '',
+    'Reversed order': '',
+    'Restore default': '',
 }

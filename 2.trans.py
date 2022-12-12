@@ -1734,6 +1734,7 @@ translation = [
     '            {{Open Dev Tools}}',
     '            {{Open SQL Console}}',
     '            {{Show backend log}}',
+    '            {{Switch to mobile version}}',
     '            {{Reload frontend}}',
     'title="{{Reload can help with some visual glitches without restarting the whole app.}}"',
     '    {{Zoom}}',
@@ -2131,24 +2132,6 @@ file_path = 'src/public/app/widgets/find.js'
 translation = [
     '                {{case sensitive}}',
     '                {{match words}}',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/global_menu.js'
-translation = [
-    '    {{Options}}',
-    '    {{Open new window}}',
-    '    {{Open Dev Tools}}',
-    '    {{Open SQL Console}}',
-    '    {{Show backend log}}',
-    '    {{Reload frontend}}',
-    '    {{Toggle Zen mode}}',
-    '    {{Toggle fullscreen}}',
-    '    {{Show Help}}',
-    '    {{About Trilium Notes}}',
-    '    {{Logout}}',
-    'title="{{Menu}}"',
-    'title="{{Reload can help with some visual glitches without restarting the whole app.}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -2911,6 +2894,7 @@ translation = [
     '''"Light grey":"{{Light grey}}"''',
     '''Link:"{{Link}}"''',
     '''"Link URL":"{{Link URL}}"''',
+    '''"List properties":"{{List properties}}"''',
     '''"Lower-latin":"{{Lower-latin}}"''',
     '''"Lower–roman":"{{Lower–roman}}"''',
     '''"Merge cell down":"{{Merge cell down}}"''',
@@ -2939,6 +2923,8 @@ translation = [
     '''"Resize image":"{{Resize image}}"''',
     '''"Resize image to %0":"{{Resize image to %0}}"''',
     '''"Resize image to the original size":"{{Resize image to the original size}}"''',
+    '''"Restore default":"{{Restore default}}"''',
+    '''"Reversed order":"{{Reversed order}}"''',
     '''"Rich Text Editor":"{{Rich Text Editor}}"''',
     '''"Rich Text Editor %0":"{{Rich Text Editor %0}}"''',
     '''Ridge:"{{Ridge}}"''',
@@ -2955,6 +2941,7 @@ translation = [
     '''"Split cell horizontally":"{{Split cell horizontally}}"''',
     '''"Split cell vertically":"{{Split cell vertically}}"''',
     '''Square:"{{Square}}"''',
+    '''"Start at":"{{Start at}}"''',
     '''Strikethrough:"{{Strikethrough}}"''',
     '''Style:"{{Style}}"''',
     '''Subscript:"{{Subscript}}"''',

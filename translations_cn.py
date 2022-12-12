@@ -1497,5 +1497,10 @@ translation_dict = {
     'No note will be deleted (only clones).': '没有笔记会被删除(只删除克隆).',
     ' (to be deleted) is referenced by relation <code>${attr.name}</code> originating from ': '(将被删除的笔记) 被以下关系 <code>${attr.name}</code> 引用, 来自 ',
     'Erase deleted notes now': '永久删除已删除的笔记(不可恢复)',
+    'Switch to mobile version': '切换到移动版',
+    'List properties': '列表属性',
+    'Start at': '起始数字',
+    'Reversed order': '反向',
+    'Restore default': '恢复默认',
     '': '',
 }
