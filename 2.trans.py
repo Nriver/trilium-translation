@@ -314,8 +314,8 @@ file_path = 'src/public/app/widgets/dialogs/clone_to.js'
 translation = [
     '>{{Clone notes to ...}}<',
     '>{{Notes to clone}}<',
-    '>{{Target parent note}}<',
-    '>{{Prefix (optional)}}<',
+    '    {{Target parent note}}',
+    '    {{Prefix (optional)}}',
     '>{{Clone to selected note }}<',
     '>{{enter}}<',
     'title="{{Help on links}}"',
@@ -502,7 +502,7 @@ file_path = 'src/public/app/widgets/dialogs/move_to.js'
 translation = [
     '>{{Move notes to ...}}<',
     '>{{Notes to move}}<',
-    '>{{Target parent note}}<',
+    '    {{Target parent note}}',
     '>{{Move to selected note }}<',
     '>{{enter}}<',
     '{{search for note by its name}}',
@@ -2339,6 +2339,7 @@ translation = [
     '>{{Download}}<',
     '>{{Open}}<',
     '>{{Copy to clipboard}}<',
+    '>{{Copy reference to clipboard}}<',
     '>{{Upload new revision}}<',
     "title: '{{Image}}",
     'showMessage("{{New image revision has been uploaded.}}"',
@@ -2719,6 +2720,8 @@ file_path = 'src/public/app/widgets/type_widgets/image.js'
 translation = [
     'showMessage("{{Image copied to the clipboard}}"',
     '    toastService.showAndLogError("{{Could not copy the image to clipboard.}}"',
+    '"{{Copy reference to clipboard}}"',
+    '"{{Copy image to clipboard}}"',
 ]
 replace_in_file(file_path, translation)
 

@@ -1502,5 +1502,7 @@ translation_dict = {
     'Start at': '起始数字',
     'Reversed order': '反向',
     'Restore default': '恢复默认',
+    'Copy reference to clipboard': '，复制引用到剪贴板',
+    'Copy image to clipboard': '复制图片到剪贴板',
     '': '',
 }

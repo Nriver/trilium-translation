@@ -1507,4 +1507,6 @@ translation_dict = {
     'Start at': '',
     'Reversed order': '',
     'Restore default': '',
+    'Copy reference to clipboard': '',
+    'Copy image to clipboard': '',
 }
