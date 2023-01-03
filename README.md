@@ -176,27 +176,43 @@ Wechat Pay:
 
 Thank you for your support, it fills me with determination.
 
-Thanks `tr**one` for donating 20.00 CNY!
+Thanks `t**e` for donating 20 CNY!
 
-Thanks `1*0` for donating 8.00 CNY for a MXBC milk tea!
+Thanks `1*0` for donating 8 CNY! Memo: 蜜雪冰城
 
-Thanks `**钧` for donating 38.00 CNY for a cup of coffee!
+Thanks `**钧` for donating 38 CNY! Memo: 咖啡
 
-Thanks `*风` for donating 25.00 CNY!
+Thanks `*风` for donating 25 CNY!
 
-Thanks `**进` for donating 25.00 CNY!
+Thanks `**进` for donating 25 CNY!
 
-Thanks `**甜` for donating 18.00 CNY!
+Thanks `*军` for donating 18 CNY! Memo: 七分甜
 
-Thanks `**逸` for donating 10.00 CNY!
+Thanks `**逸` for donating 10 CNY!
 
-Thanks `**恩` for donating 30.00 CNY!
+Thanks `**恩` for donating 30 CNY!
 
-Thanks `*记` for donating 10.00 CNY!
+Thanks `**莲` for donating 10 CNY!
 
-Thanks `*建` for donating 200.00 CNY!
+Thanks `**楷` for donating 5 CNY!
 
-Thanks `*称` for donating 10.00 CNY!
+Thanks `J*s` for donating 50 CNY!
+
+Thanks `*记` for donating 10 CNY! Memo: 多谢大佬的辛勤付出
+
+Thanks `*睿` for donating 5 CNY! Memo: 感谢您的自动命名工具
+
+Thanks `*建` for donating 200 CNY! Memo: trilium
+
+Thanks `*称` for donating 10 CNY!
+
+Thanks `**逸` for donating 10 CNY! Memo: 大佬牛逼
+
+Thanks `*斌` for donating 10 CNY!
+
+Thanks `*僧` for donating 30 CNY! Memo: 加油，老哥！
+
+Thanks `*天` for donating 9 CNY!
 
 Thanks for the greate IDE Pycharm from Jetbrains.
 
