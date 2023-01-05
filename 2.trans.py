@@ -82,17 +82,18 @@ with open(about_file_path, 'r') as f:
 with open(about_file_path, 'w') as f:
     f.write(content)
 
-# 修复flex布局下部分界面中文自动换行的问题
-# 选项界面
-file_path = 'src/public/app/widgets/dialogs/options.js'
-with open(file_path, 'r') as f:
-    content = f.read()
-    target_element = '<ul class="nav nav-tabs flex-column">'
-    if target_element in content:
-        content = content.replace('<ul class="nav nav-tabs flex-column">',
-                                  '<ul class="nav nav-tabs flex-column" style="white-space: nowrap;">')
-with open(file_path, 'w') as f:
-    f.write(content)
+# Removed in 0.58.2
+# # 修复flex布局下部分界面中文自动换行的问题
+# # 选项界面
+# file_path = 'src/public/app/widgets/dialogs/options.js'
+# with open(file_path, 'r') as f:
+#     content = f.read()
+#     target_element = '<ul class="nav nav-tabs flex-column">'
+#     if target_element in content:
+#         content = content.replace('<ul class="nav nav-tabs flex-column">',
+#                                   '<ul class="nav nav-tabs flex-column" style="white-space: nowrap;">')
+# with open(file_path, 'w') as f:
+#     f.write(content)
 
 # 修复受保护的会话输入密码框样式
 file_path = 'src/public/app/widgets/dialogs/protected_session_password.js'
@@ -105,16 +106,17 @@ with open(file_path, 'r') as f:
 with open(file_path, 'w') as f:
     f.write(content)
 
-# 修复设置界面样式
-file_path = 'src/public/app/widgets/dialogs/options.js'
-with open(file_path, 'r') as f:
-    content = f.read()
-    target_element = '                    <br/>\n                    <div class="tab-content">'
-    if target_element in content:
-        content = content.replace('                    <br/>\n                    <div class="tab-content">',
-                                  '                    <br/>\n                    <div class="tab-content" style="width: -webkit-fill-available">')
-with open(file_path, 'w') as f:
-    f.write(content)
+# Removed in 0.58.2
+# # 修复设置界面样式
+# file_path = 'src/public/app/widgets/dialogs/options.js'
+# with open(file_path, 'r') as f:
+#     content = f.read()
+#     target_element = '                    <br/>\n                    <div class="tab-content">'
+#     if target_element in content:
+#         content = content.replace('                    <br/>\n                    <div class="tab-content">',
+#                                   '                    <br/>\n                    <div class="tab-content" style="width: -webkit-fill-available">')
+# with open(file_path, 'w') as f:
+#     f.write(content)
 
 # 升级属性
 file_path = 'src/public/app/widgets/ribbon_widgets/promoted_attributes.js'
@@ -547,24 +549,25 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options.js'
-translation = [
-    '>{{Options}}<',
-    '>{{Appearance}}<',
-    '>{{Shortcuts}}<',
-    '>{{Keyboard shortcuts}}<',
-    '>{{Text notes}}<',
-    '>{{Code notes}}<',
-    # removed from 0.50
-    # '>{{Username & password}}<',
-    '>{{Password}}<',
-    '>{{ETAPI}}<',
-    '>{{Backup}}<',
-    '>{{Sync}}<',
-    '>{{Other}}<',
-    '>{{Advanced}}<',
-]
-replace_in_file(file_path, translation)
+# Removed in 0.58.2
+# file_path = 'src/public/app/widgets/dialogs/options.js'
+# translation = [
+#     '>{{Options}}<',
+#     '>{{Appearance}}<',
+#     '>{{Shortcuts}}<',
+#     '>{{Keyboard shortcuts}}<',
+#     '>{{Text notes}}<',
+#     '>{{Code notes}}<',
+#     # removed from 0.50
+#     # '>{{Username & password}}<',
+#     '>{{Password}}<',
+#     '>{{ETAPI}}<',
+#     '>{{Backup}}<',
+#     '>{{Sync}}<',
+#     '>{{Other}}<',
+#     '>{{Advanced}}<',
+# ]
+# replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/dialogs/password_not_set.js'
 translation = [
