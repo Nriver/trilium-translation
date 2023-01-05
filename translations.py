@@ -1387,6 +1387,7 @@ translation_dict = {
     'Canvas': '',
     'Download images automatically for offline use.': '',
     'Images': '',
+    '(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)': '',
     'Protected notes are encrypted using a user password, but password has not been set yet.': '',
     'To be able to protect notes, <a id="open-password-options-button" href="javascript:">
                     click here to open the Options dialog</a> and set your password.': '',

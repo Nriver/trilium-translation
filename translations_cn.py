@@ -1379,7 +1379,7 @@ translation_dict = {
     'Canvas': '画布',
     'Download images automatically for offline use.': '自动下载图片以便于离线使用.',
     'Images': '图片',
-    # '(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)': '(粘贴的HTML可能包含在线图片的引用, Trilium会找到并下载这些图片用于离线使用)',
+    '(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)': '(粘贴的HTML可能包含在线图片的引用, Trilium会找到并下载这些图片用于离线使用)',
     'Protected notes are encrypted using a user password, but password has not been set yet.': '受保护的笔记使用用户密码进行加密，但是目前没有设置密码.',
     'To be able to protect notes, <a id="open-password-options-button" href="javascript:">\n                    click here to open the Options dialog</a> and set your password.': '想要保护笔记<a id="open-password-options-button" href="javascript:">点击这里打开设置窗口</a>并设置你的密码.',
     "DB schema does not exist, can't sync.": '数据库不存在, 无法同步.',
