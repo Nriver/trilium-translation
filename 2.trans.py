@@ -3296,6 +3296,87 @@ translation = [
 replace_in_file(file_path, translation)
 replace_in_file(file_path, translation, TARGET_PATH)
 
+# 0.58.2 doc_notes
+file_path = 'src/public/app/doc_notes/hidden.html'
+translation = [
+    '>{{Hidden tree is used to record various application-level data which can stay most of the time hidden from the user view.}}<',
+    ">{{Make sure you know what you're doing. Incorrect changes in this subtree might potentially crash the application.}}<",
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/public/app/doc_notes/launchbar_command_launcher.html'
+translation = [
+    '>{{Keyboard launcher for this launcher action can be configured in Options -> Launchers.}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/public/app/doc_notes/launchbar_intro.html'
+translation = [
+    '>{{Welcome to the Launchbar configuration.}}<',
+    '>{{You can do the following things here:}}<',
+    '>{{Move available launchers to the visible list (thus putting them into the launchbar) by dragging them}}<',
+    '>{{Move visible launchers to the available list (thus hiding them from the launchbar) by dragging them}}<',
+    '>{{You can reorder the items in the lists by dragging}}<',
+    '>{{You can create new launchers by right-clicking on the "Visible launchers" folder}}<',
+    '>{{If you want to get back to the default setup, you can find "reset" in the context menu.}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/public/app/doc_notes/launchbar_note_launcher.html'
+translation = [
+    '>{{You can define the following attributes:}}<',
+    # '>{{target}}<',
+    '>{{ - note which should be opened upon activating the launcher}}<',
+    # '>{{hoistedNote}}<',
+    '>{{ - optional, will change the hoisted note before opening the target note}}<',
+    # '>{{keyboardLauncher}}<',
+    '>{{ - optional, pressing the keyboard launcher will open the note}}<',
+    '>{{Launchbar displays the title / icon from the launcher which does not necessarily mirrors those of the target note.}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/public/app/doc_notes/launchbar_script_launcher.html'
+translation = [
+    '>{{Script launcher can execute a script (code note) connected via }}<',
+    # '>{{~script}}<',
+    '>{{ relation.}}<',
+    # '>{{script}}<',
+    '>{{ - relation to the script note which should be executed upon launcher activation}}<',
+    # '>{{keyboardLauncher}}<',
+    '>{{ - optional, pressing the keyboard launcher will activate the launcher}}<',
+    '>{{Example script}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/public/app/doc_notes/launchbar_spacer.html'
+translation = [
+    '>{{Spacer allows you to visually group launchers. You can configure it in the promoted attributes:}}<',
+    # '>{{baseSize}}<',
+    ">{{ - defines size in pixels (if there's enough space)}}<",
+    # '>{{growthFactor}}<',
+    '>{{ - set to 0 if you want the spacer to be of constant <code>baseSize</code>, with positive value it will grow.}}',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/public/app/doc_notes/launchbar_widget_launcher.html'
+translation = [
+    '>{{Please define the target widget note in the promoted attributes. The widget will be used to render the launchbar icon.}}<',
+    '>{{Example launchbar widget}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/public/app/doc_notes/share.html'
+translation = [
+    '>{{Here you can find all shared notes.}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/public/app/doc_notes/user_hidden.html'
+translation = [
+    '>{{This note serves as a subtree reserved for data produced by user scripts which should otherwise not freely create data in the hidden subtree.}}<',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
 # 0.52
 # 使用 Excalidraw 内置的语言文件
 # use Excalidraw built-in language file
@@ -3333,6 +3414,9 @@ os.mkdir(PATCH_FOLDER)
 # src/public 目录下的要用node重新编译的文件
 # src/public requires recompiled file with nodejs
 shutil.copytree(f'{BASE_PATH}src/public/app-dist', f'{PATCH_FOLDER}/src/public/app-dist')
+# doc notes
+shutil.copytree(f'{BASE_PATH}src/public/app/doc_notes',
+                f'{PATCH_FOLDER}/src/public/app-dist/doc_notes/')
 
 # 其它目录直接用release版本的
 # others can use the release client's file directly
