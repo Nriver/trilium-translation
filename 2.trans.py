@@ -301,6 +301,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/dialogs/bulk_actions.js'
 translation = [
+    '>{{Bulk actions}}<',
     '>{{Bulk assign attributes}}<',
     '>{{Affected notes: }}<',
     '                        {{Include descendants of the selected notes}}',
@@ -333,6 +334,7 @@ translation = [
     '>{{Confirmation}}<',
     '>{{Cancel}}<',
     '>{{OK}}<',
+    '''.attr("title", "{{If you don't check this, the note will be only removed from the relation map.}}")''',
 ]
 replace_in_file(file_path, translation)
 
@@ -366,6 +368,9 @@ translation = [
     '>{{Export}}<',
     '{{this preserves most of the formatting.}}',
     '{{outliner interchange format for text only. Formatting, images and files are not included.}}',
+    'title: "{{Export status}}"',
+    'showError("{{Choose export type first please}}"',
+    'throw new Error(`{{Unrecognized type ${defaultType}}}`',
 ]
 replace_in_file(file_path, translation)
 
@@ -647,106 +652,120 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/advanced.js'
+file_path = 'src/public/app/widgets/type_widgets/options/advanced/consistency_checks.js'
 translation = [
-    'return "{{Advanced}}"',
-    '>{{Sync}}<',
-    '>{{Force full sync}}<',
-    '>{{Fill entity changes records}}<',
-    '>{{Database integrity check}}<',
-    '>{{This will check that the database is not corrupted on the SQLite level. It might take some time, depending on the DB size.}}<',
-    '>{{Check database integrity}}<',
     '>{{Consistency checks}}<',
     '>{{Find and fix consistency issues}}<',
-    '>{{Anonymize database}}<',
-    '>{{Full anonymization}}<',
-    '>{{Save fully anonymized database}}<',
-    '>{{Light anonymization}}<',
-    '>{{This action will create a new copy of the database and do a light anonymization on it - specifically only content of all notes will be removed, but titles and attributes will remain. Additionally, custom JS frontend/backend script notes and custom widgets will remain. This provides more context to debug the issues.}}<',
-    '>{{You can decide yourself if you want to provide fully or lightly anonymized database. Even fully anonymized DB is very useful, however in some cases lightly anonymized database can speed up the process of bug identification and fixing.}}<',
-    '>{{Save lightly anonymized database}}<',
-    '>{{Save anonymized database}}<',
-    '>{{Backup database}}<',
-    '>{{Trilium has automatic backup (daily, weekly, monthly), but you can also trigger a manual backup here.}}<',
-    '>{{Backup database now}}<',
-    '>{{Vacuum database}}<',
-    '>{{This will rebuild the database which will typically result in a smaller database file. No data will be actually changed.}}<',
-    '>{{Vacuum database}}<',
-    '{{This action will create a new copy of the database and anonymize it}}',
-    '{{remove all note content and leave only structure and some non-sensitive metadata}}',
-    '{{for sharing online for debugging purposes without fear of leaking your personal data.}}',
-    'showMessage({{`Created fully anonymized database in ${resp.anonymizedFilePath}`}}',
-    'showMessage({{`Created lightly anonymized database in ${resp.anonymizedFilePath}`}}',
-    'showMessage("{{Full sync triggered}}"',
-    'showMessage("{{Filling entity changes rows...}}"',
-    'showMessage("{{Sync rows filled successfully}}"',
-    'showMessage("{{Database has been backed up to }}"',
-    'showMessage("{{Creating fully anonymized database...}}"',
-    'showMessage("{{Creating lightly anonymized database...}}"',
-    'showMessage("{{Vacuuming database...}}"',
-    'showMessage("{{Database has been vacuumed}}"',
     'showMessage("{{Finding and fixing consistency issues...}}"',
     'showMessage("{{Consistency issues should be fixed.}}"',
-    'showMessage("{{Checking database integrity...}}"',
-    'showError("{{Could not create anonymized database, check backend logs for details}}"',
-    'showMessage("{{Integrity check succeeded - no problems found.}}"',
-    'showMessage("{{Integrity check failed: }}"',
-    'showMessage({{`Created anonymized database in ${resp.anonymizedFilePath}`}}',
-
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/appearance.js'
+file_path = 'src/public/app/widgets/type_widgets/options/advanced/database_anonymization.js'
 translation = [
-    'return "{{Appearance}}"',
-    '>{{Theme}}<',
-    '{{Settings on this options tab are saved automatically after each change.}}',
-    '>{{Zoom factor (desktop build only)}}<',
-    '>{{Native title bar (requires app restart)}}<',
-    '>{{enabled}}<',
-    '>{{disabled}}<',
-    '>{{Heading style}}<',
-    '>{{Zooming can be controlled with CTRL+- and CTRL+= shortcuts as well.}}<',
-    '>{{Font sizes}}<',
-    '>{{Main font size}}<',
-    '>{{Note tree font size}}<',
-    '>{{Note detail font size}}<',
-    '>{{Note that tree and detail font sizing is relative to the main font size setting.}}<',
-    "title: '{{White}}'",
-    "title: '{{Dark}}'",
-    "title: '{{Black}}'",
-    '>{{Plain}}<',
-    '>{{Markdown-style}}<',
-    '>{{Underline}}<',
-    '>{{Override theme fonts}}<',
+    '>{{Database anonymization}}<',
+    '>{{Full anonymization}}<',
+    '>{{Save fully anonymized database}}<',
+    '>{{Light anonymization}}<',
+    '>{{This action will create a new copy of the database and anonymize it (remove all note content and leave only structure and some non-sensitive metadata)\n        for sharing online for debugging purposes without fear of leaking your personal data.}}<',
+    '>{{You can decide yourself if you want to provide fully or lightly anonymized database. Even fully anonymized DB is very useful, however in some cases lightly anonymized database can speed up the process of bug identification and fixing.}}<',
+    '>{{Save lightly anonymized database}}<',
+    'showMessage(`{{Created fully anonymized database in ${resp.anonymizedFilePath}`}}',
+    'showMessage(`{{Created lightly anonymized database in ${resp.anonymizedFilePath}`}}',
+    'showMessage("{{Creating fully anonymized database...}}"',
+    'showMessage("{{Creating lightly anonymized database...}}"',
+    'showError("{{Could not create anonymized database, check backend logs for details}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/advanced/database_integrity_check.js'
+translation = [
+    '>{{Database integrity check}}<',
+    '>{{This will check that the database is not corrupted on the SQLite level. It might take some time, depending on the DB size.}}<',
+    '>{{Check database integrity}}<',
+    'showMessage(`{{Integrity check failed: ${JSON.stringify(results, null, 2)}}}`',
+    'showMessage("{{Checking database integrity...}}"',
+    'showMessage("{{Integrity check succeeded - no problems found.}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/advanced/sync.js'
+translation = [
+    '>{{Sync}}<',
+    '>{{Force full sync}}<',
+    '>{{Fill entity changes records}}<',
+    'showMessage("{{Full sync triggered}}"',
+    'showMessage("{{Filling entity changes rows...}}"',
+    'showMessage("{{Sync rows filled successfully}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/advanced/vacuum_database.js'
+translation = [
+    '>{{Vacuum database}}<',
+    '>{{This will rebuild the database which will typically result in a smaller database file. No data will be actually changed.}}<',
+    'showMessage("{{Vacuuming database...}}"',
+    'showMessage("{{Database has been vacuumed}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/appearance/fonts.js'
+translation = [
     '>{{Fonts}}<',
     '>{{Main font}}<',
     '>{{Font family}}<',
     '>{{Size}}<',
-    '>{{%}}<',
     '>{{Note tree font}}<',
     '>{{Note detail font}}<',
-    '>{{Monospace font}}<',
+    '>{{Monospace (code) font}}<',
+    '>{{Note that tree and detail font sizing is relative to the main font size setting.}}<',
     '>{{Not all listed fonts may be available on your system.}}<',
     '>{{reload frontend}}<',
-    "title: '{{Light}}",
-    '"{{Theme defined}}"',
-    '>{{Content width}}<',
-    '>{{Trilium by default limits max content width to improve readability for maximized screens on wide screens.}}<',
-    '>{{Max content width in pixels}}<',
-    '{{To content width changes, click on}}',
-    '{{To apply font changes, click on}}',
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/backup.js'
+file_path = 'src/public/app/widgets/type_widgets/options/appearance/max_content_width.js'
+translation = [
+    '>{{Content width}}<',
+    '>{{Trilium by default limits max content width to improve readability for maximized screens on wide screens.}}<',
+    '>{{Max content width in pixels}}<',
+    '>{{reload frontend}}<',
+    '{{To apply content width changes, click on}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/appearance/native_title_bar.js'
+translation = [
+    '>{{Native title bar (requires app restart)}}<',
+    '>{{enabled}}<',
+    '>{{disabled}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/appearance/theme.js'
+translation = [
+    '>{{Theme}}<',
+    '>{{Override theme fonts}}<',
+    "title: '{{Light}}",
+    "title: '{{Dark}}",
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/appearance/zoom_factor.js'
+translation = [
+    '>{{Zoom factor (desktop build only)}}<',
+    '>{{Zooming can be controlled with CTRL+- and CTRL+= shortcuts as well.}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/backup.js'
 translation = [
     'return "{{Backup}}"',
     '>{{Automatic backup}}<',
     '>{{Trilium can back up the database automatically:}}<',
-    '>{{Enable daily backup}}<',
-    '>{{Enable weekly backup}}<',
-    '>{{Enable monthly backup}}<',
+    '    {{Enable daily backup}}',
+    '    {{Enable weekly backup}}',
+    '    {{Enable monthly backup}}',
     '''>{{It's recommended to keep the backup turned on, but this can make application startup slow with large databases and/or slow storage devices.}}<''',
     '>{{Backup now}}<',
     '>{{Backup database now}}<',
@@ -755,23 +774,35 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/code_notes.js'
+file_path = 'src/public/app/widgets/type_widgets/options/code_notes/code_auto_read_only_size.js'
 translation = [
-    'return "{{Code notes}}"',
-    '>{{Use vim keybindings in code notes (no ex mode)}}<',
-    '>{{Enable Vim Keybindings}}<',
+    '>{{Automatic read-only size}}<',
+    '>{{Automatic read-only note size is the size after which notes will be displayed in a read-only mode (for performance reasons).}}<',
+    '>{{Automatic read-only size (code notes)}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/code_notes/code_mime_types.js'
+translation = [
     '>{{Available MIME types in the dropdown}}<',
-    'showMessage("{{Options change have been saved.}}"',
-    '>{{Automatic readonly size}}<',
-    '>{{Automatic readonly note size is the size after which notes will be displayed in a readonly mode (for performance reasons).}}<',
-    '>{{Automatic readonly size (text notes)}}<',
-    '>{{Automatic readonly size (code notes)}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/code_notes/vim_key_bindings.js'
+translation = [
+    '>{{Use vim keybindings in code notes (no ex mode)}}<',
+    '{{Enable Vim Keybindings}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/code_notes/wrap_lines.js'
+translation = [
     '>{{Wrap lines in code notes}}<',
     '{{Enable Line Wrap (change might need a frontend reload to take effect)}}',
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/etapi.js'
+file_path = 'src/public/app/widgets/type_widgets/options/etapi.js'
 translation = [
     '{{ETAPI is a REST API used to access Trilium instance programmatically, without UI.}}',
     """{{See more details on <a href="https://github.com/zadam/trilium/wiki/ETAPI">wiki</a> and <a onclick="window.open('etapi/etapi.openapi.yaml')" href="etapi/etapi.openapi.yaml">ETAPI OpenAPI spec</a>.}}""",
@@ -794,47 +825,60 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/images.js'
+file_path = 'src/public/app/widgets/type_widgets/options/images.js'
 translation = [
-    'return "{{Images}}"',
     '>{{Images}}<',
-    '>{{Download images automatically for offline use.}}<',
-    '>{{(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)}}<',
-    '>{{Image compression}}<',
-    '>{{Enable image compression}}<',
+    '{{Download images automatically for offline use.}}',
+    # '>{{(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)}}<',
+    '{{Enable image compression}}',
     '>{{Max width / height of an image in pixels (image will be resized if it exceeds this setting).}}<',
     '>{{JPEG quality (10 - worst quality, 100 best quality, 50 - 85 is recommended)}}<',
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/other.js'
+file_path = 'src/public/app/widgets/type_widgets/options/options_widget.js'
 translation = [
-    'return "{{Other}}"',
-    '>{{Tray}}<',
-    '>{{Enable tray (Trilium needs to be restarted for this change to take effect)}}<',
+    'title: "{{Options status}}"',
+    'message: "{{Options change have been saved.}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/other/network_connections.js'
+translation = [
+    '>{{Network connections}}<',
+    '{{Check for updates automatically}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/other/note_erasure_timeout.js'
+translation = [
     '>{{Note erasure timeout}}<',
     '>{{Erase notes after X seconds}}<',
     '>{{You can also trigger erasing manually:}}<',
     '>{{Erase deleted notes now}}<',
+    'showMessage("{{Deleted notes have been erased.}}"',
+    '{{Deleted notes (and attributes, revisions...) are at first only marked as deleted and it is possible to recover them \n    from Recent Notes dialog. After a period of time, deleted notes are "erased" which means \n    their content is not recoverable anymore. This setting allows you to configure the length \n    of the period between deleting and erasing the note.}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/other/note_revisions_snapshot_interval.js'
+translation = [
     '>{{Note revisions snapshot interval}}<',
     '>{{Note revision snapshot time interval is time in seconds after which a new note revision will be created for the note. See }}<',
+    '>{{wiki}}<',
+    '>{{ for more info.}}<',
     '>{{Note revision snapshot time interval (in seconds)}}<',
-    '>{{Deleted notes (and attributes, revisions...) are at first only marked as deleted and it is possible to recover them \n    from Recent Notes dialog. After a period of time, deleted notes are "erased" which means \n    their content is not recoverable anymore. This setting allows you to configure the length \n    of the period between deleting and erasing the note.}}<',
-    'showMessage("{{Options changed have been saved.}}"',
-    'showMessage("{{Deleted notes have been erased.}}"',
-    '>{{Network connections}}<',
-    '>{{Check for updates automatically}}<',
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/options_tab.js'
+file_path = 'src/public/app/widgets/type_widgets/options/other/tray.js'
 translation = [
-    'title: "{{Options status}}"',
-    'message: "{{Options change have been saved.}}",',
+    '>{{Tray}}<',
+    '{{Enable tray (Trilium needs to be restarted for this change to take effect)}}',
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/password.js'
+file_path = 'src/public/app/widgets/type_widgets/options/password.js'
 translation = [
     'return "{{Password}}"',
     '>{{click here to reset it}}<',
@@ -857,7 +901,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/shortcuts.js'
+file_path = 'src/public/app/widgets/type_widgets/options/shortcuts.js'
 translation = [
     'return "{{Shortcuts}}"',
     '>{{Keyboard shortcuts}}<',
@@ -874,12 +918,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/spellcheck.js'
+file_path = 'src/public/app/widgets/type_widgets/options/spellcheck.js'
 translation = [
     'return "{{Spellcheck}}"',
     '>{{Spell check}}<',
     '>{{These options apply only for desktop builds, browsers will use their own native spell check. App restart is required after change.}}<',
-    '>{{Enable spellcheck}}<',
+    '{{Enable spellcheck}}',
     '>{{Language code(s)}}<',
     '>{{Multiple languages can be separated by comma, e.g. }}<',
     '>{{Available language codes: }}<',
@@ -887,7 +931,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/sync.js'
+file_path = 'src/public/app/widgets/type_widgets/options/sync.js'
 translation = [
     'return "{{Sync}}"',
     '>{{Sync configuration}}<',
@@ -906,20 +950,28 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/options/text_notes.js'
+file_path = 'src/public/app/widgets/type_widgets/options/text_notes/heading_style.js'
 translation = [
-    'return "{{Text notes}}"',
-    '>{{Settings on this options tab are saved automatically after each change.}}<',
     '>{{Heading style}}<',
     '>{{Plain}}<',
     '>{{Underline}}<',
     '>{{Markdown-style}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/text_notes/table_of_contents.js'
+translation = [
     '>{{Table of contents}}<',
-    '>{{You can also use this option to effectively disable TOC by setting a very high number.}}<',
     '{{Table of contents will appear in text notes when the note has more than a defined number of headings. You can customize this number:}}',
-    '>{{Automatic readonly size}}<',
-    '>{{Automatic readonly note size is the size after which notes will be displayed in a readonly mode (for performance reasons).}}<',
-    '>{{Automatic readonly size (text notes)}}<',
+    '>{{You can also use this option to effectively disable TOC by setting a very high number.}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/text_notes/text_auto_read_only_size.js'
+translation = [
+    '>{{Automatic read-only size}}<',
+    '>{{Automatic read-only note size is the size after which notes will be displayed in a read-only mode (for performance reasons).}}<',
+    '>{{Automatic read-only size (text notes)}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -1223,7 +1275,22 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/services/link_context_menu.js'
+file_path = 'src/public/app/menus/launcher_context_menu.js'
+translation = [
+    "title: '{{Add a note launcher}}",
+    "title: '{{Add a script launcher}}",
+    "title: '{{Add a custom widget}}",
+    "title: '{{Add spacer}}",
+    "title: '{{Delete }}",
+    "title: '{{Reset}}",
+    "title: '{{Move to visible launchers}}",
+    "title: '{{Move to available launchers}}",
+    'title: `{{Duplicate launcher <kbd data-command="duplicateSubtree">}}`',
+    '`{{Do you really want to reset "${this.node.title}"? \n                       All data / settings in this note (and its children) will be lost \n                       and the launcher will be returned to its original location.}}`',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/menus/link_context_menu.js'
 translation = [
     'title: "{{Open note in a new tab}}"',
     'title: "{{Open note in a new split}}"',
@@ -1336,7 +1403,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/services/tree_context_menu.js'
+file_path = 'src/public/app/menus/tree_context_menu.js'
 translation = [
     '>{{Ctrl+Click}}<',
     '"{{Info}}"',
@@ -1733,17 +1800,23 @@ file_path = 'src/public/app/widgets/buttons/global_menu.js'
 translation = [
     'title="{{Menu}}"',
     '            {{Options}}',
-    '            {{Open new window}}',
+    '            {{Open New Window}}',
     '            {{Open Dev Tools}}',
     '            {{Open SQL Console}}',
-    '            {{Show backend log}}',
-    '            {{Switch to mobile version}}',
-    '            {{Reload frontend}}',
+    '            {{Show Backend Log}}',
+    '            {{Open Search History}}',
+    '            {{Switch to Mobile Version}}',
+    '            {{Switch to Desktop Version}}',
+    '            {{Configure Launchbar}}',
+    '            {{Show Shared Notes Subtree}}',
+    '            {{Advanced}}',
+    '            {{Reload Frontend}}',
+    '            {{Show Hidden Subtree}}',
     'title="{{Reload can help with some visual glitches without restarting the whole app.}}"',
     '    {{Zoom}}',
-    'title="{{Zoom out}}"',
-    'title="{{Zoom in}}"',
-    '            {{Toggle fullscreen}}',
+    'title="{{Zoom Out}}"',
+    'title="{{Zoom In}}"',
+    '            {{Toggle Fullscreen}}',
     '            {{Show Help}}',
     '            {{About Trilium Notes}}',
     '            {{Logout}}',
@@ -1760,6 +1833,12 @@ translation = [
     '>{{Export note}}<',
     '>{{Delete note}}<',
     '>{{ Print note}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/note_revisions_button.js'
+translation = [
+    'title("{{Note Revisions}}")',
 ]
 replace_in_file(file_path, translation)
 
@@ -2010,7 +2089,7 @@ translation = [
     '>{{Ancestor:}}<',
     '{{search for note by its name}}',
     '>{{depth:}}<',
-    ">{{doesn't mattter}}<",
+    ">{{doesn't matter}}<",
     '>{{is exactly 1 (direct children)}}<',
     '>{{is exactly 2}}<',
     '>{{is exactly 3}}<',
@@ -2131,6 +2210,21 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/floating_buttons/code_buttons.js'
+translation = [
+    'title="{{Execute script}}"',
+    'title="{{Open Trilium API docs}}"',
+    'showMessage(`{{SQL Console note has been saved into ${await treeService.getNotePathTitle(notePath)}}}`',
+    'showMessage("{{Opening API docs...}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/floating_buttons/hide_floating_buttons_button.js'
+translation = [
+    'title="{{Hide buttons}}"',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/find.js'
 translation = [
     '                {{case sensitive}}',
@@ -2147,7 +2241,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/mermaid.js'
 translation = [
-    '>{{The diagram could not displayed. See }}<',
+    '>{{The diagram could not be displayed. See }}<',
     '>{{help and examples}}<',
 ]
 replace_in_file(file_path, translation)
@@ -2247,6 +2341,9 @@ translation = [
     # capital letter!
     'title: "{{Saved Search}}"',
     'title: "{{Note Map}}"',
+    'title: "{{Launcher}}"',
+    'title: "{{Doc}}"',
+    'title: "{{Widget}}"',
     'title: "{{Text}}"',
     'title: "{{Relation Map}}"',
     'title: "{{Render Note}}"',
@@ -2286,7 +2383,7 @@ translation = [
     # 0.48
     '>{{ Searching ...}}<',
     '>{{No results found}}<',
-    '>{{... and ${resultNoteIds.length - MAX_DISPLAYED_NOTES} more results.}}<',
+    '>{{... and ${searchResultNoteIds.length - MAX_DISPLAYED_NOTES} more results.}}<',
     '>{{Show in full search}}<',
     '"{{Quick search}}"',
 ]
@@ -2309,6 +2406,8 @@ translation = [
     'title="{{Expand all children}}"',
     "title: '{{Book Properties}}",
     'throw new Error(`{{Invalid view type ${type}}}`',
+    '    {{Collapse}}',
+    '    {{Expand}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -2421,7 +2520,7 @@ translation = [
     'title="{{Limit number of results}}"',
     'title="{{Debug will print extra debugging information into the console to aid in debugging complex queries}}"',
     "title: '{{Search parameters}}",
-    'showMessage("{{Search note has been saved into }}"',
+    'showMessage("{{Search note has been saved into }}',
     "showMessage('{{Actions have been executed.}}'",
     '    logError(`{{Unknown search option ${searchOptionName}}}`',
     """    logError(`{{Parsing of attribute: '${actionAttr.value}' failed with error: ${e.message}}}`""",
@@ -2523,6 +2622,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/spacer.js'
+translation = [
+    'title: "{{Configure Launchbar}}"',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/standard_top_widget.js'
 translation = [
     '    {{New note}}',
@@ -2578,6 +2683,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/type_widgets/content/backend_log.js'
+translation = [
+    '>{{Refresh}}<',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/type_widgets/book.js'
 translation = [
     """{{This note of type Book doesn't have any child notes so there's nothing to display. See <a href="https://github.com/zadam/trilium/wiki/Book-note">wiki</a> for details.}}""",
@@ -2624,14 +2735,6 @@ translation = [
     '{{File preview is not available for this file format.}}',
 ]
 
-replace_in_file(file_path, translation)
-file_path = 'src/public/app/widgets/type_widgets/image.js'
-translation = [
-    'showMessage("{{Image copied to the clipboard}}"',
-    '    toastService.showAndLogError("{{Could not copy the image to clipboard.}}"',
-    '"{{Copy reference to clipboard}}"',
-    '"{{Copy image to clipboard}}"',
-]
 replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/protected_session.js'
@@ -2930,6 +3033,55 @@ replace_in_file(file_path, translation, TARGET_PATH)
 file_path = 'src/services/export/zip.js'
 translation = [
     r'''`<p>{{This is a clone of a note. Go to its <a href="${targetUrl}">primary location</a>.}}</p>`''',
+]
+replace_in_file(file_path, translation, TARGET_PATH)
+
+file_path = 'src/services/hidden_subtree.js'
+translation = [
+    '''title: "{{Open Today's Journal Note}}"''',
+    "title: '{{Hidden Notes}}",
+    "title: '{{Search History}}",
+    "title: '{{Note Map}}",
+    "title: '{{SQL Console History}}",
+    "title: '{{Shared Notes}}",
+    "title: '{{Bulk Action}}",
+    "title: '{{Backend Log}}",
+    "title: '{{User Hidden}}",
+    "title: '{{Launch Bar Templates}}",
+    "title: '{{Base Abstract Launcher}}",
+    "title: '{{Command Launcher}}",
+    "title: '{{Note Launcher}}",
+    "title: '{{Script Launcher}}",
+    "title: '{{Built-in Widget}}",
+    "title: '{{Spacer}}",
+    "title: '{{Custom Widget}}",
+    "title: '{{Launch Bar}}",
+    "title: '{{Available Launchers}}",
+    "title: '{{Go to Previous Note}}",
+    "title: '{{Go to Next Note}}",
+    "title: '{{Visible Launchers}}",
+    "title: '{{New Note}}",
+    "title: '{{Search Notes}}",
+    "title: '{{Jump to Note}}",
+    "title: '{{Calendar}}",
+    "title: '{{Recent Changes}}",
+    "title: '{{Bookmarks}}",
+    "title: '{{Protected Session}}",
+    "title: '{{Sync Status}}",
+    "title: '{{Options}}",
+    "title: '{{Appearance}}",
+    "title: '{{Shortcuts}}",
+    "title: '{{Text Notes}}",
+    "title: '{{Code Notes}}",
+    "title: '{{Images}}",
+    "title: '{{Spellcheck}}",
+    "title: '{{Password}}",
+    "title: '{{ETAPI}}",
+    "title: '{{Backup}}",
+    "title: '{{Sync}}",
+    "title: '{{Other}}",
+    "title: '{{Advanced}}",
+    '',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
