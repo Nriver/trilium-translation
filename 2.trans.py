@@ -667,7 +667,7 @@ translation = [
     '>{{Full anonymization}}<',
     '>{{Save fully anonymized database}}<',
     '>{{Light anonymization}}<',
-    '>{{This action will create a new copy of the database and anonymize it (remove all note content and leave only structure and some non-sensitive metadata)\n        for sharing online for debugging purposes without fear of leaking your personal data.}}<',
+    '>{{This action will create a new copy of the database and do a light anonymization on it - specifically only content of all notes will be removed, but titles and attributes will remain. Additionally, custom JS frontend/backend script notes and custom widgets will remain. This provides more context to debug the issues.}}<',
     '>{{You can decide yourself if you want to provide fully or lightly anonymized database. Even fully anonymized DB is very useful, however in some cases lightly anonymized database can speed up the process of bug identification and fixing.}}<',
     '>{{Save lightly anonymized database}}<',
     'showMessage(`{{Created fully anonymized database in ${resp.anonymizedFilePath}`}}',
@@ -829,7 +829,7 @@ file_path = 'src/public/app/widgets/type_widgets/options/images.js'
 translation = [
     '>{{Images}}<',
     '{{Download images automatically for offline use.}}',
-    # '>{{(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)}}<',
+    '>{{(pasted HTML can contain references to online images, Trilium will find those references and download the images so that they are available offline)}}<',
     '{{Enable image compression}}',
     '>{{Max width / height of an image in pixels (image will be resized if it exceeds this setting).}}<',
     '>{{JPEG quality (10 - worst quality, 100 best quality, 50 - 85 is recommended)}}<',
@@ -3302,13 +3302,13 @@ translation = [
     '>{{Hidden tree is used to record various application-level data which can stay most of the time hidden from the user view.}}<',
     ">{{Make sure you know what you're doing. Incorrect changes in this subtree might potentially crash the application.}}<",
 ]
-replace_in_file(file_path, translation, TARGET_PATH)
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/doc_notes/launchbar_command_launcher.html'
 translation = [
     '>{{Keyboard launcher for this launcher action can be configured in Options -> Launchers.}}<',
 ]
-replace_in_file(file_path, translation, TARGET_PATH)
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/doc_notes/launchbar_intro.html'
 translation = [
@@ -3320,7 +3320,7 @@ translation = [
     '>{{You can create new launchers by right-clicking on the "Visible launchers" folder}}<',
     '>{{If you want to get back to the default setup, you can find "reset" in the context menu.}}<',
 ]
-replace_in_file(file_path, translation, TARGET_PATH)
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/doc_notes/launchbar_note_launcher.html'
 translation = [
@@ -3333,7 +3333,7 @@ translation = [
     '>{{ - optional, pressing the keyboard launcher will open the note}}<',
     '>{{Launchbar displays the title / icon from the launcher which does not necessarily mirrors those of the target note.}}<',
 ]
-replace_in_file(file_path, translation, TARGET_PATH)
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/doc_notes/launchbar_script_launcher.html'
 translation = [
@@ -3346,7 +3346,7 @@ translation = [
     '>{{ - optional, pressing the keyboard launcher will activate the launcher}}<',
     '>{{Example script}}<',
 ]
-replace_in_file(file_path, translation, TARGET_PATH)
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/doc_notes/launchbar_spacer.html'
 translation = [
@@ -3356,26 +3356,26 @@ translation = [
     # '>{{growthFactor}}<',
     '>{{ - set to 0 if you want the spacer to be of constant <code>baseSize</code>, with positive value it will grow.}}',
 ]
-replace_in_file(file_path, translation, TARGET_PATH)
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/doc_notes/launchbar_widget_launcher.html'
 translation = [
     '>{{Please define the target widget note in the promoted attributes. The widget will be used to render the launchbar icon.}}<',
     '>{{Example launchbar widget}}<',
 ]
-replace_in_file(file_path, translation, TARGET_PATH)
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/doc_notes/share.html'
 translation = [
     '>{{Here you can find all shared notes.}}<',
 ]
-replace_in_file(file_path, translation, TARGET_PATH)
+replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/doc_notes/user_hidden.html'
 translation = [
     '>{{This note serves as a subtree reserved for data produced by user scripts which should otherwise not freely create data in the hidden subtree.}}<',
 ]
-replace_in_file(file_path, translation, TARGET_PATH)
+replace_in_file(file_path, translation)
 
 # 0.52
 # 使用 Excalidraw 内置的语言文件
