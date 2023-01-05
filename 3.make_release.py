@@ -98,6 +98,27 @@ def download_releases(releases):
         download_file(release['url'], TRANS_RELEASE_FOLDER + release['name'])
 
 
+def download_release(releases, package_type):
+    for x in releases:
+        if x == package_type:
+            release = releases[x]
+            download_file(release['url'], TRANS_RELEASE_FOLDER + release['name'])
+            return
+
+
+def download_and_patch(releases, package_type):
+    download_release(releases, package_type)
+    file_name = releases[package_type]['name']
+    if package_type == 'linux':
+        patch_linux(file_name)
+    elif package_type == 'windows':
+        patch_windows(file_name)
+    elif package_type == 'linux-server':
+        patch_linux_server(file_name)
+    elif package_type == 'mac':
+        patch_mac(file_name)
+
+
 def decompress_package(file_name):
     print(f'decompress {file_name}')
     if file_name.endswith('tar.xz'):
@@ -336,24 +357,24 @@ if __name__ == '__main__':
     # 下载
     # download
     releases = version_info['releases']
-    download_releases(releases)
+    # download_releases(releases)
 
     # 打补丁
     # patch
 
     # linux
-    patch_linux(releases['linux']['name'])
+    download_and_patch(releases, 'linux')
 
-    if DEBUG:
-        os.system(f'xdg-open {TRANS_RELEASE_FOLDER}')
-    else:
+    if not DEBUG:
         # linux-server
-        patch_linux_server(releases['linux-server']['name'])
+        download_and_patch(releases, 'linux-server')
 
         # windows
-        patch_windows(releases['windows']['name'])
+        download_and_patch(releases, 'windows')
 
         # mac
-        patch_mac(releases['mac']['name'])
+        download_and_patch(releases, 'mac')
+    
+    os.system(f'xdg-open {TRANS_RELEASE_FOLDER}')
 
     print('finished')
