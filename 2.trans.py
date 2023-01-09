@@ -620,6 +620,7 @@ translation = [
     '    {{date modified}}',
     '    {{ascending}}',
     '    {{descending}}',
+    '    {{sort folders at the top}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -3292,6 +3293,11 @@ translation = [
     "title: '{{SQL Console}}'",
     "title: '{{Search}}: '",
     "title: '{{Shared notes}}',",
+    "title: '{{SQL Console}} - '",
+    'title: "{{Script Launcher}}",',
+    'title: "{{Note Launcher}}",',
+    'title: "{{Widget Launcher}}",',
+    'title: "{{Spacer}}",',
 ]
 replace_in_file(file_path, translation)
 replace_in_file(file_path, translation, TARGET_PATH)
