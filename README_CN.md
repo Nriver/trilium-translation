@@ -27,6 +27,9 @@ https://hub.docker.com/r/nriver/trilium-cn
 Nriver 的 scoop 仓库
 http://github.com/Nriver/Scoop-Nriver
 
+Archlinux AUR 仓库
+https://aur.archlinux.org/packages/trilium-cn
+
 # 目录导航
 
 <!--ts-->
@@ -38,17 +41,17 @@ http://github.com/Nriver/Scoop-Nriver
     * [关于汉化版的内置文档](#关于汉化版的内置文档)
 * [界面截图](#界面截图)
 * [使用方法](#使用方法)
+* [服务端](#服务端)
     * [在Docker里运行服务端](#在docker里运行服务端)
+        * [Docker服务端版本更新](#docker服务端版本更新)
+* [客户端](#客户端)
     * [通过scoop安装Windows客户端](#通过scoop安装windows客户端)
-* [更新版本](#更新版本)
-    * [Docker服务端版本更新](#docker服务端版本更新)
-    * [Scoope 更新 Windows客户端](#scoope-更新-windows客户端)
-    * [其它版本更新](#其它版本更新)
-    * [(太长, 别看) 自己编译](#太长-别看-自己编译)
-        * [翻译原理](#翻译原理)
-        * [编译环境](#编译环境)
-        * [翻译过程](#翻译过程)
-        * [没翻译到的文字](#没翻译到的文字)
+    * [通过AUR安装客户端](#通过aur安装客户端)
+* [(太长, 别看) 自己编译](#太长-别看-自己编译)
+    * [翻译原理](#翻译原理)
+    * [编译环境](#编译环境)
+    * [翻译过程](#翻译过程)
+    * [没翻译到的文字](#没翻译到的文字)
 * [注意事项](#注意事项)
     * [数据同步](#数据同步)
 * [常见问题](#常见问题)
@@ -140,9 +143,14 @@ Mermaid.js 流程图
 2. 解压运行(Linux桌面运行trilium, Linux服务端运行trilium.sh, Windows 运行trilium.exe, macOS 运行trilium.app).
 3. 玩去吧 :)
 
-注: Trilium的服务端可以直接通过浏览器访问单独使用。同时也可以作为同步服务器和桌面客户端进行数据同步。
+注1: Trilium的服务端可以直接通过浏览器访问单独使用。同时也可以作为同步服务器和桌面客户端进行数据同步。
+注2: Trilium更新需要同时更新服务端与客户端, 版本必须一致. 更新前以防万一请备份好数据.
 
 ---
+
+# 服务端
+
+除了直接下载Github的Release文件, 还可以通过以下方式安装服务端
 
 ## 在Docker里运行服务端
 
@@ -170,30 +178,7 @@ docker-compose up -d
 
 (docker镜像存了一个0.47.5的旧版本备份，需要的可以自己拿)
 
-## 通过scoop安装Windows客户端
-
-除了手动在Github下载Release包, 现在Windows客户端可以通过scoop来安装啦!
-
-添加我的scoop源
-
-```
-scoop bucket add Scoop-Nriver https://github.com/nriver/Scoop-Nriver
-```
-
-安装 Trilium
-
-```
-scoop install trilium-cn
-```
-
-通过scoop安装后, 在开始菜单的`Scoop Apps`下会有启动的快捷方式. 同时也可以在命令行里通过`trilium`命令启动,
-这种方式启动可以方便查看报错信息.
-
-# 更新版本
-
-注意Trilium更新需要同时更新服务端与客户端, 版本必须一致. 更新前以防万一请备份好数据.
-
-## Docker服务端版本更新
+### Docker服务端版本更新
 
 cd到docker-compose.yml所在目录
 
@@ -215,27 +200,60 @@ docker-compose pull
 docker-compose up -d
 ```
 
-## Scoope 更新 Windows客户端
+# 客户端
+
+除了直接下载Github的Release文件, 还可以通过以下方式安装客户端
+
+## 通过scoop安装Windows客户端
+
+除了手动在Github下载Release包, 现在Windows客户端可以通过scoop来安装啦!
+
+添加我的scoop源
+
+```
+scoop bucket add Scoop-Nriver https://github.com/nriver/Scoop-Nriver
+```
+
+安装 Trilium
+
+```
+scoop install trilium-cn
+```
+
+通过scoop安装后, 在开始菜单的`Scoop Apps`下会有启动的快捷方式. 同时也可以在命令行里通过`trilium`命令启动,
+这种方式启动可以方便查看报错信息.
+
+更新 Trilium
 
 ```
 scoop update trilium-cn
 ```
 
-## 其它版本更新
+## 通过AUR安装客户端
 
-直接去[Release](https://github.com/Nriver/trilium-translation/releases)里下载对应最新版客户端
+Linux桌面系统可以使用AUR安装中文版客户端
 
-## (太长, 别看) 自己编译
+```
+yay -S trilium-cn
+```
+
+更新
+
+```
+yay -Syu
+```
+
+# (太长, 别看) 自己编译
 
 如果你想自己检查代码(代码都有中英双语注释)再自己编译, 可以看看下面的东西.
 
 警告! 代码里有'rm -rf'相关命令, 胡乱修改代码可能会删除你的文件, 请小心使用.
 
-### 翻译原理
+## 翻译原理
 
 从Trilium Notes官方的Release下载Linux包和源码, 用正则替换掉里面的界面文字再编译打包回去.
 
-### 编译环境
+## 编译环境
 
 我用Manjaro(Linux)/macOS, 你想改成其它环境只要修改一下代码理论上也没问题.
 
@@ -255,7 +273,7 @@ npm install -g webpack-cli
 
 7z命令用来打包
 
-### 翻译过程
+## 翻译过程
 
 1. 根据注释修改 `settings.py` 里的配置.
 2. 翻译 `translations.py`. (参照 `translations_cn.py`. 大概有一千多行要翻译, 耐心点 :) )
@@ -266,7 +284,7 @@ npm install -g webpack-cli
 注意: `translations.py` 有一些开头和结尾引号是用来做正则匹配的, 翻译的时候别删了. 有些类似 '${xxxx}' 的字符串是 Trilium
 Notes 的占位符, 别动它们.
 
-### 没翻译到的文字
+## 没翻译到的文字
 
 参考 `trans.py` 写的, 用双花括号 '{{}}' 把要翻译的文字括起来.
 
@@ -299,10 +317,10 @@ Note的笔记数据, 需要自行建立 Trilium Notes 服务端, 让 Trilium
 
 现在有黑五优惠，有需要的话可以试试。链接带有aff，不喜欢的可以去掉。买最便宜的就够用了，一年不到100块。如果觉得硬盘不够大，可以买贵一档的，也就100出头。再贵就没有必要了。
 
-| 内存 | CPU | SSD | 流量 | 价格    | 购买                                                     |
-| ---- | --- | --- | ----- | --------- |--------------------------------------------------------|
-| 768M | 1核 | 10G | 1T/月 | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
-| 1.5G | 1核 | 30G | 3T/月 | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
+| 内存   | CPU | SSD | 流量   | 价格       | 购买                                                     |
+|------|-----|-----|------|----------|--------------------------------------------------------|
+| 768M | 1核  | 10G | 1T/月 | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
+| 1.5G | 1核  | 30G | 3T/月 | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
 
 你也可以选择其它的VPS提供商，不过要记得备份数据，数据是无价的。做好备份以防万一，切记。
 
