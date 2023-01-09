@@ -1,6 +1,7 @@
 /*
  * 作者: Nate
  * Trilium启动时随机选一条信息显示 MoTD（Message of The Day）功能
+ * 给前端js笔记加上 #run=frontendStartup 的属性就能在起动时运行了
  */
 
 console.log("banner notification 启动通知");
