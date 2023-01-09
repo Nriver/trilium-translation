@@ -1589,4 +1589,5 @@ translation_dict = {
     'Do you really want to reset "${this.node.title}"? 
                        All data / settings in this note (and its children) will be lost 
                        and the launcher will be returned to its original location.': '',
+    'sort folders at the top': '',
 }

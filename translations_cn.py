@@ -1498,7 +1498,7 @@ translation_dict = {
     'Start at': '起始数字',
     'Reversed order': '反向',
     'Restore default': '恢复默认',
-    'Copy reference to clipboard': '，复制引用到剪贴板',
+    'Copy reference to clipboard': '复制引用到剪贴板',
     'Copy image to clipboard': '复制图片到剪贴板',
     'Configure Launchbar': '配置启动栏',
     'Show Shared Notes Subtree': '显示分享的笔记子树',
@@ -1581,5 +1581,6 @@ translation_dict = {
     'Collapse': '折叠',
     'Expand': '展开',
     'Do you really want to reset "${this.node.title}"? \n                       All data / settings in this note (and its children) will be lost \n                       and the launcher will be returned to its original location.': '您确定要重置"${this.node.title}"吗? 这个笔记和它的子笔记的所有数据都会丢失, 并且启动器会恢复到它原来的位置.',
+    'sort folders at the top': '文件夹排列在前面',
     '': '',
 }
