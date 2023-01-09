@@ -24,6 +24,9 @@ https://github.com/Nriver/trilium-translation
 Trilium Notes 汉化版 Docker镜像
 https://hub.docker.com/r/nriver/trilium-cn
 
+Nriver 的 scoop 仓库
+http://github.com/Nriver/Scoop-Nriver
+
 # 目录导航
 
 <!--ts-->
@@ -35,9 +38,11 @@ https://hub.docker.com/r/nriver/trilium-cn
     * [关于汉化版的内置文档](#关于汉化版的内置文档)
 * [界面截图](#界面截图)
 * [使用方法](#使用方法)
-* [在Docker里运行服务端](#在docker里运行服务端)
+    * [在Docker里运行服务端](#在docker里运行服务端)
+    * [通过scoop安装Windows客户端](#通过scoop安装windows客户端)
 * [更新版本](#更新版本)
     * [Docker服务端版本更新](#docker服务端版本更新)
+    * [Scoope 更新 Windows客户端](#scoope-更新-windows客户端)
     * [其它版本更新](#其它版本更新)
     * [(太长, 别看) 自己编译](#太长-别看-自己编译)
         * [翻译原理](#翻译原理)
@@ -71,6 +76,8 @@ https://hub.docker.com/r/nriver/trilium-cn
     * [前端js报错](#前端js报错)
     * [第三方主题不生效](#第三方主题不生效)
     * [初始化慢，同步数据慢](#初始化慢同步数据慢)
+* [0.57.5 升级到 0.58.2-beta 之后版本的问题](#0575-升级到-0582-beta-之后版本的问题)
+    * [自定义按钮问题](#自定义按钮问题)
 * [关于本项目使用的字体](#关于本项目使用的字体)
 * [限制](#限制)
 * [Stargazers 数据](#stargazers-数据)
@@ -137,7 +144,7 @@ Mermaid.js 流程图
 
 ---
 
-# 在Docker里运行服务端
+## 在Docker里运行服务端
 
 Trilium Notes的服务端可以用我构建好的docker镜像运行. 注意！请不要使用加速镜像，可以避免类似 #16, #14 的问题.
 
@@ -163,6 +170,25 @@ docker-compose up -d
 
 (docker镜像存了一个0.47.5的旧版本备份，需要的可以自己拿)
 
+## 通过scoop安装Windows客户端
+
+除了手动在Github下载Release包, 现在Windows客户端可以通过scoop来安装啦!
+
+添加我的scoop源
+
+```
+scoop bucket add Scoop-Nriver https://github.com/nriver/Scoop-Nriver
+```
+
+安装 Trilium
+
+```
+scoop install trilium-cn
+```
+
+通过scoop安装后, 在开始菜单的`Scoop Apps`下会有启动的快捷方式. 同时也可以在命令行里通过`trilium`命令启动,
+这种方式启动可以方便查看报错信息.
+
 # 更新版本
 
 注意Trilium更新需要同时更新服务端与客户端, 版本必须一致. 更新前以防万一请备份好数据.
@@ -187,6 +213,12 @@ docker-compose pull
 
 ```
 docker-compose up -d
+```
+
+## Scoope 更新 Windows客户端
+
+```
+scoop update trilium-cn
 ```
 
 ## 其它版本更新
