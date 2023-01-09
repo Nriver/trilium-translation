@@ -214,6 +214,8 @@ Thanks `*僧` for donating 30 CNY! Memo: 加油，老哥！
 
 Thanks `*天` for donating 9 CNY!
 
+Thanks `*均` for donating 30 CNY! Memo: 翻译辛苦了，喝杯咖啡
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
