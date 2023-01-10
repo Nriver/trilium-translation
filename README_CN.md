@@ -42,11 +42,12 @@ https://aur.archlinux.org/packages/trilium-cn
 * [界面截图](#界面截图)
 * [使用方法](#使用方法)
 * [服务端](#服务端)
-    * [在Docker里运行服务端](#在docker里运行服务端)
+    * [服务端 - Linux - 在Docker里运行服务端](#服务端---linux---在docker里运行服务端)
         * [Docker服务端版本更新](#docker服务端版本更新)
+    * [服务端 - Linux - 通过AUR安装Linux服务端](#服务端---linux---通过aur安装linux服务端)
 * [客户端](#客户端)
-    * [通过scoop安装Windows客户端](#通过scoop安装windows客户端)
-    * [通过AUR安装客户端](#通过aur安装客户端)
+    * [客户端 - Windows - 通过scoop安装Windows客户端](#客户端---windows---通过scoop安装windows客户端)
+    * [客户端 - Linux - 通过AUR安装客户端](#客户端---linux---通过aur安装客户端)
 * [(太长, 别看) 自己编译](#太长-别看-自己编译)
     * [翻译原理](#翻译原理)
     * [编译环境](#编译环境)
@@ -152,7 +153,7 @@ Mermaid.js 流程图
 
 除了直接下载Github的Release文件, 还可以通过以下方式安装服务端
 
-## 在Docker里运行服务端
+## 服务端 - Linux - 在Docker里运行服务端
 
 Trilium Notes的服务端可以用我构建好的docker镜像运行. 注意！请不要使用加速镜像，可以避免类似 #16, #14 的问题.
 
@@ -200,11 +201,31 @@ docker-compose pull
 docker-compose up -d
 ```
 
+## 服务端 - Linux - 通过AUR安装Linux服务端
+
+安装
+
+```
+yay -S trilium-server-cn
+```
+
+直接运行 (可以使用pm2等应用管理来启动)
+
+```
+trilium-server-cn
+```
+
+同时提供了一个 `trilium-server-cn` 的服务，也可以通过 `systemctl` 来管理
+
+```
+systemctl start trilium-server-cn
+```
+
 # 客户端
 
 除了直接下载Github的Release文件, 还可以通过以下方式安装客户端
 
-## 通过scoop安装Windows客户端
+## 客户端 - Windows - 通过scoop安装Windows客户端
 
 除了手动在Github下载Release包, 现在Windows客户端可以通过scoop来安装啦!
 
@@ -229,7 +250,7 @@ scoop install trilium-cn
 scoop update trilium-cn
 ```
 
-## 通过AUR安装客户端
+## 客户端 - Linux - 通过AUR安装客户端
 
 Linux桌面系统可以使用AUR安装中文版客户端
 
