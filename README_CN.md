@@ -18,17 +18,15 @@ Trilium Notes 交流qq群 686232370
 
 Trilium Notes 汉化版目前只通过以下渠道发布:
 
-Trilium Notes 汉化版 Github代码仓库
-https://github.com/Nriver/trilium-translation
+Trilium Notes 汉化版 Github代码仓库 https://github.com/Nriver/trilium-translation
 
-Trilium Notes 汉化版 Docker镜像
-https://hub.docker.com/r/nriver/trilium-cn
+Trilium Notes 汉化版 Docker镜像 https://hub.docker.com/r/nriver/trilium-cn
 
-Nriver 的 scoop 仓库
-http://github.com/Nriver/Scoop-Nriver
+Nriver 的 scoop 仓库 http://github.com/Nriver/Scoop-Nriver
 
-Archlinux AUR 仓库
-https://aur.archlinux.org/packages/trilium-cn
+Archlinux AUR 仓库 客户端 https://aur.archlinux.org/packages/trilium-cn
+
+Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server-cn
 
 # 目录导航
 
