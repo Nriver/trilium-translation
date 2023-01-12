@@ -335,6 +335,8 @@ def patch_mac(file_name):
 
 if __name__ == '__main__':
 
+    print(f'DEBUG is {DEBUG}')
+
     a = input(f'Delete folder {TRANS_RELEASE_FOLDER}, continue?(y)')
     if a not in ['y', ]:
         exit()
@@ -374,7 +376,7 @@ if __name__ == '__main__':
 
         # mac
         download_and_patch(releases, 'mac')
-    
+
     os.system(f'xdg-open {TRANS_RELEASE_FOLDER}')
 
     print('finished')

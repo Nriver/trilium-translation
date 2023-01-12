@@ -184,6 +184,7 @@ translation_dict = {
     'Include note ': '',
     'Info message': '',
     'Jump to Note': '',
+    'Jump to note': '',
     'Search in full text ': '',
     'Ctrl+Enter': '',
     'Link map': '',
@@ -1537,9 +1538,12 @@ translation_dict = {
     'Visible Launchers': '',
     'New Note': '',
     'Search Notes': '',
+    'Search notes': '',
     'Recent Changes': '',
+    'Recent changes': '',
     'Bookmarks': '',
     'Protected Session': '',
+    'Protected session': '',
     'Sync Status': '',
     'Hidden tree is used to record various application-level data which can stay most of the time hidden from the user view.': '',
     "Make sure you know what you're doing. Incorrect changes in this subtree might potentially crash the application.": '',
@@ -1590,4 +1594,5 @@ translation_dict = {
                        All data / settings in this note (and its children) will be lost 
                        and the launcher will be returned to its original location.': '',
     'sort folders at the top': '',
+    'Monospace (code) font': '',
 }
