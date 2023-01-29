@@ -6,6 +6,7 @@
  * You can read some details on theming here: http://github.com/zadam/trilium/wiki/Themes
  */
 
+
 @font-face { /* This will be used as main UI font (see below) */
   font-family: 'Raleway';
   font-style: normal;
@@ -42,10 +43,11 @@
     --accented-background-color: #383C4A;
     --more-accented-background-color: #2F343F;
     
+    --button-text-color: #AFB8C6;
     --button-background-color: #2F343F;
+    --button-disabled-text-color: #86919F;
     --button-disabled-background-color: #404552;
     --button-border-color: #333;
-    --button-text-color: #AFB8C6;
     --button-border-radius: 2px;
     
     --primary-button-background-color: #6c757d;
@@ -89,7 +91,7 @@
 }
 
 body .global-menu-button {
-    background-image: url("../../../images/icon-grey.png");
+    background-image: url("../../../assets/vX/images/icon-grey.png");
 }
 
 body .note-detail-editable-text, body .note-detail-readonly-text {
