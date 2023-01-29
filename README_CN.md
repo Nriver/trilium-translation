@@ -604,6 +604,14 @@ Trilium Notes的文字是硬编码的, 所以没法切换语言.
 
 感谢 `*臾` 赞助的30元!
 
+感谢 `*冰` 赞助的10元!
+
+感谢 `*遥` 赞助的10元! 备注: 感谢群主的翻译
+
+感谢 `**庆` 赞助的10元!
+
+感谢 `**逸` 赞助的50元!
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
