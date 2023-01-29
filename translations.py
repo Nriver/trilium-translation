@@ -1595,4 +1595,6 @@ translation_dict = {
                        and the launcher will be returned to its original location.': '',
     'sort folders at the top': '',
     'Monospace (code) font': '',
+    'Close': '',
+    'Close other tabs': '',
 }

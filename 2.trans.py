@@ -2682,6 +2682,8 @@ translation = [
     'title: "{{Close all tabs except for this}}"',
     'title="{{Close tab}}"',
     'title="{{Add new tab}}"',
+    'title="{{Close}}"',
+    'title="{{Close other tabs}}"',
     ", '{{New tab}}')",
 ]
 replace_in_file(file_path, translation)

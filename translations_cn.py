@@ -1587,5 +1587,7 @@ translation_dict = {
     'Do you really want to reset "${this.node.title}"? \n                       All data / settings in this note (and its children) will be lost \n                       and the launcher will be returned to its original location.': '您确定要重置"${this.node.title}"吗? 这个笔记和它的子笔记的所有数据都会丢失, 并且启动器会恢复到它原来的位置.',
     'sort folders at the top': '文件夹排列在前面',
     'Monospace (code) font': '等宽字体 (代码)',
+    'Close': '关闭',
+    'Close other tabs': '关闭其它标签页',
     '': '',
 }
