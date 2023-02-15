@@ -3,8 +3,11 @@ FROM ubuntu:latest
 
 LABEL MAINTAINER https://github.com/Nriver/trilium-translation
 
-ADD trilium-linux-x64-server /app/
+USER triliumuser:triliumgroup
+
+ADD --chown=triliumuser:triliumgroup trilium-linux-x64-server /app/
 WORKDIR /app
+
 
 EXPOSE 8080
 
