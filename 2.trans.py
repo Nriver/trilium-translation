@@ -2682,8 +2682,8 @@ translation = [
     'title: "{{Close all tabs except for this}}"',
     'title="{{Close tab}}"',
     'title="{{Add new tab}}"',
-    'title="{{Close}}"',
-    'title="{{Close other tabs}}"',
+    'title: "{{Close}}"',
+    'title: "{{Close other tabs}}"',
     ", '{{New tab}}')",
 ]
 replace_in_file(file_path, translation)
@@ -3317,6 +3317,13 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/doc_notes/launchbar_command_launcher.html'
 translation = [
     '>{{Keyboard launcher for this launcher action can be configured in Options -> Launchers.}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/doc_notes/launchbar_history_navigation.html'
+translation = [
+    '>{{Back and Forward buttons allow you to move in the navigation history.}}<',
+    '>{{These launchers are active only in the desktop build and will be ignored in the server edition where you can use the native browser navigation buttons instead.}}<',
 ]
 replace_in_file(file_path, translation)
 
