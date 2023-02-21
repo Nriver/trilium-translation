@@ -9,8 +9,8 @@ import platform
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 
-DEBUG = False
 # DEBUG = False
+DEBUG = False
 
 # excalidraw 自定义字体
 # excalidraw custom font
@@ -54,8 +54,8 @@ PROXIES = {
 
 # 避免兼容性问题，强制使用某个版本的trilium
 # To avoid compatibility issue, force to use certain version of trilium
-VERSION_INFO_OVERRIDE = True
-# VERSION_INFO_OVERRIDE = False
+# VERSION_INFO_OVERRIDE = True
+VERSION_INFO_OVERRIDE = False
 
 force_version_info = {
     'name': 'v0.57.5 release',
@@ -77,8 +77,8 @@ force_version_info_full = {
     }
 }
 
-VERSION_INFO_OVERRIDE_BETA = True
-# VERSION_INFO_OVERRIDE_BETA = False
+# VERSION_INFO_OVERRIDE_BETA = True
+VERSION_INFO_OVERRIDE_BETA = False
 # beta
 force_version_info_beta = {
     'name': 'v0.58.3-beta release',

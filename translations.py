@@ -697,6 +697,7 @@ translation_dict = {
     'Open New Window': '',
     'Open Dev Tools': '',
     'Open SQL Console': '',
+    'Open SQL Console History': '',
     'Show Backend Log': '',
     'Reload Frontend': '',
     'Toggle Zen mode': '',

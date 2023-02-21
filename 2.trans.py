@@ -1805,6 +1805,7 @@ translation = [
     '            {{Options}}',
     '            {{Open New Window}}',
     '            {{Open Dev Tools}}',
+    '            {{Open SQL Console History}}',
     '            {{Open SQL Console}}',
     '            {{Show Backend Log}}',
     '            {{Open Search History}}',

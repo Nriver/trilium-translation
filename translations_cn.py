@@ -681,6 +681,7 @@ translation_dict = {
     'Open New Window': '新窗口',
     'Open Dev Tools': '开发者工具',
     'Open SQL Console': '打开SQL控制台',
+    'Open SQL Console History': '打开SQL控制台历史记录',
     'Show Backend Log': '显示后台日志',
     'Reload Frontend': '重新加载界面',
     'Toggle Zen mode': '切换禅模式',
