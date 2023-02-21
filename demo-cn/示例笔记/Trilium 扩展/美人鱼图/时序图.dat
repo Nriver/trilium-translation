@@ -1,9 +1,0 @@
-sequenceDiagram
-Alice->>John: John, 你好吗?
-loop Healthcheck
-    John->>John: 和疑心病做斗争
-end
-Note right of John: 思考中
-John-->>Alice: 我很好!
-John->>Bob: 你好吗?
-Bob-->>John: High的不行了

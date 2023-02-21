@@ -1,8 +1,0 @@
-gantt
-section Trilium汉化 by Nriver
-Completed :done,    des1, 2021-11-23,2021-11-25
-Active        :active,  des2, 2021-11-24, 3d
-Parallel 1   :         des3, after des1, 1d
-Parallel 2   :         des4, after des1, 1d
-Parallel 3   :         des5, after des3, 1d
-Parallel 4   :         des6, after des4, 1d
