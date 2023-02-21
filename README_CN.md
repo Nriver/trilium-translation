@@ -513,6 +513,14 @@ const notes = await api.runOnBackend(async () => {
 
 ---
 
+# 0.58 升级到 0.59 之后版本的问题
+
+## 字数统计组件报错
+
+由于API变化，字数统计组件的代码需要修改，请将字数统计组件的代码替换为最新的 [word count 字数统计组件.js](https://github.com/Nriver/trilium-translation/blob/main/demo-cn/示例笔记%20-%20请不要删除/Trilium%20扩展/Trilium%20组件%20widget/word%20count%20字数统计组件.js)
+
+---
+
 # 关于本项目使用的字体
 
 本项目使用的字体文件为免费字体.
