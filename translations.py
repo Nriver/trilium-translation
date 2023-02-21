@@ -1600,4 +1600,5 @@ translation_dict = {
     'Close other tabs': '',
     'Back and Forward buttons allow you to move in the navigation history.': '',
     'These launchers are active only in the desktop build and will be ignored in the server edition where you can use the native browser navigation buttons instead.': '',
+    'Close TOC': '',
 }

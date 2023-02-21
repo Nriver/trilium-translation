@@ -828,7 +828,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/type_widgets/options/images.js'
+file_path = 'src/public/app/widgets/type_widgets/options/images/images.js'
 translation = [
     '>{{Images}}<',
     '{{Download images automatically for offline use.}}',
@@ -2666,6 +2666,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/toc.js'
 translation = [
     '"{{Table of Contents}}"',
+    '.title("{{Close TOC}}")',
 ]
 replace_in_file(file_path, translation)
 

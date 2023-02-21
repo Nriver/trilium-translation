@@ -1592,5 +1592,6 @@ translation_dict = {
     'Close other tabs': '关闭其它标签页',
     'Back and Forward buttons allow you to move in the navigation history.': '后退和前进按钮允许您在导航历史记录中移动.',
     'These launchers are active only in the desktop build and will be ignored in the server edition where you can use the native browser navigation buttons instead.': '这些启动器仅在桌面版本中有效, 在服务器版本中将被忽略, 您可以在服务器版本中使用原生的浏览器导航按钮.',
+    'Close TOC': '关闭目录',
     '': '',
 }
