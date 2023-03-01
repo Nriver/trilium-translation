@@ -4,21 +4,10 @@
  * 给前端js笔记加上 #run=frontendStartup 的属性就能在起动时运行了
  */
 
-console.log("banner notification 启动通知");
+console.log("banner startup notification 启动通知");
 
-var messages = [
-    "欢迎回来~",
-    "深呼吸 xi~~ 放轻松 hu~~",
-    "抬头看看蓝天吧~",
-    "世界是实力至上的，要多在正确的方向上努力",
-    "给自己多充充电，多学点东西，总会有用得到的地方",
-    "锻炼身体能让人焕然一新，有事没事锻炼一下总没错",
-    "书是好东西，要多看书",
-    "Trilium是第二大脑",
-    "爱护自己",
-    "出门在外保护好自己",
-    "吾生也有涯，而知也无涯。",
-]
-
+// read config from config files
+// 从配置文件读取信息
+var messages = config.messages;
 
 api.showMessage(messages[Math.floor(Math.random()*messages.length)]);

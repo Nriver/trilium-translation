@@ -1,5 +1,5 @@
 async function getChartData() {
-    const days = await api.runOnServer(async () => {
+    const days = await api.runOnBackend(async () => {
         const label_name = '体重';
         const notes = await api.getNotesWithLabel(label_name);
         const days = [];

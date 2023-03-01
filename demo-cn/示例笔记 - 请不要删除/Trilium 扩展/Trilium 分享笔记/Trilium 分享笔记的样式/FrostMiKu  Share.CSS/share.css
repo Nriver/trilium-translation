@@ -1,0 +1,258 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #f5f5fa;
+    font-family: "Times New Roman", times, "Heti Song", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+a {
+    text-decoration: none;
+    color:  var(--blue);
+}
+
+a:hover {
+    background-color: hsla(0deg, 0%, 0%, 0.054);
+    color: black;
+}
+
+pre {
+    overflow: auto;
+}
+
+img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+iframe {
+    border: none;
+    border-radius: 0.25rem;
+}
+
+#layout {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 4rem;
+    min-height: 100vh;
+}
+
+#main {
+    contain: content;
+    background-color: #fff;
+    padding: 4rem 6rem 2rem 6rem;
+}
+
+#title {
+    text-align: center;
+    margin-block-end: 24px;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+}
+
+#content {
+    font-size: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: subpixel-antialiased;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    letter-spacing: 0.02em;
+}
+
+#content h2, h3, h4 {
+    color: #000;
+    line-height: 36px;
+    padding: 5px 0px;
+    letter-spacing: 0.02em;
+    font-weight: 800;
+}
+
+#content h2::before {
+    content: '#';
+    color: var(--blue);
+    position: absolute;
+    left: 5rem;
+}
+
+#content h2 {
+    font-size: 24px;
+}
+
+#content h3 {
+    font-size: 20px;
+}
+
+#content h4 {
+    font-size: 16px;
+}
+
+#content p {
+    margin-block-start: 12px;
+    margin-block-end: 12px;
+    text-align: justify;
+    overflow: hidden;
+}
+
+#content hr {
+    height: 1px;
+}
+
+#content blockquote {
+    margin-block-start: 12px;
+    margin-block-end: 24px;
+    margin-inline-start: 32px;
+    margin-inline-end: 32px;
+    padding-block-start: 12px;
+    padding-block-end: 12px;
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+    background-color: hsla(0deg, 0%, 0%, 0.054);
+}
+
+#noteClippedFrom {
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+    font-style:italic;
+}
+
+.table {
+    overflow-wrap: anywhere;
+}
+
+.pdf-view {
+    width: 100%;
+    min-height: 40rem;
+}
+
+.type-file > button {
+    display: block;
+    margin: 2rem auto;
+    background-color: var(--blue);
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: var(--shadow);
+}
+
+.mermaid {
+    text-align: center;
+}
+
+/* Menu */
+
+#toggleMenuButton {
+    position:fixed;
+    background: white;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    box-shadow: var(--shadow);
+    border-radius: 0.25rem;
+    letter-spacing: 0.05em;
+}
+#toggleMenuButton::before {
+    content: "Menu";
+    color: var(--blue);
+} 
+
+#menu {
+    display: none;
+}
+
+.showMenu #menu {
+    display: block;
+}
+
+#menu strong{
+    color:  var(--blue-strong);
+}
+
+nav.grid ul {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+}
+nav.list {
+    line-height: 1.5;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0 1rem;
+}
+
+#parentLink {
+    color: var(--gray);
+    position: relative;
+    left: -3rem;
+    top: -1rem;
+}
+#parentLink::before {
+    content: "@";
+}
+
+@media screen and (min-width: 60rem) {
+    #main {
+        width: 48rem;
+        margin-block-start: 6rem;
+        box-shadow: var(--shadow);
+        border-radius: 4px 4px 0px 0px;
+    }
+    #toggleMenuButton {
+        right: 1rem;
+        top: 1rem;
+    }
+    #menu {
+        margin-block-start: 6rem;
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    #main {
+        width: 100%;
+    }
+    #toggleMenuButton {
+        right: 1rem;
+        bottom: 1rem;
+    }
+    #menu {
+        margin-left: 6rem;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 83rem) {
+    #menu {
+        width: fit-content;
+        margin-block-start: 0;
+    }
+}
+
+@media screen and (max-width: 32rem) {
+    #main {
+        padding: 4rem 2rem 2rem 2rem;
+    }
+    #content h2::before {
+        left: 1rem;
+    }
+    #parentLink {
+        left: 0rem;
+    }
+}
+
+:root {
+    --shadow: 0px 24px 32px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    --blue: #409EFF;
+    --blue-strong: #307bc7;
+    --gray: gray;
+    --ck-color-table-caption-text: gray;
+}
