@@ -236,6 +236,16 @@ Thanks `**庆` for donating 10 CNY!
 
 Thanks `**逸` for donating 50 CNY!
 
+Thanks `**聪` for donating 10 CNY! Memo: 很大的帮助翻译家！爱来自中国
+
+Thanks `*メ` for donating 200 CNY!
+
+Thanks `**奇` for donating 20 CNY!
+
+Thanks `*磊` for donating 10 CNY!
+
+Thanks `*味` for donating 5 CNY!
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
