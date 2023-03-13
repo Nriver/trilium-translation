@@ -16,11 +16,21 @@
 
 <a href="https://count.getloli.com"><img align="center" src="https://count.getloli.com/get/@Nriver_trilium-translation"></a><br>
 
-Trilium Notes 学习交流 TG群 https://t.me/trilium_cn (qq群满了请优先加TG群)
+qq群满了请优先加TG群
 
-Trilium Notes 交流qq群 686232370
+Trilium Notes 学习交流 TG群 https://t.me/trilium_cn
 
-![image](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png)
+![tg](https://user-images.githubusercontent.com/6752679/224602865-44bf8e9c-f31b-4d4c-b22c-2fdf349e8d5e.png)
+
+Trilium Notes 交流qq群
+
+1群 686232370 (已满)
+
+<!-- ![qq1](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png) -->
+
+2群 535368955
+
+![qq2](https://user-images.githubusercontent.com/6752679/224601193-f1d9eead-731a-4468-8a94-cd954e88efe9.png)
 
 # 声明
 
