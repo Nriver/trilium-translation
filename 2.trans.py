@@ -2455,7 +2455,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/ribbon_widgets/inherited_attribute_list.js'
 translation = [
-    'title: "{{Inherited attributes}}"',
+    'title: "{{Inherited Attributes}}"',
     '"{{No inherited attributes.}}"',
 ]
 replace_in_file(file_path, translation)
@@ -2505,7 +2505,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/ribbon_widgets/owned_attribute_list.js'
 translation = [
-    'title: "{{Owned attributes}}"',
+    'title: "{{Owned Attributes}}"',
 ]
 replace_in_file(file_path, translation)
 
