@@ -17,7 +17,7 @@ Star this repo if you like it, thx :)
 
 If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 
-<a href="https://count.getloli.com"><img align="center" src="https://count.getloli.com/get/@Nriver_trilium-translation"></a><br>
+<a href="https://github.com/Nriver"><img align="center" src="https://moe-counter--nriver1.repl.co/get/@Nriver_trilium-translation"></a><br>
 
 # Table of Contents
 

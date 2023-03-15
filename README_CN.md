@@ -14,7 +14,7 @@
 
 如果你是老用户, 使用前最好备份数据以防万一.
 
-<a href="https://count.getloli.com"><img align="center" src="https://count.getloli.com/get/@Nriver_trilium-translation"></a><br>
+<a href="https://github.com/Nriver"><img align="center" src="https://moe-counter--nriver1.repl.co/get/@Nriver_trilium-translation"></a><br>
 
 qq群满了请优先加TG群
 
