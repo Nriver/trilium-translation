@@ -61,6 +61,7 @@ Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server
     * [服务端 - Linux - 在Docker里运行服务端](#服务端---linux---在docker里运行服务端)
         * [Docker服务端版本更新](#docker服务端版本更新)
     * [服务端 - Linux - 通过AUR安装Linux服务端](#服务端---linux---通过aur安装linux服务端)
+        * [关于Arm服务器运行服务端的说明](#关于arm服务器运行服务端的说明)
 * [客户端](#客户端)
     * [客户端 - Windows - 通过scoop安装Windows客户端](#客户端---windows---通过scoop安装windows客户端)
     * [客户端 - Linux - 通过AUR安装客户端](#客户端---linux---通过aur安装客户端)
@@ -98,6 +99,8 @@ Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server
     * [初始化慢，同步数据慢](#初始化慢同步数据慢)
 * [0.57.5 升级到 0.58.2-beta 之后版本的问题](#0575-升级到-0582-beta-之后版本的问题)
     * [自定义按钮问题](#自定义按钮问题)
+* [0.58 升级到 0.59 之后版本的问题](#058-升级到-059-之后版本的问题)
+    * [字数统计组件报错](#字数统计组件报错)
 * [关于本项目使用的字体](#关于本项目使用的字体)
 * [限制](#限制)
 * [Stargazers 数据](#stargazers-数据)
@@ -236,6 +239,12 @@ trilium-server-cn
 ```
 systemctl start trilium-server-cn
 ```
+
+### 关于Arm服务器运行服务端的说明
+
+如果需要在Arm服务器上跑, 可以直接用trilium原版的docker镜像. 汉化版和原版数据是互通的. 可以用汉化版的客户端和原版的服务端进行链接.
+
+汉化版暂时不会有Arm镜像. [相关issue](https://github.com/Nriver/trilium-translation/issues/10)
 
 # 客户端
 
