@@ -45,7 +45,7 @@ while True:
         if os.stat(fname).st_mtime <= mtime:
             continue
 
-        with open(fname) as fd:
+        with open(fname, encoding='utf-8') as fd:
             head = fd.read(4096)
 
         idx = head.find("Page saved with SingleFile")
@@ -66,7 +66,7 @@ while True:
         if title is None:
             title = fname[:-5] # filename without '.html' suffix
 
-        with open(fname) as fd:
+        with open(fname, encoding='utf-8') as fd:
             content = fd.read()
 
         try:
