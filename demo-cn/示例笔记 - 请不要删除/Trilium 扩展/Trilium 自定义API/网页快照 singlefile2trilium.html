@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="style.css">
     <base target="_parent">
   </head>
   
@@ -12,31 +12,38 @@
        <h1>网页快照 singlefile2trilium</h1>
 
       <div class="ck-content">
-        <p><strong>singlefile2trilium</strong>
-
-          <br />Trilium notes 配合 chrome/firefox的singlefile插件进行网页剪藏，效果还不错。
-          <br />来自 https://github.com/nil0x42/singlefile2trilium</p>
-        <p>singlefile的配置要修改一下，主要是2个地方
-          <br />用户界面-信息栏内容模板
-          <br />{url-href}\n{page-title}\n{date-iso} {time-iso}
-          <br />文件名-模板
-          <br />{url-host}-{date-iso}_{time-iso}-{page-title}.html</p>
-        <p> </p>
-        <p>下面是文件说明</p>
-        <p> </p>
-        <p><strong>singlefile2trilium-handler.js</strong>
-
-          <br />后端api接口。默认不启用，如果要启用，去掉开头的return。</p>
-        <p> </p>
-        <p><strong>api_tester.py</strong>
-
-          <br />测试api接口的python脚本</p>
-        <p> </p>
-        <p><strong>singlefile2trilium-sender.py</strong>
-
-          <br />文件夹监控, 文件夹中如果存在html文件就调用api接口上传html文件到Trilium Notes, 之后把html文件删除
-          <br />BASEDIR 为要监控的文件夹，注意修改
-          <br /> </p>
+        <h2>singlefile2trilium</h2>
+        <p>
+          <br>Trilium notes 配合 chrome/firefox的singlefile插件进行网页剪藏，效果还不错。
+          <br>来自 <a href="https://github.com/nil0x42/singlefile2trilium">https://github.com/nil0x42/singlefile2trilium</a>
+        </p>
+        <p>我做了一点修改，加入了简单的密码校验来保障安全。</p>
+        <p>&nbsp;</p>
+        <h2>SingleFile插件配置</h2>
+        <p>singlefile的配置要修改一下 (版本更新之后选项可能会有些变化)</p>
+        <p>
+          <br>信息栏 - 信息栏内容模板</p><pre><code class="language-text-plain">{url-href}\n{page-title}\n{date-iso} {time-iso}</code></pre>
+        <p>
+          <br>文件名 - 模板</p><pre><code class="language-text-plain">{page-title}.html</code></pre>
+        <p>&nbsp;</p>
+        <p>杂项</p>
+        <p>去掉 <code>在后台保存页面</code> 的勾选。SingleFile新版的bug会导致文件名不按照模板来命名，所以要去掉这个。https://github.com/gildas-lormeau/SingleFile/issues/1106</p>
+        <p>&nbsp;</p>
+        <h2>文件说明</h2>
+        <p>&nbsp;</p>
+        <p><a class="reference-link" href="%E7%BD%91%E9%A1%B5%E5%BF%AB%E7%85%A7%20singlefile2trilium/singlefile2trilium-handler.js"
+          data-note-path="root/HfAnsf8XiarY/ZrLsMHqy3rsl/2HeteRodBRdx/lFboOeMcTAfQ">singlefile2trilium-handler.js</a>
+          <br>后端api接口。默认不启用，如果要启用，去掉开头的return。并修改里面的密码</p>
+        <p>&nbsp;</p>
+        <p><a class="reference-link" href="#root/HfAnsf8XiarY/ZrLsMHqy3rsl/n3O92TaLO7Ac/2yugtB8wYXDM"
+          data-note-path="root/HfAnsf8XiarY/ZrLsMHqy3rsl/n3O92TaLO7Ac/2yugtB8wYXDM">api_tester.py</a>
+          <br>测试api接口的python脚本。按照你的服务器来配置。密码要和上面的一致</p>
+        <p>&nbsp;</p>
+        <p><a class="reference-link" href="%E7%BD%91%E9%A1%B5%E5%BF%AB%E7%85%A7%20singlefile2trilium/singlefile2trilium-sender.py"
+          data-note-path="root/HfAnsf8XiarY/ZrLsMHqy3rsl/2HeteRodBRdx/nKw1TyIcC76k">singlefile2trilium-sender.py</a>
+          <br>文件夹监控, 文件夹中如果存在html文件就调用api接口上传html文件到Trilium Notes, 之后把html文件删除
+          <br>BASEDIR 为要监控的文件夹，注意修改。密码也要和后端api接口的一致。
+          <br>&nbsp;</p>
       </div>
     </div>
   </body>

@@ -11,7 +11,7 @@ var SECRET_PASSWORD = '你的密码';
 /*
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-<iframe id="r-iframe" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="width:100%" src="data:text/html;charset=utf-8,%%CONTENT%%" sandbox=""></iframe>
+<iframe id="r-iframe" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="width:100%; flex-grow: 1; border:none;" src="data:text/html;charset=utf-8,%%CONTENT%%" sandbox=""></iframe>
 */
 
 const template = `
@@ -46,32 +46,32 @@ if (req.method == 'POST' && secret === SECRET_PASSWORD) {
     api.log("==========================");
 
     //const todayNote = await api.getDateNote(today);
-    const todayNote = await api.getTodayNote();
+    const todayNote = api.getTodayNote();
     
     // create render note
-    const renderNote = (await api.createNewNote({
+    const renderNote = (api.createNewNote({
         parentNoteId: todayNote.noteId,
         title: title,
         content: '',
         type: 'render'
     })).note;
-    await renderNote.setLabel('clipType', 'singlefile2trilium');
-    await renderNote.setLabel('pageUrl', url);
-    await renderNote.setLabel('pageTitle', title);
+    renderNote.setLabel('clipType', 'singlefile2trilium');
+    renderNote.setLabel('pageUrl', url);
+    renderNote.setLabel('pageTitle', title);
 
     // create child `content.html`
     var wrapped_content = template.replace("%%CONTENT%%", encodeURIComponent(content));
-    const htmlNote = (await api.createNewNote({
+    const htmlNote = (api.createNewNote({
         parentNoteId: renderNote.noteId,
         title: 'content.html',
         content: wrapped_content,
         type: 'file',
         mime: 'text/html'
     })).note;
-    await htmlNote.setLabel('archived');
+    htmlNote.setLabel('archived');
 
     // link renderNote to htmlNote
-    await renderNote.setRelation('renderNote', htmlNote.noteId);
+    renderNote.setRelation('renderNote', htmlNote.noteId);
 
     res.send(201); // http 201: created
 }
