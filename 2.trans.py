@@ -502,6 +502,7 @@ translation = [
     ">{{Because of browser sandbox it's not possible to directly read clipboard from JavaScript. Please paste the Markdown to import to textarea below and click on Import button}}<",
     '>{{Import }}<',
     '>{{Ctrl+Enter}}<',
+    'showMessage("{{Markdown content has been imported into the document.}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -513,6 +514,8 @@ translation = [
     '>{{Move to selected note }}<',
     '>{{enter}}<',
     '{{search for note by its name}}',
+    'showMessage({{`Selected notes have been moved into ${parentNote.title}`}}',
+    '    logError("{{No path to move to.}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -604,6 +607,7 @@ file_path = 'src/public/app/widgets/dialogs/recent_changes.js'
 translation = [
     '>{{Recent changes}}<',
     '{{Erase deleted notes now}}',
+    'showMessage("{{Deleted notes have been erased.}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -1477,6 +1481,8 @@ translation = [
     '- {{run once a day}}<',
     '>{{Custom request handler}}<',
     '>{{ will force the Table of Contents to be shown, }}<',
+    '{{will force hiding it.}}',
+    "{{If the label doesn't exist, the global setting is observed}}",
     'title="{{Cancel changes and close}}"',
     'title="{{Attribute name can be composed of alphanumeric characters, colon and underscore only}}"',
     'title="{{Relation is a named connection between source note and target note.}}"',
@@ -1504,6 +1510,8 @@ translation = [
     "{{On which hour should this run. Should be used together with <code>#run=hourly</code>. Can be defined multiple times for more runs during the day.}}",
     "{{scripts with this label won't be included into parent script execution.}}",
     "{{keeps child notes sorted by title alphabetically}}",
+    "{{ASC (the default) or DESC}}",
+    "{{Folders (notes with children) should be sorted on top}}",
     "{{keep given note on top in its parent (applies only on sorted parents)}}",
     "{{Hide promoted attributes on this note}}",
     "{{editor is in read only mode. Works only for text and code notes.}}",
@@ -1517,10 +1525,13 @@ translation = [
     "{{marks this note as a workspace which allows easy hoisting}}",
     "{{defines box icon CSS class which will be used in tab when hoisted to this note}}",
     "{{CSS color used in the note tab when hoisted to this note}}",
-    "{{new search notes will be created as children of this note when hoisted to some ancestor of this note}}",
+    "{{Defines per-workspace calendar root}}",
+    "{{This note will appear in the selection of available template when creating new note, but only when hoisted into a workspace containing this template}}",
+    "{{new search notes will be created as children of this note when hoisted to some ancestor of this workspace note}}",
     "{{new search notes will be created as children of this note}}",
-    "{{default inbox location for new notes when hoisted to some ancestor of this note}}",
+    "{{default inbox location for new notes when hoisted to some ancestor of this workspace note}}",
     "{{default inbox location for new notes}}",
+    """{{when you create a note using \\"new note\\" button in the sidebar, notes will be created as child notes in the note marked as with <code>#inbox</code> label.}}""",
     "{{default location of SQL console notes}}",
     "{{note with this label will appear in bookmarks as folder (allowing access to its children)}}",
     "{{note with this label will appear in bookmarks}}",
@@ -1528,9 +1539,12 @@ translation = [
     "{{define an alias using which the note will be available under https://your_trilium_host/share/[your_alias]}}",
     "{{default share page CSS will be omitted. Use when you make extensive styling changes.}}",
     "{{marks note which is served on /share root.}}",
+    "{{define text to be added to the HTML meta tag for description}}",
     "{{note will be served in its raw format, without HTML wrapper}}",
     "{{will forbid robot indexing of this note via <code>X-Robots-Tag: noindex</code> header}}",
     "{{require credentials to access this shared note. Value is expected to be in format 'username:password'. Don't forget to make this inheritable to apply to child-notes/images.}}",
+    "{{note with this this label will list all roots of shared notes}}",
+    "{{This note will appear in the selection of available template when creating new note}}",
     "{{comma delimited names of relations which should be displayed. All other ones will be hidden.}}",
     "{{comma delimited names of relations which should be hidden. All other ones will be displayed.}}",
     "{{executes when note is created on backend}}",
@@ -1553,6 +1567,22 @@ translation = [
     "{{<code>Log for \${now.format('YYYY-MM-DD HH:mm:ss')}</code>}}",
     '{{See <a href="https://github.com/zadam/trilium/wiki/Default-note-title">wiki with details</a>, API docs for <a href="https://zadam.github.io/trilium/backend_api/Note.html">parentNote</a> and <a href="https://day.js.org/docs/en/display/format">now</a> for details.}}',
     "'{{see}} <",
+    "{{defines color of the note in note tree, links etc. Use any valid CSS color value like 'red' or #a13d5f}}",
+    "{{Defines a keyboard shortcut which will immediately jump to this note. Example: 'ctrl+alt+e'. Requires frontend reload for the change to take effect.}}",
+    "{{Opening this link won't change hoisting even if the note is not displayable in the current hoisted subtree.}}",
+    "{{Title of the button which will execute the current code note}}",
+    "{{Longer description of the current code note displayed together with the execute button}}",
+    "{{Notes with this label will be hidden from the Note Map}}",
+    "{{New notes will be created at the top of the parent note, not on the bottom.}}",
+    "{{Use this relation if you want to run the script for all notes created under a specific subtree. In that case, create it on the subtree root note and make it inheritable. A new note created within the subtree (any depth) will trigger the script.}}",
+    "{{executes when new note is created under the note where this relation is defined}}",
+    "{{executes when note content is changed (includes note creation as well).}}",
+    "{{Does not include content changes}}",
+    "{{executes when new attribute is created for the note which defines this relation}}",
+    "{{executes when the attribute is changed of a note which defines this relation. This is triggered also when the attribute is deleted}}",
+    "{{note's attributes will be inherited even without a parent-child relationship, note's content and subtree will be added to instance notes if empty. See documentation for details.}}",
+    "{{note's attributes will be inherited even without a parent-child relationship. See template relation for a similar concept. See attribute inheritance in the documentation.}}",
+    
 ]
 replace_in_file(file_path, translation)
 
@@ -2734,6 +2764,16 @@ translation = [
     ">{{Open a note by typing the note's title into the input below or choose a note in the tree.}}<",
     '"{{search for a note by its name}}"',
     '{{Enter workspace}} ',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/image.js'
+translation = [
+    'title: "{{Copy reference to clipboard}}"',
+    'title: "{{Copy image to clipboard}}"',
+    'showMessage("{{Image copied to the clipboard}}"',
+    'throw new Error(`{{Unrecognized command}}',
+    '    toastService.showAndLogError("{{Could not copy the image to clipboard.}}"',
 ]
 replace_in_file(file_path, translation)
 
