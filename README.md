@@ -244,7 +244,19 @@ Thanks `**奇` for donating 20 CNY!
 
 Thanks `*磊` for donating 10 CNY!
 
-Thanks `*味` for donating 5 CNY!
+Thanks `*姆` for donating 5 CNY!
+
+Thanks `**锐` for donating 20 CNY! Memo: 感谢您的工作，请您喝杯咖啡
+
+Thanks `**行` for donating 10 CNY! Memo: 小葱白贡献绵薄之力
+
+Thanks `鞠*M` for donating 10 CNY! Memo: 感谢大佬，请喝水
+
+Thanks `*🐈` for donating 10 CNY!
+
+Thanks `*白` for donating 10 CNY! Memo: 小葱白献上
+
+Thanks `*白` for donating 5 CNY! Memo: 小葱白献上
 
 Thanks for the greate IDE Pycharm from Jetbrains.
 
