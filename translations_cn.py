@@ -1174,7 +1174,7 @@ translation_dict = {
     'Note Map': '笔记地图',
     'Note Paths': '笔记路径',
     'Owned Attributes': '拥有的属性',
-    'Promoted attributes': '升级属性',
+    'Promoted Attributes': '升级属性',
     'Search parameters': '搜索参数',
     'Search note has been saved into ': '搜索笔记已保存到',
     'Unknown search option ${searchOptionName}': '未知搜索选项 ${searchOptionName}',

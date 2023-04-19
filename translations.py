@@ -1195,7 +1195,7 @@ translation_dict = {
     'Note Map': '',
     'Note Paths': '',
     'Owned Attributes': '',
-    'Promoted attributes': '',
+    'Promoted Attributes': '',
     'Search parameters': '',
     'Search note has been saved into ': '',
     'Unknown search option ${searchOptionName}': '',

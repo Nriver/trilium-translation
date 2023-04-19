@@ -2540,7 +2540,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/ribbon_widgets/promoted_attributes.js'
 translation = [
-    'title: "{{Promoted attributes}}"',
+    'title: "{{Promoted Attributes}}"',
 ]
 replace_in_file(file_path, translation)
 
