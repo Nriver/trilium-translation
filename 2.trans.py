@@ -1134,7 +1134,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/services/app_context.js'
+file_path = 'src/public/app/components/app_context.js'
 translation = [
     'showMessage("{{Please wait for a couple of seconds for the save to finish, then you can try again.}}"',
 ]
@@ -1155,7 +1155,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/services/entrypoints.js'
+file_path = 'src/public/app/components/entrypoints.js'
 translation = [
     "title: '{{new note}}",
     'showMessage("{{Note executed}}"',
@@ -1208,7 +1208,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/services/tab_manager.js'
+file_path = 'src/public/app/components/tab_manager.js'
 translation = [
     """throw new Error(`{{Cannot find noteContext id='${ntxId}'}}`""",
 ]
@@ -1346,7 +1346,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/services/note_context.js'
+file_path = 'src/public/app/components/note_context.js'
 translation = [
     '    logError(`{{Cannot resolve note path ${inputNotePath}}}`',
 ]
@@ -1582,7 +1582,6 @@ translation = [
     "{{executes when the attribute is changed of a note which defines this relation. This is triggered also when the attribute is deleted}}",
     "{{note's attributes will be inherited even without a parent-child relationship, note's content and subtree will be added to instance notes if empty. See documentation for details.}}",
     "{{note's attributes will be inherited even without a parent-child relationship. See template relation for a similar concept. See attribute inheritance in the documentation.}}",
-    
 ]
 replace_in_file(file_path, translation)
 
