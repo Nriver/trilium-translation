@@ -4,13 +4,13 @@ import shutil
 from zipfile import ZipFile
 
 import requests
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
+import urllib3
 
 from settings import BASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info, \
     VERSION_INFO_OVERRIDE_BETA, force_version_info_beta
 
 # disable warning if we use proxy
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 CLIENT_FOLDER = BASE_FOLDER + 'trilium-linux-x64'
 REPO_NAME = 'zadam/trilium'

@@ -2,13 +2,13 @@ import os
 import re
 
 import requests
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
+import urllib3
 
 from settings import DEBUG, PATCH_FOLDER, LANG, TRANS_RELEASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, \
     force_version_info_full, VERSION_INFO_OVERRIDE_BETA, force_version_info_full_beta
 
 # disable warning if we use proxy
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 COMPRESS_TOOL = '7z'
 
