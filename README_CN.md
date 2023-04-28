@@ -56,7 +56,7 @@ Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server
 * [汉化版修改记录](#-汉化版修改记录)
     * [关于汉化版的内置文档](#-关于汉化版的内置文档)
 * [界面截图](#-界面截图)
-* [使用方法](#-使用方法)
+* [使用方法 - Windows, Linux, MacOS 直接使用Release打包的文件](#-使用方法---windows-linux-macos-直接使用release打包的文件)
 * [服务端](#️-服务端)
     * [服务端 - Linux - 在Docker里运行服务端](#-服务端---linux---在docker里运行服务端)
         * [Docker服务端版本更新](#-docker服务端版本更新)
@@ -157,7 +157,7 @@ Mermaid.js 流程图
 
 ![nier](docs/screenshot_math_formular.png)
 
-# 📖 使用方法
+# 📖 使用方法 - Windows, Linux, MacOS 直接使用Release打包的文件
 
 1. [Release](https://github.com/Nriver/trilium-translation/releases)里下载对应客户端
 2. 解压运行(Linux桌面运行trilium, Linux服务端运行trilium.sh, Windows 运行trilium.exe, macOS 运行trilium.app).
