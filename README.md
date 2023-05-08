@@ -258,6 +258,8 @@ Thanks `*白` for donating 10 CNY! Memo: 小葱白献上
 
 Thanks `*白` for donating 5 CNY! Memo: 小葱白献上
 
+Thanks `*杜` for donating 20 CNY! Memo: 谢谢您的翻译
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
