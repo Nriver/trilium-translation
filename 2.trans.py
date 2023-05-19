@@ -617,6 +617,7 @@ translation = [
     '>{{Sorting criteria}}<',
     '>{{Sorting direction}}<',
     '>{{Folders}}<',
+    '>{{Natural Sort}}<',
     '>{{Sort }}<',
     '>{{enter}}<',
     '    {{title}}',
@@ -625,6 +626,9 @@ translation = [
     '    {{ascending}}',
     '    {{descending}}',
     '    {{sort folders at the top}}',
+    '{{sort with respect to different character sorting and collation rules in different languages or regions.}}',
+    '{{Natural sort language}}',
+    '{{The language code for natural sort, e.g. "zh-CN" for Chinese.}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -875,6 +879,21 @@ translation = [
     '>{{wiki}}<',
     '>{{ for more info.}}<',
     '>{{Note revision snapshot time interval (in seconds)}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/options/other/search_engine.js'
+translation = [
+    '>{{Search Engine}}<',
+    '>{{Custom search engine requires both a name and a URL to be set. If either of these is not set, DuckDuckGo will be used as the default search engine.}}<',
+    '>{{Predefined search engine templates}}<',
+    '>{{Bing}}<',
+    '>{{Baidu}}<',
+    '>{{Duckduckgo}}<',
+    '>{{Google}}<',
+    '>{{Custom search engine name}}<',
+    '>{{Custom search engine URL should include <code>{keyword}</code> as a placeholder for the search term.}}<',
+    '>{{Save}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -3453,6 +3472,7 @@ else:
 
 # 应用补丁
 # apply patch
+print(f'switch to dir: {BASE_PATH}')
 os.chdir(BASE_PATH)
 os.system('npm run webpack')
 
@@ -3524,5 +3544,12 @@ if missing_files:
     print('missing_files!')
     for x in missing_files:
         print(x)
+
+# 尝试删除electron的缓存, 避免代码修改不生效的问题
+# try delete electron cache, avoid code change does not take effect
+try:
+    shutil.rmtree(os.path.expanduser('~/.config/Trilium Notes/'))
+except:
+    pass
 
 print('finished!')
