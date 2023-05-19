@@ -736,7 +736,7 @@ translation_dict = {
     'Ignore this change': '忽略此修改',
     'Searching ...': '正在搜索中...',
     'No results found': '没有找到结果',
-    '... and ${searchResultNoteIds.length - MAX_DISPLAYED_NOTES} more results.': '... 以及另外 ${resultNoteIds.length - MAX_DISPLAYED_NOTES} 个结果',
+    '... and ${searchResultNoteIds.length - MAX_DISPLAYED_NOTES} more results.': '... 以及另外 ${searchResultNoteIds.length - MAX_DISPLAYED_NOTES} 个结果',
     'Show in full search': '在搜索中显示',
     'Quick search': '快速搜索',
     'Remove this search action': '去掉这个搜索动作',
