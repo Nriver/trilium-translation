@@ -312,9 +312,8 @@ pip3 install requests --user
 Nodejs 和以下模块
 
 ```
-npm install -g asar
-npm install -g webpack
-npm install -g webpack-cli
+npm install -g asar webpack webpack-cli
+npm install webpack --save-dev
 ```
 
 7z命令用来打包
@@ -365,12 +364,12 @@ Racknerd的促销似乎都是长期有效的活动，一直都可以买，有需
 
 我测试过Trilium的服务端程序大概会占150MB左右的内存。买最便宜的就够用了，一年不到100块。如果觉得硬盘不够大，可以买贵一档的，也就100出头。再贵就没有必要了。
 
-| 促销活动 | 内存 | CPU | SSD | 流量 | 价格 | 购买 |
-|--|------|-----|-----|------|----------|--------------------------------------------------------|
-| 复活节 | 840M | 1核 | 10G | 1T/月 | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
-| 复活节 | 1.2G | 1核 | 30G | 3T/月 | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
-| 黑五 | 768M | 1核 | 10G | 1T/月 | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
-| 黑五 | 1.5G | 1核 | 30G | 3T/月 | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
+| 促销活动 | 内存   | CPU | SSD | 流量   | 价格       | 购买                                                     |
+|------|------|-----|-----|------|----------|--------------------------------------------------------|
+| 复活节  | 840M | 1核  | 10G | 1T/月 | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
+| 复活节  | 1.2G | 1核  | 30G | 3T/月 | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
+| 黑五   | 768M | 1核  | 10G | 1T/月 | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
+| 黑五   | 1.5G | 1核  | 30G | 3T/月 | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
 
 你也可以选择其它的VPS提供商，不过要记得备份数据，数据是无价的。做好备份以防万一，切记。
 

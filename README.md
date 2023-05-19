@@ -118,9 +118,8 @@ pip3 install requests --user
 Nodejs with module
 
 ```
-npm install -g asar
-npm install -g webpack
-npm install -g webpack-cli
+npm install -g asar webpack webpack-cli
+npm install webpack --save-dev
 ```
 
 7z if you want to make release
