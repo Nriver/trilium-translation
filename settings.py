@@ -81,21 +81,21 @@ VERSION_INFO_OVERRIDE_BETA = True
 # VERSION_INFO_OVERRIDE_BETA = False
 # beta
 force_version_info_beta = {
-    'name': 'v0.59.0-beta release',
-    'zipball_url': 'https://github.com/zadam/trilium/archive/refs/tags/v0.59.0-beta.zip',
-    'browser_download_url': 'https://github.com/zadam/trilium/releases/download/v0.59.0-beta/trilium-linux-x64-0.59.0-beta.tar.xz'
+    'name': 'v0.60.0-beta release',
+    'zipball_url': 'https://github.com/zadam/trilium/archive/refs/tags/v0.60.0-beta.zip',
+    'browser_download_url': 'https://github.com/zadam/trilium/releases/download/v0.60.0-beta/trilium-linux-x64-0.60.0-beta.tar.xz'
 }
 
 force_version_info_full_beta = {
-    'name': 'v0.59.0-beta release',
+    'name': 'v0.60.0-beta release',
     'releases': {
-        'linux': {'name': 'trilium-linux-x64-v0.59.0-beta.tar.xz',
-                  'url': 'https://github.com/zadam/trilium/releases/download/v0.59.0-beta/trilium-linux-x64-0.59.0-beta.tar.xz'},
-        'linux-server': {'name': 'trilium-linux-x64-server-v0.59.0-beta.tar.xz',
-                         'url': 'https://github.com/zadam/trilium/releases/download/v0.59.0-beta/trilium-linux-x64-server-0.59.0-beta.tar.xz'},
-        'mac': {'name': 'trilium-mac-x64-v0.59.0-beta.zip',
-                'url': 'https://github.com/zadam/trilium/releases/download/v0.59.0-beta/trilium-mac-x64-0.59.0-beta.zip'},
-        'windows': {'name': 'trilium-windows-x64-v0.59.0-beta.zip',
-                    'url': 'https://github.com/zadam/trilium/releases/download/v0.59.0-beta/trilium-windows-x64-0.59.0-beta.zip'}
+        'linux': {'name': 'trilium-linux-x64-v0.60.0-beta.tar.xz',
+                  'url': 'https://github.com/zadam/trilium/releases/download/v0.60.0-beta/trilium-linux-x64-0.60.0-beta.tar.xz'},
+        'linux-server': {'name': 'trilium-linux-x64-server-v0.60.0-beta.tar.xz',
+                         'url': 'https://github.com/zadam/trilium/releases/download/v0.60.0-beta/trilium-linux-x64-server-0.60.0-beta.tar.xz'},
+        'mac': {'name': 'trilium-mac-x64-v0.60.0-beta.zip',
+                'url': 'https://github.com/zadam/trilium/releases/download/v0.60.0-beta/trilium-mac-x64-0.60.0-beta.zip'},
+        'windows': {'name': 'trilium-windows-x64-v0.60.0-beta.zip',
+                    'url': 'https://github.com/zadam/trilium/releases/download/v0.60.0-beta/trilium-windows-x64-0.60.0-beta.zip'}
     }
 }
