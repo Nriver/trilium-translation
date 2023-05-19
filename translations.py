@@ -1639,4 +1639,5 @@ translation_dict = {
     'sort with respect to different character sorting and collation rules in different languages or regions.': '',
     'Natural sort language': '',
     'The language code for natural sort, e.g. "zh-CN" for Chinese.': '',
+    'Open note custom': '',
 }

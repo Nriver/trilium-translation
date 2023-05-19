@@ -1881,6 +1881,7 @@ translation = [
     '>{{Search in note }}<',
     '>{{ Note source}}<',
     '>{{ Open note externally}}<',
+    '> {{Open note custom}}<',
     '>{{Import files}}<',
     '>{{Export note}}<',
     '>{{Delete note}}<',
@@ -3474,7 +3475,10 @@ else:
 # apply patch
 print(f'switch to dir: {BASE_PATH}')
 os.chdir(BASE_PATH)
-os.system('npm run webpack')
+# os.system('npm install webpack --save-dev')
+# os.system('npm run webpack')
+os.system('which webpack')
+os.system('webpack -c webpack.config.js')
 
 # 把编译好的文件复制到客户端里
 # copy compiled file to the client

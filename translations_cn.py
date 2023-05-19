@@ -1631,5 +1631,6 @@ translation_dict = {
     'sort with respect to different character sorting and collation rules in different languages or regions.': '根据不同语言或地区的字符排序和排序规则进行排序。',
     'Natural sort language': '自然排序语言',
     'The language code for natural sort, e.g. "zh-CN" for Chinese.': '自然排序的语言代码, 例如中文的"zh-CN"',
+    'Open note custom': '使用自定义程序打开笔记',
     '': '',
 }
