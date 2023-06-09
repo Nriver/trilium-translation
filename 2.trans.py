@@ -608,6 +608,9 @@ translation = [
     '>{{Recent changes}}<',
     '{{Erase deleted notes now}}',
     'showMessage("{{Deleted notes have been erased.}}"',
+    '{{No changes yet ...}}',
+    '{{Do you want to undelete this note and its sub-notes?}}',
+    'text("{{undelete}}")',
 ]
 replace_in_file(file_path, translation)
 
@@ -998,14 +1001,6 @@ translation = [
     '>{{Automatic read-only size}}<',
     '>{{Automatic read-only note size is the size after which notes will be displayed in a read-only mode (for performance reasons).}}<',
     '>{{Automatic read-only size (text notes)}}<',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/dialogs/recent_changes.js'
-translation = [
-    '{{No changes yet ...}}',
-    '{{Do you want to undelete this note and its sub-notes?}}',
-    'text("{{undelete}}")',
 ]
 replace_in_file(file_path, translation)
 
