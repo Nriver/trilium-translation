@@ -90,6 +90,7 @@ Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server
     * [提示 error 401 Unauthorized 是什么问题？](#提示-error-401-unauthorized-是什么问题)
     * [画布笔记变成了一个json文件怎么办?](#画布笔记变成了一个json文件怎么办)
     * [导入文档结果标题显示乱码怎么办？](#导入文档结果标题显示乱码怎么办)
+    * [Docker运行不起来怎么办？](#docker运行不起来怎么办)
 * [迁移笔记](#-迁移笔记)
     * [从 印象笔记 迁移到 Trilium](#从-印象笔记-迁移到-trilium)
     * [从 VNote或其它Markdown文件笔记 迁移到 Trilium](#从-vnote或其它markdown文件笔记-迁移到-trilium)
@@ -475,6 +476,23 @@ update notes set `type` = 'canvas' where noteId = '你的笔记ID'
 里勾上 `在Zip文件中使用Unicode文件名(UTF-8)`的选项即可.
 
 [这里](docs/中文测试.zip)有个UTF-8格式的压缩包例子, 你可以导入试试, 中文文件名可以正常显示.
+
+## Docker运行不起来怎么办？
+
+请尝试更新docker和docker-compose工具的版本, 下面是我使用的工具版本
+
+```
+❯ docker -v
+Docker version 23.0.4, build f480fb1e37
+❯ docker-compose -v
+Docker Compose version 2.17.3
+```
+
+如果你的docker版本太旧，有可能会无法启动。
+
+如果docker用不了，请尝试直接从release下载服务器版的zip包运行。
+
+还是不行的话，建议换一个新一点的Linux发行版，软件环境太旧也可能无法运行。
 
 ---
 
