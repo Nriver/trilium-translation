@@ -5,24 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../style.css">
     <base target="_parent">
+    <title data-trilium-title>数据库</title>
   </head>
   
   <body>
     <div class="content">
-       <h1>数据库</h1>
+       <h1 data-trilium-h1>数据库</h1>
 
       <div class="ck-content">
-        <p>在左上角<code>关于 Trilium Notes</code>界面里有数据库存放位置，需要备份的可以自行备份。</p>
-        <p>&nbsp;</p>
-        <h2>如何备份数据库?</h2>
-        <p>&nbsp;</p>
-        <p>Trilium有自动备份功能，软件内可以左上角设置里可以设定自动备份频率。如果需要手动备份，请务必先停止Trilium，然后找到对应的trilium-data目录进行备份。</p>
-        <p>注意，服务端和客户端的数据库文件是不能互相替换的，我之前尝试过，替换之后无法启动。但是客户端之间的数据库是可以直接复制粘贴的，比如可以把linux桌面客户端的数据直接拷贝给windows桌面客户端。</p>
-        <p>&nbsp;</p>
-        <h2>关于数据同步</h2>
-        <p>&nbsp;</p>
-        <p>Trilium唯一推荐的数据同步方式是通过服务端进行数据同步。</p>
-        <p>请不要使用第三方同步软件，如OneDrive等对数据进行同步！因为Trilium存储数据使用的是数据库，不是零散的文件。第三方同步软件是无法正确处理数据库的同步的。之前已经有一些用户使用第三方同步软件导致数据损坏的例子。</p>
+        <div>
+          <div>
+            <p>在左上角<code>关于 Trilium Notes</code>界面里有数据库存放位置，需要备份的可以自行备份。</p>
+            <p> </p>
+             <h2>如何备份数据库?</h2>
+
+            <p> </p>
+            <p>Trilium有自动备份功能，软件内可以左上角设置里可以设定自动备份频率。如果需要手动备份，请务必先停止Trilium，然后找到对应的trilium-data目录进行备份。</p>
+            <p>注意，服务端和客户端的数据库文件是不能互相替换的，我之前尝试过，替换之后无法启动。但是客户端之间的数据库是可以直接复制粘贴的，比如可以把linux桌面客户端的数据直接拷贝给windows桌面客户端。</p>
+            <p> </p>
+             <h2>关于数据同步</h2>
+
+            <p> </p>
+            <p>Trilium唯一推荐的数据同步方式是通过服务端进行数据同步。</p>
+            <p>请不要使用第三方同步软件，如OneDrive等对数据进行同步！因为Trilium存储数据使用的是数据库，不是零散的文件。第三方同步软件是无法正确处理数据库的同步的。之前已经有一些用户使用第三方同步软件导致数据损坏的例子。</p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
