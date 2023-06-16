@@ -179,8 +179,6 @@ Wechat Pay:
 
 # 🙏 Thanks
 
-Thank you for your support, it fills me with determination.
-
 Thanks `t**e` for donating 20 CNY!
 
 Thanks `1*0` for donating 8 CNY! Memo: 蜜雪冰城
@@ -258,6 +256,10 @@ Thanks `*白` for donating 10 CNY! Memo: 小葱白献上
 Thanks `*白` for donating 5 CNY! Memo: 小葱白献上
 
 Thanks `*杜` for donating 20 CNY! Memo: 谢谢您的翻译
+
+Thanks `*伟` for donating 20 CNY!
+
+Thanks `*淼` for donating 10 CNY! Memo: 今天第一天下载使用，感觉发现新大陆，谢谢！（希望入群交流）
 
 Thanks for the greate IDE Pycharm from Jetbrains.
 
