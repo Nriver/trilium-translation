@@ -880,7 +880,7 @@ translation = [
     '>{{Note revisions snapshot interval}}<',
     '>{{Note revision snapshot time interval is time in seconds after which a new note revision will be created for the note. See }}<',
     '>{{wiki}}<',
-    '>{{ for more info.}}<',
+    '> {{for more info.}}<',
     '>{{Note revision snapshot time interval (in seconds)}}<',
 ]
 replace_in_file(file_path, translation)
@@ -2704,6 +2704,12 @@ translation = [
     '"{{Sync with the server is in progress.}}"',
     'title: "{{Sync status}}"',
     'message: "{{Sync update in progress}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/title_bar_buttons.js'
+translation = [
+    '{{Keep this window on top.}}',
 ]
 replace_in_file(file_path, translation)
 

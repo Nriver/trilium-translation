@@ -1632,5 +1632,6 @@ translation_dict = {
     'Natural sort language': '自然排序语言',
     'The language code for natural sort, e.g. "zh-CN" for Chinese.': '自然排序的语言代码, 例如中文的"zh-CN"',
     'Open note custom': '使用自定义程序打开笔记',
+    'Keep this window on top.': '保持此窗口置顶.',
     '': '',
 }

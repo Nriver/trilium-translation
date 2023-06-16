@@ -1640,4 +1640,5 @@ translation_dict = {
     'Natural sort language': '',
     'The language code for natural sort, e.g. "zh-CN" for Chinese.': '',
     'Open note custom': '',
+    'Keep this window on top.': '',
 }
