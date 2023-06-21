@@ -9,8 +9,8 @@ import platform
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 
-DEBUG = False
 # DEBUG = False
+DEBUG = False
 
 # excalidraw 自定义字体
 # excalidraw custom font
@@ -54,31 +54,31 @@ PROXIES = {
 
 # 避免兼容性问题，强制使用某个版本的trilium
 # To avoid compatibility issue, force to use certain version of trilium
-VERSION_INFO_OVERRIDE = True
-# VERSION_INFO_OVERRIDE = False
+# VERSION_INFO_OVERRIDE = True
+VERSION_INFO_OVERRIDE = False
 
 force_version_info = {
-    'name': 'v0.57.5 release',
-    'zipball_url': 'https://api.github.com/repos/zadam/trilium/zipball/v0.57.5',
-    'browser_download_url': 'https://github.com/zadam/trilium/releases/download/v0.57.5/trilium-linux-x64-0.57.5.tar.xz'
+    'name': 'v0.60.3 release',
+    'zipball_url': 'https://api.github.com/repos/zadam/trilium/zipball/v0.60.3',
+    'browser_download_url': 'https://github.com/zadam/trilium/releases/download/v0.60.3/trilium-linux-x64-0.60.3.tar.xz'
 }
 
 force_version_info_full = {
-    'name': 'v0.57.5 release',
+    'name': 'v0.60.3 release',
     'releases': {
-        'linux': {'name': 'trilium-linux-x64-0.57.5.tar.xz',
-                  'url': 'https://github.com/zadam/trilium/releases/download/v0.57.5/trilium-linux-x64-0.57.5.tar.xz'},
-        'linux-server': {'name': 'trilium-linux-x64-server-0.57.5.tar.xz',
-                         'url': 'https://github.com/zadam/trilium/releases/download/v0.57.5/trilium-linux-x64-server-0.57.5.tar.xz'},
-        'mac': {'name': 'trilium-mac-x64-0.57.5.zip',
-                'url': 'https://github.com/zadam/trilium/releases/download/v0.57.5/trilium-mac-x64-0.57.5.zip'},
-        'windows': {'name': 'trilium-windows-x64-0.57.5.zip',
-                    'url': 'https://github.com/zadam/trilium/releases/download/v0.57.5/trilium-windows-x64-0.57.5.zip'}
+        'linux': {'name': 'trilium-linux-x64-0.60.3.tar.xz',
+                  'url': 'https://github.com/zadam/trilium/releases/download/v0.60.3/trilium-linux-x64-0.60.3.tar.xz'},
+        'linux-server': {'name': 'trilium-linux-x64-server-0.60.3.tar.xz',
+                         'url': 'https://github.com/zadam/trilium/releases/download/v0.60.3/trilium-linux-x64-server-0.60.3.tar.xz'},
+        'mac': {'name': 'trilium-mac-x64-0.60.3.zip',
+                'url': 'https://github.com/zadam/trilium/releases/download/v0.60.3/trilium-mac-x64-0.60.3.zip'},
+        'windows': {'name': 'trilium-windows-x64-0.60.3.zip',
+                    'url': 'https://github.com/zadam/trilium/releases/download/v0.60.3/trilium-windows-x64-0.60.3.zip'}
     }
 }
 
-VERSION_INFO_OVERRIDE_BETA = True
-# VERSION_INFO_OVERRIDE_BETA = False
+# VERSION_INFO_OVERRIDE_BETA = True
+VERSION_INFO_OVERRIDE_BETA = False
 # beta
 force_version_info_beta = {
     'name': 'v0.60.2-beta release',
