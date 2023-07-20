@@ -261,6 +261,10 @@ Thanks `*伟` for donating 20 CNY!
 
 Thanks `*淼` for donating 10 CNY! Memo: 今天第一天下载使用，感觉发现新大陆，谢谢！（希望入群交流）
 
+Thanks `*落` for donating 10 CNY! Memo: 感谢长期的坚持♥
+
+Thanks `*F` for donating 99 CNY! Memo: 感谢分享 希望深度合作 长期学习交流
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)

@@ -707,6 +707,10 @@ Trilium Notes的文字是硬编码的, 所以没法切换语言.
 
 感谢 `*淼` 赞助的10元! 备注: 今天第一天下载使用，感觉发现新大陆，谢谢！（希望入群交流）
 
+感谢 `*落` 赞助的10元! 备注: 感谢长期的坚持♥
+
+感谢 `*F` 赞助的99元! 备注: 感谢分享 希望深度合作 长期学习交流
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
