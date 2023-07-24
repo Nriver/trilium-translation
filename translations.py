@@ -1657,4 +1657,13 @@ translation_dict = {
     'Convert to attachment': '',
     'Are you sure you want to convert note selected notes into attachments of their parent notes?': '',
     '${converted} notes have been converted to attachments.': '',
+    'Owning note': '',
+    'Upload attachments': '',
+    'you can also open the': '',
+    'This attachment has been deleted.': '',
+    '`This attachment will be automatically deleted in ${utils.formatTimeInterval(willBeDeletedInMs)}`': '',
+    'This attachment will be automatically deleted soon': '',
+    "because the attachment is not linked in the note's content. To prevent deletion, add the attachment link back into the content or convert the attachment into note.": '',
+    'Attachment link copied to clipboard.': '',
+    '`Role: ${this.attachment.role}, Size: ${utils.formatSize(this.attachment.contentLength)}`': '',
 }

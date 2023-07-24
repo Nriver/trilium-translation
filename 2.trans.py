@@ -1494,6 +1494,16 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/attachment_detail.js'
+translation = [
+    '{{`This attachment will be automatically deleted in ${utils.formatTimeInterval(willBeDeletedInMs)}`}}',
+    '{{This attachment will be automatically deleted soon}}',
+    "{{because the attachment is not linked in the note's content. To prevent deletion, add the attachment link back into the content or convert the attachment into note.}}",
+    '{{Attachment link copied to clipboard.}}',
+    '`Role: ${this.attachment.role}, Size: ${utils.formatSize(this.attachment.contentLength)}`',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/attribute_widgets/attribute_detail.js'
 translation = [
     '>{{Name:}}<',
@@ -2775,6 +2785,21 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/type_widgets/content/backend_log.js'
 translation = [
     '>{{Refresh}}<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/attachment_detail.js'
+translation = [
+    '"{{Owning note}}: "',
+    '", {{you can also open the}} "',
+    '>This attachment has been deleted.<',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/type_widgets/attachment_list.js'
+translation = [
+    '"{{Owning note}}: "',
+    '"{{Upload attachments}}"',
 ]
 replace_in_file(file_path, translation)
 
