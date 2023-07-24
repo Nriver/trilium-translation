@@ -207,9 +207,9 @@ translation = [
     ">{{Sync has been correctly set up. It will take some time for the initial sync to finish. Once it's done, you'll be redirected to the login page.}}<",
     '>{{N/A}}<',
     '{{Username and / or password are incorrect. Please try again.}}',
-    "{{I'm a new user, and I want to create new Trilium document for my notes}}",
-    '{{I have desktop instance already, and I want to set up sync with it}}',
-    '{{I have server instance already, and I want to set up sync with it}}',
+    "{{I'm a new user, and I want to create a new Trilium document for my notes}}",
+    '{{I have a desktop instance already, and I want to set up sync with it}}',
+    '{{I have a server instance already, and I want to set up sync with it}}',
     "{{You're almost done with the setup. The last thing is to choose username and password using which you'll login to the application.}}",
     '{{This password is also used for generating encryption key which encrypts protected notes.}}',
     'placeholder="{{Choose alphanumeric username}}"',
@@ -666,7 +666,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/advanced/consistency_checks.js'
 translation = [
-    '>{{Consistency checks}}<',
+    '>{{Consistency Checks}}<',
     '>{{Find and fix consistency issues}}<',
     'showMessage("{{Finding and fixing consistency issues...}}"',
     'showMessage("{{Consistency issues should be fixed.}}"',
@@ -675,13 +675,13 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/advanced/database_anonymization.js'
 translation = [
-    '>{{Database anonymization}}<',
-    '>{{Full anonymization}}<',
+    '>{{Database Anonymization}}<',
+    '>{{Full Anonymization}}<',
     '>{{Save fully anonymized database}}<',
-    '>{{Light anonymization}}<',
+    '>{{Light Anonymization}}<',
     '{{This action will create a new copy of the database and anonymize it (remove all note content and leave only structure and some non-sensitive metadata)\n        for sharing online for debugging purposes without fear of leaking your personal data.}}',
-    '>{{This action will create a new copy of the database and do a light anonymization on it - specifically only content of all notes will be removed, but titles and attributes will remain. Additionally, custom JS frontend/backend script notes and custom widgets will remain. This provides more context to debug the issues.}}<',
-    '>{{You can decide yourself if you want to provide fully or lightly anonymized database. Even fully anonymized DB is very useful, however in some cases lightly anonymized database can speed up the process of bug identification and fixing.}}<',
+    '>{{This action will create a new copy of the database and do a light anonymization on it — specifically only content of all notes will be removed, but titles and attributes will remain. Additionally, custom JS frontend/backend script notes and custom widgets will remain. This provides more context to debug the issues.}}<',
+    '>{{You can decide yourself if you want to provide a fully or lightly anonymized database. Even fully anonymized DB is very useful, however in some cases lightly anonymized database can speed up the process of bug identification and fixing.}}<',
     '>{{Save lightly anonymized database}}<',
     'showMessage(`{{Created fully anonymized database in ${resp.anonymizedFilePath}`}}',
     'showMessage(`{{Created lightly anonymized database in ${resp.anonymizedFilePath}`}}',
@@ -693,7 +693,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/advanced/database_integrity_check.js'
 translation = [
-    '>{{Database integrity check}}<',
+    '>{{Database Integrity Check}}<',
     '>{{This will check that the database is not corrupted on the SQLite level. It might take some time, depending on the DB size.}}<',
     '>{{Check database integrity}}<',
     'showMessage(`{{Integrity check failed: ${JSON.stringify(results, null, 2)}}}`',
@@ -715,7 +715,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/advanced/vacuum_database.js'
 translation = [
-    '>{{Vacuum database}}<',
+    '>{{Vacuum Database}}<',
     '>{{This will rebuild the database which will typically result in a smaller database file. No data will be actually changed.}}<',
     'showMessage("{{Vacuuming database...}}"',
     'showMessage("{{Database has been vacuumed}}"',
@@ -740,7 +740,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/appearance/max_content_width.js'
 translation = [
-    '>{{Content width}}<',
+    '>{{Content Width}}<',
     '>{{Trilium by default limits max content width to improve readability for maximized screens on wide screens.}}<',
     '>{{Max content width in pixels}}<',
     '>{{reload frontend}}<',
@@ -750,7 +750,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/appearance/native_title_bar.js'
 translation = [
-    '>{{Native title bar (requires app restart)}}<',
+    '>{{Native Title Bar (requires app restart)}}<',
     '>{{enabled}}<',
     '>{{disabled}}<',
 ]
@@ -767,7 +767,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/appearance/zoom_factor.js'
 translation = [
-    '>{{Zoom factor (desktop build only)}}<',
+    '>{{Zoom Factor (desktop build only)}}<',
     '>{{Zooming can be controlled with CTRL+- and CTRL+= shortcuts as well.}}<',
 ]
 replace_in_file(file_path, translation)
@@ -790,7 +790,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/code_notes/code_auto_read_only_size.js'
 translation = [
-    '>{{Automatic read-only size}}<',
+    '>{{Automatic Read-Only Size}}<',
     '>{{Automatic read-only note size is the size after which notes will be displayed in a read-only mode (for performance reasons).}}<',
     '>{{Automatic read-only size (code notes)}}<',
 ]
@@ -857,16 +857,25 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/type_widgets/options/other/attachment_erasure_timeout.js'
+translation = [
+    '>{{Attachment Erasure Timeout}}<',
+    '{{Attachments get automatically deleted (and erased) if they are not referenced by their note anymore after a defined time out.}}',
+    '{{Erase attachments after X seconds of not being used in its note}}',
+    '{{You can also trigger erasing manually (without considering the timeout defined above)}}',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/type_widgets/options/other/network_connections.js'
 translation = [
-    '>{{Network connections}}<',
+    '>{{Network Connections}}<',
     '{{Check for updates automatically}}',
 ]
 replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/other/note_erasure_timeout.js'
 translation = [
-    '>{{Note erasure timeout}}<',
+    '>{{Note Erasure Timeout}}<',
     '>{{Erase notes after X seconds}}<',
     '>{{You can also trigger erasing manually:}}<',
     '>{{Erase deleted notes now}}<',
@@ -877,7 +886,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/other/note_revisions_snapshot_interval.js'
 translation = [
-    '>{{Note revisions snapshot interval}}<',
+    '>{{Note Revisions Snapshot Interval}}<',
     '>{{Note revision snapshot time interval is time in seconds after which a new note revision will be created for the note. See }}<',
     '>{{wiki}}<',
     '> {{for more info.}}<',
@@ -913,7 +922,7 @@ translation = [
     '>{{click here to reset it}}<',
     '>{{Old password}}<',
     '>{{New password}}<',
-    '>{{New password Confirmation}}<',
+    '>{{New password confirmation}}<',
     '>{{Change password}}<',
     '    alert("{{Password has been reset. Please set new password}}"',
     '    alert("{{New passwords are not the same.}}"',
@@ -922,8 +931,8 @@ translation = [
     '{{If you forget your password, then all your protected notes are forever lost.}}',
     '{{In case you did forget your password}}',
     '"{{By resetting the password you will forever lose access to all your existing protected notes. Do you really want to reset the password?}}"',
-    "'{{Change password}}' : '{{Set password}}')",
-    '>{{Protected session timeout}}<',
+    "'{{Change Password}}' : '{{Set Password}}')",
+    '>{{Protected Session Timeout}}<',
     "{{Protected session timeout is a time period after which the protected session is wiped from\n        the browser's memory. This is measured from the last interaction with protected notes. See}}",
     '{{for more info.}}',
     '>{{Protected session timeout (in seconds)}}<',
@@ -933,7 +942,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/type_widgets/options/shortcuts.js'
 translation = [
     'return "{{Shortcuts}}"',
-    '>{{Keyboard shortcuts}}<',
+    '>{{Keyboard Shortcuts}}<',
     '{{Multiple shortcuts for the same action can be separated by comma.}}',
     '{{See <a href="https://www.electronjs.org/docs/latest/api/accelerator">Electron documentation</a> for available modifiers and key codes.}}',
     '>{{Action name}}<',
@@ -950,7 +959,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/type_widgets/options/spellcheck.js'
 translation = [
     'return "{{Spellcheck}}"',
-    '>{{Spell check}}<',
+    '>{{Spell Check}}<',
     '>{{These options apply only for desktop builds, browsers will use their own native spell check. App restart is required after change.}}<',
     '{{Enable spellcheck}}',
     '>{{Language code(s)}}<',
@@ -963,7 +972,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/type_widgets/options/sync.js'
 translation = [
     'return "{{Sync}}"',
-    '>{{Sync configuration}}<',
+    '>{{Sync Configuration}}<',
     '>{{Server instance address}}<',
     '>{{Sync timeout (milliseconds)}}<',
     '>{{Sync proxy server (optional)}}<',
@@ -971,7 +980,7 @@ translation = [
     '> {{If you leave the proxy setting blank, the system proxy will be used (applies to desktop/electron build only)}}<',
     '>{{Save}}<',
     '>{{Help}}<',
-    '>{{Sync test}}<',
+    '>{{Sync Test}}<',
     ">{{This will test the connection and handshake to the sync server. If the sync server isn't initialized, this will set it up to sync with the local document.}}<",
     '>{{Test sync}}<',
     'showMessage("{{Options changed have been saved.}}"',
@@ -981,16 +990,28 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/text_notes/heading_style.js'
 translation = [
-    '>{{Heading style}}<',
+    '>{{Heading Style}}<',
     '>{{Plain}}<',
     '>{{Underline}}<',
     '>{{Markdown-style}}<',
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/type_widgets/options/text_notes/highlights_list.js'
+translation = [
+    '>{{Highlights List}}<',
+    '{{You can customize the highlights list displayed in the right panel}}',
+    '{{Bold font}}',
+    '{{Italic font}}',
+    '{{Underlined font}}',
+    '{{Font with color}}',
+    '{{Font with background color}}',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/type_widgets/options/text_notes/table_of_contents.js'
 translation = [
-    '>{{Table of contents}}<',
+    '>{{Table of Contents}}<',
     '{{Table of contents will appear in text notes when the note has more than a defined number of headings. You can customize this number:}}',
     '>{{You can also use this option to effectively disable TOC by setting a very high number.}}<',
 ]
@@ -998,7 +1019,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/options/text_notes/text_auto_read_only_size.js'
 translation = [
-    '>{{Automatic read-only size}}<',
+    '>{{Automatic Read-Only Size}}<',
     '>{{Automatic read-only note size is the size after which notes will be displayed in a read-only mode (for performance reasons).}}<',
     '>{{Automatic read-only size (text notes)}}<',
 ]
@@ -1465,8 +1486,11 @@ translation = [
     "title: '{{Move to ... }}",
     "title: '{{Paste into }}",
     "title: '{{Paste after}}",
+    "title: '{{Convert to attachment}}'",
     # special colon
     "title: `{{Duplicate subtree}}",
+    '`{{Are you sure you want to convert note selected notes into attachments of their parent notes?}}`',
+    '`{{${converted} notes have been converted to attachments.}}`'
 ]
 replace_in_file(file_path, translation)
 
@@ -1875,7 +1899,9 @@ translation = [
     '>{{ Re-render note}}<',
     '>{{Search in note }}<',
     '>{{ Note source}}<',
-    '>{{ Open note externally}}<',
+    '>{{ Note attachments}}<',
+    '{{Open note externally}}',
+    "{{File will be open in an external application and watched for changes. You'll then be able to upload the modified version back to Trilium.}}",
     '> {{Open note custom}}<',
     '>{{Import files}}<',
     '>{{Export note}}<',
@@ -2277,6 +2303,12 @@ file_path = 'src/public/app/widgets/find.js'
 translation = [
     '                {{case sensitive}}',
     '                {{match words}}',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/highlights_list.js'
+translation = [
+    '"{{Highlights List}}"',
 ]
 replace_in_file(file_path, translation)
 
