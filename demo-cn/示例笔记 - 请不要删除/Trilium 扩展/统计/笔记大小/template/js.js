@@ -1,16 +1,35 @@
 const notes = await api.runOnBackend(() => {
-    return api.sql.getRows(`
+    const blobSizes = api.sql.getMap(`SELECT blobId, LENGTH(content) FROM blobs`);
+    const noteBlobIds = api.sql.getRows(`
         SELECT
             notes.noteId,
-            LENGTH(note_contents.content) + COALESCE(SUM(LENGTH(note_revision_contents.content)), 0) AS size
-        FROM notes
-        JOIN note_contents ON notes.noteId=note_contents.noteId
-        LEFT JOIN note_revisions ON note_revisions.noteId=notes.noteId
-        LEFT JOIN note_revision_contents ON note_revisions.noteRevisionId=note_revision_contents.noteRevisionId
-        WHERE notes.isDeleted = 0
-        GROUP BY notes.noteId
-        ORDER BY size DESC
-        LIMIT 100`);
+            notes.blobId,
+            GROUP_CONCAT(revisions.blobId) AS revisions_blobIds,
+            GROUP_CONCAT(note_attachments.blobId) AS note_attachments_blobIds,
+            GROUP_CONCAT(revision_attachments.blobId) AS revision_attachments_blobIds
+        FROM
+            notes
+            LEFT JOIN revisions USING (noteId)
+            LEFT JOIN attachments AS note_attachments ON notes.noteId = note_attachments.ownerId
+            LEFT JOIN attachments AS revision_attachments ON revisions.revisionId = revision_attachments.ownerId
+        GROUP BY noteId`);
+    
+    let noteSizes = [];
+    
+    for (const {noteId, blobId, revisions_blobIds, note_attachments_blobIds, revision_attachments_blobIds} of noteBlobIds) {
+       const blobIds = new Set(`${blobId},${revisions_blobIds},${note_attachments_blobIds},${revision_attachments_blobIds}`.split(',').filter(blobId => !!blobId));
+        
+        const lengths = [...blobIds].map(blobId => blobSizes[blobId] || 0);
+        const totalLength = lengths.reduce((partialSum, a) => partialSum + a, 0);
+        
+        noteSizes.push({ noteId, size: totalLength });
+    }
+    
+    noteSizes.sort((a, b) => a.size > b.size ? -1 : 1);
+    
+    noteSizes = noteSizes.splice(0, 100);
+    
+    return noteSizes;
 });
 
 const $statsTable = api.$container.find('.stats-table');

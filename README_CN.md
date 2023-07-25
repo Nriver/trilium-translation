@@ -580,6 +580,13 @@ const notes = await api.runOnBackend(async () => {
 
 ---
 
+# 0.60 升级到 0.61 的问题
+
+由于数据库结构和API变化，示例笔记中的`统计`
+功能会报错，需要更新相关的js代码，请找到对应有报错的js文件替换成最新版的。代码在[这里](https://github.com/Nriver/trilium-translation/tree/main/demo-cn/示例笔记%20-%20请不要删除/Trilium%20扩展/统计)
+
+---
+
 # 🔤 关于本项目使用的字体
 
 本项目使用的字体文件为免费字体.
