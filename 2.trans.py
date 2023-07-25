@@ -240,7 +240,7 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-file_path = 'src/public/app/desktop.js'
+file_path = 'src/public/app/menus/electron_context_menu.js'
 translation = [
     'title: `{{Add "${params.misspelledWord}" to dictionary}}`',
     'title: `{{Cut}}',
@@ -248,7 +248,7 @@ translation = [
     'title: `{{Copy link}}`',
     'title: `{{Paste as plain text}}',
     'title: `{{Paste}}',
-    'title: `{{Search for "${shortenedSelection}" with DuckDuckGo}}`',
+    'title: {{`Search for "${shortenedSelection}" with ${searchEngineName}`}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -451,7 +451,7 @@ file_path = 'src/public/app/widgets/dialogs/import.js'
 translation = [
     '>{{Import into note}}<',
     '>{{Choose import file}}<',
-    '>{{Content of the file will be imported as child note(s) into }}<',
+    '>{{Content of the selected file(s) will be imported as child note(s) into }}<',
     '>{{Options:}}<',
     '>{{Safe import}}<',
     '>{{Read contents of <code>.zip</code>, <code>.enex</code> and <code>.opml</code> archives.}}<',
@@ -1266,6 +1266,10 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/services/utils.js'
 translation = [
     '''throw new Error("{{Can't parse date from}} "''',
+    "'{{day}}'",
+    "'{{hour}}'",
+    "'{{minute}}'",
+    "'{{second}}'",
 ]
 replace_in_file(file_path, translation)
 
@@ -1500,7 +1504,7 @@ translation = [
     '{{This attachment will be automatically deleted soon}}',
     "{{because the attachment is not linked in the note's content. To prevent deletion, add the attachment link back into the content or convert the attachment into note.}}",
     '{{Attachment link copied to clipboard.}}',
-    '`Role: ${this.attachment.role}, Size: ${utils.formatSize(this.attachment.contentLength)}`',
+    '{{`Role: ${this.attachment.role}, Size: ${utils.formatSize(this.attachment.contentLength)}`}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -1708,7 +1712,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/bulk_actions/note/delete_note_revisions.js'
+file_path = 'src/public/app/widgets/bulk_actions/note/delete_revisions.js'
 translation = [
     '"{{Delete note revisions}}"',
     '        {{Delete note revisions}}',
@@ -1789,6 +1793,28 @@ translation = [
     'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
     'placeholder="{{relation name}}"',
     'placeholder="{{target note}}"',
+]
+replace_in_file(file_path, translation)
+
+file_path = 'src/public/app/widgets/buttons/attachments_actions.js'
+translation = [
+    "{{File will be open in an external application and watched for changes. You'll then be able to upload the modified version back to Trilium.}}",
+    '>{{Open externally}}<',
+    '>{{Download}}<',
+    '>{{Rename attachment}}<',
+    '>{{Upload new revision}}<',
+    '>{{Copy link to clipboard}}<',
+    '>{{Convert attachment into note}}<',
+    '>{{Delete attachment}}<',
+    '"{{New attachment revision has been uploaded.}}"',
+    '"{{"Upload of a new attachment revision failed."}}"',
+    '"{{Opening attachment externally is available only from the detail page, please first click on the attachment detail first and repeat the action.}}"',
+    '{{Are you sure you want to delete attachment}}',
+    "{{Attachment '${this.attachment.title}' has been deleted.}}",
+    "{{Are you sure you want to convert attachment '${this.attachment.title}' into a separate note?}}",
+    "{{Attachment '${this.attachment.title}' has been converted to note.}}",
+    'title: "{{Rename attachment}}",',
+    "{{Please enter new attachment's name}}",
 ]
 replace_in_file(file_path, translation)
 
@@ -2792,7 +2818,8 @@ file_path = 'src/public/app/widgets/type_widgets/attachment_detail.js'
 translation = [
     '"{{Owning note}}: "',
     '", {{you can also open the}} "',
-    '>This attachment has been deleted.<',
+    "title: '{{List of all attachments}}',",
+    '>{{This attachment has been deleted.}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -2800,6 +2827,7 @@ file_path = 'src/public/app/widgets/type_widgets/attachment_list.js'
 translation = [
     '"{{Owning note}}: "',
     '"{{Upload attachments}}"',
+    '{{This note has no attachments.}}',
 ]
 replace_in_file(file_path, translation)
 
