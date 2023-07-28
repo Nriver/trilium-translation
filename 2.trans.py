@@ -519,7 +519,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/note_revisions.js'
+file_path = 'src/public/app/widgets/dialogs/revisions.js'
 translation = [
     '>{{Note revisions}}<',
     '>{{Delete all revisions}}<',
@@ -716,6 +716,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/type_widgets/options/advanced/vacuum_database.js'
 translation = [
     '>{{Vacuum Database}}<',
+    '>{{Vacuum database}}<',
     '>{{This will rebuild the database which will typically result in a smaller database file. No data will be actually changed.}}<',
     'showMessage("{{Vacuuming database...}}"',
     'showMessage("{{Database has been vacuumed}}"',
@@ -863,6 +864,7 @@ translation = [
     '{{Attachments get automatically deleted (and erased) if they are not referenced by their note anymore after a defined time out.}}',
     '{{Erase attachments after X seconds of not being used in its note}}',
     '{{You can also trigger erasing manually (without considering the timeout defined above)}}',
+    '{{Erase unused attachment notes now}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -884,7 +886,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/type_widgets/options/other/note_revisions_snapshot_interval.js'
+file_path = 'src/public/app/widgets/type_widgets/options/other/revisions_snapshot_interval.js'
 translation = [
     '>{{Note Revisions Snapshot Interval}}<',
     '>{{Note revision snapshot time interval is time in seconds after which a new note revision will be created for the note. See }}<',
@@ -3463,7 +3465,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/doc_notes/launchbar_command_launcher.html'
 translation = [
-    '>{{Keyboard launcher for this launcher action can be configured in Options -> Launchers.}}<',
+    '>{{Keyboard shortcut for this launcher action can be configured in Options -> Shortcuts.}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -3494,8 +3496,8 @@ translation = [
     # '>{{hoistedNote}}<',
     '>{{ - optional, will change the hoisted note before opening the target note}}<',
     # '>{{keyboardLauncher}}<',
-    '>{{ - optional, pressing the keyboard launcher will open the note}}<',
-    '>{{Launchbar displays the title / icon from the launcher which does not necessarily mirrors those of the target note.}}<',
+    '>{{ - optional, pressing the keyboard shortcut will open the note}}<',
+    '>{{Launchbar displays the title / icon from the launcher which does not necessarily mirror those of the target note.}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -3507,7 +3509,7 @@ translation = [
     # '>{{script}}<',
     '>{{ - relation to the script note which should be executed upon launcher activation}}<',
     # '>{{keyboardLauncher}}<',
-    '>{{ - optional, pressing the keyboard launcher will activate the launcher}}<',
+    '>{{ - optional, pressing the keyboard shortcut will activate the launcher}}<',
     '>{{Example script}}<',
 ]
 replace_in_file(file_path, translation)
