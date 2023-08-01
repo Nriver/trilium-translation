@@ -1186,7 +1186,6 @@ translation_dict = {
     'No similar notes found.': '没有找到相似笔记.',
     'Open Trilium API docs': '打开 Trilium API 文档',
     'SQL Console note has been saved into ': 'SQL 控制台笔记已保存到',
-
     '''Normal (soft) deletion only marks the notes as deleted and they can be undeleted (in recent changes dialog) within a period of time. Checking this option will erase the notes immediatelly and it won't be possible to undelete the notes.''': '通常(软)删除只是标记笔记可以被删掉并且在一段时间内可以通过最新修改窗口进行恢复. 勾上这个选项会立即删除笔记，并且不可恢复.',
     ' - follow link under cursor': ' - 跟随链接',
     'Show recent changes': '显示最近修改',
@@ -1347,7 +1346,6 @@ translation_dict = {
     'in tree pane will switch from tree pane into note title. Enter from note title will switch focus to text editor.': '从笔记树切换到笔记标题, 或者从笔记标题切换到笔记内容.',
     "link title mirrors the note's current title": '链接标题跟随笔记标题变化',
     'link title can be changed arbitrarily': '链接标题可随意修改',
-
     'Full Anonymization': '完全匿名化',
     'Save fully anonymized database': '保存完全匿名化的数据库',
     'Light Anonymization': '轻度匿名化',

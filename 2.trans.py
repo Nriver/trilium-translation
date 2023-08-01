@@ -77,8 +77,10 @@ about_file_path = f'src/public/app/widgets/dialogs/about.js'
 with open(about_file_path, 'r') as f:
     content = f.read()
     if TRANSLATOR_LABEL not in content:
-        content = content.replace('                </table>',
-                                  f'\n                    <tr>\n                        <th>{TRANSLATOR_LABEL}:</th>\n                        <td><a href="{TRANSLATOR_URL}" class="external">{TRANSLATOR_URL}</a></td>\n                    </tr>\n                </table>')
+        content = content.replace(
+            '                </table>',
+            f'\n                    <tr>\n                        <th>{TRANSLATOR_LABEL}:</th>\n                        <td><a href="{TRANSLATOR_URL}" class="external">{TRANSLATOR_URL}</a></td>\n                    </tr>\n                </table>',
+        )
 with open(about_file_path, 'w') as f:
     f.write(content)
 
@@ -101,8 +103,10 @@ with open(file_path, 'r') as f:
     content = f.read()
     target_element = '                    <div class="form-group">\n                        <label>'
     if target_element in content:
-        content = content.replace('                    <div class="form-group">\n                        <label>',
-                                  '                    <div class="form-group">\n                        <label style="width: -webkit-fill-available">')
+        content = content.replace(
+            '                    <div class="form-group">\n                        <label>',
+            '                    <div class="form-group">\n                        <label style="width: -webkit-fill-available">',
+        )
 with open(file_path, 'w') as f:
     f.write(content)
 
@@ -236,7 +240,7 @@ translation = [
     '>{{This note was originally clipped from }}<',
     '>{{This note has no content.}}<',
     '>{{Child notes: }}<',
-    '    {{parent: }}<'
+    '    {{parent: }}<',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
@@ -660,7 +664,6 @@ file_path = 'src/public/app/dialogs/delete_notes.js'
 translation = [
     '{{Note}} ',
     '` {{(to be deleted) is referenced by relation <code>${attr.name}</code> originating from}} `',
-
 ]
 replace_in_file(file_path, translation)
 
@@ -1095,8 +1098,7 @@ replace_in_file(file_path, translation, TARGET_PATH)
 
 # no need for translate for now
 file_path = 'src/services/search/services/search.js'
-translation = [
-]
+translation = []
 replace_in_file(file_path, translation, TARGET_PATH)
 
 file_path = 'src/services/sql_init.js'
@@ -1360,7 +1362,6 @@ translation = [
     '{{Column:}}',
     '{{Error object:}}',
     '{{Stack:}}',
-
 ]
 replace_in_file(file_path, translation)
 
@@ -1496,7 +1497,7 @@ translation = [
     # special colon
     "title: `{{Duplicate subtree}}",
     '`{{Are you sure you want to convert note selected notes into attachments of their parent notes?}}`',
-    '`{{${converted} notes have been converted to attachments.}}`'
+    '`{{${converted} notes have been converted to attachments.}}`',
 ]
 replace_in_file(file_path, translation)
 
@@ -1851,7 +1852,6 @@ translation = [
     'title="{{Save attributes <enter>}}"',
     'title="{{Add a new attribute}}"',
     """`\n{{<p>To add label, just type e.g. <code>#rock</code> or if you want to add also value then e.g. <code>#year = 2020</code></p> \n\n<p>For relation, type <code>~author = @</code> which should bring up an autocomplete where you can look up the desired note.</p>\n\n<p>Alternatively you can add label and relation using the <code>+</code> button on the right side.</p>}}`""",
-
 ]
 replace_in_file(file_path, translation)
 
@@ -1958,7 +1958,6 @@ file_path = 'src/public/app/widgets/buttons/protected_session_status.js'
 translation = [
     '{{Protected session is active. Click to leave protected session.}}',
     '{{Click to enter protected session}}',
-
 ]
 replace_in_file(file_path, translation)
 
@@ -1966,14 +1965,12 @@ file_path = 'src/public/app/widgets/buttons/left_pane_toggle.js'
 translation = [
     '"{{Hide sidebar.}}"',
     '"{{Open sidebar.}}"',
-
 ]
 replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/buttons/show_note_source.js'
 translation = [
     'title("{{Show Note Source}}")',
-
 ]
 replace_in_file(file_path, translation)
 
@@ -2287,10 +2284,8 @@ translation = [
     '>{{Search script must be of type "code" and subtype "JavaScript backend". The script receives  needs to return an array of noteIds or notes.}}<',
     '>{{See this example:}}<',
     ">{{Note that search script and search string can't be combined with each other.}}<",
-
     '    {{Search script:}}',
     '{{search for note by its name}}',
-
 ]
 replace_in_file(file_path, translation)
 
@@ -2318,7 +2313,6 @@ translation = [
     '"auto": "{{Auto}}",',
     '"readOnly": "{{Read-only}}",',
     '"autoReadOnlyDisabled": "{{Always Editable}}"',
-
 ]
 replace_in_file(file_path, translation)
 
@@ -2441,14 +2435,12 @@ translation = [
     'showMessage("{{Auto collapsing notes after inactivity...}}"',
     'infoDialog.info("{{Dropping notes into this location is not allowed.}}")',
     "{{Dropping notes into this location is not allowed.}}",
-
     'throw new Error(`{{Branch "${branch.branchId}" has no note "${branch.noteId}"}}`',
     'throw new Error("{{Unknown hitMode=}}"',
     '    logError(`{{Cannot parse ${jsonStr} into notes for drop}}`',
     '    logError({{`Cannot find branch=${branchId}`}}',
     '    logError("{{Could not find run path for notePath:}}"',
     '"{{Apply bulk actions on selected notes}}"',
-
 ]
 replace_in_file(file_path, translation)
 
@@ -2586,7 +2578,6 @@ translation = [
     "title: '{{Note Info}}",
     '({{subtree size}}: ',
     '{{in ${subTreeResp.subTreeNoteCount} notes}})',
-
 ]
 replace_in_file(file_path, translation)
 
@@ -2695,11 +2686,9 @@ translation = [
     '> - {{also see}} <',
     '>{{complete help on search syntax}}<',
     "title: '{{Search: }}",
-
     """<li>{{Just enter any text for full text search</li>\n                <li><code>#abc</code> - returns notes with label abc</li>\n                <li><code>#year = 2019</code> - matches notes with label <code>year</code> having value <code>2019</code></li>\n                <li><code>#rock #pop</code> - matches notes which have both <code>rock</code> and <code>pop</code> labels</li>\n                <li><code>#rock or #pop</code> - only one of the labels must be present</li>\n                <li><code>#year &lt;= 2000</code> - numerical comparison (also &gt;, &gt;=, &lt;).</li>\n                <li><code>note.dateCreated >= MONTH-1</code> - notes created in the last month}}</li>""",
     """{{this.note.title.startsWith('Search: ')}}""",
     '{{fulltext keywords, #tag = value ...}}',
-
 ]
 replace_in_file(file_path, translation)
 
@@ -2968,7 +2957,6 @@ translation = [
     'label:"{{Internal Trilium link}} (CTRL-L)"',
     'label:"{{Markdown import from clipboard}}"',
     'label:"{{Cut & paste selection to sub-note}}"',
-
     '''"%0 of %1":"{{%0 of %1}}"''',
     '''"Align cell text to the bottom":"{{Align cell text to the bottom}}"''',
     '''"Align cell text to the center":"{{Align cell text to the center}}"''',
@@ -3255,15 +3243,22 @@ translation = [
 ]
 
 if TRANSLATE_NOTE_TAG:
-    translation.extend(["=== '{{inheritable}}'", ])
+    translation.extend(
+        [
+            "=== '{{inheritable}}'",
+        ]
+    )
 
 replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/services/attribute_renderer.js'
-translation = [
-]
+translation = []
 if TRANSLATE_NOTE_TAG:
-    translation.extend([' `({{inheritable}})` ', ])
+    translation.extend(
+        [
+            ' `({{inheritable}})` ',
+        ]
+    )
 
 replace_in_file(file_path, translation)
 
@@ -3555,7 +3550,9 @@ else:
     with open(file_full_path, 'r', encoding='utf-8') as f:
         content = f.read()
     if not 'langCode' in content:
-        content = content.replace('ref: excalidrawRef,', 'ref: excalidrawRef,\n                    langCode: "zh-CN",')
+        content = content.replace(
+            'ref: excalidrawRef,', 'ref: excalidrawRef,\n                    langCode: "zh-CN",'
+        )
     with open(file_full_path, 'w') as f:
         f.write(content)
 
@@ -3585,8 +3582,9 @@ os.mkdir(PATCH_FOLDER)
 # src/public requires recompiled file with nodejs
 shutil.copytree(f'{BASE_PATH}src/public/app-dist', f'{PATCH_FOLDER}/src/public/app-dist')
 # doc notes
-shutil.copytree(f'{BASE_PATH}src/public/app/doc_notes',
-                f'{PATCH_FOLDER}/src/public/app-dist/doc_notes/')
+shutil.copytree(
+    f'{BASE_PATH}src/public/app/doc_notes', f'{PATCH_FOLDER}/src/public/app-dist/doc_notes/'
+)
 
 # 其它目录直接用release版本的
 # others can use the release client's file directly
@@ -3615,7 +3613,9 @@ with open(dest_path, 'w') as f:
 # excalidraw 自定义字体
 # excalidraw custom font
 src_path = f'{script_path}/font/muyao-shouxie.ttf'
-dest_path = f'{PATCH_FOLDER}/node_modules/@excalidraw/excalidraw/dist/excalidraw-assets/Virgil.woff2'
+dest_path = (
+    f'{PATCH_FOLDER}/node_modules/@excalidraw/excalidraw/dist/excalidraw-assets/Virgil.woff2'
+)
 os.makedirs(os.path.dirname(dest_path), exist_ok=True)
 shutil.copy(src_path, dest_path)
 

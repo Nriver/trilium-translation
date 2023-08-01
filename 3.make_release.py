@@ -4,8 +4,18 @@ import re
 import requests
 import urllib3
 
-from settings import DEBUG, PATCH_FOLDER, LANG, TRANS_RELEASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, \
-    force_version_info_full, VERSION_INFO_OVERRIDE_BETA, force_version_info_full_beta
+from settings import (
+    DEBUG,
+    PATCH_FOLDER,
+    LANG,
+    TRANS_RELEASE_FOLDER,
+    USE_PROXY,
+    PROXIES,
+    VERSION_INFO_OVERRIDE,
+    force_version_info_full,
+    VERSION_INFO_OVERRIDE_BETA,
+    force_version_info_full_beta,
+)
 
 # disable warning if we use proxy
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -65,10 +75,7 @@ def get_latest_version():
     for x in res.json()['assets']:
         for package_type in patterns:
             if re.match(patterns[package_type], x['name']):
-                releases[package_type] = {
-                    'name': x['name'],
-                    'url': x['browser_download_url']
-                }
+                releases[package_type] = {'name': x['name'], 'url': x['browser_download_url']}
     version_info['releases'] = releases
     return version_info
 
@@ -334,11 +341,12 @@ def patch_mac(file_name):
 
 
 if __name__ == '__main__':
-
     print(f'DEBUG is {DEBUG}')
 
     a = input(f'Delete folder {TRANS_RELEASE_FOLDER}, continue?(y)')
-    if a not in ['y', ]:
+    if a not in [
+        'y',
+    ]:
         exit()
 
     os.system(f'rm -rf {TRANS_RELEASE_FOLDER}')
