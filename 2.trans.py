@@ -886,6 +886,7 @@ translation = [
     '>{{Erase deleted notes now}}<',
     'showMessage("{{Deleted notes have been erased.}}"',
     '{{Deleted notes (and attributes, revisions...) are at first only marked as deleted and it is possible to recover them \n    from Recent Notes dialog. After a period of time, deleted notes are "erased" which means \n    their content is not recoverable anymore. This setting allows you to configure the length \n    of the period between deleting and erasing the note.}}',
+    '{{You can also trigger erasing manually (without considering the timeout defined above)}}',
 ]
 replace_in_file(file_path, translation)
 
