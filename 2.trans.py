@@ -760,6 +760,14 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/type_widgets/options/appearance/ribbon.js'
+translation = [
+    '>{{Ribbon widgets}}<',
+    '{{Promoted Attributes ribbon tab will automatically open if promoted attributes are present on the note}}',
+    '{{Edited Notes ribbon tab will automatically open on day notes}}',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/type_widgets/options/appearance/theme.js'
 translation = [
     '>{{Theme}}<',
@@ -1841,6 +1849,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/buttons/revisions_button.js'
+translation = [
+    '.title("{{Note Revisions}}")',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/attribute_widgets/attribute_editor.js'
 translation = [
     'title: "{{Add new label definition}}"',
@@ -2629,7 +2643,7 @@ translation = [
     'title="{{Archived notes are by default excluded from search results, with this option they will be included.}}"',
     'title="{{Limit number of results}}"',
     'title="{{Debug will print extra debugging information into the console to aid in debugging complex queries}}"',
-    "title: '{{Search parameters}}",
+    "title: '{{Search Parameters}}",
     'showMessage("{{Search note has been saved into }}',
     "showMessage('{{Actions have been executed.}}'",
     '    logError(`{{Unknown search option ${searchOptionName}}}`',

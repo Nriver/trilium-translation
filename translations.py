@@ -1199,7 +1199,7 @@ translation_dict = {
     'Note Paths': '',
     'Owned Attributes': '',
     'Promoted Attributes': '',
-    'Search parameters': '',
+    'Search Parameters': '',
     'Search note has been saved into ': '',
     'Unknown search option ${searchOptionName}': '',
     "Parsing of attribute: '${actionAttr.value}' failed with error: ${e.message}": '',
@@ -1688,4 +1688,7 @@ translation_dict = {
     "Are you sure you want to convert attachment '${this.attachment.title}' into a separate note?`": '',
     "Attachment '${this.attachment.title}' has been converted to note.": '',
     "Please enter new attachment's name": '',
+    'Ribbon widgets': '',
+    'Promoted Attributes ribbon tab will automatically open if promoted attributes are present on the note': '',
+    'Edited Notes ribbon tab will automatically open on day notes': '',
 }
