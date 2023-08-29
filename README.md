@@ -265,6 +265,8 @@ Thanks `*落` for donating 10 CNY! Memo: 感谢长期的坚持♥
 
 Thanks `*F` for donating 99 CNY! Memo: 感谢分享 希望深度合作 长期学习交流
 
+Thanks `*F` for donating 200 CNY! Memo: Best wishes
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
