@@ -11,3 +11,9 @@ services:
     environment:
       # 环境变量表示容器内笔记数据的存储路径
       - TRILIUM_DATA_DIR=/root/trilium-data
+    # 可选功能: 健康检查。需要启用的话，把下面的注释去掉
+    #healthcheck:
+    #  test: ["CMD-SHELL", "curl --fail http://localhost:8080/api/health-check | jq -e '.status == "ok"' || exit 1"]
+    #  interval: 30s
+    #  timeout: 10s
+    #  retries: 3
