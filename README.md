@@ -174,7 +174,7 @@ Alipay:
 Wechat Pay:  
 ![Wechat Pay](docs/wechat_pay.png)
 
-Ko-fi:
+Ko-fi:  
 [![Support Me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nriver)
 
 ---
