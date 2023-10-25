@@ -625,6 +625,8 @@ Trilium Notes的文字是硬编码的, 所以没法切换语言.
 微信:  
 ![Wechat Pay](docs/wechat_pay.png)
 
+Ko-fi:
+[![Support Me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nriver)
 
 ---
 
