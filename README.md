@@ -269,6 +269,14 @@ Thanks `*F` for donating 99 CNY! Memo: 感谢分享 希望深度合作 长期学
 
 Thanks `*F` for donating 200 CNY! Memo: Best wishes
 
+Thanks `F*g` for donating 10 CNY!
+
+Thanks `**逸` for donating 30 CNY! Memo: 来杯奶茶，哈皮一下
+
+Thanks `*绿` for donating 20 CNY! Memo: 多谢,学生能力有限，尽一份心意
+
+Thanks `A*` for donating 100 CNY! Memo: 非常感謝你寫這個小程式，捐贈了小小的心意給你及保重身體!
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
