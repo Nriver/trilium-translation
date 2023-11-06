@@ -639,6 +639,18 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/dialogs/upload_attachments.js'
+translation = [
+    '>{{Upload attachments to note}}<',
+    '>{{Choose files}}<',
+    '>{{Files will be uploaded as attachments into }}<',
+    '>{{Options:}}<',
+    '>{{If you check this option, Trilium will attempt to shrink the uploaded images by scaling and optimization which may affect the perceived image quality. If unchecked, images will be uploaded without changes.}}<',
+    '>{{Shrink images}}<',
+    '>{{Upload}}<',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/dialogs/add_link.js'
 translation = [
     '    logError("{{No link to add.}}"',
@@ -682,6 +694,7 @@ translation = [
     '>{{Full Anonymization}}<',
     '>{{Save fully anonymized database}}<',
     '>{{Light Anonymization}}<',
+    '>{{Existing anonymized databases}}<',
     '{{This action will create a new copy of the database and anonymize it (remove all note content and leave only structure and some non-sensitive metadata)\n        for sharing online for debugging purposes without fear of leaking your personal data.}}',
     '>{{This action will create a new copy of the database and do a light anonymization on it — specifically only content of all notes will be removed, but titles and attributes will remain. Additionally, custom JS frontend/backend script notes and custom widgets will remain. This provides more context to debug the issues.}}<',
     '>{{You can decide yourself if you want to provide a fully or lightly anonymized database. Even fully anonymized DB is very useful, however in some cases lightly anonymized database can speed up the process of bug identification and fixing.}}<',
@@ -691,6 +704,7 @@ translation = [
     'showMessage("{{Creating fully anonymized database...}}"',
     'showMessage("{{Creating lightly anonymized database...}}"',
     'showError("{{Could not create anonymized database, check backend logs for details}}"',
+    '"{{no anonymized database yet}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -732,9 +746,9 @@ translation = [
     '>{{Main font}}<',
     '>{{Font family}}<',
     '>{{Size}}<',
-    '>{{Note tree font}}<',
-    '>{{Note detail font}}<',
-    '>{{Monospace (code) font}}<',
+    '>{{Note Tree Font}}<',
+    '>{{Note Detail Font}}<',
+    '>{{Monospace (code) Font}}<',
     '>{{Note that tree and detail font sizing is relative to the main font size setting.}}<',
     '>{{Not all listed fonts may be available on your system.}}<',
     '>{{reload frontend}}<',
@@ -795,8 +809,10 @@ translation = [
     '''>{{It's recommended to keep the backup turned on, but this can make application startup slow with large databases and/or slow storage devices.}}<''',
     '>{{Backup now}}<',
     '>{{Backup database now}}<',
-    'showMessage("{{Database has been backed up to }}"',
+    'showMessage(`{{Database has been backed up to }}',
     'showMessage("{{Options changed have been saved.}}"',
+    '>{{Existing backups}}<',
+    '"no backup yet"',
 ]
 replace_in_file(file_path, translation)
 
@@ -848,6 +864,8 @@ translation = [
     '''defaultValue: "{{new token}}"''',
     '''    alert("{{Token name can't be empty}}"''',
     '{{Are you sure you want to delete ETAPI token}}',
+    'title="{{Delete / deactivate this token}}"',
+    '''showError("{{Token name can't be empty}}"''',
 ]
 replace_in_file(file_path, translation)
 
@@ -876,6 +894,7 @@ translation = [
     '{{Erase attachments after X seconds of not being used in its note}}',
     '{{You can also trigger erasing manually (without considering the timeout defined above)}}',
     '{{Erase unused attachment notes now}}',
+    'showMessage("{{Unused attachments have been erased.}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -991,7 +1010,8 @@ translation = [
     '>{{Sync timeout (milliseconds)}}<',
     '>{{Sync proxy server (optional)}}<',
     '>{{Note:}}<',
-    '> {{If you leave the proxy setting blank, the system proxy will be used (applies to desktop/electron build only)}}<',
+    '> {{If you leave the proxy setting blank, the system proxy will be used (applies to desktop/electron build only)}}',
+    '>{{Another special value is <code>noproxy</code> which forces ignoring even the system proxy and respectes <code>NODE_TLS_REJECT_UNAUTHORIZED</code>.}}<',
     '>{{Save}}<',
     '>{{Help}}<',
     '>{{Sync Test}}<',
@@ -1386,7 +1406,7 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/services/note_content_renderer.js'
+file_path = 'src/public/app/services/content_renderer.js'
 translation = [
     '>{{Download}}<',
     '>{{Open}}<',
@@ -1503,6 +1523,7 @@ translation = [
     "title: '{{Paste into }}",
     "title: '{{Paste after}}",
     "title: '{{Convert to attachment}}'",
+    "title: '{{Copy note path to clipboard}}",
     # special colon
     "title: `{{Duplicate subtree}}",
     '`{{Are you sure you want to convert note selected notes into attachments of their parent notes?}}`',
@@ -1940,7 +1961,7 @@ translation = [
     '    {{Zoom}}',
     'title="{{Zoom Out}}"',
     'title="{{Zoom In}}"',
-    '            {{Toggle Fullscreen}}',
+    'title="{{Toggle Fullscreen}}"',
     '            {{Show Help}}',
     '            {{About Trilium Notes}}',
     '            {{Logout}}',
@@ -1949,6 +1970,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/buttons/note_actions.js'
 translation = [
+    '>{{Convert into attachment}}<',
     '>{{ Re-render note}}<',
     '>{{Search in note }}<',
     '>{{ Note source}}<',
@@ -1960,6 +1982,7 @@ translation = [
     '>{{Export note}}<',
     '>{{Delete note}}<',
     '>{{ Print note}}<',
+    '>{{ Save revision}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -2223,6 +2246,7 @@ translation = [
     '>{{is exactly 7}}<',
     '>{{is exactly 8}}<',
     '>{{is exactly 9}}<',
+    '>{{is greater than 0}}<',
     '>{{is greater than 1}}<',
     '>{{is greater than 2}}<',
     '>{{is greater than 3}}<',
@@ -2232,6 +2256,7 @@ translation = [
     '>{{is greater than 7}}<',
     '>{{is greater than 8}}<',
     '>{{is greater than 9}}<',
+    '>{{is less than 2}}<',
     '>{{is less than 3}}<',
     '>{{is less than 4}}<',
     '>{{is less than 5}}<',
@@ -2281,6 +2306,8 @@ translation = [
     '>{{Date of last modification}}<',
     '>{{Note content size}}<',
     '>{{Note content size including revisions}}<',
+    '>{{Note content size including attachments}}<',
+    '>{{Note content size including attachments and revisions}}<',
     '>{{Number of revisions}}<',
     '>{{Number of children notes}}<',
     '>{{Number of clones}}<',
@@ -2356,6 +2383,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/highlights_list.js'
 translation = [
     '"{{Highlights List}}"',
+    '"{{Close HighlightsListWidget}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -2370,25 +2398,6 @@ file_path = 'src/public/app/widgets/mermaid.js'
 translation = [
     '>{{The diagram could not be displayed. See }}<',
     '>{{help and examples}}<',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/note_actions.js'
-translation = [
-    '>{{ Re-render note}}<',
-    '>{{Search in note }}<',
-    '>{{Revisions}}<',
-    '>{{ Link map}}<',
-    '>{{ Note source}}<',
-    '>{{ Open note externally}}<',
-    '>{{Import files}}<',
-    '>{{Export note}}<',
-    '>{{ Print note}}<',
-    '>{{ Note info}}<',
-    'title="{{Note is not protected, click to make it protected}}"',
-    'title="{{Note is protected, click to make it unprotected}}"',
-    '        {{Actions}}',
-    '        {{Protect the note}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -2826,6 +2835,7 @@ translation = [
     '", {{you can also open the}} "',
     "title: '{{List of all attachments}}',",
     '>{{This attachment has been deleted.}}<',
+    'title="{{Open help page on attachments}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -2834,6 +2844,7 @@ translation = [
     '"{{Owning note}}: "',
     '"{{Upload attachments}}"',
     '{{This note has no attachments.}}',
+    'title="{{Open help page on attachments}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -3181,6 +3192,14 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/watched_file_update_status.js'
+translation = [
+    '>{{File <code class="file-path"></code> has been last modified on <span class="file-last-modified"></span>.}}<',
+    '>{{Upload modified file}}<',
+    '>{{Ignore this change}}<',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/services/export/opml.js'
 translation = [
     '>{{Trilium export}}<',
@@ -3286,6 +3305,7 @@ translation = [
     "    alert('{{Cannot move notes before root note.}}'",
     "    alert('{{Cannot move notes after root note.}}'",
     '"{{Undeleting notes in progress:}} "',
+    "'{{Cannot move notes here.}}'",
 ]
 replace_in_file(file_path, translation)
 
@@ -3507,7 +3527,7 @@ translation = [
     '>{{ - optional, will change the hoisted note before opening the target note}}<',
     # '>{{keyboardLauncher}}<',
     '>{{ - optional, pressing the keyboard shortcut will open the note}}<',
-    '>{{Launchbar displays the title / icon from the launcher which does not necessarily mirror those of the target note.}}<',
+    '>{{Launchbar displays the title / icon from the launcher, which does not necessarily mirror those of the target note.}}<',
 ]
 replace_in_file(file_path, translation)
 
