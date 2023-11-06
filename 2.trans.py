@@ -2367,6 +2367,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/floating_buttons/copy_image_reference_button.js'
+translation = [
+    '{{Copy image reference to the clipboard, can be pasted into a text note.}}',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/floating_buttons/hide_floating_buttons_button.js'
 translation = [
     'title="{{Hide buttons}}"',
