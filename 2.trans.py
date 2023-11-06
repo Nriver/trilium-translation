@@ -812,7 +812,7 @@ translation = [
     'showMessage(`{{Database has been backed up to }}',
     'showMessage("{{Options changed have been saved.}}"',
     '>{{Existing backups}}<',
-    '"no backup yet"',
+    '"{{no backup yet}}"',
 ]
 replace_in_file(file_path, translation)
 
