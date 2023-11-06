@@ -34,18 +34,6 @@ const notes = await api.runOnBackend(() => {
 
 const $statsTable = api.$container.find('.stats-table');
 
-function formatSize(bytes, decimals = 2) {
-    if (!+bytes) return '0 Bytes'
-
-    const k = 1024
-    const dm = decimals < 0 ? 0 : decimals
-    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-
-    const i = Math.floor(Math.log(bytes) / Math.log(k))
-
-    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`
-}
-
 for (const note of notes) {     
     $statsTable.append(
         $("<tr>")
@@ -53,8 +41,7 @@ for (const note of notes) {
                 $("<td>").append(await api.createNoteLink(note.noteId, {showNotePath: true}))
             ) 
             .append(
-                //$("<td nowrap>").text(note.size + " bytes")
-                $("<td nowrap>").text(formatSize(note.size))
+                $("<td nowrap>").text(note.size + " bytes")
             )
     );
 }

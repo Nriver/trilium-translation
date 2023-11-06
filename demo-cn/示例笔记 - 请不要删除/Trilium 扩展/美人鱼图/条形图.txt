@@ -1,0 +1,15 @@
+gantt
+    title Git问题 - 距上次更新天数
+    dateFormat  X
+    axisFormat %s
+
+    section 问题1
+    10   : 0, 10
+    section 问题2
+    16   : 0, 16
+    section 问题3
+    14   : 0, 14
+    section 问题4
+    9    : 0, 9
+    section 问题5
+    5    : 0, 5
