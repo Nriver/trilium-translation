@@ -1714,4 +1714,5 @@ translation_dict = {
     'no anonymized database yet': '',
     'Convert into attachment': '',
     'Close HighlightsListWidget': '',
+    'Copy image reference to the clipboard, can be pasted into a text note.': '',
 }

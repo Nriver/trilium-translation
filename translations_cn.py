@@ -1696,5 +1696,6 @@ translation_dict = {
     'no anonymized database yet': '还没有匿名化的数据库',
     'Convert into attachment': '转换为附件',
     'Close HighlightsListWidget': '关闭高亮列表',
+    'Copy image reference to the clipboard, can be pasted into a text note.': '复制图像引用到剪贴板, 可以粘贴到文本笔记中.',
     '': '',
 }
