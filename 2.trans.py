@@ -133,6 +133,18 @@ with open(file_path, 'r') as f:
 with open(file_path, 'w') as f:
     f.write(content)
 
+# 0.61 新增
+# 附件功能 去掉复数名词后面的 s 字母
+file_path = 'src/public/app/services/utils.js'
+with open(file_path, 'r') as f:
+    content = f.read()
+    target_element = "const plural = (count, name) => `${count} ${name}${count > 1 ? 's' : ''}`;"
+    new_element = "const plural = (count, name) => `${count} ${name}`;"
+    if target_element in content:
+        content = content.replace(target_element, new_element)
+with open(file_path, 'w') as f:
+    f.write(content)
+
 # 下面一堆是正则匹配规则, 读代码的时候下面这一段可以跳过, 直接看最后面几行
 # TL;DR, the following codes are regex matches, you can jump to the last few lines.
 
