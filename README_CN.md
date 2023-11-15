@@ -371,14 +371,16 @@ Racknerd的促销似乎都是长期有效的活动，一直都可以买，有需
 
 | 促销活动 | 内存   | CPU | SSD | 流量   | 价格       | 购买                                                     |
 |------|------|-----|-----|------|----------|--------------------------------------------------------|
-| 双十一  | 1G   | 1核  | 12G | 2T/月 | $11/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=788) |
-| 双十一  | 2G   | 1核  | 20G | 4T/月 | $17.55/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=789) |
-| 独立日  | 1G   | 1核  | 14G | 2T/月 | $11.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=775) |
-| 独立日  | 2G   | 1核  | 20G | 3T/月 | $19.89/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=776) |
-| 复活节  | 840M | 1核  | 10G | 1T/月 | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
-| 复活节  | 1.2G | 1核  | 30G | 3T/月 | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
-| 黑五   | 768M | 1核  | 10G | 1T/月 | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
-| 黑五   | 1.5G | 1核  | 30G | 3T/月 | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
+| 2023黑五   | 768M | 1核  | 15G | 1T/月 | $10.18/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
+| 2023黑五   | 2G | 1核  | 30G | 2.5T/月 | $16.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
+| (过期) 2023双十一  | 1G   | 1核  | 12G | 2T/月 | $11/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=788) |
+| (过期) 2023双十一  | 2G   | 1核  | 20G | 4T/月 | $17.55/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=789) |
+| (过期) 2023独立日  | 1G   | 1核  | 14G | 2T/月 | $11.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=775) |
+| (过期) 2023独立日  | 2G   | 1核  | 20G | 3T/月 | $19.89/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=776) |
+| (过期) 2023复活节  | 840M | 1核  | 10G | 1T/月 | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
+| (过期) 2023复活节  | 1.2G | 1核  | 30G | 3T/月 | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
+| (过期) 2022黑五   | 768M | 1核  | 10G | 1T/月 | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
+| (过期) 2022黑五   | 1.5G | 1核  | 30G | 3T/月 | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
 
 你也可以选择其它的VPS提供商，不过要记得备份数据，数据是无价的。做好备份以防万一，切记。
 
