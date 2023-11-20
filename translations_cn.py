@@ -1697,5 +1697,9 @@ translation_dict = {
     'Convert into attachment': '转换为附件',
     'Close HighlightsListWidget': '关闭高亮列表',
     'Copy image reference to the clipboard, can be pasted into a text note.': '复制图像引用到剪贴板, 可以粘贴到文本笔记中.',
+    'Box size of the included note:': '包含的笔记框大小',
+    'small (~ 10 lines)': '小（约10行）',
+    'medium (~ 30 lines)': '中等（约30行）',
+    'full (box shows complete text)': '完整（框显示完整文本）',
     '': '',
 }

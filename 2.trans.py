@@ -492,6 +492,11 @@ translation = [
     '>{{Include note }}<',
     '>{{enter}}<',
     '{{search for note by its name}}',
+    '    logError("{{No noteId to include.}}"',
+    '{{Box size of the included note:}}',
+    '{{small (~ 10 lines)}}',
+    '{{medium (~ 30 lines)}}',
+    '{{full (box shows complete text)}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -1084,12 +1089,6 @@ translation = [
     '    alert("{{Choose export type first please}}"',
     '"{{Export in progress:}} "',
     '"{{Export finished successfully.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/dialogs/include_note.js'
-translation = [
-    '    logError("{{No noteId to include.}}"',
 ]
 replace_in_file(file_path, translation)
 

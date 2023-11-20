@@ -1715,4 +1715,8 @@ translation_dict = {
     'Convert into attachment': '',
     'Close HighlightsListWidget': '',
     'Copy image reference to the clipboard, can be pasted into a text note.': '',
+    'Box size of the included note:': '',
+    'small (~ 10 lines)': '',
+    'medium (~ 30 lines)': '',
+    'full (box shows complete text)': '',
 }
