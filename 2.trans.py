@@ -760,7 +760,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/type_widgets/options/appearance/fonts.js'
 translation = [
     '>{{Fonts}}<',
-    '>{{Main font}}<',
+    '>{{Main Font}}<',
     '>{{Font family}}<',
     '>{{Size}}<',
     '>{{Note Tree Font}}<',
@@ -1057,6 +1057,9 @@ translation = [
     '{{Underlined font}}',
     '{{Font with color}}',
     '{{Font with background color}}',
+    # 这里作者打错字了，提了个pr下次修改
+    '{{Highlists List visibility}}',
+    '{{You can hide the hightlights widget per-note by adding a <code>#hideHighlightWidget</code> label.}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -1881,6 +1884,13 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/buttons/move_pane_button.js'
+translation = [
+    '"{{Move left}}"',
+    '"{{Move right}}"',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/buttons/revisions_button.js'
 translation = [
     '.title("{{Note Revisions}}")',
@@ -2400,7 +2410,8 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/highlights_list.js'
 translation = [
     '"{{Highlights List}}"',
-    '"{{Close HighlightsListWidget}}"',
+    '"{{Close Highlights List}}"',
+    '"{{Options}}"',
 ]
 replace_in_file(file_path, translation)
 
