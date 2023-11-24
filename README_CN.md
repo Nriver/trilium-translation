@@ -369,18 +369,18 @@ Racknerd的促销似乎都是长期有效的活动，一直都可以买，有需
 
 我测试过Trilium的服务端程序大概会占150MB左右的内存。买最便宜的就够用了，一年不到100块。如果觉得硬盘不够大，可以买贵一档的，也就100出头。再贵就没有必要了。
 
-| 促销活动 | 内存   | CPU | SSD | 流量   | 价格       | 购买                                                     |
-|------|------|-----|-----|------|----------|--------------------------------------------------------|
-| 2023黑五   | 768M | 1核  | 15G | 1T/月 | $10.18/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
-| 2023黑五   | 2G | 1核  | 30G | 2.5T/月 | $16.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
-| (过期) 2023双十一  | 1G   | 1核  | 12G | 2T/月 | $11/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=788) |
-| (过期) 2023双十一  | 2G   | 1核  | 20G | 4T/月 | $17.55/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=789) |
-| (过期) 2023独立日  | 1G   | 1核  | 14G | 2T/月 | $11.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=775) |
-| (过期) 2023独立日  | 2G   | 1核  | 20G | 3T/月 | $19.89/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=776) |
-| (过期) 2023复活节  | 840M | 1核  | 10G | 1T/月 | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
-| (过期) 2023复活节  | 1.2G | 1核  | 30G | 3T/月 | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
-| (过期) 2022黑五   | 768M | 1核  | 10G | 1T/月 | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
-| (过期) 2022黑五   | 1.5G | 1核  | 30G | 3T/月 | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
+| 促销活动         | 内存   | CPU | SSD | 流量     | 价格       | 购买                                                     |
+|--------------|------|-----|-----|--------|----------|--------------------------------------------------------|
+| 2023黑五       | 768M | 1核  | 15G | 1T/月   | $10.18/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
+| 2023黑五       | 2G   | 1核  | 30G | 2.5T/月 | $16.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
+| (过期) 2023双十一 | 1G   | 1核  | 12G | 2T/月   | $11/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=788) |
+| (过期) 2023双十一 | 2G   | 1核  | 20G | 4T/月   | $17.55/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=789) |
+| (过期) 2023独立日 | 1G   | 1核  | 14G | 2T/月   | $11.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=775) |
+| (过期) 2023独立日 | 2G   | 1核  | 20G | 3T/月   | $19.89/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=776) |
+| (过期) 2023复活节 | 840M | 1核  | 10G | 1T/月   | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
+| (过期) 2023复活节 | 1.2G | 1核  | 30G | 3T/月   | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
+| (过期) 2022黑五  | 768M | 1核  | 10G | 1T/月   | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
+| (过期) 2022黑五  | 1.5G | 1核  | 30G | 3T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
 
 你也可以选择其它的VPS提供商，不过要记得备份数据，数据是无价的。做好备份以防万一，切记。
 
@@ -425,7 +425,8 @@ Trilium有自动备份功能，软件内可以左上角设置里可以设定自�
 ## 为什么使用了中文版的程序，界面还是英文的?
 
 你运行过原版的Trilium程序，系统里有英文版的缓存，请关闭trilium，
-Windows系统删除这个目录`C:\Users\用户名\AppData\Roaming\Trilium Notes`, Linux系统删除这个目录`~/.config/Trilium Notes/`。再启动Trilium就是中文的了。
+Windows系统删除这个目录`C:\Users\用户名\AppData\Roaming\Trilium Notes`, Linux系统删除这个目录`~/.config/Trilium Notes/`
+。再启动Trilium就是中文的了。
 
 ## 为什么用中文版的自带文档还是英文的?
 
@@ -471,6 +472,12 @@ set-executionpolicy remotesigned
 
 ## 画布笔记变成了一个json文件怎么办?
 
+### 方法1
+
+把json文件导出来，新建一个画布笔记，再从画布里把json导入。
+
+### 方法2
+
 在新版的Trilium里创建的画布笔记, 如果不小心在另一个旧的客户端进行同步, 会因为无法识别这种类型的笔记, 会自动把它的笔记类型改成文件来处理.
 解决办法: 先把服务端和所有的客户端都升级到最新版.
 在笔记信息里找到对应笔记的ID, 然后在左上菜单里打开SQL控制台. 里面输入以下sql, 注意修改笔记ID.
@@ -480,6 +487,13 @@ update notes set `type` = 'canvas' where noteId = '你的笔记ID'
 ```
 
 点击下方的运行. 然后关闭客户端, 重启服务端, 画布笔记就回来了.
+
+## 画布笔记上的文字没了怎么办？
+
+版本升级之后, 画布笔记上的文字看不到了。可以参考这个 https://github.com/zadam/trilium/issues/3979#issuecomment-1798395522
+
+把笔记导出, 找到.json文件, 用在线版本的 https://excalidraw.com/ 打开那个json文件, 应该能看到文字。之后把它导出,
+再把导出的.excalidraw改成.json导入回trilium就行.
 
 ## 导入文档结果标题显示乱码怎么办？
 
@@ -733,6 +747,10 @@ Ko-fi:
 感谢 `*绿` 赞助的20元! 备注: 多谢,学生能力有限，尽一份心意
 
 感谢 `A*` 赞助的100元! 备注: 非常感謝你寫這個小程式，捐贈了小小的心意給你及保重身體!
+
+感谢 `*户` 赞助的20元!
+
+感谢 `*孤` 赞助的20元! 备注: 请群主大大喝杯奶茶
 
 感谢Jetbrins公司提供的Pycharm编辑器!
 
