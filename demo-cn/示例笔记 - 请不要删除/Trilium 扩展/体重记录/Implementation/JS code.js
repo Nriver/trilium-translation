@@ -1,12 +1,11 @@
 async function getChartData() {
-    const days = await api.runOnBackend(async () => {
-        const label_name = '体重';
-        const notes = await api.getNotesWithLabel(label_name);
+    const days = await api.runOnBackend(() => {
+        const notes = api.getNotesWithLabel('体重');
         const days = [];
 
         for (const note of notes) {
-            const date = await note.getLabelValue('dateNote');
-            const weight = parseFloat(await note.getLabelValue(label_name));
+            const date = note.getLabelValue('dateNote');
+            const weight = parseFloat(note.getLabelValue('weight'));
 
             if (date && weight) {
                 days.push({ date, weight });
@@ -20,7 +19,7 @@ async function getChartData() {
 
     const datasets = [
         {
-            label: "体重(kg)",
+            label: "体重 (kg)",
             backgroundColor: 'red',
             borderColor: 'red',
             data: days.map(day => day.weight),
@@ -28,7 +27,8 @@ async function getChartData() {
             spanGaps: true,
             datalabels: {
                 display: false
-            }
+            },
+            tension: 0.3
         }
     ];
 
@@ -38,7 +38,7 @@ async function getChartData() {
     };
 }
 
-const ctx = $("#canvas")[0].getContext("2d");
+const ctx = api.$container.find("canvas")[0].getContext("2d");
 
 new chartjs.Chart(ctx, {
     type: 'line',
