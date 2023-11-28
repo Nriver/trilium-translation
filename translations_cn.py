@@ -1703,8 +1703,10 @@ translation_dict = {
     'full (box shows complete text)': '完整（框显示完整文本）',
     'Highlists List visibility': '高亮列表显示',
     'Highlights List visibility': '高亮列表显示',
+    'You can hide the hightlights widget per-note by adding a <code>#hideHighlightWidget</code> label.': '您可以通过添加 <code>#hideHighlightWidget</code> 标签来在每个笔记中隐藏高亮小部件。',
     'You can hide the highlights widget per-note by adding a <code>#hideHighlightWidget</code> label.': '您可以通过添加 <code>#hideHighlightWidget</code> 标签来在每个笔记中隐藏高亮小部件。',
     'Move left': '向左移动',
     'Move right': '向右移动',
+    'Open custom': '使用自定义程序打开',
     '': '',
 }

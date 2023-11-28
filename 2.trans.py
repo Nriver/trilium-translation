@@ -1057,8 +1057,7 @@ translation = [
     '{{Underlined font}}',
     '{{Font with color}}',
     '{{Font with background color}}',
-    # 这里作者打错字了，提了个pr下次修改
-    '{{Highlists List visibility}}',
+    '{{Highlights List visibility}}',
     '{{You can hide the hightlights widget per-note by adding a <code>#hideHighlightWidget</code> label.}}',
 ]
 replace_in_file(file_path, translation)
@@ -1847,6 +1846,7 @@ file_path = 'src/public/app/widgets/buttons/attachments_actions.js'
 translation = [
     "{{File will be open in an external application and watched for changes. You'll then be able to upload the modified version back to Trilium.}}",
     '>{{Open externally}}<',
+    '>{{Open custom}}<',
     '>{{Download}}<',
     '>{{Rename attachment}}<',
     '>{{Upload new revision}}<',

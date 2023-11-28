@@ -1721,7 +1721,9 @@ translation_dict = {
     'full (box shows complete text)': '',
     'Highlists List visibility': '',
     'Highlights List visibility': '',
+    'You can hide the hightlights widget per-note by adding a <code>#hideHighlightWidget</code> label.': '',
     'You can hide the highlights widget per-note by adding a <code>#hideHighlightWidget</code> label.': '',
     'Move left': '',
     'Move right': '',
+    'Open custom': '',
 }
