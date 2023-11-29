@@ -1340,7 +1340,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/services/hoisted_note.js'
 translation = [
-    'confirmDialog.confirm("{{Requested note is outside of hoisted note subtree and you must unhoist to access the note. Do you want to proceed with unhoisting?}}"',
+    '.confirm("{{Requested note is outside of hoisted note subtree and you must unhoist to access the note. Do you want to proceed with unhoisting?}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -2515,7 +2515,7 @@ translation = [
     'title: "{{Mermaid Diagram}}"',
     'title: "{{Code}}"',
     '    {{Type:}} <span',
-    'confirmDialog.confirm("{{It is not recommended to change note type when note content is not empty. Do you want to continue anyway?}}"',
+    '.confirm("{{It is not recommended to change note type when note content is not empty. Do you want to continue anyway?}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -2975,7 +2975,7 @@ translation = [
     '"{{Start dragging relations from here and drop them on another note.}}"',
     'showError(`{{Note "${note.title}" is already in the diagram.}}`',
     'throw new Error("{{Cannot match transform: }}"',
-    'confirmDialog.confirm("{{Are you sure you want to remove the relation?}}"',
+    '.confirm("{{Are you sure you want to remove the relation?}}"',
     '    logError(`{{Note ${noteId} not found!}}`',
 ]
 replace_in_file(file_path, translation)
