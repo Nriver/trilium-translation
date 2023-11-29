@@ -5,7 +5,7 @@ async function getChartData() {
 
         for (const note of notes) {
             const date = note.getLabelValue('dateNote');
-            const weight = parseFloat(note.getLabelValue('weight'));
+            const weight = parseFloat(note.getLabelValue('体重'));
 
             if (date && weight) {
                 days.push({ date, weight });
