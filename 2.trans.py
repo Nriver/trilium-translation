@@ -3664,14 +3664,23 @@ src_path = f'{CLIENT_PATH}resources/app/libraries/ckeditor/ckeditor.js'
 dest_path = f'{PATCH_FOLDER}/libraries/ckeditor/ckeditor.js'
 os.makedirs(os.path.dirname(dest_path), exist_ok=True)
 shutil.copy(src_path, dest_path)
-# ckeditor 代码块通过中文的 · 触发
-# ckeditor code block trigger by chinese ·
 with open(dest_path, 'r') as f:
     content = f.read()
+
+    # ckeditor 代码块通过中文的 · 触发
+    # ckeditor code block trigger by chinese ·
     target_element = '/^```$/'
     new_element = '/^(```|···)$/'
     if target_element in content:
         content = content.replace(target_element, new_element)
+
+    # ckeditor 引用通过中文的 》 触发
+    # ckeditor block quote trigger by chinese 》
+    target_element = '/^>\s$/'
+    new_element = '/^(>|》)\s$/'
+    if target_element in content:
+        content = content.replace(target_element, new_element)
+
 with open(dest_path, 'w') as f:
     f.write(content)
 
