@@ -1726,4 +1726,6 @@ translation_dict = {
     'Move left': '',
     'Move right': '',
     'Open custom': '',
+    'Click to edit block': '',
+    'Drag to move': '',
 }

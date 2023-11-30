@@ -1708,5 +1708,7 @@ translation_dict = {
     'Move left': '向左移动',
     'Move right': '向右移动',
     'Open custom': '使用自定义程序打开',
+    'Click to edit block': '点击编辑块',
+    'Drag to move': '拖拽移动块',
     '': '',
 }

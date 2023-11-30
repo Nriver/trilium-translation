@@ -3039,6 +3039,7 @@ translation = [
     '''"Change image text alternative":"{{Change image text alternative}}"''',
     '''"Choose heading":"{{Choose heading}}"''',
     '''Circle:"{{Circle}}"''',
+    '''"Click to edit block":"{{Click to edit block}}"''',
     '''Code:"{{Code}}"''',
     '''Color:"{{Color}}"''',
     '''"Color picker":"{{Color picker}}"''',
