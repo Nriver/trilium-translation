@@ -3058,6 +3058,7 @@ translation = [
     '''Dotted:"{{Dotted}}"''',
     '''Double:"{{Double}}"''',
     '''Downloadable:"{{Downloadable}}"''',
+    '''"Drag to move":"{{Drag to move}}"''',
     '''"Dropdown toolbar":"{{Dropdown toolbar}}"''',
     '''"Edit block":"{{Edit block}}"''',
     '''"Edit link":"{{Edit link}}"''',
