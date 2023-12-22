@@ -1,0 +1,34 @@
+# Dockerfile for build up the image
+FROM node:18.18.2-alpine
+
+LABEL MAINTAINER https://github.com/Nriver/trilium-translation
+
+ADD trilium-linux-x64-server /app
+WORKDIR /app
+
+# 添加curl jq命令给health check使用
+# 合并RUN减少镜像层数
+# 减少镜像大小 purge清理包列表
+RUN apk add --virtual .build-dependencies \
+    autoconf \
+    automake \
+    g++ \
+    gcc \
+    libtool \
+    make \
+    nasm \
+    libpng-dev \
+    python3 \
+    && cp ./node_modules/@excalidraw/excalidraw/dist/excalidraw-assets/Virgil.woff2 ./Virgil.ttf \
+    && rm -rf ./node_modules \
+    && rm -rf ./node \
+    && npm ci --production \
+    && apk del .build-dependencies \
+    && apk add curl jq \
+    && npm prune --omit=dev \
+    && mv -f ./Virgil.ttf ./node_modules/@excalidraw/excalidraw/dist/excalidraw-assets/Virgil.woff2 \
+    && rm -rf /var/cache/apk/* \
+    && rm -rf /var/log
+
+EXPOSE 8080
+CMD node /app/src/www

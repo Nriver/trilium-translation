@@ -1,0 +1,53 @@
+name: 发布docker镜像
+on:
+  workflow_dispatch: #github页面手动触发
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Initialization environment
+        run : |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ref: main
+
+      - name: Check and download remote files
+        run: |
+          wget https://github.com/Nriver/trilium-translation/releases/latest/download/trilium-cn-linux-x64-server.zip 
+          unzip -q trilium-cn-linux-x64-server.zip 
+          rm -f trilium-cn-linux-x64-server.zip
+          sed -i '/electron/d' ./trilium-linux-x64-server/package.json
+
+      - name: Show files
+        run: |
+          pwd
+          ls
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          file: ./Dockerfile_github_action
+          context: .
+          platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/trilium-cn:latest
+
