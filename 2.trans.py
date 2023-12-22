@@ -40,14 +40,17 @@ used_translations = [
     'translator',
 ]
 unused_translations = []
+missing_translations = []
 
 
 def translate(m):
-    trans = translation_dict.get(m.group(1), m.group(1))
+    s = m.group(1)
+    trans = translation_dict.get(s, None)
     if not trans:
-        trans = m.group(1)
+        trans = s
+        missing_translations.append(s)
     else:
-        used_translations.append(m.group(1))
+        used_translations.append(s)
 
     return trans
 
@@ -387,7 +390,7 @@ translation = [
     '{{outliner interchange format for text only. Formatting, images and files are not included.}}',
     'title: "{{Export status}}"',
     'showError("{{Choose export type first please}}"',
-    'throw new Error(`{{Unrecognized type ${defaultType}}}`',
+    "throw new Error(`{{Unrecognized type}}",
 ]
 replace_in_file(file_path, translation)
 
@@ -683,8 +686,8 @@ translation = [
     '>{{This action will create a new copy of the database and do a light anonymization on it — specifically only content of all notes will be removed, but titles and attributes will remain. Additionally, custom JS frontend/backend script notes and custom widgets will remain. This provides more context to debug the issues.}}<',
     '>{{You can decide yourself if you want to provide a fully or lightly anonymized database. Even fully anonymized DB is very useful, however in some cases lightly anonymized database can speed up the process of bug identification and fixing.}}<',
     '>{{Save lightly anonymized database}}<',
-    'showMessage(`{{Created fully anonymized database in ${resp.anonymizedFilePath}`}}',
-    'showMessage(`{{Created lightly anonymized database in ${resp.anonymizedFilePath}`}}',
+    'showMessage({{`Created fully anonymized database in ${resp.anonymizedFilePath}`}}',
+    'showMessage({{`Created lightly anonymized database in ${resp.anonymizedFilePath}`}}',
     'showMessage("{{Creating fully anonymized database...}}"',
     'showMessage("{{Creating lightly anonymized database...}}"',
     'showError("{{Could not create anonymized database, check backend logs for details}}"',
@@ -697,7 +700,7 @@ translation = [
     '>{{Database Integrity Check}}<',
     '>{{This will check that the database is not corrupted on the SQLite level. It might take some time, depending on the DB size.}}<',
     '>{{Check database integrity}}<',
-    'showMessage(`{{Integrity check failed: ${JSON.stringify(results, null, 2)}}}`',
+    'showMessage(`{{Integrity check failed:}}',
     'showMessage("{{Checking database integrity...}}"',
     'showMessage("{{Integrity check succeeded - no problems found.}}"',
 ]
@@ -1024,8 +1027,10 @@ translation = [
     '{{Underlined font}}',
     '{{Font with color}}',
     '{{Font with background color}}',
+    '{{Highlists List visibility}}',
     '{{Highlights List visibility}}',
     '{{You can hide the hightlights widget per-note by adding a <code>#hideHighlightWidget</code> label.}}',
+    '{{You can hide the highlights widget per-note by adding a <code>#hideHighlightWidget</code> label.}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -1173,17 +1178,17 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/services/froca.js'
 translation = [
-    'throw new Error(`{{Search note ${note.noteId} failed: ${searchResultNoteIds}}}`',
+    "`{{Search note '${note.noteId}' failed:}}",
     'throw new Error("{{Empty noteId}}"',
-    '    logError(`{{Not existing branch ${branchId}}}`',
+    "logError(`{{Not existing branch '${branchId}'}}`)",
     '    logError(`{{Could not find branchId for parent=${parentNoteId}, child=${childNoteId} since child does not exist}}`',
 ]
 replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/services/froca_updater.js'
 translation = [
-    'throw new Error(`{{Unknown entityName ${ec.entityName}}}`',
-    """throw new Error(`{{Can't process entity ${JSON.stringify(ec)} with error ${e.message} ${e.stack}}}`""",
+    "throw new Error(`{{Unknown entityName '${ec.entityName}'}}`",
+    """throw new Error({{`Can't process entity ${JSON.stringify(ec)} with error ${e.message} ${e.stack}`}})""",
 ]
 replace_in_file(file_path, translation)
 
@@ -1350,7 +1355,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/components/note_context.js'
 translation = [
-    '    logError(`{{Cannot resolve note path ${inputNotePath}}}`',
+    'logError({{`Cannot resolve note path ${inputNotePath}`}})',
 ]
 replace_in_file(file_path, translation)
 
@@ -1360,7 +1365,7 @@ translation = [
     'title="{{Expand all children}}"',
     'title="{{List view}}"',
     'title="{{Grid view}}"',
-    'throw new Error({{`Invalid view type ${type}`}}',
+    'throw new Error(`{{Invalid view type}} ${type}`',
 ]
 replace_in_file(file_path, translation)
 
@@ -1693,7 +1698,7 @@ translation = [
     '"{{Rename note}}"',
     '>{{Rename note title to:}}<',
     '>{{The given value is evaluated as JavaScript string and thus can be enriched with dynamic content via the injected }}<',
-    '>{{note}}<',
+    # '>{{note}}<',
     '>{{ variable (note being renamed). Examples:}}<',
     '>{{Note}}<',
     '>{{ - all matched notes are renamed to "Note"}}<',
@@ -1763,7 +1768,7 @@ translation = [
     '>{{Convert attachment into note}}<',
     '>{{Delete attachment}}<',
     '"{{New attachment revision has been uploaded.}}"',
-    '"{{"Upload of a new attachment revision failed."}}"',
+    '"{{Upload of a new attachment revision failed.}}"',
     '"{{Opening attachment externally is available only from the detail page, please first click on the attachment detail first and repeat the action.}}"',
     '{{Are you sure you want to delete attachment}}',
     "{{Attachment '${this.attachment.title}' has been deleted.}}",
@@ -2091,7 +2096,7 @@ file_path = 'src/public/app/widgets/floating_buttons/code_buttons.js'
 translation = [
     'title="{{Execute script}}"',
     'title="{{Open Trilium API docs}}"',
-    'showMessage(`{{SQL Console note has been saved into ${await treeService.getNotePathTitle(notePath)}}}`',
+    'showMessage(`{{SQL Console note has been saved into}}',
     'showMessage("{{Opening API docs...}}"',
 ]
 replace_in_file(file_path, translation)
@@ -2238,7 +2243,7 @@ translation = [
     'title="{{Collapse all notes}}"',
     'title="{{Expand all children}}"',
     "title: '{{Book Properties}}",
-    'throw new Error(`{{Invalid view type ${type}}}`',
+    "throw new Error(`{{Invalid view type}} '${type}'`)",
     '    {{Collapse}}',
     '    {{Expand}}',
 ]
@@ -2354,8 +2359,8 @@ translation = [
     "title: '{{Search Parameters}}",
     'showMessage("{{Search note has been saved into }}',
     "showMessage('{{Actions have been executed.}}'",
-    '    logError(`{{Unknown search option ${searchOptionName}}}`',
-    """    logError(`{{Parsing of attribute: '${actionAttr.value}' failed with error: ${e.message}}}`""",
+    'logError(`{{Unknown search option}}`)',
+    """logError({{`Parsing of attribute: '${actionAttr.value}' failed with error: ${e.message}`}})""",
     """    logError(`{{No action class for '${actionDef.name}' found.}}`""",
     '    {{Search & Execute actions}}',
     '    {{Save to note}}',
@@ -3330,13 +3335,20 @@ if missing_files:
 else:
     print('no missing file, good!')
 print('=====================================')
-unused_translations = [key for key in translation_dict if key not in used_translations]
+unused_translations = [key for key in translation_dict if key and key not in used_translations]
 if unused_translations:
     print('unused_translations! \n')
     for x in unused_translations:
         print(x)
 else:
     print('no unused translation, good!')
+print('=====================================')
+if missing_translations:
+    print('missing_translations! \n')
+    for x in missing_translations:
+        print(x)
+else:
+    print('no missing translation, good!')
 print('=====================================')
 
 # 尝试删除electron的缓存, 避免代码修改不生效的问题
