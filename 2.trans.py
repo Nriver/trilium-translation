@@ -33,21 +33,29 @@ TRANSLATE_NOTE_TAG = True
 
 pat = re.compile('{{(.*?)}}', flags=re.DOTALL + re.MULTILINE)
 
+# check which file is not in use anymore
 missing_files = []
+# check which translation is not in use anymore
+used_translations = [
+    'translator',
+]
+unused_translations = []
 
 
 def translate(m):
-    # print(m)
     trans = translation_dict.get(m.group(1), m.group(1))
     if not trans:
         trans = m.group(1)
+    else:
+        used_translations.append(m.group(1))
+
     return trans
 
 
 def replace_in_file(file_path, translation, base_path=BASE_PATH):
     file_full_path = os.path.join(base_path, file_path)
     if not os.path.exists(file_full_path):
-        missing_files.append(file_full_path)
+        missing_files.append(file_path)
         return
 
     with open(file_full_path, 'r') as f:
@@ -295,13 +303,6 @@ translation = [
     '{{search for note by its name}}',
     "{{link title mirrors the note's current title}}",
     '{{link title can be changed arbitrarily}}',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/dialogs/backend_log.js'
-translation = [
-    '>{{Backend log}}<',
-    '>{{Refresh}}<',
 ]
 replace_in_file(file_path, translation)
 
@@ -564,12 +565,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/dialogs/note_source.js'
-translation = [
-    '>{{Note source}}<',
-]
-replace_in_file(file_path, translation)
-
 file_path = 'src/public/app/widgets/dialogs/note_type_chooser.js'
 translation = [
     '>{{Choose note type}}<',
@@ -665,34 +660,6 @@ translation = [
     '>{{If you check this option, Trilium will attempt to shrink the uploaded images by scaling and optimization which may affect the perceived image quality. If unchecked, images will be uploaded without changes.}}<',
     '>{{Shrink images}}<',
     '>{{Upload}}<',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/dialogs/add_link.js'
-translation = [
-    '    logError("{{No link to add.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/dialogs/clone_to.js'
-translation = [
-    '{{`Note "${clonedNote.title}" has been cloned into ${targetNote.title}`}}',
-    '    logError("{{No path to clone to.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/dialogs/confirm.js'
-translation = [
-    '{{Are you sure you want to remove the note "${title}" from relation map?}}',
-    "{{If you don't check this, note will be only removed from relation map, but will stay as a note.}}",
-    '{{Also delete note}}',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/dialogs/delete_notes.js'
-translation = [
-    '{{Note}} ',
-    '` {{(to be deleted) is referenced by relation <code>${attr.name}</code> originating from}} `',
 ]
 replace_in_file(file_path, translation)
 
@@ -1078,41 +1045,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/dialogs/branch_prefix.js'
-translation = [
-    'showMessage("{{Branch prefix has been saved.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/dialogs/export.js'
-translation = [
-    'title: "{{Export status}}"',
-    'throw new Error("{{Unrecognized type }}"',
-    '    alert("{{Choose export type first please}}"',
-    '"{{Export in progress:}} "',
-    '"{{Export finished successfully.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/dialogs/markdown_import.js'
-translation = [
-    'showMessage("{{Markdown content has been imported into the document.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/dialogs/move_to.js'
-translation = [
-    'showMessage({{`Selected notes have been moved into ${parentNote.title}`}}',
-    '    logError("{{No path to move to.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/services/change_password.js'
-translation = [
-    '''message: "{{Given current password doesn't match hash}}"''',
-]
-replace_in_file(file_path, translation, TARGET_PATH)
-
 file_path = 'src/services/search/expressions/ancestor.js'
 translation = [
     '{{Unrecognized depth condition value}}',
@@ -1194,13 +1126,6 @@ file_path = 'src/public/app/services/note_create.js'
 translation = [
     ' "{{new note}}";',
     '`{{Note "${origNote.title}" has been duplicated}}`',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/entities/note_short.js'
-translation = [
-    'throw new Error(`{{Note ${this.noteId} is of type ${this.type} and mime ${this.mime} and thus cannot be executed}}`',
-    'throw new Error({{`Unrecognized env type ${env} for note ${this.noteId}`}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -1292,13 +1217,6 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/components/tab_manager.js'
 translation = [
     """throw new Error(`{{Cannot find noteContext id='${ntxId}'}}`""",
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/services/tab_context.js'
-translation = [
-    '    logError({{`Cannot resolve note path ${inputNotePath}`}}',
-    """    logError(`{{Cannot find tabContext's note id='${this.noteId}'}}`""",
 ]
 replace_in_file(file_path, translation)
 
@@ -1482,15 +1400,6 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/services/tree.js'
 translation = [
     '    logError("{{Node is null}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/services/tree_cache.js'
-translation = [
-    'throw new Error({{`Search note ${note.noteId} failed: ${searchResultNoteIds}`}}',
-    'throw new Error("{{Empty noteId}}"',
-    '    logError({{`Not existing branch ${branchId}`}}',
-    '    logError(`{{Could not find branchId for parent=${parentNoteId}, child=${childNoteId} since child does not exist}}`',
 ]
 replace_in_file(file_path, translation)
 
@@ -2007,12 +1916,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/buttons/note_revisions_button.js'
-translation = [
-    'title("{{Note Revisions}}")',
-]
-replace_in_file(file_path, translation)
-
 file_path = 'src/public/app/widgets/buttons/protected_session_status.js'
 translation = [
     '{{Protected session is active. Click to leave protected session.}}',
@@ -2027,103 +1930,9 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/buttons/show_note_source.js'
-translation = [
-    'title("{{Show Note Source}}")',
-]
-replace_in_file(file_path, translation)
-
 file_path = 'src/public/app/widgets/buttons/update_available.js'
 translation = [
     'title="{{Update available}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/collapsible_widgets/calendar.js'
-translation = [
-    '"{{Calendar}}"',
-    "'{{January}}',",
-    "'{{Febuary}}',",
-    "'{{March}}',",
-    "'{{April}}',",
-    "'{{May}}',",
-    "'{{June}}',",
-    "'{{July}}',",
-    "'{{August}}',",
-    "'{{September}}',",
-    "'{{October}}',",
-    "'{{November}}',",
-    "'{{December}}'",
-    '>{{Mon}}<',
-    '>{{Tue}}<',
-    '>{{Wed}}<',
-    '>{{Thu}}<',
-    '>{{Fri}}<',
-    '>{{Sat}}<',
-    '>{{Sun}}<',
-    '"{{Cannot find day note}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/collapsible_widget.js'
-translation = [
-    '{{Collapsible Group Item}}',
-    '"{{Untitled widget}}"',
-    'title="{{Minimize/maximize widget}}"',
-    '"title", "{{Hide}}"',
-    '"title", "{{Show}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/collapsible_widgets/edited_notes.js'
-translation = [
-    '"{{Edited notes on this day}}"',
-    '>{{No edited notes on this day yet ...}}<',
-    'title: "{{This contains a list of notes created or updated on this day.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/collapsible_widgets/link_map.js'
-translation = [
-    '"{{Link map}}"',
-    'title: "{{Link map shows incoming and outgoing links from/to the current note.}}"',
-    "'{{Show full link map}}'",
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/collapsible_widgets/note_info.js'
-translation = [
-    '"{{Note info}}"',
-    '>{{Note ID}}:<',
-    '>{{Type:}}</',
-    '>{{Created}}:<',
-    '>{{Modified}}:<',
-    '>{{Note size}}:<',
-    'span> {{calculate}}',
-    '''"{{Note size provides rough estimate of storage requirements for this note. It takes into account note's content and content of its note revisions.}}"''',
-    '"({{subtree size}}: "',
-    r'` {{in ${subTreeResp.subTreeNoteCount} notes)}}`',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/collapsible_widgets/note_revisions.js'
-translation = [
-    '"{{Note revisions}}"',
-    '"{{No revisions yet...}}"',
-    "'{{This revision was last edited on}} '",
-    '"{{Note revisions track changes in the note across the time.}}"',
-    "'{{Show Note revisions dialog}}'",
-    "title: '{{This revision was last edited on}} ",
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/collapsible_widgets/what_links_here.js'
-translation = [
-    '"{{What links here}}"',
-    '"{{Nothing links here yet ...}}"',
-    'title: "{{This list contains all notes which link to this note through links and relations.}}"',
-    '{{more links ...}}`',
-    "'{{Show full link map}}'",
 ]
 replace_in_file(file_path, translation)
 
@@ -2148,107 +1957,6 @@ translation = [
     'title: "{{Delete this note}}"',
     'throw new Error({{`Cannot get branchId for notePath ${notePath}`}}',
     'throw new Error("{{Unrecognized command}} "',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/mobile_widgets/mobile_global_buttons.js'
-translation = [
-    '>{{No plugin buttons loaded yet.}}<',
-    '> {{Switch to desktop version}}<',
-    '>{{ Enter protected session}}<',
-    '>{{ Leave protected session}}<',
-    '> {{Logout}}<',
-    'title="{{New note}}"',
-    'title="{{Collapse note tree}}"',
-    'title="{{Scroll to active note}}"',
-    'title="{{Plugin buttons}}"',
-    'title="{{Global actions}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/delete_label.js'
-translation = [
-    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/delete_note.js'
-translation = [
-    '    {{Delete matched notes}}',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/delete_note_revisions.js'
-translation = [
-    '    {{Delete note revisions}}',
-    "{{All past note revisions of matched notes will be deleted. Note itself will be fully preserved. In other terms, note's history will be removed.}}",
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/delete_relation.js'
-translation = [
-    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
-    '{{Delete relation:}}',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/execute_script.js'
-translation = [
-    '{{Execute script:}}',
-    '{{You can execute simple scripts on the matched notes.}}',
-    "{{For example to append a string to a note's title, use this small script:}}",
-    "{{More complex example would be deleting all matched note's attributes:}}",
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/move_note.js'
-translation = [
-    '>{{Move note}}<',
-    '>{{to}}<',
-    '>{{On all matched notes:}}<',
-    '>{{move note to the new parent if note has only one parent (i.e. the old placement is removed and new placement into the new parent is created)}}<',
-    ">{{clone note to the new parent if note has multiple clones/placements (it's not clear which placement should be removed)}} <",
-    '>{{nothing will happen if note cannot be moved to the target note (i.e. this would create a tree cycle)}}<',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/rename_label.js'
-translation = [
-    '>{{Rename label from:}}<',
-    '>{{To:}}<',
-    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/rename_relation.js'
-translation = [
-    '>{{Rename relation from:}}<',
-    '>{{To:}}<',
-    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/set_label_value.js'
-translation = [
-    '>{{Set label}}<',
-    '>{{to value}}<',
-    '>{{On all matched notes:}}<',
-    ">{{create given label if note doesn't have one yet}}<",
-    '>{{or change value of the existing label}}<',
-    '>{{You can also call this method without value, in such case label will be assigned to the note without value.}}<',
-    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/search_actions/set_relation_target.js'
-translation = [
-    '>{{Set relation}}<',
-    '>{{to}}<',
-    '>{{On all matched notes:}}<',
-    ">{{create given relation if note doesn't have one yet}} <",
-    '>{{or change target note of the existing relation}}<',
-    'title="{{Alphanumeric characters, underscore and colon are allowed characters.}}"',
-    ">{{create given relation if note doesn't have one yet}}<",
 ]
 replace_in_file(file_path, translation)
 
@@ -2415,13 +2123,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/history_navigation.js'
-translation = [
-    'title="{{Go to previous note.}}"',
-    'title="{{Go to next note.}}"',
-]
-replace_in_file(file_path, translation)
-
 file_path = 'src/public/app/widgets/mermaid.js'
 translation = [
     '>{{The diagram could not be displayed. See }}<',
@@ -2448,17 +2149,6 @@ file_path = 'src/public/app/widgets/note_map.js'
 translation = [
     'title="{{Link Map}}"',
     'title="{{Tree map}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/note_paths.js'
-translation = [
-    'title="{{Note paths}}"',
-    'title="{{This path is outside of hoisted note and you would have to unhoist.}}"',
-    'title="{{Archived}}"',
-    'title="{{Search}}"',
-    '{{This note is placed into the following paths:}}',
-    '{{Clone note to new location...}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -2518,25 +2208,6 @@ translation = [
     '.confirm("{{It is not recommended to change note type when note content is not empty. Do you want to continue anyway?}}"',
 ]
 replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/note_update_status.js'
-translation = [
-    '>{{File }}<',
-    '>{{ has been last modified on }}<',
-    '>{{Upload modified file}}<',
-    '>{{Ignore this change}}<',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/protected_note_switch.js'
-translation = [
-    '"title", "{{Note is not protected, click to make it protected}}"',
-    '"title", "{{Note is protected, click to make it unprotected}}"',
-    '"{{Protect the note}}"',
-    '"{{Unprotect the note}}"',
-]
-replace_in_file(file_path, translation)
-replace_in_file(file_path, translation, TARGET_PATH)
 
 file_path = 'src/public/app/widgets/quick_search.js'
 translation = [
@@ -2717,13 +2388,6 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/search_actions/abstract_search_action.js'
-translation = [
-    '{{Remove this search action}}',
-    '    logError({{`Failed rendering search action: ${JSON.stringify(this.attribute.dto)} with error: ${e.message} ${e.stack}`}}',
-]
-replace_in_file(file_path, translation)
-
 file_path = 'src/public/app/widgets/search_options/abstract_search_option.js'
 translation = [
     '{{Remove this search option}}',
@@ -2767,36 +2431,9 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/side_pane_toggles.js'
-translation = [
-    'title="{{Hide sidebar}}"',
-    'title="{{Show sidebar}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/similar_notes.js'
-translation = [
-    r'''{{`${similarNotes.length} similar note${similarNotes.length === 1 ? '': "s"}`}}''',
-    'title="{{This list contains notes which might be similar to the current note based on textual similarity of note title, its labels and relations.}}"',
-]
-replace_in_file(file_path, translation)
-
 file_path = 'src/public/app/widgets/spacer.js'
 translation = [
     'title: "{{Configure Launchbar}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/standard_top_widget.js'
-translation = [
-    '    {{New note}}',
-    '    {{Jump to note}}',
-    '    {{Search}}',
-    '    {{Recent changes}}',
-    '    {{Enter protected session}}',
-    '    {{Leave protected session}}',
-    'title="{{Enter protected session to be able to find and view protected notes}}"',
-    'title="{{Leave protected session so that protected notes are not accessible any more.}}"',
 ]
 replace_in_file(file_path, translation)
 
@@ -2882,24 +2519,9 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
-file_path = 'src/public/app/widgets/type_widgets/deleted.js'
-translation = [
-    '{{This note has been deleted.}}',
-]
-replace_in_file(file_path, translation)
-
 file_path = 'src/public/app/widgets/type_widgets/editable_code.js'
 translation = [
     'placeholder: "{{Type the content of your code note here...}}"',
-]
-replace_in_file(file_path, translation)
-
-file_path = 'src/public/app/widgets/type_widgets/editable_code_buttons.js'
-translation = [
-    'title="{{Open Trilium API docs}}"',
-    'showMessage("{{SQL Console note has been saved into }}"',
-    '{{Execute}} <k',
-    '{{Save to note}}</k',
 ]
 replace_in_file(file_path, translation)
 
@@ -3465,12 +3087,6 @@ translation = [
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
-file_path = 'src/routes/api/date_notes.js'
-translation = [
-    "title: '{{Search:}} '",
-]
-replace_in_file(file_path, translation, TARGET_PATH)
-
 file_path = 'src/routes/api/image.js'
 translation = [
     'message: "{{Unknown image type: }}"',
@@ -3706,10 +3322,22 @@ if LANG == 'cn':
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
     shutil.copy(src_path, dest_path)
 
+print('=====================================')
 if missing_files:
-    print('missing_files!')
+    print('missing_files! \n')
     for x in missing_files:
         print(x)
+else:
+    print('no missing file, good!')
+print('=====================================')
+unused_translations = [key for key in translation_dict if key not in used_translations]
+if unused_translations:
+    print('unused_translations! \n')
+    for x in unused_translations:
+        print(x)
+else:
+    print('no unused translation, good!')
+print('=====================================')
 
 # 尝试删除electron的缓存, 避免代码修改不生效的问题
 # try delete electron cache, avoid code change does not take effect
