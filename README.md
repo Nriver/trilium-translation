@@ -23,20 +23,27 @@ If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 
 <!--ts-->
 
-* [Trilium Translation](#-trilium-translation)
-* [Table of Contents](#-table-of-contents)
-* [Screenshots](#-screenshots)
-* [How to use](#-how-to-use)
-* [How to run server with docker](#-how-to-run-server-with-docker)
-* [How to translate](#-how-to-translate)
-    * [How does the translation work](#-how-does-the-translation-work)
-        * [Compile Environment Requirement](#-compile-environment-requirement)
-        * [Translate Process](#-translate-process)
-        * [More text to translate](#-more-text-to-translate)
-* [Limitations](#-limitations)
-* [Stargazers over time](#-stargazers-over-time)
-* [Donation](#-donation)
-* [Thanks](#-thanks)
+* [🌏 Trilium Translation](#-trilium-translation)
+* [🦮 Table of Contents](#-table-of-contents)
+* [📸 Screenshots](#-screenshots)
+* [📚 How to use](#-how-to-use)
+* [🐳 How to run server with docker](#-how-to-run-server-with-docker)
+* [🌐 How to translate](#-how-to-translate)
+   * [🌐 How does the translation work](#-how-does-the-translation-work)
+      * [💻 Compile Environment Requirement](#-compile-environment-requirement)
+      * [🔍 Translate Process](#-translate-process)
+      * [📝 More text to translate](#-more-text-to-translate)
+* [🛑 Limitations](#-limitations)
+* [🤔 Common questions](#-common-questions)
+   * [Which VPS provider are you using to run the Trilium Notes server?](#which-vps-provider-are-you-using-to-run-the-trilium-notes-server)
+   * [Why my translation is not working?](#why-my-translation-is-not-working)
+   * [Where is the Note Database?](#where-is-the-note-database)
+      * [Default Paths for Client Databases](#default-paths-for-client-databases)
+      * [Default Path for Server Database](#default-path-for-server-database)
+   * [How to Change the Database Location?](#how-to-change-the-database-location)
+* [⏳ Stargazers over time](#-stargazers-over-time)
+* [💰 Donation](#-donation)
+* [🙏 Thanks](#-thanks)
 
 <!--te-->
 
@@ -153,6 +160,57 @@ If there were some mistakes in the translation, Trilium Notes may not function c
 data before use.
 
 If you break Trilium Notes somehow, you need to redownload everything with `init.py`.
+
+---
+
+# 🤔 Common questions
+
+The following are some representative questions that I feel are frequently asked by users, so I'll summarize them.
+
+## Which VPS provider are you using to run the Trilium Notes server?
+
+I'm using Racknerd now. It's insainly cheap. And very suitable to host Trilium Server.
+
+Racknerd's promotions seem to be ongoing, and you can always purchase them. If you're interested, you might want to give it a try. The links include an affiliate code, which you can remove if you prefer.
+
+I've tested Trilium's server program, and it typically consumes around 150MB of memory. So, the cheapest level would be sufficient, which costs only $10 per year. If you find the storage is not enough for you, you can try the slightly more expensive option, which is usually less than $20 per year and can provide you with about 30GB of SSD storage.
+
+| Promotion      | RAM  | CPU | SSD | Bandwidth | Price    | Purchase                                                 |
+| -------------- | ---- | --- | --- | --------- | -------- | -------------------------------------------------------- |
+| 2024 New Year  | 768M | 1 Core | 21G | 1T/Month  | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
+| 2024 New Year  | 2G   | 1 Core | 35G | 2.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
+| 2023 Black Friday | 768M | 1 Core | 15G | 1T/Month  | $10.18/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
+| 2023 Black Friday | 2G   | 1 Core | 30G | 2.5T/Month | $16.98/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
+
+You can also choose other VPS providers, but remember to back up your data. Data is priceless. Make sure to perform backups just in case, and keep it in mind.
+
+## Why my translation is not working?
+
+If you have run the original version of the Trilium program and there is a cache of the English version in your system, please follow these steps:
+
+1. Close Trilium.
+2. On Windows, delete the directory `C:\Users\Username\AppData\Roaming\Trilium Notes`.
+3. On Linux, delete the directory `~/.config/Trilium Notes/`.
+4. Restart Trilium, and it will be in your translated language.
+
+## Where is the Note Database?
+
+### Default Paths for Client Databases
+
+- Windows: C:\Users\Username\AppData\Roaming\trilium-data
+- Linux: /home/Username/.local/share/trilium-data
+- Mac: /Users/Username/Library/ApplicationSupport/trilium-data
+
+### Default Path for Server Database
+
+- Linux Server: /home/Username/trilium-data
+- Docker: In the `trilium-data` folder in the same directory as docker-compose.yml
+
+## How to Change the Database Location?
+
+You can refer to the client's built-in `trilium-portable.sh` or `trilium-portable.bat` to run it in a portable manner. To change the database location, simply modify the database path in the file.
+
+If you want to experience the latest original features, it is recommended to use this method.
 
 ---
 
