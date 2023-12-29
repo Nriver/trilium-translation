@@ -2214,6 +2214,15 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/widgets/protected_note_switch.js'
+translation = [
+    '"{{Protect the note}}"',
+    '"{{Note is not protected, click to make it protected}}"',
+    '"{{Unprotect the note}}"',
+    '"{{Note is protected, click to make it unprotected}}"',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/widgets/quick_search.js'
 translation = [
     # 0.47

@@ -1599,5 +1599,9 @@ translation_dict = {
     "`Parsing of attribute: '${actionAttr.value}' failed with error: ${e.message}`": "`解析属性: '${actionAttr.value}' 失败, 错误信息: ${e.message}`",
     ' relation.': ' 关联关系.',
     'wiki': 'wiki',
+    'Protect the note': '保护笔记',
+    'Note is not protected, click to make it protected': '笔记未受保护，点击以进行保护',
+    'Unprotect the note': '取消保护笔记',
+    'Note is protected, click to make it unprotected': '笔记已受保护，点击以取消保护',
     '': '',
 }

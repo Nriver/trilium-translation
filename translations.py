@@ -1625,4 +1625,8 @@ translation_dict = {
     "`Parsing of attribute: '${actionAttr.value}' failed with error: ${e.message}`": '',
     ' relation.': '',
     'wiki': '',
+    'Protect the note': '',
+    'Note is not protected, click to make it protected': '',
+    'Unprotect the note': '',
+    'Note is protected, click to make it unprotected': '',
 }
