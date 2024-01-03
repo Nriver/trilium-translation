@@ -6,7 +6,10 @@
 [![GitHub release](https://img.shields.io/github/v/release/nriver/trilium-translation.svg)](https://github.com/nriver/trilium-translation/releases/)
 [![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://hub.docker.com/repository/docker/nriver/trilium-cn/general)
 
-[中文说明](README_CN.md)
+<p align="center">
+English | <a href="README_CN.md">简体中文</a>
+</p>
+
 This repo provides a translation for the awesome [Trilium Notes](https://github.com/zadam/trilium).
 If you'd like to translate Trilium Notes into any language you like, please
 follow [this guide](https://github.com/Nriver/trilium-translation#how-to-translate).
