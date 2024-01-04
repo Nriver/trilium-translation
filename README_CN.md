@@ -758,6 +758,8 @@ Ko-fi:
 
 感谢 `*孤` 赞助的20元! 备注: 请群主大大喝杯奶茶
 
+感谢 `X*H` 赞助的10元!
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
