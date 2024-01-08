@@ -44,9 +44,9 @@ Trilium Notes 汉化版 Docker镜像 https://hub.docker.com/r/nriver/trilium-cn
 
 Nriver 的 scoop 仓库 http://github.com/Nriver/Scoop-Nriver
 
-Archlinux AUR 仓库 客户端 https://aur.archlinux.org/packages/trilium-cn
+Archlinux AUR 仓库 客户端 https://aur.archlinux.org/packages/trilium-cn-bin
 
-Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server-cn
+Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server-cn-bin
 
 # 🦮 目录导航
 
