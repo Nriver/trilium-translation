@@ -232,7 +232,7 @@ docker-compose up -d
 安装
 
 ```
-yay -S trilium-server-cn
+yay -S trilium-server-cn-bin
 ```
 
 直接运行 (可以使用pm2等应用管理来启动)
@@ -287,7 +287,7 @@ scoop update trilium-cn
 Linux桌面系统可以使用AUR安装中文版客户端
 
 ```
-yay -S trilium-cn
+yay -S trilium-cn-bin
 ```
 
 更新
