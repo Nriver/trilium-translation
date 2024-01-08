@@ -18,8 +18,6 @@
 
 如果你是老用户, 使用前最好备份数据以防万一.
 
-<a href="https://github.com/Nriver"><img align="center" src="https://moe-counter--nriver1.repl.co/get/@Nriver_trilium-translation"></a><br>
-
 qq群满了请优先加TG群
 
 Trilium Notes 学习交流 TG群 https://t.me/trilium_cn
@@ -30,7 +28,7 @@ Trilium Notes 交流qq群
 
 1群 686232370 (已满)
 
-<!-- ![qq1](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png) -->
+<!-- ![qq2](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png) -->
 
 2群 535368955
 
