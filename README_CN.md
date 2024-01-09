@@ -456,8 +456,9 @@ Windows系统删除这个目录`C:\Users\用户名\AppData\Roaming\Trilium Notes
 
 目前我也不太清楚正确的解决办法, 只能有这几点建议:
 
-1. 不用国内的加速镜像, 它们的数据有可能不是最新的. 去掉加速镜像后再尝试pull.
-2. (危险操作, 注意) 停掉trilium, 使用 `docker system prune -a` 来清理掉所有没有在使用的docker镜像和容器等再重新pull.
+1. 不用国内的加速镜像, 它们的数据有可能不是最新的. 去掉加速镜像后再尝试从官方源拉取镜像.
+2. 将本地的旧版镜像完全删除，然后再尝试拉取镜像.
+3. (危险操作, 注意) 停掉trilium, 使用 `docker system prune -a` 来清理掉所有没有在使用的docker镜像和容器等再重新pull.
 
 ## 为什么`trilium-portable.bat`提示禁止执行?
 
