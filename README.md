@@ -30,18 +30,22 @@ If you have old data, PLEASE BACK UP YOUR DATA BEFORE USE.
 * [📚 How to use](#-how-to-use)
 * [🐳 How to run server with docker](#-how-to-run-server-with-docker)
 * [🌐 How to translate](#-how-to-translate)
-   * [🌐 How does the translation work](#-how-does-the-translation-work)
-      * [💻 Compile Environment Requirement](#-compile-environment-requirement)
-      * [🔍 Translate Process](#-translate-process)
-      * [📝 More text to translate](#-more-text-to-translate)
+    * [🌐 How does the translation work](#-how-does-the-translation-work)
+        * [💻 Compile Environment Requirement](#-compile-environment-requirement)
+        * [🔍 Translate Process](#-translate-process)
+        * [📝 More text to translate](#-more-text-to-translate)
 * [🛑 Limitations](#-limitations)
 * [🤔 Common questions](#-common-questions)
-   * [Which VPS provider are you using to run the Trilium Notes server?](#which-vps-provider-are-you-using-to-run-the-trilium-notes-server)
-   * [Why my translation is not working?](#why-my-translation-is-not-working)
-   * [Where is the Note Database?](#where-is-the-note-database)
-      * [Default Paths for Client Databases](#default-paths-for-client-databases)
-      * [Default Path for Server Database](#default-path-for-server-database)
-   * [How to Change the Database Location?](#how-to-change-the-database-location)
+    * [Which VPS provider are you using to run the Trilium Notes server?](#which-vps-provider-are-you-using-to-run-the-trilium-notes-server)
+    * [Some Questions Regarding Domain Names](#some-questions-regarding-domain-names)
+        * [How to Enable HTTPS Encryption?](#how-to-enable-https-encryption)
+        * [Where Did You Purchase Your Domain?](#where-did-you-purchase-your-domain)
+        * [How to Apply for a Website Certificate?](#how-to-apply-for-a-website-certificate)
+    * [Why my translation is not working?](#why-my-translation-is-not-working)
+    * [Where is the Note Database?](#where-is-the-note-database)
+        * [Default Paths for Client Databases](#default-paths-for-client-databases)
+        * [Default Path for Server Database](#default-path-for-server-database)
+    * [How to Change the Database Location?](#how-to-change-the-database-location)
 * [⏳ Stargazers over time](#-stargazers-over-time)
 * [💰 Donation](#-donation)
 * [🙏 Thanks](#-thanks)
@@ -172,22 +176,43 @@ The following are some representative questions that I feel are frequently asked
 
 I'm using Racknerd now. It's insainly cheap. And very suitable to host Trilium Server.
 
-Racknerd's promotions seem to be ongoing, and you can always purchase them. If you're interested, you might want to give it a try. The links include an affiliate code, which you can remove if you prefer.
+Racknerd's promotions seem to be ongoing, and you can always purchase them. If you're interested, you might want to give
+it a try. The links include an affiliate code, which you can remove if you prefer.
 
-I've tested Trilium's server program, and it typically consumes around 150MB of memory. So, the cheapest level would be sufficient, which costs only $10 per year. If you find the storage is not enough for you, you can try the slightly more expensive option, which is usually less than $20 per year and can provide you with about 30GB of SSD storage.
+I've tested Trilium's server program, and it typically consumes around 150MB of memory. So, the cheapest level would be
+sufficient, which costs only $10 per year. If you find the storage is not enough for you, you can try the slightly more
+expensive option, which is usually less than $20 per year and can provide you with about 30GB of SSD storage.
 
-| Promotion      | RAM  | CPU | SSD | Bandwidth | Price    | Purchase                                                 |
-| -------------- | ---- | --- | --- | --------- | -------- | -------------------------------------------------------- |
-| 2024 New Year  | 768M | 1 Core | 21G | 1T/Month  | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
-| 2024 New Year  | 2G   | 1 Core | 35G | 2.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
-| 2023 Black Friday | 768M | 1 Core | 15G | 1T/Month  | $10.18/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
+| Promotion         | RAM  | CPU    | SSD | Bandwidth  | Price       | Purchase                                                 |
+|-------------------|------|--------|-----|------------|-------------|----------------------------------------------------------|
+| 2024 New Year     | 768M | 1 Core | 21G | 1T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
+| 2024 New Year     | 2G   | 1 Core | 35G | 2.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
+| 2023 Black Friday | 768M | 1 Core | 15G | 1T/Month   | $10.18/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
 | 2023 Black Friday | 2G   | 1 Core | 30G | 2.5T/Month | $16.98/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
 
-You can also choose other VPS providers, but remember to back up your data. Data is priceless. Make sure to perform backups just in case, and keep it in mind.
+You can also choose other VPS providers, but remember to back up your data. Data is priceless. Make sure to perform
+backups just in case, and keep it in mind.
+
+## Some Questions Regarding Domain Names
+
+### How to Enable HTTPS Encryption?
+
+In general, HTTP requests accessed through ports are plaintext. If you need to use HTTPS encryption, it must be used in conjunction with the domain.
+
+### Where Did You Purchase Your Domain?
+
+I purchased my domain from Namesilo, and the prices are quite reasonable. Feel free to give it a try if you're interested. Below is the link with an affiliate tag; you can remove it if you prefer. Additionally, there is a coupon code `nriver` that can save you $1 on your first domain purchase.
+
+[Domain Purchase Link](https://www.namesilo.com/?rid=d62cb16lq)
+
+### How to Apply for a Website Certificate?
+
+As for website certificates, you can use the free `acme.sh` tool. For specific instructions, you can refer to the [acme.sh documentation on certificate issuance](https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E).
 
 ## Why my translation is not working?
 
-If you have run the original version of the Trilium program and there is a cache of the English version in your system, please follow these steps:
+If you have run the original version of the Trilium program and there is a cache of the English version in your system,
+please follow these steps:
 
 1. Close Trilium.
 2. On Windows, delete the directory `C:\Users\Username\AppData\Roaming\Trilium Notes`.
@@ -209,7 +234,8 @@ If you have run the original version of the Trilium program and there is a cache
 
 ## How to Change the Database Location?
 
-You can refer to the client's built-in `trilium-portable.sh` or `trilium-portable.bat` to run it in a portable manner. To change the database location, simply modify the database path in the file.
+You can refer to the client's built-in `trilium-portable.sh` or `trilium-portable.bat` to run it in a portable manner.
+To change the database location, simply modify the database path in the file.
 
 If you want to experience the latest original features, it is recommended to use this method.
 
