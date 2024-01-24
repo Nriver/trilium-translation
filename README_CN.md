@@ -202,7 +202,7 @@ wget https://raw.githubusercontent.com/Nriver/trilium-translation/main/docker-co
 运行
 
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 它会从[Docker Hub](https://hub.docker.com/repository/docker/nriver/trilium-cn)直接拉镜像运行.
@@ -220,19 +220,19 @@ cd到docker-compose.yml所在目录
 先停止trilium
 
 ```
-docker-compose down
+docker compose down
 ```
 
 拉取最新镜像
 
 ```
-docker-compose pull
+docker compose pull
 ```
 
 运行
 
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 ## 服务端 - Linux - 通过AUR安装Linux服务端
@@ -551,6 +551,8 @@ Docker Compose version 2.17.3
 如果docker用不了，请尝试直接从release下载服务器版的zip包运行。
 
 还是不行的话，建议换一个新一点的Linux发行版，软件环境太旧也可能无法运行。
+
+新版本的docker已内置docker-compose，可以用 `docker compose` 代替 `docker-compose` 命令。
 
 ---
 
