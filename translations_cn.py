@@ -1532,7 +1532,7 @@ translation_dict = {
     'Upload attachments': '上传附件',
     'you can also open the': '你也可以打开',
     'This attachment has been deleted.': '这个附件已被删除',
-    '`This attachment will be automatically deleted in ${utils.formatTimeInterval(willBeDeletedInMs)}`': '`此附件将在 ${utils.formatTimeInterval(willBeDeletedInMs)} 后自动删除。`',
+    '`This attachment will be automatically deleted in ${utils.formatTimeInterval(willBeDeletedInMs)}`': '`此附件将在 ${utils.formatTimeInterval(willBeDeletedInMs)} 后自动删除`',
     'This attachment will be automatically deleted soon': '此附件将很快被自动删除',
     "because the attachment is not linked in the note's content. To prevent deletion, add the attachment link back into the content or convert the attachment into note.": "因为附件未在笔记内容中链接。为防止被删除，请将附件链接添加回内容中或将附件转换为笔记。",
     'Attachment link copied to clipboard.': '附件链接已复制到剪贴板.',
