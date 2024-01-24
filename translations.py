@@ -1642,4 +1642,6 @@ translation_dict = {
     'Activates the eigth tab in the list': '',
     'Activates the ninth tab in the list': '',
     'Activates the last tab in the list': '',
+    "Converting note '${this.note.title}' failed.": '',
+    "Note '${newAttachment.title}' has been converted to attachment.": '',
 }

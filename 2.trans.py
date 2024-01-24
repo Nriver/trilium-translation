@@ -1919,6 +1919,8 @@ translation = [
     '>{{Delete note}}<',
     '>{{ Print note}}<',
     '>{{ Save revision}}<',
+    "showMessage(`{{Converting note '${this.note.title}' failed.}}`",
+    "showMessage(`{{Note '${newAttachment.title}' has been converted to attachment.}}`",
 ]
 replace_in_file(file_path, translation)
 
@@ -2367,7 +2369,7 @@ translation = [
     'title="{{Limit number of results}}"',
     'title="{{Debug will print extra debugging information into the console to aid in debugging complex queries}}"',
     "title: '{{Search Parameters}}",
-    'showMessage("{{Search note has been saved into }}',
+    'showMessage(`{{Search note has been saved into }}',
     "showMessage('{{Actions have been executed.}}'",
     'logError(`{{Unknown search option}}`)',
     """logError({{`Parsing of attribute: '${actionAttr.value}' failed with error: ${e.message}`}})""",

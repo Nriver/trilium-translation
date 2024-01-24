@@ -1616,5 +1616,7 @@ translation_dict = {
     'Activates the eigth tab in the list': '激活列表中的第8个标签',
     'Activates the ninth tab in the list': '激活列表中的第9个标签',
     'Activates the last tab in the list': '激活列表中的最后一个标签',
+    "Converting note '${this.note.title}' failed.": "转换笔记 '${this.note.title}' 失败。",
+    "Note '${newAttachment.title}' has been converted to attachment.": "笔记 '${newAttachment.title}' 已被转换为附件。",
     '': '',
 }
