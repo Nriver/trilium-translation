@@ -1366,6 +1366,7 @@ translation = [
     'title="{{List view}}"',
     'title="{{Grid view}}"',
     'throw new Error(`{{Invalid view type}} ${type}`',
+    ' {{notes}})</span>',
 ]
 replace_in_file(file_path, translation)
 
@@ -2482,6 +2483,7 @@ file_path = 'src/public/app/widgets/toc.js'
 translation = [
     '"{{Table of Contents}}"',
     '.title("{{Close TOC}}")',
+    '.title("{{Options}}")',
 ]
 replace_in_file(file_path, translation)
 
