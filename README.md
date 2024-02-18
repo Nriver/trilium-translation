@@ -374,6 +374,16 @@ Thanks `*孤` for donating 20 CNY! Memo: 请群主大大喝杯奶茶
 
 Thanks `X*H` for donating 10 CNY!
 
+Thanks `**辉` for donating 20 CNY! Memo: 感谢大佬，辛苦了
+
+Thanks `*卫` for donating 50 CNY! Memo: 希望能保持更新
+
+Thanks `**鄂` for donating 10 CNY!
+
+Thanks `**幻` for donating 10 CNY!
+
+Thanks `C*W` for donating 50 CNY!
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
