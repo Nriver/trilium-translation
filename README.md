@@ -183,12 +183,14 @@ I've tested Trilium's server program, and it typically consumes around 150MB of 
 sufficient, which costs only $10 per year. If you find the storage is not enough for you, you can try the slightly more
 expensive option, which is usually less than $20 per year and can provide you with about 30GB of SSD storage.
 
-| Promotion         | RAM  | CPU    | SSD | Bandwidth  | Price       | Purchase                                                 |
-|-------------------|------|--------|-----|------------|-------------|----------------------------------------------------------|
-| 2024 New Year     | 768M | 1 Core | 21G | 1T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
-| 2024 New Year     | 2G   | 1 Core | 35G | 2.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
-| 2023 Black Friday | 768M | 1 Core | 15G | 1T/Month   | $10.18/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
-| 2023 Black Friday | 2G   | 1 Core | 30G | 2.5T/Month | $16.98/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
+| Promotion             | RAM  | CPU    | SSD | Bandwidth  | Price       | Purchase                                                 |
+|-----------------------|------|--------|-----|------------|-------------|----------------------------------------------------------|
+| 2024 Chinese New Year | 1G   | 1 Core | 15G | 2T/Month   | $10.99/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
+| 2024 Chinese New Year | 1.5G | 1 Core | 25G | 4T/Month   | $16.88/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
+| 2024 New Year         | 768M | 1 Core | 21G | 1T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
+| 2024 New Year         | 2G   | 1 Core | 35G | 2.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
+| 2023 Black Friday     | 768M | 1 Core | 15G | 1T/Month   | $10.18/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
+| 2023 Black Friday     | 2G   | 1 Core | 30G | 2.5T/Month | $16.98/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
 
 You can also choose other VPS providers, but remember to back up your data. Data is priceless. Make sure to perform
 backups just in case, and keep it in mind.
@@ -197,17 +199,21 @@ backups just in case, and keep it in mind.
 
 ### How to Enable HTTPS Encryption?
 
-In general, HTTP requests accessed through ports are plaintext. If you need to use HTTPS encryption, it must be used in conjunction with the domain.
+In general, HTTP requests accessed through ports are plaintext. If you need to use HTTPS encryption, it must be used in
+conjunction with the domain.
 
 ### Where Did You Purchase Your Domain?
 
-I purchased my domain from Namesilo, and the prices are quite reasonable. Feel free to give it a try if you're interested. Below is the link with an affiliate tag; you can remove it if you prefer. Additionally, there is a coupon code `nriver` that can save you $1 on your first domain purchase.
+I purchased my domain from Namesilo, and the prices are quite reasonable. Feel free to give it a try if you're
+interested. Below is the link with an affiliate tag; you can remove it if you prefer. Additionally, there is a coupon
+code `nriver` that can save you $1 on your first domain purchase.
 
 [Domain Purchase Link](https://www.namesilo.com/?rid=d62cb16lq)
 
 ### How to Apply for a Website Certificate?
 
-As for website certificates, you can use the free `acme.sh` tool. For specific instructions, you can refer to the [acme.sh documentation on certificate issuance](https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E).
+As for website certificates, you can use the free `acme.sh` tool. For specific instructions, you can refer to
+the [acme.sh documentation on certificate issuance](https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E).
 
 ## Why my translation is not working?
 
