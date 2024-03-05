@@ -1031,6 +1031,7 @@ translation = [
     '{{Highlights List visibility}}',
     '{{You can hide the hightlights widget per-note by adding a <code>#hideHighlightWidget</code> label.}}',
     '{{You can hide the highlights widget per-note by adding a <code>#hideHighlightWidget</code> label.}}',
+    '{{You can configure a keyboard shortcut for quickly toggling the right pane (including Highlights) in the Options -> Shortcuts (name "toggleRightPane").}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -1039,6 +1040,7 @@ translation = [
     '>{{Table of Contents}}<',
     '{{Table of contents will appear in text notes when the note has more than a defined number of headings. You can customize this number:}}',
     '>{{You can also use this option to effectively disable TOC by setting a very high number.}}<',
+    '{{You can configure a keyboard shortcut for quickly toggling the right pane (including TOC) in the Options -> Shortcuts (name "toggleRightPane").}}',
 ]
 replace_in_file(file_path, translation)
 
@@ -2850,6 +2852,15 @@ translation = [
     '"In line":"{{In line}}",',
     '"Toggle caption off":"{{Toggle caption off}}"',
     '"Toggle caption on":"{{Toggle caption on}}",',
+    '"Upload image from computer":"{{Upload image from computer}}"',
+    '"Special characters":"{{Special characters}}"',
+    '"Character categories":"{{Character categories}}"',
+    'Currency:"{{Currency}}"',
+    ',Text:"{{Text}}",',
+    'Mathematical:"{{Mathematical}}",',
+    'Arrows:"{{Arrows}}"',
+    'Latin:"{{Latin}}"',
+    'All:"{{All}}",',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
