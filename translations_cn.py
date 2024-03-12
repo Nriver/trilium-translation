@@ -1629,5 +1629,6 @@ translation_dict = {
     'Arrows': '箭头',
     'Latin': '拉丁',
     'All': '全部',
+    'Advanced options': '高级选项',
     '': '',
 }

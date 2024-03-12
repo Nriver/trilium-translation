@@ -1655,4 +1655,5 @@ translation_dict = {
     'Arrows': '',
     'Latin': '',
     'All': '',
+    'Advanced options': '',
 }

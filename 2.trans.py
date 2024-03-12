@@ -2861,6 +2861,7 @@ translation = [
     'Arrows:"{{Arrows}}"',
     'Latin:"{{Latin}}"',
     'All:"{{All}}",',
+    '"Advanced options":"{{Advanced options}}",',
 ]
 replace_in_file(file_path, translation, TARGET_PATH)
 
