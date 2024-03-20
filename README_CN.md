@@ -186,14 +186,19 @@ Mermaid.js 流程图
 
 ## 🐳 服务端 - Linux - 在Docker里运行服务端
 
-Trilium Notes的服务端可以用我构建好的docker镜像运行. 注意！请不要使用加速镜像，可以避免类似 #16, #14 下到旧版导致无法启动的问题.
+Trilium Notes的服务端可以用我构建好的docker镜像运行.
 
-如果无法拉取docker镜像，可以参考 [docker官方文档](https://docs.docker.com/config/daemon/systemd/) 对 `http-proxy.conf`
-设置代理。
+注意事项：
 
-直接下载 [docker-compose.yml](https://raw.githubusercontent.com/Nriver/trilium-translation/main/docker-compose.yml).
+1. 请不要使用加速镜像，可以避免类似 #16, #14 下到旧版导致无法启动的问题.
+2. 如果无法拉取docker镜像，可以参考 [docker官方文档](https://docs.docker.com/config/daemon/systemd/) 对 `http-proxy.conf`
+   设置代理。
+3. 如果 `docker compose` 无法执行，可能是docker版本比较低。你可以尝试升级docker版本或者安装`docker-compose`
+   来代替`docker compose`。
 
-下载docker-compose配置文件
+运行步骤：
+
+直接下载 [docker-compose.yml](https://raw.githubusercontent.com/Nriver/trilium-translation/main/docker-compose.yml)
 
 ```
 wget https://raw.githubusercontent.com/Nriver/trilium-translation/main/docker-compose.yml
@@ -257,9 +262,12 @@ systemctl start trilium-server-cn
 
 ### 关于Arm服务器运行服务端的说明
 
-如果需要在Arm服务器上跑, 可以直接用trilium原版的docker镜像. 汉化版和原版数据是互通的. 可以用汉化版的客户端和原版的服务端进行链接.
+~~如果需要在Arm服务器上跑, 可以直接用trilium原版的docker镜像. 汉化版和原版数据是互通的. 可以用汉化版的客户端和原版的服务端进行链接.~~
 
-汉化版暂时不会有Arm镜像. [相关issue](https://github.com/Nriver/trilium-translation/issues/10)
+~~汉化版暂时不会有Arm镜像. [相关issue](https://github.com/Nriver/trilium-translation/issues/10)~~
+
+汉化版已经有Arm版的docker镜像了，可以放心食用。如果无法运行，请尝试升级docker版本。
+
 
 # 🖥️ 客户端
 
