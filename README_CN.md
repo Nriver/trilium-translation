@@ -807,6 +807,12 @@ Ko-fi:
 
 感谢 `C*W` 赞助的50元!
 
+感谢 `*超` 赞助的10元!
+
+感谢 `*磊` 赞助的30元!
+
+感谢 `**龙` 赞助的200元!
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
