@@ -290,7 +290,7 @@ def patch_windows(file_name):
 
 def patch_mac(file_name):
     if not file_name.endswith('.zip'):
-        print('windows 文件名有问题')
+        print('mac 文件名有问题')
         exit()
 
     file_path = TRANS_RELEASE_FOLDER + file_name
