@@ -392,8 +392,6 @@ Thanks `**龙` for donating 200 CNY!
 
 Thanks `*平` for donating 20 CNY!
 
-Thanks `**梦` for donating 50 CNY!
-
 Thanks `*超` for donating 66 CNY!
 
 Thanks for the greate IDE Pycharm from Jetbrains.
