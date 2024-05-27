@@ -385,22 +385,24 @@ Racknerd的促销似乎都是长期有效的活动，一直都可以买，有需
 
 我测试过Trilium的服务端程序大概会占150MB左右的内存。买最便宜的就够用了，一年不到100块。如果觉得硬盘不够大，可以买贵一档的，也就100出头。再贵就没有必要了。
 
-| 促销活动         | 内存   | CPU | SSD | 流量     | 价格       | 购买                                                     |
-|--------------|------|-----|-----|--------|----------|--------------------------------------------------------|
-| 2024中国新年     | 1G   | 1核  | 15G | 2T/月   | $10.99/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
-| 2024中国新年     | 1.5G | 1核  | 25G | 4T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
-| 2024新年       | 768M | 1核  | 21G | 1T/月   | $11.49/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
-| 2024新年       | 2G   | 1核  | 35G | 2.5T/月 | $17.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
-| 2023黑五       | 768M | 1核  | 15G | 1T/月   | $10.18/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
-| 2023黑五       | 2G   | 1核  | 30G | 2.5T/月 | $16.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
-| (过期) 2023双十一 | 1G   | 1核  | 12G | 2T/月   | $11/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=788) |
-| (过期) 2023双十一 | 2G   | 1核  | 20G | 4T/月   | $17.55/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=789) |
-| (过期) 2023独立日 | 1G   | 1核  | 14G | 2T/月   | $11.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=775) |
-| (过期) 2023独立日 | 2G   | 1核  | 20G | 3T/月   | $19.89/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=776) |
-| (过期) 2023复活节 | 840M | 1核  | 10G | 1T/月   | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
-| (过期) 2023复活节 | 1.2G | 1核  | 30G | 3T/月   | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
-| (过期) 2022黑五  | 768M | 1核  | 10G | 1T/月   | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
-| (过期) 2022黑五  | 1.5G | 1核  | 30G | 3T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
+| 促销活动         | 内存    | CPU | SSD | 流量     | 价格       | 购买                                                     |
+|--------------|-------|-----|-----|--------|----------|--------------------------------------------------------|
+| 2024龙舟节促销    | 1.25G | 1核  | 20G | 2T/月   | $12.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=850) |
+| 2024龙舟节促销     | 2G    | 2核  | 30G | 4T/月   | $19.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=851) |
+| 2024中国新年     | 1G    | 1核  | 15G | 2T/月   | $10.99/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
+| 2024中国新年     | 1.5G  | 1核  | 25G | 4T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
+| 2024新年       | 768M  | 1核  | 21G | 1T/月   | $11.49/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
+| 2024新年       | 2G    | 1核  | 35G | 2.5T/月 | $17.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
+| 2023黑五       | 768M  | 1核  | 15G | 1T/月   | $10.18/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
+| 2023黑五       | 2G    | 1核  | 30G | 2.5T/月 | $16.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
+| (过期) 2023双十一 | 1G    | 1核  | 12G | 2T/月   | $11/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=788) |
+| (过期) 2023双十一 | 2G    | 1核  | 20G | 4T/月   | $17.55/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=789) |
+| (过期) 2023独立日 | 1G    | 1核  | 14G | 2T/月   | $11.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=775) |
+| (过期) 2023独立日 | 2G    | 1核  | 20G | 3T/月   | $19.89/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=776) |
+| (过期) 2023复活节 | 840M  | 1核  | 10G | 1T/月   | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
+| (过期) 2023复活节 | 1.2G  | 1核  | 30G | 3T/月   | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
+| (过期) 2022黑五  | 768M  | 1核  | 10G | 1T/月   | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
+| (过期) 2022黑五  | 1.5G  | 1核  | 30G | 3T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
 
 你也可以选择其它的VPS提供商，不过要记得备份数据，数据是无价的。做好备份以防万一，切记。
 

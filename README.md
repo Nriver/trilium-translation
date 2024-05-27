@@ -185,6 +185,8 @@ expensive option, which is usually less than $20 per year and can provide you wi
 
 | Promotion             | RAM  | CPU    | SSD | Bandwidth  | Price       | Purchase                                                 |
 |-----------------------|------|--------|-----|------------|-------------|----------------------------------------------------------|
+| 2024 Dragon Boat Festival | 1.25G | 1 Core | 20G | 2TB/month | $12.88/year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=850) |
+| 2024 Dragon Boat Festival | 2G    | 2 Cores | 30G | 4TB/month | $19.88/year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=851) |
 | 2024 Chinese New Year | 1G   | 1 Core | 15G | 2T/Month   | $10.99/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
 | 2024 Chinese New Year | 1.5G | 1 Core | 25G | 4T/Month   | $16.88/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
 | 2024 New Year         | 768M | 1 Core | 21G | 1T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
