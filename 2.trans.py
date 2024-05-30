@@ -3334,7 +3334,7 @@ with open(dest_path, 'r') as f:
     # ckeditor 代码块通过中文的 · 触发
     # ckeditor code block trigger by chinese ·
     target_element = '/^```$/'
-    new_element = '/^(```|···)$/'
+    new_element = '/^(```|···|｀｀｀)$/'
     if target_element in content:
         content = content.replace(target_element, new_element)
 
