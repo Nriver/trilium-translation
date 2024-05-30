@@ -1578,8 +1578,8 @@ translation = [
     "{{JavaScript note which will be injected into the share page. JS note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree'.}}",
     "{{Favicon note to be set in the shared page. Typically you want to set it to share root and make it inheritable. Favicon note must be in the shared sub-tree as well. Consider using 'shareHiddenFromTree'.}}",
     '{{default title of notes created as children of this note. The value is evaluated as JavaScript string \n                        and thus can be enriched with dynamic content via the injected <code>now</code> and <code>parentNote</code> variables. Examples:}}',
-    "{{<code>\${parentNote.getLabelValue('authorName')}'s literary works</code>}}",
-    "{{<code>Log for \${now.format('YYYY-MM-DD HH:mm:ss')}</code>}}",
+    "{{<code>\\${parentNote.getLabelValue('authorName')}'s literary works</code>}}",
+    "{{<code>Log for \\${now.format('YYYY-MM-DD HH:mm:ss')}</code>}}",
     '{{See <a href="https://github.com/zadam/trilium/wiki/Default-note-title">wiki with details</a>, API docs for <a href="https://zadam.github.io/trilium/backend_api/Note.html">parentNote</a> and <a href="https://day.js.org/docs/en/display/format">now</a> for details.}}',
     "'{{see}} <",
     "{{defines color of the note in note tree, links etc. Use any valid CSS color value like 'red' or #a13d5f}}",
@@ -3335,8 +3335,8 @@ with open(dest_path, 'r') as f:
 
     # ckeditor 引用通过中文的 》 触发
     # ckeditor block quote trigger by chinese 》
-    target_element = '/^>\s$/'
-    new_element = '/^(>|》)\s$/'
+    target_element = '/^>\\s$/'
+    new_element = '/^(>|》)\\s$/'
     if target_element in content:
         content = content.replace(target_element, new_element)
 
