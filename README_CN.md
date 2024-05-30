@@ -322,7 +322,7 @@ yay -Syu
 
 ## 编译环境
 
-我用Manjaro(Linux)/macOS, 你想改成其它环境只要修改一下代码理论上也没问题.
+我用Manjaro(Linux), 你想改成其它环境只要修改一下代码理论上也没问题.
 
 Python3 和以下模块
 

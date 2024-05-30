@@ -118,7 +118,7 @@ text for each file. Then pack the translated files back into the package. Done.
 
 ### 💻 Compile Environment Requirement
 
-My environment is Manjaro(Linux)/macOS based, but you can make some change to work on other platform. You need to change
+My environment is Manjaro(Linux) based, but you can make some change to work on other platform. You need to change
 some path configuration in my code to work on your machine.
 
 Python3 with module
