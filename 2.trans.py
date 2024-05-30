@@ -3275,7 +3275,7 @@ else:
         content = f.read()
     if not 'langCode' in content:
         content = content.replace(
-            'ref: excalidrawRef,', 'ref: excalidrawRef,\n                    langCode: "zh-CN",'
+            'excalidrawAPI: api => { this.excalidrawApi = api; },', 'excalidrawAPI: api => { this.excalidrawApi = api; },\n                    langCode: "zh-CN",'
         )
     with open(file_full_path, 'w') as f:
         f.write(content)
