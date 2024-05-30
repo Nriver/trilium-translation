@@ -3286,8 +3286,13 @@ print(f'switch to dir: {BASE_PATH}')
 os.chdir(BASE_PATH)
 # os.system('npm install webpack --save-dev')
 # os.system('npm run webpack')
-os.system('which webpack')
-os.system('webpack -c webpack.config.js')
+
+# nvm managed environment
+if os.path.exists('/usr/share/nvm/init-nvm.sh'):
+    os.system('source /usr/share/nvm/init-nvm.sh && which webpack && webpack -c webpack.config.js')
+else:
+    os.system('which webpack')
+    os.system('webpack -c webpack.config.js')
 
 # 把编译好的文件复制到客户端里
 # copy compiled file to the client
