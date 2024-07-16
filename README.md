@@ -398,6 +398,14 @@ Thanks `*燃` for donating 66 CNY!
 
 Thanks `**喜` for donating 10 CNY!
 
+Thanks `*君` for donating 28 CNY!
+
+Thanks `S*o` for donating 38 CNY! Memo: 群主辛苦，请喝杯咖啡
+
+Thanks `**厅` for donating 10 CNY! Memo: 沉浸在知识的整理，特别感谢中文版
+
+Thanks `**泳` for donating 30 CNY!
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
