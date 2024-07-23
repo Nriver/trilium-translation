@@ -26,13 +26,17 @@ Trilium Notes 学习交流 TG群 https://t.me/trilium_cn
 
 Trilium Notes 交流qq群
 
+3群 182871623
+
+![1](https://github.com/user-attachments/assets/d624e114-3491-4e38-8cd4-850125470c97)
+
+2群 535368955 (已满)
+
+<!-- ![qq2](https://user-images.githubusercontent.com/6752679/224601193-f1d9eead-731a-4468-8a94-cd954e88efe9.png) -->
+
 1群 686232370 (已满)
 
 <!-- ![qq2](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png) -->
-
-2群 535368955
-
-![qq2](https://user-images.githubusercontent.com/6752679/224601193-f1d9eead-731a-4468-8a94-cd954e88efe9.png)
 
 # 🔔 声明
 
