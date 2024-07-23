@@ -271,7 +271,8 @@ file_path = 'src/public/app/menus/electron_context_menu.js'
 translation = [
     'title: `{{Add "${params.misspelledWord}" to dictionary}}`',
     'title: `{{Cut}}',
-    'title: `{{Copy}}',
+    'title: `{{Copy link}}`,',
+    'title: `{{Copy}} <kbd>',
     'title: `{{Copy link}}`',
     'title: `{{Paste as plain text}}',
     'title: `{{Paste}}',
