@@ -1,0 +1,32 @@
+C4Context
+title 互联网银行系统的系统上下文图
+
+Person(customerA, "银行客户A", "银行的客户，拥有个人银行账户。")
+Person(customerB, "银行客户B")
+Person_Ext(customerC, "银行客户C")
+System(SystemAA, "互联网银行系统", "允许客户查看其银行账户信息并进行支付。")
+
+Person(customerD, "银行客户D", "银行的客户，拥有个人银行账户。")
+
+Enterprise_Boundary(b1, "银行边界") {
+
+  SystemDb_Ext(SystemE, "主机银行系统", "存储客户、账户、交易等所有核心银行信息。")
+
+  System_Boundary(b2, "银行边界2") {
+    System(SystemA, "银行系统A")
+    System(SystemB, "银行系统B", "银行的系统，拥有个人银行账户。")
+  }
+
+  System_Ext(SystemC, "电子邮件系统", "内部微软Exchange电子邮件系统。")
+  SystemDb(SystemD, "银行系统D数据库", "银行的系统，拥有个人银行账户。")
+
+  Boundary(b3, "银行边界3", "边界") {
+    SystemQueue(SystemF, "银行系统F队列", "银行的系统，拥有个人银行账户。")
+    SystemQueue_Ext(SystemG, "银行系统G队列", "银行的系统，拥有个人银行账户。")
+  }
+}
+
+BiRel(customerA, SystemAA, "使用")
+BiRel(SystemAA, SystemE, "使用")
+Rel(SystemAA, SystemC, "发送电子邮件", "SMTP")
+Rel(SystemC, customerA, "发送电子邮件至")

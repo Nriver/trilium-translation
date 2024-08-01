@@ -2,9 +2,9 @@ const notes = await api.runOnBackend(() => {
     return api.sql.getRows(`
         SELECT
             notes.noteId,
-            COUNT(note_revisions.noteRevisionId) AS count
+            COUNT(revisions.revisionId) AS count
         FROM notes
-        JOIN note_revisions USING (noteId)
+        JOIN revisions USING (noteId)
         WHERE notes.isDeleted = 0
         GROUP BY notes.noteId
         ORDER BY count DESC

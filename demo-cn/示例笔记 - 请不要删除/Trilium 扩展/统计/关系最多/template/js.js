@@ -19,7 +19,7 @@ for (const note of notes) {
     $statsTable.append(
         $("<tr>")
             .append(
-                $("<td>").append(await api.createNoteLink(note.noteId, {showNotePath: true}))
+                $("<td>").append(await api.createLink(note.noteId, {showNotePath: true}))
             ) 
             .append($("<td nowrap>").text(note.count))
     );

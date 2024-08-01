@@ -1,0 +1,33 @@
+[build-system]
+# These are the assumed default build requirements from pip:
+# https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+skip-string-normalization = true
+line-length = 100
+target-version = ['py39']
+exclude = '''
+/(
+    \.git
+  | \.tox
+  | \.venv
+  | \.history
+  | build
+  | dist
+  | docs
+  | hack
+)/
+'''
+
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "DEBUG"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"

@@ -6,11 +6,19 @@ from zipfile import ZipFile
 import requests
 import urllib3
 
-from settings import BASE_FOLDER, USE_PROXY, PROXIES, VERSION_INFO_OVERRIDE, force_version_info, \
-    VERSION_INFO_OVERRIDE_BETA, force_version_info_beta
+from settings import (
+    BASE_FOLDER,
+    USE_PROXY,
+    PROXIES,
+    VERSION_INFO_OVERRIDE,
+    force_version_info,
+    VERSION_INFO_OVERRIDE_BETA,
+    force_version_info_beta,
+)
 
 # disable warning if we use proxy
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 CLIENT_FOLDER = BASE_FOLDER + 'trilium-linux-x64'
 REPO_NAME = 'zadam/trilium'
@@ -35,7 +43,9 @@ def requests_get(url):
     try:
         ret = requests.get(url, proxies=PROXIES, verify=not USE_PROXY)
     except Exception as e:
-        print('If github is not available, you can set USE_PROXY to True and set PROXIES to your proxy.')
+        print(
+            'If github is not available, you can set USE_PROXY to True and set PROXIES to your proxy.'
+        )
         print('Exception', e)
     return ret
 
@@ -58,7 +68,9 @@ def get_latest_version():
         version_info['browser_download_url'] = x['browser_download_url']
         break
     if 'browser_download_url' not in version_info:
-        print('Did not find a matching release! Please check file name and modify PREFERRED_RELEASE_NAME_PATTERN.')
+        print(
+            'Did not find a matching release! Please check file name and modify PREFERRED_RELEASE_NAME_PATTERN.'
+        )
         exit()
     print(f'latest version is {version_info["name"]}')
     return version_info
@@ -131,7 +143,10 @@ def decompress_source_package(file_name):
 
 if __name__ == '__main__':
     if os.path.exists(BASE_FOLDER):
-        if not (input(f'BASE_FOLDER exists! DELETE {BASE_FOLDER}, continue?(y)')).lower() in ['y', 'yes']:
+        if not (input(f'BASE_FOLDER exists! DELETE {BASE_FOLDER}, continue?(y)')).lower() in [
+            'y',
+            'yes',
+        ]:
             exit()
         os.system(f'rm -rf {BASE_FOLDER}')
     os.makedirs(BASE_FOLDER)
