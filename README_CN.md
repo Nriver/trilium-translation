@@ -831,6 +831,10 @@ Ko-fi:
 
 感谢 `**泳` 赞助的30元!
 
+感谢 `**宣` 赞助的99元!
+
+感谢 `R*r` 赞助的10元! 备注: Thanks for copy code for trilium!
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)

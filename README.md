@@ -406,6 +406,10 @@ Thanks `**厅` for donating 10 CNY! Memo: 沉浸在知识的整理，特别感�
 
 Thanks `**泳` for donating 30 CNY!
 
+Thanks `**宣` for donating 99 CNY!
+
+Thanks `R*r` for donating 10 CNY! Memo: Thanks for copy code for trilium!
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
