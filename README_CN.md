@@ -391,16 +391,18 @@ Racknerd的促销似乎都是长期有效的活动，一直都可以买，有需
 
 | 促销活动         | 内存    | CPU | SSD | 流量     | 价格       | 购买                                                     |
 |--------------|-------|-----|-----|--------|----------|--------------------------------------------------------|
-| 2024双十一 | 1G    | 1核  | 14G | 2T/月   | $11.11/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=875) |
-| 2024双十一 | 2G    | 1核  | 25G | 3T/月   | $17.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=876) |
-| 2024龙舟节促销    | 1.25G | 1核  | 20G | 2T/月   | $12.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=850) |
-| 2024龙舟节促销     | 2G    | 2核  | 30G | 4T/月   | $19.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=851) |
-| 2024中国新年     | 1G    | 1核  | 15G | 2T/月   | $10.99/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
-| 2024中国新年     | 1.5G  | 1核  | 25G | 4T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
-| 2024新年       | 768M  | 1核  | 21G | 1T/月   | $11.49/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
-| 2024新年       | 2G    | 1核  | 35G | 2.5T/月 | $17.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
-| 2023黑五       | 768M  | 1核  | 15G | 1T/月   | $10.18/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
-| 2023黑五       | 2G    | 1核  | 30G | 2.5T/月 | $16.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
+| 2024黑五 | 1G    | 1核  | 20G | 1.5T/月   | $10.99/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=879) |
+| 2024黑五 | 2.5G    | 2核  | 40G | 3T/月   | $18.93/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=880) |
+| (过期) 2024双十一 | 1G    | 1核  | 14G | 2T/月   | $11.11/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=875) |
+| (过期) 2024双十一 | 2G    | 1核  | 25G | 3T/月   | $17.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=876) |
+| (过期) 2024龙舟节促销    | 1.25G | 1核  | 20G | 2T/月   | $12.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=850) |
+| (过期) 2024龙舟节促销     | 2G    | 2核  | 30G | 4T/月   | $19.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=851) |
+| (过期) 2024中国新年     | 1G    | 1核  | 15G | 2T/月   | $10.99/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
+| (过期) 2024中国新年     | 1.5G  | 1核  | 25G | 4T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
+| (过期) 2024新年       | 768M  | 1核  | 21G | 1T/月   | $11.49/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
+| (过期) 2024新年       | 2G    | 1核  | 35G | 2.5T/月 | $17.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
+| (过期) 2023黑五       | 768M  | 1核  | 15G | 1T/月   | $10.18/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
+| (过期) 2023黑五       | 2G    | 1核  | 30G | 2.5T/月 | $16.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
 | (过期) 2023双十一 | 1G    | 1核  | 12G | 2T/月   | $11/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=788) |
 | (过期) 2023双十一 | 2G    | 1核  | 20G | 4T/月   | $17.55/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=789) |
 | (过期) 2023独立日 | 1G    | 1核  | 14G | 2T/月   | $11.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=775) |
