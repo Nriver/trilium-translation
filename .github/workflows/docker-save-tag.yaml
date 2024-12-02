@@ -50,5 +50,5 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/trilium-cn:0.62.4
+            ${{ secrets.DOCKERHUB_USERNAME }}/trilium-cn:0.63.7
 
