@@ -337,8 +337,7 @@ pip3 install requests --user
 Nodejs 和以下模块
 
 ```
-npm install -g asar webpack webpack-cli
-npm install webpack --save-dev
+npm install asar webpack webpack-cli cross-env typescript ts-node ts-loader @types/node -g
 ```
 
 7z命令用来打包

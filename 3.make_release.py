@@ -24,22 +24,20 @@ COMPRESS_TOOL = '7z'
 
 COMPRESS_LEVEL = 9
 
-REPO_NAME = 'zadam/trilium'
+REPO_NAME = 'TriliumNext/Notes'
 # TRANS_RELEASE_FOLDER = TRANS_RELEASE_FOLDER
 # PATCH_FOLDER = PATCH_FOLDER
 
 
 # 是否从GitHub下载文件
 # whether download files from GitHub
-DO_DOWNLOAD = True
-# DO_DOWNLOAD = False
+# DO_DOWNLOAD = True
+DO_DOWNLOAD = False
 
 # 是否删除临时文件
 # whether delete template files
-DO_DELETE = True
-
-
-# DO_DELETE = False
+# DO_DELETE = True
+DO_DELETE = False
 
 
 def requests_get(url):
@@ -64,10 +62,10 @@ def get_latest_version():
     # version_info['zipball_url'] = res.json()['zipball_url']
 
     patterns = {
-        'linux': r'trilium-linux-x64-[0-9\.]+.tar.xz',
-        'linux-server': r'trilium-linux-x64-server-[0-9\.]+.tar.xz',
-        'windows': r'trilium-windows-x64-[0-9\.]+.zip',
-        'mac': r'trilium-mac-x64-[0-9\.]+.zip',
+        'linux': r'TriliumNextNotes-v[0-9\.]+-linux-x64.zip',
+        'linux-server': r'TriliumNextNotes-v[0-9\.]+-server-linux-x64.tar.xz',
+        'windows': r'TriliumNextNotes-v[0-9\.]+-windows-x64.zip',
+        'mac': r'TriliumNextNotes-v[0-9\.]+-macos-x64.zip',
     }
 
     releases = {}
@@ -148,9 +146,27 @@ def decompress_package(file_name):
         except:
             pass
 
+def change_default_language(asar_folder):
+    # 0.90.12
+    # 修改默认语言
+    file_path = f'{asar_folder}/app/dist/src/services/i18n.js'
+    print(f'change language {file_path}')
+    with open(file_path, 'r') as f:
+        content = f.read()
+        target_element = 'language = "en";'
+        new_element = 'language = "cn";'
+        if target_element in content:
+            content = content.replace(target_element, new_element)
+        target_element = 'console.info("Language option not found, falling back to en.");'
+        new_element = 'console.info("Language option not found, falling back to cn.");'
+        if target_element in content:
+            content = content.replace(target_element, new_element)
+    with open(file_path, 'w') as f:
+        f.write(content)
+
 
 def patch_linux(file_name):
-    if not file_name.endswith('.tar.xz'):
+    if not file_name.endswith('.zip'):
         print('linux客户端文件名有问题')
         print('linux client wrong file name')
         exit()
@@ -159,7 +175,7 @@ def patch_linux(file_name):
     print('file_path', file_path)
     decompress_package(file_path)
 
-    asar_folder = TRANS_RELEASE_FOLDER + 'trilium-linux-x64/resources'
+    asar_folder = TRANS_RELEASE_FOLDER + 'TriliumNext Notes-linux-x64/resources'
     asar_path = asar_folder + '/app.asar'
     print(asar_path)
 
@@ -170,7 +186,11 @@ def patch_linux(file_name):
 
     # 打补丁
     # apply patch
-    os.system(f'cp -rf {PATCH_FOLDER}* "{asar_folder}/app/"')
+    cmd = f'cp -rf {PATCH_FOLDER}* "{asar_folder}/app/dist/"'
+    print(cmd)
+    os.system(cmd)
+
+    change_default_language(asar_folder)
 
     # asar封包
     # asar pack
@@ -179,26 +199,26 @@ def patch_linux(file_name):
     if not DEBUG:
         # 删除解包文件
         # remove unpacked files
-        os.system(f'rm -rf {asar_folder}/app/')
+        os.system(f'rm -rf "{asar_folder}/app/"')
 
         # 打zip包
         # make zip
         new_name = f'trilium-{LANG}-linux-x64.zip'
         print('new_name', new_name)
         os.system(f'rm -f {new_name}')
-        patched_root_folder = 'trilium-linux-x64'
+        patched_root_folder = 'TriliumNext Notes-linux-x64'
         os.chdir(TRANS_RELEASE_FOLDER)
 
         if COMPRESS_TOOL == '7z':
             cmd = f'7z a {new_name} -r {patched_root_folder}'
         else:
-            cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} {patched_root_folder}'
+            cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} "{patched_root_folder}"'
 
         print(cmd)
         os.system(cmd)
 
         if DO_DELETE:
-            os.system('rm -rf trilium-linux-x64')
+            os.system(f'rm -rf "{patched_root_folder}"')
 
         return new_name
 
@@ -215,7 +235,7 @@ def patch_linux_server(file_name):
 
     # 打补丁
     # apply patch
-    cmd = f'cp -rf {PATCH_FOLDER}* {TRANS_RELEASE_FOLDER}/trilium-linux-x64-server/'
+    cmd = f'cp -rf "{PATCH_FOLDER}*" "{TRANS_RELEASE_FOLDER}/TriliumNext Notes-linux-x64-server/"'
     print('cmd', cmd)
     os.system(cmd)
 
@@ -224,17 +244,17 @@ def patch_linux_server(file_name):
     new_name = 'trilium-cn-linux-x64-server.zip'
     print('new_name', new_name)
     os.system(f'rm -f {new_name}')
-    patched_root_folder = 'trilium-linux-x64-server'
+    patched_root_folder = 'TriliumNext Notes-linux-x64-server'
     os.chdir(TRANS_RELEASE_FOLDER)
     if COMPRESS_TOOL == '7z':
-        cmd = f'7z a {new_name} -r {patched_root_folder}'
+        cmd = f'7z a {new_name} -r "{patched_root_folder}"'
     else:
-        cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} {patched_root_folder}'
+        cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} "{patched_root_folder}"'
     print(cmd)
     os.system(cmd)
 
     if DO_DELETE:
-        os.system('rm -rf trilium-linux-x64-server')
+        os.system('rm -rf "TriliumNext Notes-linux-x64-server"')
 
     return new_name
 
@@ -258,7 +278,7 @@ def patch_windows(file_name):
 
     # 打补丁
     # apply patch
-    os.system(f'cp -rf {PATCH_FOLDER}* {asar_folder}/app/')
+    os.system(f'cp -rf {PATCH_FOLDER}* {asar_folder}/app/dist/')
 
     # asar封包
     # asar pack
@@ -266,7 +286,7 @@ def patch_windows(file_name):
 
     # 删除解包文件
     # remove unpacked files
-    os.system(f'rm -rf {asar_folder}/app/')
+    os.system(f'rm -rf "{asar_folder}/app/"')
 
     # 打zip包
     # make zip package
@@ -283,7 +303,7 @@ def patch_windows(file_name):
     os.system(cmd)
 
     if DO_DELETE:
-        os.system('rm -rf trilium-windows-x64')
+        os.system('rm -rf "trilium-windows-x64"')
 
     return new_name
 
@@ -308,7 +328,7 @@ def patch_mac(file_name):
 
     # 打补丁
     # apply patch
-    os.system(f'cp -rf {PATCH_FOLDER}* "{asar_folder}/app/"')
+    os.system(f'cp -rf {PATCH_FOLDER}* "{asar_folder}/app/dist/"')
 
     # asar封包
     # asar pack
@@ -335,7 +355,7 @@ def patch_mac(file_name):
     os.system(cmd)
 
     if DO_DELETE:
-        os.system('rm -rf trilium-mac-x64')
+        os.system('rm -rf "trilium-mac-x64"')
 
     return new_name
 
@@ -343,14 +363,17 @@ def patch_mac(file_name):
 if __name__ == '__main__':
     print(f'DEBUG is {DEBUG}')
 
-    a = input(f'Delete folder {TRANS_RELEASE_FOLDER}, continue?(y)')
-    if a not in [
-        'y',
-    ]:
-        exit()
-
-    os.system(f'rm -rf {TRANS_RELEASE_FOLDER}')
-    os.makedirs(f'{TRANS_RELEASE_FOLDER}')
+    if DO_DELETE:
+        a = input(f'Delete folder {TRANS_RELEASE_FOLDER}, continue?(y)')
+        if a not in [
+            'y',
+        ]:
+            exit()
+        os.system(f'rm -rf "{TRANS_RELEASE_FOLDER}"')
+    try:
+        os.makedirs(f'{TRANS_RELEASE_FOLDER}')
+    except:
+        pass
     os.chdir(TRANS_RELEASE_FOLDER)
 
     # 获取更新

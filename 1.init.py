@@ -15,16 +15,17 @@ from settings import (
     VERSION_INFO_OVERRIDE_BETA,
     force_version_info_beta,
 )
+import zipfile
 
 # disable warning if we use proxy
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
-CLIENT_FOLDER = BASE_FOLDER + 'trilium-linux-x64'
-REPO_NAME = 'zadam/trilium'
+CLIENT_FOLDER = BASE_FOLDER + 'TriliumNext Notes-linux-x64'
+REPO_NAME = 'TriliumNext/Notes'
 # regex match which file to download if multiple files exists
-PREFERRED_RELEASE_NAME_PATTERN = 'trilium-linux-x64-.*?.tar.xz'
-SOURCE_CODE_NAME_PATTERN = 'trilium-linux-x64-.*?.tar.xz'
+PREFERRED_RELEASE_NAME_PATTERN = 'TriliumNextNotes-.*?-linux-x64.zip'
+SOURCE_CODE_NAME_PATTERN = 'TriliumNextNotes-.*?-linux-x64.zip'
 
 CMD_STOP_SERVICE = """pkill -9 trilium"""
 
@@ -84,8 +85,8 @@ def backup_old_service():
     os.mkdir(backup_dir)
 
     if os.path.exists(CLIENT_FOLDER):
-        os.system(f'mv {CLIENT_FOLDER} {CLIENT_FOLDER}{backup_suffix}')
-        print(f'old version is moved to {CLIENT_FOLDER}{backup_suffix}')
+        os.system(f'mv "{CLIENT_FOLDER}" "{CLIENT_FOLDER}{backup_suffix}"')
+        print(f'old version is moved to "{CLIENT_FOLDER}{backup_suffix}"')
 
 
 def download_file(url, file_name=None):
@@ -110,9 +111,9 @@ def stop_service():
 
 
 def clean_cache():
-    os.system('rm -rf ~/.config/Trilium Notes/Cache/')
-    os.system('rm -rf ~/.config/Trilium Notes/Code Cache/')
-    os.system('rm -rf ~/.config/Trilium Notes/GPUCache/')
+    os.system('rm -rf ~/.config/TriliumNext Notes/Cache/')
+    os.system('rm -rf ~/.config/TriliumNext Notes/Code Cache/')
+    os.system('rm -rf ~/.config/TriliumNext Notes/GPUCache/')
 
 
 def decompress_package(file_name):
@@ -125,6 +126,8 @@ def decompress_package(file_name):
         os.system(f'tar -xf {file_name[:-3]}')
         if DO_DELETE:
             os.system(f'rm -f {file_name[:-3]}')
+    if file_name.endswith('.zip'):
+        decompress_source_package(file_name)
 
 
 def decompress_source_package(file_name):
