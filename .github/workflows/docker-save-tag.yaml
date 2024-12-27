@@ -19,7 +19,7 @@ jobs:
 
       - name: Check and download remote files
         run: |
-          wget https://github.com/Nriver/trilium-translation/releases/download/v0.62.4_20231222/trilium-cn-linux-x64-server.zip
+          wget https://github.com/Nriver/trilium-translation/releases/download/v0.63.7_20240530/trilium-cn-linux-x64-server.zip
           # wget https://github.com/Nriver/trilium-translation/releases/latest/download/trilium-cn-linux-x64-server.zip 
           unzip -q trilium-cn-linux-x64-server.zip 
           rm -f trilium-cn-linux-x64-server.zip
