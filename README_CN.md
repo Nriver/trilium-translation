@@ -473,9 +473,15 @@ Trilium有自动备份功能，软件内可以左上角设置里可以设定自�
 
 ## 为什么使用了中文版的程序，界面还是英文的?
 
-你运行过原版的Trilium程序，系统里有英文版的缓存，请关闭trilium，
-Windows系统删除这个目录`C:\Users\用户名\AppData\Roaming\Trilium Notes`, Linux系统删除这个目录`~/.config/Trilium Notes/`
-。再启动Trilium就是中文的了。
+这是因为你曾运行过 Trilium 的英文原版程序，导致系统中存有英文版的缓存文件。请按照以下步骤解决：
+
+1. 关闭 Trilium 程序。  
+2. 删除缓存目录：  
+   - **Windows**: 删除 `C:\Users\用户名\AppData\Roaming\Trilium Notes`。  
+   - **Linux**: 删除 `~/.config/Trilium Notes/`。  
+   - **MacOS**: 搜索并删除与 `Trilium Notes` 相关的缓存目录。  
+   - 如果是浏览器访问，请删除浏览器缓存。
+3. 重新启动 Trilium，界面将切换为中文版。
 
 ## 为什么用中文版的自带文档还是英文的?
 
