@@ -848,6 +848,18 @@ Ko-fi:
 
 感谢 `R*r` 赞助的10元! 备注: Thanks for copy code for trilium!
 
+感谢 `*衣` 赞助的6元! 备注: 感谢大佬
+
+感谢 `**辰` 赞助的0.88元!
+
+感谢 `*舟` 赞助的6元! 备注: 帮了很大忙，浅表谢意
+
+感谢 `*零` 赞助的15元!
+
+感谢 `*杰` 赞助的1元!
+
+感谢 `**泳` 赞助的20元!
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
