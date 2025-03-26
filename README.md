@@ -428,6 +428,22 @@ Thanks `*杰` for donating 1 CNY!
 
 Thanks `**泳` for donating 20 CNY!
 
+Thanks `*洲` for donating 30 CNY! Memo: 新年好！已经决定从ob转到trilium了
+
+Thanks `*口` for donating 50 CNY! Memo: 辛苦了，多运动，注意身体
+
+Thanks `*乐` for donating 25 CNY! Memo: 一杯咖啡 at trilium
+
+Thanks `*唯` for donating 10 CNY! Memo: 大佬厉害
+
+Thanks `**玲` for donating 16 CNY!
+
+Thanks `*六` for donating 10 CNY!
+
+Thanks `*林` for donating 1.14 CNY!
+
+Thanks `*林` for donating 5.14 CNY!
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
