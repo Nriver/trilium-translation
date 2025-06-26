@@ -116,6 +116,8 @@ Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server
 * [0.58 升级到 0.59 之后版本的问题](#058-升级到-059-之后版本的问题)
    * [字数统计组件报错](#字数统计组件报错)
 * [0.60 升级到 0.61 的问题](#060-升级到-061-的问题)
+* [在哪里可以找到 Trilium 的插件？](#在哪里可以找到-trilium-的插件)
+* [如何将网页剪藏到 Trilium？谷歌浏览器的 Trilium Web Clipper 插件无法下载了？](#如何将网页剪藏到-trilium谷歌浏览器的-trilium-web-clipper-插件无法下载了)
 * [🔤 关于本项目使用的字体](#-关于本项目使用的字体)
 * [🛑 限制](#-限制)
 * [⏳ Stargazers 数据](#-stargazers-数据)
@@ -671,6 +673,13 @@ const notes = await api.runOnBackend(async () => {
 
 ---
 
+# 如何将网页剪藏到 Trilium？谷歌浏览器的 `Trilium Web Clipper` 插件无法下载了？
+
+`Trilium Web Clipper` 是一款可用于将网页内容保存到 Trilium 的浏览器扩展。然而，该插件的原版已长期未维护，且不符合谷歌浏览器最新的 Manifest V3 标准，因此已无法在 Chrome 网上应用店中下载使用。
+
+为了解决这一问题，我对原项目进行了 Fork，并完成了对 Manifest V3 的兼容性更新。同时，我还加入了中文界面支持并修复了若干 Bug。欢迎前往 [Trilium Web Clipper Plus](https://github.com/Nriver/trilium-web-clipper-plus/blob/master/README_CN.md) 项目页面了解更多详情。
+
+---
 
 # 🔤 关于本项目使用的字体
 

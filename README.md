@@ -253,6 +253,12 @@ To change the database location, simply modify the database path in the file.
 
 If you want to experience the latest original features, it is recommended to use this method.
 
+## How to Clip Web Pages to Trilium? The `Trilium Web Clipper` Extension for Chrome Is No Longer Available
+
+`Trilium Web Clipper` is a browser extension that allows you to save web content directly to Trilium Notes. However, the original version of the extension has not been maintained for a long time and no longer complies with Chrome's latest Manifest V3 standard. As a result, it is no longer available for download from the Chrome Web Store.
+
+To address this, I forked the original project and updated it for Manifest V3 compatibility. I also added support for the Chinese interface and fixed several bugs. You can find more details on the project page: [Trilium Web Clipper Plus](https://github.com/Nriver/trilium-web-clipper-plus/blob/master/README_CN.md).
+
 ---
 
 # ⏳ Stargazers over time
