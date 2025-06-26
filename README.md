@@ -444,6 +444,12 @@ Thanks `*林` for donating 1.14 CNY!
 
 Thanks `*林` for donating 5.14 CNY!
 
+Thanks `*建` for donating 20 CNY! Memo: 感谢维护trilium
+
+Thanks `**行` for donating 0.5 CNY!
+
+Thanks `**建` for donating 25 CNY!
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)

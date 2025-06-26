@@ -878,6 +878,12 @@ Ko-fi:
 
 感谢 `*林` 赞助的5.14元!
 
+感谢 `*建` 赞助的20元! 备注: 感谢维护trilium
+
+感谢 `**行` 赞助的0.5元!
+
+感谢 `**建` 赞助的25元!
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
