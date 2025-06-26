@@ -665,6 +665,13 @@ const notes = await api.runOnBackend(async () => {
 
 ---
 
+# 在哪里可以找到 Trilium 的插件？
+
+我整理了一个项目 [awesome-trilium](https://github.com/Nriver/awesome-trilium)，收集了 Trilium 相关的大部分插件、主题以及其他资源。需要查找插件时，可以直接在页面中搜索关键词，快速定位你需要的内容。
+
+---
+
+
 # 🔤 关于本项目使用的字体
 
 本项目使用的字体文件为免费字体.
