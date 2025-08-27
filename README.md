@@ -302,15 +302,7 @@ Thanks `**逸` for donating 10 CNY!
 
 Thanks `**恩` for donating 30 CNY!
 
-Thanks `**莲` for donating 10 CNY!
-
-Thanks `**楷` for donating 5 CNY!
-
-Thanks `J*s` for donating 50 CNY!
-
 Thanks `*记` for donating 10 CNY! Memo: 多谢大佬的辛勤付出
-
-Thanks `*睿` for donating 5 CNY! Memo: 感谢您的自动命名工具
 
 Thanks `*建` for donating 200 CNY! Memo: trilium
 
@@ -341,8 +333,6 @@ Thanks `**庆` for donating 10 CNY!
 Thanks `**逸` for donating 50 CNY!
 
 Thanks `**聪` for donating 10 CNY! Memo: 很大的帮助翻译家！爱来自中国
-
-Thanks `*メ` for donating 200 CNY!
 
 Thanks `**奇` for donating 20 CNY!
 
@@ -379,8 +369,6 @@ Thanks `F*g` for donating 10 CNY!
 Thanks `**逸` for donating 30 CNY! Memo: 来杯奶茶，哈皮一下
 
 Thanks `*绿` for donating 20 CNY! Memo: 多谢,学生能力有限，尽一份心意
-
-Thanks `A*` for donating 100 CNY! Memo: 非常感謝你寫這個小程式，捐贈了小小的心意給你及保重身體!
 
 Thanks `*户` for donating 20 CNY!
 
@@ -434,6 +422,8 @@ Thanks `*杰` for donating 1 CNY!
 
 Thanks `**泳` for donating 20 CNY!
 
+Thanks `C*x` for donating 50 CNY!
+
 Thanks `*洲` for donating 30 CNY! Memo: 新年好！已经决定从ob转到trilium了
 
 Thanks `*口` for donating 50 CNY! Memo: 辛苦了，多运动，注意身体
@@ -455,6 +445,8 @@ Thanks `*建` for donating 20 CNY! Memo: 感谢维护trilium
 Thanks `**行` for donating 0.5 CNY!
 
 Thanks `**建` for donating 25 CNY!
+
+Thanks `K*l` for donating 2 CNY! Memo: trilium很好用，感谢大佬的付出
 
 Thanks for the greate IDE Pycharm from Jetbrains.
 
