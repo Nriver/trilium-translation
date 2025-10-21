@@ -585,6 +585,10 @@ Docker Compose version 2.17.3
 
 新版本的docker已内置docker-compose，可以用 `docker compose` 代替 `docker-compose` 命令。
 
+## 如何跳出代码块?
+
+![code_block_escape](docs/code_block_escape.gif)
+
 ---
 
 # 🚚 迁移笔记

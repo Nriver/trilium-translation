@@ -259,6 +259,10 @@ If you want to experience the latest original features, it is recommended to use
 
 To address this, I forked the original project and updated it for Manifest V3 compatibility. I also added support for the Chinese interface and fixed several bugs. You can find more details on the project page: [Trilium Web Clipper Plus](https://github.com/Nriver/trilium-web-clipper-plus/blob/master/README_CN.md).
 
+## How to escape from the code block?
+
+![code_block_escape](docs/code_block_escape.gif)
+
 ---
 
 # ⏳ Stargazers over time
