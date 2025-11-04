@@ -185,10 +185,12 @@ expensive option, which is usually less than $20 per year and can provide you wi
 
 | Promotion             | RAM  | CPU    | SSD | Bandwidth  | Price       | Purchase                                                 |
 |-----------------------|------|--------|-----|------------|-------------|----------------------------------------------------------|
-| 2025 New Year         | 1G | 1 Core | 24G | 2T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=903) |
-| 2025 New Year         | 2G   | 1 Core | 40G | 3.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=904) |
-| 2024 Black Friday    | 1G | 1 Core | 20G | 1.5T/Month   | $10.99/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=879) |
-| 2024 Black Friday    | 2G   | 2 Core | 40G | 3T/Month | $18.93/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=880) |
+| 2025's 11.11     | 1G | 1 Core | 20G | 3T/Month   | $10.76/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=917) |
+| 2025's 11.11    | 2G   | 2 Core | 35G | 5T/Month | $17.66/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=918) |
+| (expired) 2025 New Year         | 1G | 1 Core | 24G | 2T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=903) |
+| (expired) 2025 New Year         | 2G   | 1 Core | 40G | 3.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=904) |
+| (expired) 2024 Black Friday    | 1G | 1 Core | 20G | 1.5T/Month   | $10.99/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=879) |
+| (expired) 2024 Black Friday    | 2G   | 2 Core | 40G | 3T/Month | $18.93/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=880) |
 | (expired) 2024's 11.11     | 1G | 1 Core | 14G | 2T/Month   | $11.11/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=875) |
 | (expired) 2024's 11.11    | 2G   | 1 Core | 25G | 3T/Month | $17.98/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=876) |
 | (expired) 2024 Dragon Boat Festival | 1.25G | 1 Core | 20G | 2TB/month | $12.88/year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=850) |
