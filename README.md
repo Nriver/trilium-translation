@@ -183,24 +183,33 @@ I've tested Trilium's server program, and it typically consumes around 150MB of 
 sufficient, which costs only $10 per year. If you find the storage is not enough for you, you can try the slightly more
 expensive option, which is usually less than $20 per year and can provide you with about 30GB of SSD storage.
 
-| Promotion             | RAM  | CPU    | SSD | Bandwidth  | Price       | Purchase                                                 |
-|-----------------------|------|--------|-----|------------|-------------|----------------------------------------------------------|
-| 2025's 11.11     | 1G | 1 Core | 20G | 3T/Month   | $10.76/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=917) |
-| 2025's 11.11    | 2G   | 2 Core | 35G | 5T/Month | $17.66/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=918) |
-| (expired) 2025 New Year         | 1G | 1 Core | 24G | 2T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=903) |
-| (expired) 2025 New Year         | 2G   | 1 Core | 40G | 3.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=904) |
-| (expired) 2024 Black Friday    | 1G | 1 Core | 20G | 1.5T/Month   | $10.99/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=879) |
-| (expired) 2024 Black Friday    | 2G   | 2 Core | 40G | 3T/Month | $18.93/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=880) |
-| (expired) 2024's 11.11     | 1G | 1 Core | 14G | 2T/Month   | $11.11/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=875) |
-| (expired) 2024's 11.11    | 2G   | 1 Core | 25G | 3T/Month | $17.98/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=876) |
-| (expired) 2024 Dragon Boat Festival | 1.25G | 1 Core | 20G | 2TB/month | $12.88/year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=850) |
-| (expired) 2024 Dragon Boat Festival | 2G    | 2 Cores | 30G | 4TB/month | $19.88/year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=851) |
-| (expired) 2024 Chinese New Year | 1G   | 1 Core | 15G | 2T/Month   | $10.99/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
-| (expired) 2024 Chinese New Year | 1.5G | 1 Core | 25G | 4T/Month   | $16.88/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
-| (expired) 2024 New Year         | 768M | 1 Core | 21G | 1T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
-| (expired) 2024 New Year         | 2G   | 1 Core | 35G | 2.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
-| (expired) 2023 Black Friday     | 768M | 1 Core | 15G | 1T/Month   | $10.18/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
-| (expired) 2023 Black Friday     | 2G   | 1 Core | 30G | 2.5T/Month | $16.98/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
+| Promotion                           | RAM   | CPU     | SSD | Bandwidth  | Price       | Purchase                                                 |
+|-------------------------------------|-------|---------|-----|------------|-------------|----------------------------------------------------------|
+| 2025's 11.11                        | 1G    | 1 Core  | 20G | 3T/Month   | $10.76/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=917) |
+| 2025's 11.11                        | 2G    | 2 Core  | 35G | 5T/Month   | $17.66/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=918) |
+| (expired) 2025 New Year             | 1G    | 1 Core  | 24G | 2T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=903) |
+| (expired) 2025 New Year             | 2G    | 1 Core  | 40G | 3.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=904) |
+| (expired) 2024 Black Friday         | 1G    | 1 Core  | 20G | 1.5T/Month | $10.99/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=879) |
+| (expired) 2024 Black Friday         | 2G    | 2 Core  | 40G | 3T/Month   | $18.93/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=880) |
+| (expired) 2024's 11.11              | 1G    | 1 Core  | 14G | 2T/Month   | $11.11/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=875) |
+| (expired) 2024's 11.11              | 2G    | 1 Core  | 25G | 3T/Month   | $17.98/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=876) |
+| (expired) 2024 Dragon Boat Festival | 1.25G | 1 Core  | 20G | 2TB/month  | $12.88/year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=850) |
+| (expired) 2024 Dragon Boat Festival | 2G    | 2 Cores | 30G | 4TB/month  | $19.88/year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=851) |
+| (expired) 2024 Chinese New Year     | 1G    | 1 Core  | 15G | 2T/Month   | $10.99/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
+| (expired) 2024 Chinese New Year     | 1.5G  | 1 Core  | 25G | 4T/Month   | $16.88/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
+| (expired) 2024 New Year             | 768M  | 1 Core  | 21G | 1T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
+| (expired) 2024 New Year             | 2G    | 1 Core  | 35G | 2.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
+| (expired) 2023 Black Friday         | 768M  | 1 Core  | 15G | 1T/Month   | $10.18/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
+| (expired) 2023 Black Friday         | 2G    | 1 Core  | 30G | 2.5T/Month | $16.98/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
+
+I’ve been using this VPS provider for several years, and it has always been stable with an unchanged renewal price.
+
+![vps_price](docs/vps_price.png)
+
+I used to have the 2022's 11.11 plan, which cost $11.11 per year. Now I’ve switched to the 2025's 11.11 plan, where the
+storage has increased from 11.11 GB to 20 GB — much better for running a Trilium Notes server. Previously, due to
+limited disk space, I had to disable the note backup feature. With the extra space now, I can finally turn backups back
+on without worry.
 
 You can also choose other VPS providers, but remember to back up your data. Data is priceless. Make sure to perform
 backups just in case, and keep it in mind.
@@ -257,9 +266,13 @@ If you want to experience the latest original features, it is recommended to use
 
 ## How to Clip Web Pages to Trilium? The `Trilium Web Clipper` Extension for Chrome Is No Longer Available
 
-`Trilium Web Clipper` is a browser extension that allows you to save web content directly to Trilium Notes. However, the original version of the extension has not been maintained for a long time and no longer complies with Chrome's latest Manifest V3 standard. As a result, it is no longer available for download from the Chrome Web Store.
+`Trilium Web Clipper` is a browser extension that allows you to save web content directly to Trilium Notes. However, the
+original version of the extension has not been maintained for a long time and no longer complies with Chrome's latest
+Manifest V3 standard. As a result, it is no longer available for download from the Chrome Web Store.
 
-To address this, I forked the original project and updated it for Manifest V3 compatibility. I also added support for the Chinese interface and fixed several bugs. You can find more details on the project page: [Trilium Web Clipper Plus](https://github.com/Nriver/trilium-web-clipper-plus/blob/master/README_CN.md).
+To address this, I forked the original project and updated it for Manifest V3 compatibility. I also added support for
+the Chinese interface and fixed several bugs. You can find more details on the project
+page: [Trilium Web Clipper Plus](https://github.com/Nriver/trilium-web-clipper-plus/blob/master/README_CN.md).
 
 ## How to escape from the code block?
 

@@ -55,66 +55,67 @@ Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server
 # 🦮 目录导航
 
 <!--ts-->
+
 * [🌏 Trilium Translation](#-trilium-translation)
 * [🔔 声明](#-声明)
 * [🦮 目录导航](#-目录导航)
 * [📝 汉化版修改记录](#-汉化版修改记录)
-   * [📚 关于汉化版的内置文档](#-关于汉化版的内置文档)
+    * [📚 关于汉化版的内置文档](#-关于汉化版的内置文档)
 * [📸 界面截图](#-界面截图)
 * [📖 使用方法 - Windows, Linux, MacOS 直接使用Release打包的文件](#-使用方法---windows-linux-macos-直接使用release打包的文件)
 * [🖥️ 服务端](#️-服务端)
-   * [🐳 服务端 - Linux - 在Docker里运行服务端](#-服务端---linux---在docker里运行服务端)
-      * [🔝 Docker服务端版本更新](#-docker服务端版本更新)
-   * [服务端 - Linux - 通过AUR安装Linux服务端](#服务端---linux---通过aur安装linux服务端)
-      * [关于Arm服务器运行服务端的说明](#关于arm服务器运行服务端的说明)
+    * [🐳 服务端 - Linux - 在Docker里运行服务端](#-服务端---linux---在docker里运行服务端)
+        * [🔝 Docker服务端版本更新](#-docker服务端版本更新)
+    * [服务端 - Linux - 通过AUR安装Linux服务端](#服务端---linux---通过aur安装linux服务端)
+        * [关于Arm服务器运行服务端的说明](#关于arm服务器运行服务端的说明)
 * [🖥️ 客户端](#️-客户端)
-   * [🪟 客户端 - Windows - 通过scoop安装Windows客户端](#-客户端---windows---通过scoop安装windows客户端)
-   * [🐧 客户端 - Linux - 通过AUR安装客户端](#-客户端---linux---通过aur安装客户端)
+    * [🪟 客户端 - Windows - 通过scoop安装Windows客户端](#-客户端---windows---通过scoop安装windows客户端)
+    * [🐧 客户端 - Linux - 通过AUR安装客户端](#-客户端---linux---通过aur安装客户端)
 * [💻 (太长, 别看) 自己编译](#-太长-别看-自己编译)
-   * [翻译原理](#翻译原理)
-   * [编译环境](#编译环境)
-   * [🔍 翻译过程](#-翻译过程)
-   * [📝 没翻译到的文字](#-没翻译到的文字)
+    * [翻译原理](#翻译原理)
+    * [编译环境](#编译环境)
+    * [🔍 翻译过程](#-翻译过程)
+    * [📝 没翻译到的文字](#-没翻译到的文字)
 * [注意事项](#️-注意事项)
-   * [数据同步](#数据同步)
+    * [数据同步](#数据同步)
 * [🤔 常见问题](#-常见问题)
-   * [你用的是什么VPS服务器跑的Trilium Notes服务端?](#你用的是什么vps服务器跑的trilium-notes服务端)
-   * [有关域名的一些问题](#有关域名的一些问题)
-      * [如何启用HTTPS加密？](#如何启用https加密)
-      * [你的域名是从哪里购买的？](#你的域名是从哪里购买的)
-      * [如何申请网站证书？](#如何申请网站证书)
-   * [笔记数据库在哪?](#笔记数据库在哪)
-      * [客户端数据库默认路径](#客户端数据库默认路径)
-      * [服务端数据库默认路径](#服务端数据库默认路径)
-   * [如何修改数据库位置？](#如何修改数据库位置)
-   * [如何备份数据库?](#如何备份数据库)
-   * [Trilium有开放接口调用吗？](#trilium有开放接口调用吗)
-   * [配置反向代理之后部分功能不正常了?](#配置反向代理之后部分功能不正常了)
-   * [为什么使用了中文版的程序，界面还是英文的?](#为什么使用了中文版的程序界面还是英文的)
-   * [为什么用中文版的自带文档还是英文的?](#为什么用中文版的自带文档还是英文的)
-   * [为什么程序打不开?](#为什么程序打不开)
-   * [为什么程序打开之后是空白一片?](#为什么程序打开之后是空白一片)
-   * [日记笔记跑到别的目录下了](#日记笔记跑到别的目录下了)
-   * [为什么我的docker镜像更新之后还是旧版的?](#为什么我的docker镜像更新之后还是旧版的)
-   * [为什么trilium-portable.bat提示禁止执行?](#为什么trilium-portablebat提示禁止执行)
-   * [提示 error 401 Unauthorized 是什么问题？](#提示-error-401-unauthorized-是什么问题)
-   * [画布笔记变成了一个json文件怎么办?](#画布笔记变成了一个json文件怎么办)
-      * [方法1](#方法1)
-      * [方法2](#方法2)
-   * [画布笔记上的文字没了怎么办？](#画布笔记上的文字没了怎么办)
-   * [导入文档结果标题显示乱码怎么办？](#导入文档结果标题显示乱码怎么办)
-   * [Docker运行不起来怎么办？](#docker运行不起来怎么办)
+    * [你用的是什么VPS服务器跑的Trilium Notes服务端?](#你用的是什么vps服务器跑的trilium-notes服务端)
+    * [有关域名的一些问题](#有关域名的一些问题)
+        * [如何启用HTTPS加密？](#如何启用https加密)
+        * [你的域名是从哪里购买的？](#你的域名是从哪里购买的)
+        * [如何申请网站证书？](#如何申请网站证书)
+    * [笔记数据库在哪?](#笔记数据库在哪)
+        * [客户端数据库默认路径](#客户端数据库默认路径)
+        * [服务端数据库默认路径](#服务端数据库默认路径)
+    * [如何修改数据库位置？](#如何修改数据库位置)
+    * [如何备份数据库?](#如何备份数据库)
+    * [Trilium有开放接口调用吗？](#trilium有开放接口调用吗)
+    * [配置反向代理之后部分功能不正常了?](#配置反向代理之后部分功能不正常了)
+    * [为什么使用了中文版的程序，界面还是英文的?](#为什么使用了中文版的程序界面还是英文的)
+    * [为什么用中文版的自带文档还是英文的?](#为什么用中文版的自带文档还是英文的)
+    * [为什么程序打不开?](#为什么程序打不开)
+    * [为什么程序打开之后是空白一片?](#为什么程序打开之后是空白一片)
+    * [日记笔记跑到别的目录下了](#日记笔记跑到别的目录下了)
+    * [为什么我的docker镜像更新之后还是旧版的?](#为什么我的docker镜像更新之后还是旧版的)
+    * [为什么trilium-portable.bat提示禁止执行?](#为什么trilium-portablebat提示禁止执行)
+    * [提示 error 401 Unauthorized 是什么问题？](#提示-error-401-unauthorized-是什么问题)
+    * [画布笔记变成了一个json文件怎么办?](#画布笔记变成了一个json文件怎么办)
+        * [方法1](#方法1)
+        * [方法2](#方法2)
+    * [画布笔记上的文字没了怎么办？](#画布笔记上的文字没了怎么办)
+    * [导入文档结果标题显示乱码怎么办？](#导入文档结果标题显示乱码怎么办)
+    * [Docker运行不起来怎么办？](#docker运行不起来怎么办)
 * [🚚 迁移笔记](#-迁移笔记)
-   * [从 印象笔记 迁移到 Trilium](#从-印象笔记-迁移到-trilium)
-   * [从 VNote或其它Markdown文件笔记 迁移到 Trilium](#从-vnote或其它markdown文件笔记-迁移到-trilium)
+    * [从 印象笔记 迁移到 Trilium](#从-印象笔记-迁移到-trilium)
+    * [从 VNote或其它Markdown文件笔记 迁移到 Trilium](#从-vnote或其它markdown文件笔记-迁移到-trilium)
 * [0.47 升级到 0.48 的一些问题](#047-升级到-048-的一些问题)
-   * [前端js报错](#前端js报错)
-   * [第三方主题不生效](#第三方主题不生效)
-   * [初始化慢，同步数据慢](#初始化慢同步数据慢)
+    * [前端js报错](#前端js报错)
+    * [第三方主题不生效](#第三方主题不生效)
+    * [初始化慢，同步数据慢](#初始化慢同步数据慢)
 * [0.57.5 升级到 0.58.2-beta 之后版本的问题](#0575-升级到-0582-beta-之后版本的问题)
-   * [自定义按钮问题](#自定义按钮问题)
+    * [自定义按钮问题](#自定义按钮问题)
 * [0.58 升级到 0.59 之后版本的问题](#058-升级到-059-之后版本的问题)
-   * [字数统计组件报错](#字数统计组件报错)
+    * [字数统计组件报错](#字数统计组件报错)
 * [0.60 升级到 0.61 的问题](#060-升级到-061-的问题)
 * [在哪里可以找到 Trilium 的插件？](#在哪里可以找到-trilium-的插件)
 * [如何将网页剪藏到 Trilium？谷歌浏览器的 Trilium Web Clipper 插件无法下载了？](#如何将网页剪藏到-trilium谷歌浏览器的-trilium-web-clipper-插件无法下载了)
@@ -123,6 +124,7 @@ Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server
 * [⏳ Stargazers 数据](#-stargazers-数据)
 * [💰 捐赠](#-捐赠)
 * [🙏 感谢](#-感谢)
+
 <!--te-->
 
 # 📝 汉化版修改记录
@@ -266,12 +268,12 @@ systemctl start trilium-server-cn
 
 ### 关于Arm服务器运行服务端的说明
 
-~~如果需要在Arm服务器上跑, 可以直接用trilium原版的docker镜像. 汉化版和原版数据是互通的. 可以用汉化版的客户端和原版的服务端进行链接.~~
+~~如果需要在Arm服务器上跑, 可以直接用trilium原版的docker镜像. 汉化版和原版数据是互通的.
+可以用汉化版的客户端和原版的服务端进行链接.~~
 
 ~~汉化版暂时不会有Arm镜像. [相关issue](https://github.com/Nriver/trilium-translation/issues/10)~~
 
 汉化版已经有Arm版的docker镜像了，可以放心食用。如果无法运行，请尝试升级docker版本。
-
 
 # 🖥️ 客户端
 
@@ -390,32 +392,39 @@ Racknerd的促销似乎都是长期有效的活动，一直都可以买，有需
 
 我测试过Trilium的服务端程序大概会占150MB左右的内存。买最便宜的就够用了，一年不到100块。如果觉得硬盘不够大，可以买贵一档的，也就100出头。再贵就没有必要了。
 
-| 促销活动         | 内存    | CPU | SSD | 流量     | 价格       | 购买                                                     |
-|--------------|-------|-----|-----|--------|----------|--------------------------------------------------------|
-| 2025双十一 | 1G    | 1核  | 20G | 3T/月   | $10.76/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=917) |
-| 2025双十一 | 2G    | 2核  | 35G | 5T/月   | $17.66/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=918) |
-| (过期) 2025新年       | 1G  | 1核  | 24G | 2T/月   | $11.29/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=903) |
-| (过期) 2025新年       | 2G    | 1核  | 40G | 3.5T/月 | $18.29/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=904) |
-| (过期) 2024黑五 | 1G    | 1核  | 20G | 1.5T/月   | $10.99/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=879) |
-| (过期) 2024黑五 | 2.5G    | 2核  | 40G | 3T/月   | $18.93/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=880) |
-| (过期) 2024双十一 | 1G    | 1核  | 14G | 2T/月   | $11.11/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=875) |
-| (过期) 2024双十一 | 2G    | 1核  | 25G | 3T/月   | $17.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=876) |
-| (过期) 2024龙舟节促销    | 1.25G | 1核  | 20G | 2T/月   | $12.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=850) |
-| (过期) 2024龙舟节促销     | 2G    | 2核  | 30G | 4T/月   | $19.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=851) |
-| (过期) 2024中国新年     | 1G    | 1核  | 15G | 2T/月   | $10.99/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
-| (过期) 2024中国新年     | 1.5G  | 1核  | 25G | 4T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
-| (过期) 2024新年       | 768M  | 1核  | 21G | 1T/月   | $11.49/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
-| (过期) 2024新年       | 2G    | 1核  | 35G | 2.5T/月 | $17.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
-| (过期) 2023黑五       | 768M  | 1核  | 15G | 1T/月   | $10.18/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
-| (过期) 2023黑五       | 2G    | 1核  | 30G | 2.5T/月 | $16.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
-| (过期) 2023双十一 | 1G    | 1核  | 12G | 2T/月   | $11/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=788) |
-| (过期) 2023双十一 | 2G    | 1核  | 20G | 4T/月   | $17.55/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=789) |
-| (过期) 2023独立日 | 1G    | 1核  | 14G | 2T/月   | $11.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=775) |
-| (过期) 2023独立日 | 2G    | 1核  | 20G | 3T/月   | $19.89/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=776) |
-| (过期) 2023复活节 | 840M  | 1核  | 10G | 1T/月   | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
-| (过期) 2023复活节 | 1.2G  | 1核  | 30G | 3T/月   | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
-| (过期) 2022黑五  | 768M  | 1核  | 10G | 1T/月   | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
-| (过期) 2022黑五  | 1.5G  | 1核  | 30G | 3T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
+| 促销活动           | 内存    | CPU | SSD | 流量     | 价格       | 购买                                                     |
+|----------------|-------|-----|-----|--------|----------|--------------------------------------------------------|
+| 2025双十一        | 1G    | 1核  | 20G | 3T/月   | $10.76/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=917) |
+| 2025双十一        | 2G    | 2核  | 35G | 5T/月   | $17.66/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=918) |
+| (过期) 2025新年    | 1G    | 1核  | 24G | 2T/月   | $11.29/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=903) |
+| (过期) 2025新年    | 2G    | 1核  | 40G | 3.5T/月 | $18.29/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=904) |
+| (过期) 2024黑五    | 1G    | 1核  | 20G | 1.5T/月 | $10.99/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=879) |
+| (过期) 2024黑五    | 2.5G  | 2核  | 40G | 3T/月   | $18.93/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=880) |
+| (过期) 2024双十一   | 1G    | 1核  | 14G | 2T/月   | $11.11/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=875) |
+| (过期) 2024双十一   | 2G    | 1核  | 25G | 3T/月   | $17.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=876) |
+| (过期) 2024龙舟节促销 | 1.25G | 1核  | 20G | 2T/月   | $12.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=850) |
+| (过期) 2024龙舟节促销 | 2G    | 2核  | 30G | 4T/月   | $19.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=851) |
+| (过期) 2024中国新年  | 1G    | 1核  | 15G | 2T/月   | $10.99/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=838) |
+| (过期) 2024中国新年  | 1.5G  | 1核  | 25G | 4T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=839) |
+| (过期) 2024新年    | 768M  | 1核  | 21G | 1T/月   | $11.49/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=826) |
+| (过期) 2024新年    | 2G    | 1核  | 35G | 2.5T/月 | $17.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=827) |
+| (过期) 2023黑五    | 768M  | 1核  | 15G | 1T/月   | $10.18/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=792) |
+| (过期) 2023黑五    | 2G    | 1核  | 30G | 2.5T/月 | $16.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=793) |
+| (过期) 2023双十一   | 1G    | 1核  | 12G | 2T/月   | $11/年    | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=788) |
+| (过期) 2023双十一   | 2G    | 1核  | 20G | 4T/月   | $17.55/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=789) |
+| (过期) 2023独立日   | 1G    | 1核  | 14G | 2T/月   | $11.38/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=775) |
+| (过期) 2023独立日   | 2G    | 1核  | 20G | 3T/月   | $19.89/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=776) |
+| (过期) 2023复活节   | 840M  | 1核  | 10G | 1T/月   | $10.78/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=766) |
+| (过期) 2023复活节   | 1.2G  | 1核  | 30G | 3T/月   | $14.98/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=767) |
+| (过期) 2022黑五    | 768M  | 1核  | 10G | 1T/月   | $10.28/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=695) |
+| (过期) 2022黑五    | 1.5G  | 1核  | 30G | 3T/月   | $16.88/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=696) |
+
+这家 VPS 我已经稳定使用了好几年，它的续费价格一直保持不变。
+
+![vps_price](docs/vps_price.png)
+
+之前用的是 2022 年双十一活动的机器，每年续费 11.11 美元。现在换成了 2025 年的双十一活动版本，硬盘从 11.11GB 升级到
+20GB，更适合用来搭建 Trilium Notes 服务端。以前因为硬盘空间紧张，我一直关闭笔记备份功能；现在空间充足，终于可以安心启用备份了。
 
 你也可以选择其它的VPS提供商，不过要记得备份数据，数据是无价的。做好备份以防万一，切记。
 
@@ -427,7 +436,8 @@ Racknerd的促销似乎都是长期有效的活动，一直都可以买，有需
 
 ### 你的域名是从哪里购买的？
 
-我的域名是在Namesilo购买的，价格很实惠。如果你有需要，可以试试。以下是带有aff的链接，如果你不喜欢，可以去掉。此外，还有优惠券码`nriver`
+我的域名是在Namesilo购买的，价格很实惠。如果你有需要，可以试试。以下是带有aff的链接，如果你不喜欢，可以去掉。此外，还有优惠券码
+`nriver`
 ，初次购买域名可节省1美元。
 
 [域名购买链接](https://www.namesilo.com/?rid=d62cb16lq)
@@ -479,12 +489,12 @@ Trilium有自动备份功能，软件内可以左上角设置里可以设定自�
 
 这是因为你曾运行过 Trilium 的英文原版程序，导致系统中存有英文版的缓存文件。请按照以下步骤解决：
 
-1. 关闭 Trilium 程序。  
-2. 删除缓存目录：  
-   - **Windows**: 删除 `C:\Users\用户名\AppData\Roaming\Trilium Notes`。  
-   - **Linux**: 删除 `~/.config/Trilium Notes/`。  
-   - **MacOS**: 搜索并删除与 `Trilium Notes` 相关的缓存目录。  
-   - 如果是浏览器访问，请删除浏览器缓存。
+1. 关闭 Trilium 程序。
+2. 删除缓存目录：
+    - **Windows**: 删除 `C:\Users\用户名\AppData\Roaming\Trilium Notes`。
+    - **Linux**: 删除 `~/.config/Trilium Notes/`。
+    - **MacOS**: 搜索并删除与 `Trilium Notes` 相关的缓存目录。
+    - 如果是浏览器访问，请删除浏览器缓存。
 3. 重新启动 Trilium，界面将切换为中文版。
 
 ## 为什么用中文版的自带文档还是英文的?
@@ -675,15 +685,19 @@ const notes = await api.runOnBackend(async () => {
 
 # 在哪里可以找到 Trilium 的插件？
 
-我整理了一个项目 [awesome-trilium](https://github.com/Nriver/awesome-trilium)，收集了 Trilium 相关的大部分插件、主题以及其他资源。需要查找插件时，可以直接在页面中搜索关键词，快速定位你需要的内容。
+我整理了一个项目 [awesome-trilium](https://github.com/Nriver/awesome-trilium)，收集了 Trilium
+相关的大部分插件、主题以及其他资源。需要查找插件时，可以直接在页面中搜索关键词，快速定位你需要的内容。
 
 ---
 
 # 如何将网页剪藏到 Trilium？谷歌浏览器的 `Trilium Web Clipper` 插件无法下载了？
 
-`Trilium Web Clipper` 是一款可用于将网页内容保存到 Trilium 的浏览器扩展。然而，该插件的原版已长期未维护，且不符合谷歌浏览器最新的 Manifest V3 标准，因此已无法在 Chrome 网上应用店中下载使用。
+`Trilium Web Clipper` 是一款可用于将网页内容保存到 Trilium 的浏览器扩展。然而，该插件的原版已长期未维护，且不符合谷歌浏览器最新的
+Manifest V3 标准，因此已无法在 Chrome 网上应用店中下载使用。
 
-为了解决这一问题，我对原项目进行了 Fork，并完成了对 Manifest V3 的兼容性更新。同时，我还加入了中文界面支持并修复了若干 Bug。欢迎前往 [Trilium Web Clipper Plus](https://github.com/Nriver/trilium-web-clipper-plus/blob/master/README_CN.md) 项目页面了解更多详情。
+为了解决这一问题，我对原项目进行了 Fork，并完成了对 Manifest V3 的兼容性更新。同时，我还加入了中文界面支持并修复了若干
+Bug。欢迎前往 [Trilium Web Clipper Plus](https://github.com/Nriver/trilium-web-clipper-plus/blob/master/README_CN.md)
+项目页面了解更多详情。
 
 ---
 
