@@ -896,6 +896,12 @@ Ko-fi:
 
 感谢 `K*l` 赞助的 2 元! 备注: trilium很好用，感谢大佬的付出
 
+感谢 `*欢` 赞助的 30 元! 备注: 感谢大佬
+
+感谢 `* ༼` 赞助的 2 元!
+
+感谢 `Ko-fi Supporter` 赞助的 5 美元!
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
