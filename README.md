@@ -185,8 +185,10 @@ expensive option, which is usually less than $20 per year and can provide you wi
 
 | Promotion                           | RAM   | CPU     | SSD | Bandwidth  | Price       | Purchase                                                 |
 |-------------------------------------|-------|---------|-----|------------|-------------|----------------------------------------------------------|
-| 2025's 11.11                        | 1G    | 1 Core  | 20G | 3T/Month   | $10.76/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=917) |
-| 2025's 11.11                        | 2G    | 2 Core  | 35G | 5T/Month   | $17.66/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=918) |
+| 2025 Black Friday                   | 1G    | 1 Core  | 25G | 2T/Month   | $10.60/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=923) |
+| 2025 Black Friday                   | 2.5G  | 2 Core  | 45G | 3T/Month   | $18.66/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=924) |
+| (expired) 2025's 11.11              | 1G    | 1 Core  | 20G | 3T/Month   | $10.76/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=917) |
+| (expired) 2025's 11.11              | 2G    | 2 Core  | 35G | 5T/Month   | $17.66/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=918) |
 | (expired) 2025 New Year             | 1G    | 1 Core  | 24G | 2T/Month   | $11.49/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=903) |
 | (expired) 2025 New Year             | 2G    | 1 Core  | 40G | 3.5T/Month | $17.38/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=904) |
 | (expired) 2024 Black Friday         | 1G    | 1 Core  | 20G | 1.5T/Month | $10.99/Year | [Link](https://my.racknerd.com/aff.php?aff=6217&pid=879) |

@@ -394,8 +394,10 @@ Racknerd的促销似乎都是长期有效的活动，一直都可以买，有需
 
 | 促销活动           | 内存    | CPU | SSD | 流量     | 价格       | 购买                                                     |
 |----------------|-------|-----|-----|--------|----------|--------------------------------------------------------|
-| 2025双十一        | 1G    | 1核  | 20G | 3T/月   | $10.76/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=917) |
-| 2025双十一        | 2G    | 2核  | 35G | 5T/月   | $17.66/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=918) |
+| 2025黑五         | 1G    | 1核  | 25G | 2T/月   | $10.60/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=923) |
+| 2025黑五         | 2.5G  | 2核  | 45G | 5T/月   | $18.66/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=924) |
+| (过期) 2025双十一   | 1G    | 1核  | 20G | 3T/月   | $10.76/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=917) |
+| (过期) 2025双十一   | 2G    | 2核  | 35G | 5T/月   | $17.66/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=918) |
 | (过期) 2025新年    | 1G    | 1核  | 24G | 2T/月   | $11.29/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=903) |
 | (过期) 2025新年    | 2G    | 1核  | 40G | 3.5T/月 | $18.29/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=904) |
 | (过期) 2024黑五    | 1G    | 1核  | 20G | 1.5T/月 | $10.99/年 | [链接](https://my.racknerd.com/aff.php?aff=6217&pid=879) |
