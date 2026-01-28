@@ -21,11 +21,11 @@ import zipfile
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
-CLIENT_FOLDER = BASE_FOLDER + 'TriliumNext Notes-linux-x64'
+CLIENT_FOLDER = BASE_FOLDER + 'trilium-linux-x64'
 REPO_NAME = 'TriliumNext/Trilium'
 # regex match which file to download if multiple files exists
-PREFERRED_RELEASE_NAME_PATTERN = 'TriliumNextNotes-.*?-linux-x64.zip'
-SOURCE_CODE_NAME_PATTERN = 'TriliumNextNotes-.*?-linux-x64.zip'
+PREFERRED_RELEASE_NAME_PATTERN = 'TriliumNotes-.*?-linux-x64.zip'
+SOURCE_CODE_NAME_PATTERN = 'TriliumNotes-.*?-linux-x64.zip'
 
 CMD_STOP_SERVICE = """pkill -9 trilium"""
 
