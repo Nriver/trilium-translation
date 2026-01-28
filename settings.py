@@ -59,8 +59,8 @@ VERSION_INFO_OVERRIDE = False
 
 force_version_info = {
     'name': 'v0.60.4 release',
-    'zipball_url': 'https://api.github.com/repos/TriliumNext/Notes/zipball/v0.60.4',
-    'browser_download_url': 'https://github.com/TriliumNext/Notes/releases/download/v0.60.4/trilium-linux-x64-0.60.4.tar.xz',
+    'zipball_url': 'https://api.github.com/repos/TriliumNext/Trilium/zipball/v0.60.4',
+    'browser_download_url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.60.4/trilium-linux-x64-0.60.4.tar.xz',
 }
 
 force_version_info_full = {
@@ -68,19 +68,19 @@ force_version_info_full = {
     'releases': {
         'linux': {
             'name': 'trilium-linux-x64-0.60.4.tar.xz',
-            'url': 'https://github.com/TriliumNext/Notes/releases/download/v0.60.4/trilium-linux-x64-0.60.4.tar.xz',
+            'url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.60.4/trilium-linux-x64-0.60.4.tar.xz',
         },
         'linux-server': {
             'name': 'trilium-linux-x64-server-0.60.4.tar.xz',
-            'url': 'https://github.com/TriliumNext/Notes/releases/download/v0.60.4/trilium-linux-x64-server-0.60.4.tar.xz',
+            'url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.60.4/trilium-linux-x64-server-0.60.4.tar.xz',
         },
         'mac': {
             'name': 'trilium-mac-x64-0.60.4.zip',
-            'url': 'https://github.com/TriliumNext/Notes/releases/download/v0.60.4/trilium-mac-x64-0.60.4.zip',
+            'url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.60.4/trilium-mac-x64-0.60.4.zip',
         },
         'windows': {
             'name': 'trilium-windows-x64-0.60.4.zip',
-            'url': 'https://github.com/TriliumNext/Notes/releases/download/v0.60.4/trilium-windows-x64-0.60.4.zip',
+            'url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.60.4/trilium-windows-x64-0.60.4.zip',
         },
     },
 }
@@ -90,8 +90,8 @@ VERSION_INFO_OVERRIDE_BETA = False
 # beta
 force_version_info_beta = {
     'name': 'v0.61.6-beta release',
-    'zipball_url': 'https://github.com/TriliumNext/Notes/archive/refs/tags/v0.61.6-beta.zip',
-    'browser_download_url': 'https://github.com/TriliumNext/Notes/releases/download/v0.61.6-beta/trilium-linux-x64-0.61.6-beta.tar.xz',
+    'zipball_url': 'https://github.com/TriliumNext/Trilium/archive/refs/tags/v0.61.6-beta.zip',
+    'browser_download_url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.61.6-beta/trilium-linux-x64-0.61.6-beta.tar.xz',
 }
 
 force_version_info_full_beta = {
@@ -99,19 +99,19 @@ force_version_info_full_beta = {
     'releases': {
         'linux': {
             'name': 'trilium-linux-x64-v0.61.6-beta.tar.xz',
-            'url': 'https://github.com/TriliumNext/Notes/releases/download/v0.61.6-beta/trilium-linux-x64-0.61.6-beta.tar.xz',
+            'url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.61.6-beta/trilium-linux-x64-0.61.6-beta.tar.xz',
         },
         'linux-server': {
             'name': 'trilium-linux-x64-server-v0.61.6-beta.tar.xz',
-            'url': 'https://github.com/TriliumNext/Notes/releases/download/v0.61.6-beta/trilium-linux-x64-server-0.61.6-beta.tar.xz',
+            'url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.61.6-beta/trilium-linux-x64-server-0.61.6-beta.tar.xz',
         },
         'mac': {
             'name': 'trilium-mac-x64-v0.61.6-beta.zip',
-            'url': 'https://github.com/TriliumNext/Notes/releases/download/v0.61.6-beta/trilium-mac-x64-0.61.6-beta.zip',
+            'url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.61.6-beta/trilium-mac-x64-0.61.6-beta.zip',
         },
         'windows': {
             'name': 'trilium-windows-x64-v0.61.6-beta.zip',
-            'url': 'https://github.com/TriliumNext/Notes/releases/download/v0.61.6-beta/trilium-windows-x64-0.61.6-beta.zip',
+            'url': 'https://github.com/TriliumNext/Trilium/releases/download/v0.61.6-beta/trilium-windows-x64-0.61.6-beta.zip',
         },
     },
 }
