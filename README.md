@@ -10,11 +10,9 @@
 English | <a href="README_CN.md">简体中文</a>
 </p>
 
-This repo provides a translation for the awesome [Trilium Notes](https://github.com/zadam/trilium).
-If you'd like to translate Trilium Notes into any language you like, please
-follow [this guide](https://github.com/Nriver/trilium-translation#how-to-translate).
-Currently, I have translated Trilium Notes into Chinese. The translation will keep update to the latest Trilium Notes'
-stable releases.
+The translation code for Trilium by Zadam has been saved to this fork: https://github.com/Nriver/trilium-translation/tree/zadam-version
+
+This repository will now focus on developing a modified version of Trilium.
 
 Star this repo if you like it, thx :)
 
