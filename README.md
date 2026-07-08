@@ -479,6 +479,26 @@ Thanks `* ༼` for donating 2 CNY!
 
 Thanks `Ko-fi Supporter` for donating 5 USD!
 
+Thanks `*宇` for donating 10 CNY! Memo: 瑞一杯，加油！
+
+Thanks `*婧` for donating 100 CNY! Memo: 感谢大佬的付出
+
+Thanks `**舟` for donating 66 CNY!
+
+Thanks `Roel` for donating 5 USD! Memo: Thanks SO very much for reviving the Trillium Web Clipper. With ADDED options!
+
+Thanks `Ko-fi Supporter` for donating 5 CNY! Memo: I love the solution, as this will open up incredible interoperability. Containers provide feature parity and in general better scalability. Thanks for pushing into a scalable future!
+
+Thanks `*夏` for donating 18.8 CNY!
+
+Thanks `*辉` for donating 36 CNY! Memo: 感谢维护trilium那么多库-新奥尔良烤乳猪
+
+Thanks `123` for donating 5 USD!
+
+Thanks `Supporter` for donating 5 USD!
+
+Thanks `*欢` for donating 30 CNY!
+
 Thanks for the greate IDE Pycharm from Jetbrains.
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)

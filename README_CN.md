@@ -925,6 +925,26 @@ Ko-fi:
 
 感谢 `Ko-fi Supporter` 赞助的 5 美元!
 
+感谢 `*宇` 赞助的 10 元! 备注: 瑞一杯，加油！
+
+感谢 `*婧` 赞助的 100 元! 备注: 感谢大佬的付出
+
+感谢 `**舟` 赞助的 66 元!
+
+感谢 `Roel` 赞助的 5 美元! 备注: Thanks SO very much for reviving the Trillium Web Clipper. With ADDED options!
+
+感谢 `Ko-fi Supporter` 赞助的 5 元! 备注: I love the solution, as this will open up incredible interoperability. Containers provide feature parity and in general better scalability. Thanks for pushing into a scalable future!
+
+感谢 `*夏` 赞助的 18.8 元!
+
+感谢 `*辉` 赞助的 36 元! 备注: 感谢维护trilium那么多库-新奥尔良烤乳猪
+
+感谢 `123` 赞助的 5 美元!
+
+感谢 `Supporter` 赞助的 5 美元!
+
+感谢 `*欢` 赞助的 30 元!
+
 感谢Jetbrins公司提供的Pycharm编辑器!
 
 [![Jetbrains](docs/jetbrains.svg)](https://jb.gg/OpenSource)
