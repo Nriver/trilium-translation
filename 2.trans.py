@@ -2,7 +2,7 @@ import os
 import re
 import shutil
 
-from settings import BASE_FOLDER, PATCH_FOLDER, TRANSLATOR_URL, LANG, ASAR_PATH
+from settings import BASE_FOLDER, PATCH_FOLDER, TRANSLATOR_URL, LANG, ASAR_PATH, WEBPACK_PATH, NVM_BIN
 from translations import translation_dict
 
 script_path = os.path.dirname(os.path.abspath(__file__))
@@ -3290,12 +3290,30 @@ os.chdir(BASE_PATH)
 # os.system('npm install webpack --save-dev')
 # os.system('npm run webpack')
 
-# nvm managed environment
-if os.path.exists('/usr/share/nvm/init-nvm.sh'):
-    os.system('source /usr/share/nvm/init-nvm.sh && which webpack && webpack -c webpack.config.js')
-else:
-    os.system('which webpack')
-    os.system('webpack -c webpack.config.js')
+# 安装依赖
+# install dependencies
+import subprocess
+print('installing dependencies with pnpm...')
+nvm_node = NVM_BIN
+env = os.environ.copy()
+env['PATH'] = nvm_node + ':' + env.get('PATH', '')
+npmrc_path = os.path.join(BASE_PATH, '.npmrc')
+npmrc_content = '''\nonlyBuiltDependencies[] = better-sqlite3\nonlyBuiltDependencies[] = electron-winstaller\nonlyBuiltDependencies[] = lzma-native\nonlyBuiltDependencies[] = print-this\n'''
+try:
+    with open(npmrc_path, 'a') as f:
+        f.write(npmrc_content)
+except Exception as e:
+    print(f'warning: could not update .npmrc: {e}')
+try:
+    subprocess.run(['pnpm', 'install'], env=env, cwd=BASE_PATH, check=True)
+except subprocess.CalledProcessError as e:
+    print(f'pnpm install returned {e.returncode}, continuing anyway (dependencies likely already installed)')
+
+# 使用 webpack 编译
+print('building with webpack...')
+subprocess.run([WEBPACK_PATH, '-c', 'webpack.config.js'], env=env, cwd=BASE_PATH)
+if os.path.exists(os.path.join(BASE_PATH, 'webpack.excalidraw.config.js')):
+    subprocess.run([WEBPACK_PATH, '-c', 'webpack.excalidraw.config.js'], env=env, cwd=BASE_PATH)
 
 # 把编译好的文件复制到客户端里
 # copy compiled file to the client
