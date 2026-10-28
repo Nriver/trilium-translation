@@ -16,7 +16,7 @@ from settings import (
 )
 
 # 本地 trilium-plus 打包文件目录
-LOCAL_DIST = '/home/nate/gitRepo/trilium-plus/dist/'# disable warning if we use proxy
+LOCAL_DIST = '/home/nate/gitRepo/trilium-plus/dist/'  # disable warning if we use proxy
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 COMPRESS_TOOL = '7z'
@@ -24,8 +24,6 @@ COMPRESS_TOOL = '7z'
 COMPRESS_LEVEL = 9
 
 REPO_NAME = 'nriver/trilium-plus'
-# TRANS_RELEASE_FOLDER = TRANS_RELEASE_FOLDER
-# PATCH_FOLDER = PATCH_FOLDER
 
 
 # 是否从GitHub下载文件
@@ -35,6 +33,8 @@ DO_DOWNLOAD = False
 # 是否删除临时文件
 # whether delete template files
 DO_DELETE = True
+
+
 def requests_get(url):
     ret = None
     try:
@@ -77,6 +77,7 @@ def get_local_releases():
     print('version_info', version_info)
     return version_info
 
+
 def download_file(url, file_name=None):
     """copy local file from trilium-plus/dist"""
     print('copy local file')
@@ -96,6 +97,8 @@ def download_file(url, file_name=None):
     shutil.copy2(src, dst)
     print(f'copy complete, file saved as {file_name}')
     return file_name
+
+
 def download_releases(releases):
     for package_type in releases:
         if DEBUG:
@@ -131,13 +134,13 @@ def decompress_package(file_name):
     if file_name.endswith('tar.xz'):
         try:
             os.system(f'xz -d {file_name}')
-        except:
+        except Exception:
             pass
         try:
             os.system(f'tar -xf {file_name[:-3]}')
             if DO_DELETE:
                 os.system(f'rm -f {file_name[:-3]}')
-        except:
+        except Exception:
             pass
     elif file_name.endswith('.zip'):
         try:
@@ -145,7 +148,7 @@ def decompress_package(file_name):
 
             if DO_DELETE:
                 os.system(f'rm -f {file_name}')
-        except:
+        except Exception:
             pass
 
 
@@ -181,19 +184,14 @@ def patch_linux(file_name):
         # remove unpacked files
         os.system(f'rm -rf {asar_folder}/app/')
 
-        # 打zip包
-        # make zip
-        new_name = f'trilium-{LANG}-linux-x64.zip'
+        # 打tar.xz包
+        new_name = f'trilium-{LANG}-linux-x64.tar.xz'
         print('new_name', new_name)
         os.system(f'rm -f {new_name}')
         patched_root_folder = 'trilium-linux-x64'
         os.chdir(TRANS_RELEASE_FOLDER)
 
-        if COMPRESS_TOOL == '7z':
-            cmd = f'7z a {new_name} -r {patched_root_folder}'
-        else:
-            cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} {patched_root_folder}'
-
+        cmd = f'tar -cf - {patched_root_folder} | xz -{COMPRESS_LEVEL} -c > {new_name}'
         print(cmd)
         os.system(cmd)
 
@@ -219,17 +217,13 @@ def patch_linux_server(file_name):
     print('cmd', cmd)
     os.system(cmd)
 
-    # 打zip包
-    # make zip package
-    new_name = 'trilium-cn-linux-x64-server.zip'
+    # 打tar.xz包
+    new_name = f'trilium-{LANG}-linux-x64-server.tar.xz'
     print('new_name', new_name)
     os.system(f'rm -f {new_name}')
     patched_root_folder = 'trilium-linux-x64-server'
     os.chdir(TRANS_RELEASE_FOLDER)
-    if COMPRESS_TOOL == '7z':
-        cmd = f'7z a {new_name} -r {patched_root_folder}'
-    else:
-        cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} {patched_root_folder}'
+    cmd = f'tar -cf - {patched_root_folder} | xz -{COMPRESS_LEVEL} -c > {new_name}'
     print(cmd)
     os.system(cmd)
 
@@ -267,17 +261,13 @@ def patch_windows(file_name):
     # remove unpacked files
     os.system(f'rm -rf {asar_folder}/app/')
 
-    # 打zip包
-    # make zip package
-    new_name = f'trilium-{LANG}-windows-x64.zip'
+    # 打7z包
+    new_name = f'trilium-{LANG}-windows-x64.7z'
     print('new_name', new_name)
     os.system(f'rm -f {new_name}')
     patched_root_folder = 'trilium-windows-x64'
     os.chdir(TRANS_RELEASE_FOLDER)
-    if COMPRESS_TOOL == '7z':
-        cmd = f'7z a {new_name} -r {patched_root_folder}'
-    else:
-        cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} {patched_root_folder}'
+    cmd = f'7z a {new_name} -r {patched_root_folder}'
     print(cmd)
     os.system(cmd)
 
