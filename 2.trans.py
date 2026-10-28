@@ -3331,6 +3331,14 @@ os.mkdir(PATCH_FOLDER)
 # src/public 目录下的要用node重新编译的文件
 # src/public requires recompiled file with nodejs
 shutil.copytree(f'{BASE_PATH}src/public/app-dist', f'{PATCH_FOLDER}/src/public/app-dist')
+# 删除 sourcemap 文件以减小打包体积
+for root, dirs, files in os.walk(f'{PATCH_FOLDER}/src/public/app-dist'):
+    for f in files:
+        if f.endswith('.js.map') or f.endswith('.css.map'):
+            try:
+                os.remove(os.path.join(root, f))
+            except Exception as e:
+                print('remove map failed', e)
 # doc notes
 shutil.copytree(
     f'{BASE_PATH}src/public/app/doc_notes', f'{PATCH_FOLDER}/src/public/app-dist/doc_notes/'
