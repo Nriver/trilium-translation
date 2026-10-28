@@ -34,7 +34,7 @@ def copytree_ignore_broken(src, dst):
                 if os.path.lexists(d):
                     try:
                         os.remove(d)
-                    except:
+                    except Exception:
                         pass
                 os.symlink(linkto, d)
             except Exception:
@@ -46,7 +46,7 @@ def copytree_ignore_broken(src, dst):
                 if os.path.lexists(d):
                     try:
                         os.remove(d)
-                    except:
+                    except Exception:
                         pass
                 shutil.copy2(s, d)
             except Exception:
@@ -67,7 +67,7 @@ def clean_cache():
 def prepare_from_local():
     """从本地 trilium-plus 获取编译好的包和源码，不下载"""
     print(f'从本地获取 trilium-plus 文件: {TRILIUM_PLUS_ROOT}')
-    
+
     # 获取编译好的包
     src_client = os.path.join(TRILIUM_PLUS_DIST, 'trilium-linux-x64')
     if os.path.exists(src_client):
@@ -78,26 +78,30 @@ def prepare_from_local():
     else:
         print('未找到编译好的 trilium-linux-x64 包')
         exit()
-    
-    # 获取源码
-    src_code_dir = None
-    for candidate in [
-        os.path.join(TRILIUM_PLUS_DIST, 'trilium-src'),
-        os.path.join(TRILIUM_PLUS_DIST, 'trilium-linux-x64-src'),
-    ]:
-        if os.path.exists(candidate):
-            src_code_dir = candidate
-            break
-    
-    if src_code_dir:
-        print(f'复制源码: {src_code_dir} -> {BASE_FOLDER}trilium-src')
-        dst_src = f'{BASE_FOLDER}trilium-src'
-        if os.path.exists(dst_src):
-            shutil.rmtree(dst_src)
-        copytree_ignore_broken(src_code_dir, dst_src)
-    else:
-        print('未找到源码目录')
+
+    # 获取源码 - 2.trans.py 期望结构: BASE_FOLDER/trilium-src/src/...
+    src_root = os.path.join(TRILIUM_PLUS_ROOT, 'src')
+    if not os.path.exists(src_root):
+        print('未找到 trilium-plus/src')
         exit()
+
+    dst_root = os.path.join(BASE_FOLDER, 'trilium-src')
+    dst_src = os.path.join(dst_root, 'src')
+    if os.path.exists(dst_root):
+        shutil.rmtree(dst_root)
+    os.makedirs(dst_src, exist_ok=True)
+
+    print(f'复制源码: {src_root} -> {dst_src}')
+    copytree_ignore_broken(src_root, dst_src)
+
+    # 复制 trilium-plus 根目录的一些文件到 trilium-src 根目录
+    for root_file in ['package.json', 'package-lock.json', 'webpack.config.js', 'webpack.excalidraw.config.js']:
+        src_f = os.path.join(TRILIUM_PLUS_ROOT, root_file)
+        if os.path.exists(src_f):
+            try:
+                shutil.copy2(src_f, os.path.join(dst_root, root_file))
+            except Exception:
+                pass
 
 
 if __name__ == '__main__':
