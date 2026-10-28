@@ -50,6 +50,7 @@ def get_local_releases():
     patterns = {
         'linux': r'trilium-linux-x64-([0-9\.]+)\.tar\.xz',
         'linux-server': r'trilium-linux-x64-server-([0-9\.]+)\.tar\.xz',
+        'linux-server-arm64': r'trilium-linux-arm64-server-([0-9\.]+)\.tar\.xz',
         'windows': r'trilium-windows-x64-([0-9\.]+)\.7z',
         'mac': r'trilium-mac-x64-([0-9\.]+)\.zip',
     }
@@ -123,7 +124,7 @@ def download_and_patch(releases, package_type):
         patch_linux(file_name)
     elif package_type == 'windows':
         patch_windows(file_name)
-    elif package_type == 'linux-server':
+    elif package_type == 'linux-server' or package_type == 'linux-server-arm64':
         patch_linux_server(file_name)
     elif package_type == 'mac':
         patch_mac(file_name)
@@ -218,24 +219,29 @@ def patch_linux_server(file_name):
     print('file_path', file_path)
     decompress_package(file_path)
 
+    if 'arm64' in file_name:
+        patched_root_folder = 'trilium-linux-arm64-server'
+        new_name = f'trilium-{LANG}-linux-arm64-server.tar.xz'
+    else:
+        patched_root_folder = 'trilium-linux-x64-server'
+        new_name = f'trilium-{LANG}-linux-x64-server.tar.xz'
+
     # 打补丁
     # apply patch
-    cmd = f'cp -rf {PATCH_FOLDER}* {TRANS_RELEASE_FOLDER}/trilium-linux-x64-server/'
+    cmd = f'cp -rf {PATCH_FOLDER}* {TRANS_RELEASE_FOLDER}/{patched_root_folder}/'
     print('cmd', cmd)
     os.system(cmd)
 
     # 打tar.xz包
-    new_name = f'trilium-{LANG}-linux-x64-server.tar.xz'
     print('new_name', new_name)
     os.system(f'rm -f {new_name}')
-    patched_root_folder = 'trilium-linux-x64-server'
     os.chdir(TRANS_RELEASE_FOLDER)
     cmd = f'tar -cf - {patched_root_folder} | xz -{COMPRESS_LEVEL} -c > {new_name}'
     print(cmd)
     os.system(cmd)
 
     if DO_DELETE:
-        os.system('rm -rf trilium-linux-x64-server')
+        os.system(f'rm -rf {patched_root_folder}')
 
     return new_name
 
@@ -353,17 +359,23 @@ if __name__ == '__main__':
     releases = version_info['releases']
 
     # linux
-    download_and_patch(releases, 'linux')
+    if 'linux' in releases:
+        download_and_patch(releases, 'linux')
 
     if not DEBUG:
         # linux-server
-        download_and_patch(releases, 'linux-server')
+        if 'linux-server' in releases:
+            download_and_patch(releases, 'linux-server')
+        if 'linux-server-arm64' in releases:
+            download_and_patch(releases, 'linux-server-arm64')
 
         # windows
-        download_and_patch(releases, 'windows')
+        if 'windows' in releases:
+            download_and_patch(releases, 'windows')
 
         # mac
-        download_and_patch(releases, 'mac')
+        if 'mac' in releases:
+            download_and_patch(releases, 'mac')
 
     os.system(f'xdg-open {TRANS_RELEASE_FOLDER}')
 
