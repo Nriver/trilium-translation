@@ -1,5 +1,6 @@
 import os
 import re
+import shutil
 
 import requests
 import urllib3
@@ -11,91 +12,90 @@ from settings import (
     TRANS_RELEASE_FOLDER,
     USE_PROXY,
     PROXIES,
-    VERSION_INFO_OVERRIDE,
-    force_version_info_full,
-    VERSION_INFO_OVERRIDE_BETA,
-    force_version_info_full_beta,
+    ASAR_PATH,
 )
 
-# disable warning if we use proxy
+# 本地 trilium-plus 打包文件目录
+LOCAL_DIST = '/home/nate/gitRepo/trilium-plus/dist/'# disable warning if we use proxy
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 COMPRESS_TOOL = '7z'
 
 COMPRESS_LEVEL = 9
 
-REPO_NAME = 'zadam/trilium'
+REPO_NAME = 'nriver/trilium-plus'
 # TRANS_RELEASE_FOLDER = TRANS_RELEASE_FOLDER
 # PATCH_FOLDER = PATCH_FOLDER
 
 
 # 是否从GitHub下载文件
 # whether download files from GitHub
-DO_DOWNLOAD = True
-# DO_DOWNLOAD = False
+DO_DOWNLOAD = False
 
 # 是否删除临时文件
 # whether delete template files
 DO_DELETE = True
-
-
-# DO_DELETE = False
-
-
 def requests_get(url):
     ret = None
     try:
         ret = requests.get(url, proxies=PROXIES, verify=not USE_PROXY)
     except Exception as e:
-        print('If github is not available, you can set USE_PROXY to True and set PROXIES.')
         print('Exception', e)
     return ret
 
 
-def get_latest_version():
-    """get latest version info"""
-    print('get latest version info')
-    url = f'https://api.github.com/repos/{REPO_NAME}/releases/latest'
-    print(url)
-    res = requests_get(url)
-    version_info = {'name': res.json()['name']}
-
-    # zipball_url 就是源码
-    # version_info['zipball_url'] = res.json()['zipball_url']
-
+def get_local_releases():
+    """从本地 trilium-plus/dist 获取发布文件，直接从文件名解析版本号"""
+    print('get local releases from', LOCAL_DIST)
     patterns = {
-        'linux': r'trilium-linux-x64-[0-9\.]+.tar.xz',
-        'linux-server': r'trilium-linux-x64-server-[0-9\.]+.tar.xz',
-        'windows': r'trilium-windows-x64-[0-9\.]+.zip',
-        'mac': r'trilium-mac-x64-[0-9\.]+.zip',
+        'linux': r'trilium-linux-x64-([0-9\.]+)\.tar\.xz',
+        'linux-server': r'trilium-linux-x64-server-([0-9\.]+)\.tar\.xz',
+        'windows': r'trilium-windows-x64-([0-9\.]+)\.zip',
+        'mac': r'trilium-mac-x64-([0-9\.]+)\.zip',
     }
 
     releases = {}
+    version = None
 
-    for x in res.json()['assets']:
-        for package_type in patterns:
-            if re.match(patterns[package_type], x['name']):
-                releases[package_type] = {'name': x['name'], 'url': x['browser_download_url']}
-    version_info['releases'] = releases
+    for fname in os.listdir(LOCAL_DIST):
+        for package_type, pattern in patterns.items():
+            m = re.match(pattern, fname)
+            if m:
+                if version is None:
+                    version = m.group(1)
+                elif version != m.group(1):
+                    print(f'警告：不同平台版本号不一致 {version} vs {m.group(1)}')
+                releases[package_type] = {'name': fname, 'url': os.path.join(LOCAL_DIST, fname)}
+                break
+
+    if not version:
+        print('未在本地 dist 找到匹配的 trilium 发布包')
+        print('请检查', LOCAL_DIST)
+        raise FileNotFoundError('no local release packages found')
+
+    version_info = {'name': f'v{version} release', 'releases': releases}
+    print('version_info', version_info)
     return version_info
 
-
 def download_file(url, file_name=None):
-    """download file"""
-    print('download file')
+    """copy local file from trilium-plus/dist"""
+    print('copy local file')
     if not file_name:
-        file_name = url.split('/')[-1]
-    print('downloading ...')
-    if DO_DOWNLOAD:
-        with requests.get(url, proxies=PROXIES, verify=False, stream=True) as r:
-            r.raise_for_status()
-            with open(file_name, 'wb') as f:
-                for chunk in r.iter_content(chunk_size=8192):
-                    f.write(chunk)
-    print(f'download complete, file saved as {file_name}')
+        file_name = os.path.basename(url)
+    print(f'copying from {url} -> {file_name}')
+    src = url
+    dst = file_name
+
+    if not os.path.isabs(src):
+        src = os.path.join(LOCAL_DIST, src)
+
+    if not os.path.exists(src):
+        print(f'本地文件不存在: {src}')
+        raise FileNotFoundError(src)
+
+    shutil.copy2(src, dst)
+    print(f'copy complete, file saved as {file_name}')
     return file_name
-
-
 def download_releases(releases):
     for package_type in releases:
         if DEBUG:
@@ -166,7 +166,7 @@ def patch_linux(file_name):
     # asar解包
     # asar unpack
     os.chdir(asar_folder)
-    os.system('asar extract app.asar ./app/')
+    os.system(f'"{ASAR_PATH}" extract app.asar ./app/')
 
     # 打补丁
     # apply patch
@@ -174,7 +174,7 @@ def patch_linux(file_name):
 
     # asar封包
     # asar pack
-    os.system('asar pack app/ app.asar')
+    os.system(f'"{ASAR_PATH}" pack app/ app.asar')
 
     if not DEBUG:
         # 删除解包文件
@@ -254,7 +254,7 @@ def patch_windows(file_name):
 
     # asar解包
     os.chdir(asar_folder)
-    os.system('asar extract app.asar ./app/')
+    os.system(f'"{ASAR_PATH}" extract app.asar ./app/')
 
     # 打补丁
     # apply patch
@@ -262,8 +262,7 @@ def patch_windows(file_name):
 
     # asar封包
     # asar pack
-    os.system('asar pack app/ app.asar')
-
+    os.system(f'"{ASAR_PATH}" pack app/ app.asar')
     # 删除解包文件
     # remove unpacked files
     os.system(f'rm -rf {asar_folder}/app/')
@@ -304,7 +303,7 @@ def patch_mac(file_name):
     # asar解包
     # asar unpack
     os.chdir(asar_folder)
-    os.system('asar extract app.asar ./app/')
+    os.system(f'"{ASAR_PATH}" extract app.asar ./app/')
 
     # 打补丁
     # apply patch
@@ -312,14 +311,13 @@ def patch_mac(file_name):
 
     # asar封包
     # asar pack
-    os.system('asar pack app/ app.asar')
+    os.system(f'"{ASAR_PATH}" pack app/ app.asar')
 
     # 删除解包文件
     # remove unpacked files
     cmd = f'rm -rf "{asar_folder}/app/"'
     print('cmd', cmd)
     os.system(cmd)
-
     # 打zip包
     # make zip package
     new_name = f'trilium-{LANG}-mac-x64.zip'
@@ -353,24 +351,12 @@ if __name__ == '__main__':
     os.makedirs(f'{TRANS_RELEASE_FOLDER}')
     os.chdir(TRANS_RELEASE_FOLDER)
 
-    # 获取更新
-    # get update info
-    if VERSION_INFO_OVERRIDE:
-        if VERSION_INFO_OVERRIDE_BETA:
-            version_info = force_version_info_full_beta
-        else:
-            version_info = force_version_info_full
-    else:
-        version_info = get_latest_version()
+    # 获取本地发布文件信息
+    version_info = get_local_releases()
     print('version_info', version_info)
 
-    # 下载
-    # download
+    # 获取文件并打补丁
     releases = version_info['releases']
-    # download_releases(releases)
-
-    # 打补丁
-    # patch
 
     # linux
     download_and_patch(releases, 'linux')
