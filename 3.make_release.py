@@ -50,7 +50,7 @@ def get_local_releases():
     patterns = {
         'linux': r'trilium-linux-x64-([0-9\.]+)\.tar\.xz',
         'linux-server': r'trilium-linux-x64-server-([0-9\.]+)\.tar\.xz',
-        'windows': r'trilium-windows-x64-([0-9\.]+)\.zip',
+        'windows': r'trilium-windows-x64-([0-9\.]+)\.7z',
         'mac': r'trilium-mac-x64-([0-9\.]+)\.zip',
     }
 
@@ -140,6 +140,13 @@ def decompress_package(file_name):
             os.system(f'tar -xf {file_name[:-3]}')
             if DO_DELETE:
                 os.system(f'rm -f {file_name[:-3]}')
+        except Exception:
+            pass
+    elif file_name.endswith('.7z'):
+        try:
+            os.system(f'7z x -y {file_name}')
+            if DO_DELETE:
+                os.system(f'rm -f {file_name}')
         except Exception:
             pass
     elif file_name.endswith('.zip'):
@@ -234,7 +241,7 @@ def patch_linux_server(file_name):
 
 
 def patch_windows(file_name):
-    if not file_name.endswith('.zip'):
+    if not (file_name.endswith('.zip') or file_name.endswith('.7z')):
         print('windows 文件名有问题')
         exit()
 
