@@ -464,7 +464,7 @@ translation = [
     '>{{ - Zen mode - display only note editor, everything else is hidden}}<',
     '>{{ - focus on quick search input}}<',
     '>{{ - in page search}}<',
-    '- {{edit <a class="external" href="https://github.com/zadam/trilium/wiki/Tree concepts#prefix">prefix</a> of active note clone}}<',
+    '- {{edit <a class="external" href="https://github.com/Nriver/trilium-plus/wiki/Tree concepts#prefix">prefix</a> of active note clone}}<',
     '{{Only in desktop (electron build)}}:',
     '{{in tree pane will switch from tree pane into note title. Enter from note title will switch focus to text editor.}}',
 ]
@@ -837,7 +837,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/type_widgets/options/etapi.js'
 translation = [
     '{{ETAPI is a REST API used to access Trilium instance programmatically, without UI.}}',
-    """{{See more details on <a href="https://github.com/zadam/trilium/wiki/ETAPI">wiki</a> and <a onclick="window.open('etapi/etapi.openapi.yaml')" href="etapi/etapi.openapi.yaml">ETAPI OpenAPI spec</a>.}}""",
+    """{{See more details on <a href="https://github.com/Nriver/trilium-plus/wiki/ETAPI">wiki</a> and <a onclick="window.open('etapi/etapi.openapi.yaml')" href="etapi/etapi.openapi.yaml">ETAPI OpenAPI spec</a>.}}""",
     '>{{Create new ETAPI token}}<',
     '>{{Existing tokens}}<',
     '>{{There are no tokens yet. Click on the button above to create one.}}<',
@@ -1583,7 +1583,7 @@ translation = [
     '{{default title of notes created as children of this note. The value is evaluated as JavaScript string \n                        and thus can be enriched with dynamic content via the injected <code>now</code> and <code>parentNote</code> variables. Examples:}}',
     "{{<code>\\${parentNote.getLabelValue('authorName')}'s literary works</code>}}",
     "{{<code>Log for \\${now.format('YYYY-MM-DD HH:mm:ss')}</code>}}",
-    '{{See <a href="https://github.com/zadam/trilium/wiki/Default-note-title">wiki with details</a>, API docs for <a href="https://zadam.github.io/trilium/backend_api/Note.html">parentNote</a> and <a href="https://day.js.org/docs/en/display/format">now</a> for details.}}',
+    '{{See <a href="https://github.com/Nriver/trilium-plus/wiki/Default-note-title">wiki with details</a>, API docs for <a href="https://zadam.github.io/trilium/backend_api/Note.html">parentNote</a> and <a href="https://day.js.org/docs/en/display/format">now</a> for details.}}',
     "'{{see}} <",
     "{{defines color of the note in note tree, links etc. Use any valid CSS color value like 'red' or #a13d5f}}",
     "{{Defines a keyboard shortcut which will immediately jump to this note. Example: 'ctrl+alt+e'. Requires frontend reload for the change to take effect.}}",
@@ -2539,7 +2539,7 @@ replace_in_file(file_path, translation)
 
 file_path = 'src/public/app/widgets/type_widgets/book.js'
 translation = [
-    """{{This note of type Book doesn't have any child notes so there's nothing to display. See <a href="https://github.com/zadam/trilium/wiki/Book-note">wiki</a> for details.}}""",
+    """{{This note of type Book doesn't have any child notes so there's nothing to display. See <a href="https://github.com/Nriver/trilium-plus/wiki/Book-note">wiki</a> for details.}}""",
 ]
 replace_in_file(file_path, translation)
 
@@ -2629,7 +2629,7 @@ replace_in_file(file_path, translation)
 file_path = 'src/public/app/widgets/type_widgets/render.js'
 translation = [
     ">{{This help note is shown because this note of type Render HTML doesn't have required relation to function properly.}}<",
-    """>{{Render HTML note type is used for <a class="external" href="https://github.com/zadam/trilium/wiki/Scripts">scripting</a>. In short, you have a HTML code note (optionally with some JavaScript) and this note will render it. To make it work, you need to define a <a class="external" href="https://github.com/zadam/trilium/wiki/Attributes">relation</a> called "renderNote" pointing to the HTML note to render.}}<""",
+    """>{{Render HTML note type is used for <a class="external" href="https://github.com/Nriver/trilium-plus/wiki/Scripts">scripting</a>. In short, you have a HTML code note (optionally with some JavaScript) and this note will render it. To make it work, you need to define a <a class="external" href="https://github.com/Nriver/trilium-plus/wiki/Attributes">relation</a> called "renderNote" pointing to the HTML note to render.}}<""",
 ]
 replace_in_file(file_path, translation)
 

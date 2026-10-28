@@ -45,7 +45,7 @@ TRANSLATOR_URL = 'https://github.com/Nriver/trilium-translation'
 
 # 连不到GitHub需要设置代理 USE_PROXY=False 不会用代理
 # Change following proxy setting if you need proxy to connect to GitHub. set USE_PROXY=False can ignore it.
-# USE_PROXY = True
+# # USE_PROXY = True
 USE_PROXY = False
 PROXIES = {
     "http": "http://127.0.0.1:20809",
