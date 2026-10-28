@@ -315,10 +315,7 @@ def patch_mac(file_name):
     os.system(f'rm -f {new_name}')
     patched_root_folder = 'trilium-mac-x64'
     os.chdir(TRANS_RELEASE_FOLDER)
-    if COMPRESS_TOOL == '7z':
-        cmd = f'7z a {new_name} -r {patched_root_folder}'
-    else:
-        cmd = f'zip -{COMPRESS_LEVEL} -r {new_name} {patched_root_folder}'
+    cmd = f'zip -{COMPRESS_LEVEL} -y -r {new_name} {patched_root_folder}'
     print('压缩命令', cmd)
     os.system(cmd)
 
