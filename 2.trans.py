@@ -2,7 +2,7 @@ import os
 import re
 import shutil
 
-from settings import BASE_FOLDER, PATCH_FOLDER, TRANSLATOR_URL, LANG
+from settings import BASE_FOLDER, PATCH_FOLDER, TRANSLATOR_URL, LANG, ASAR_PATH
 from translations import translation_dict
 
 script_path = os.path.dirname(os.path.abspath(__file__))
@@ -17,7 +17,9 @@ os.chdir(BASE_PATH)
 TRANSLATOR_LABEL = translation_dict['translator']
 
 if not os.path.exists(f'{TARGET_PATH}src/public/'):
-    os.system(f'cd {CLIENT_PATH}resources && asar extract app.asar ./app/')
+    import subprocess
+    resources_dir = os.path.join(CLIENT_PATH, 'resources')
+    subprocess.run([ASAR_PATH, 'extract', 'app.asar', './app/'], cwd=resources_dir)
 # 是否要翻译属性标签(可能会影响代码, 小心使用)
 # Whether to translate the note tag(may BREAK the code, use with care)
 TRANSLATE_NOTE_TAG = True

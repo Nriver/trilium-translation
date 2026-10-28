@@ -115,3 +115,6 @@ force_version_info_full_beta = {
         },
     },
 }
+
+ASAR_PATH = '/home/nate/.config/nvm/versions/node/v24.22.1/bin/asar'
+

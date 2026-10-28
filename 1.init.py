@@ -3,105 +3,54 @@ import re
 import shutil
 from zipfile import ZipFile
 
-import requests
-import urllib3
-
 from settings import (
     BASE_FOLDER,
-    USE_PROXY,
-    PROXIES,
     VERSION_INFO_OVERRIDE,
     force_version_info,
     VERSION_INFO_OVERRIDE_BETA,
     force_version_info_beta,
 )
 
-# disable warning if we use proxy
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
+# 源文件路径
+TRILIUM_PLUS_ROOT = '/home/nate/gitRepo/trilium-plus/'
+TRILIUM_PLUS_DIST = os.path.join(TRILIUM_PLUS_ROOT, 'dist/')
 
 CLIENT_FOLDER = BASE_FOLDER + 'trilium-linux-x64'
-REPO_NAME = 'zadam/trilium'
-# regex match which file to download if multiple files exists
-PREFERRED_RELEASE_NAME_PATTERN = 'trilium-linux-x64-.*?.tar.xz'
-SOURCE_CODE_NAME_PATTERN = 'trilium-linux-x64-.*?.tar.xz'
 
 CMD_STOP_SERVICE = """pkill -9 trilium"""
 
-# 是否从GitHub下载文件
-# whether download files from GitHub
-DO_DOWNLOAD = True
-
-# 是否删除临时文件
-# whether delete template files
-# DO_DELETE = False
+DO_DOWNLOAD = False
 DO_DELETE = True
 
 
-def requests_get(url):
-    ret = None
-    try:
-        ret = requests.get(url, proxies=PROXIES, verify=not USE_PROXY)
-    except Exception as e:
-        print(
-            'If github is not available, you can set USE_PROXY to True and set PROXIES to your proxy.'
-        )
-        print('Exception', e)
-    return ret
-
-
-def get_latest_version():
-    """get latest version info"""
-    print('get latest version info')
-    url = f'https://api.github.com/repos/{REPO_NAME}/releases/latest'
-    print(url)
-    res = requests_get(url)
-    version_info = {}
-
-    # zipball_url is the source code
-    version_info['zipball_url'] = res.json()['zipball_url']
-
-    version_info['name'] = res.json()['name']
-    for x in res.json()['assets']:
-        if not re.match(PREFERRED_RELEASE_NAME_PATTERN, x['name']):
-            continue
-        version_info['browser_download_url'] = x['browser_download_url']
-        break
-    if 'browser_download_url' not in version_info:
-        print(
-            'Did not find a matching release! Please check file name and modify PREFERRED_RELEASE_NAME_PATTERN.'
-        )
-        exit()
-    print(f'latest version is {version_info["name"]}')
-    return version_info
-
-
-def backup_old_service():
-    backup_suffix = '_old'
-    backup_dir = CLIENT_FOLDER + backup_suffix
-    if os.path.exists(backup_dir):
-        shutil.rmtree(backup_dir)
-    os.mkdir(backup_dir)
-
-    if os.path.exists(CLIENT_FOLDER):
-        os.system(f'mv {CLIENT_FOLDER} {CLIENT_FOLDER}{backup_suffix}')
-        print(f'old version is moved to {CLIENT_FOLDER}{backup_suffix}')
-
-
-def download_file(url, file_name=None):
-    """download file"""
-    print('download file')
-    if not file_name:
-        file_name = url.split('/')[-1]
-    print('downloading ...')
-    if DO_DOWNLOAD:
-        with requests.get(url, proxies=PROXIES, verify=False, stream=True) as r:
-            r.raise_for_status()
-            with open(file_name, 'wb') as f:
-                for chunk in r.iter_content(chunk_size=8192):
-                    f.write(chunk)
-    print(f'download complete, file saved as {file_name}')
-    return file_name
+def copytree_ignore_broken(src, dst):
+    os.makedirs(dst, exist_ok=True)
+    for item in os.listdir(src):
+        s = os.path.join(src, item)
+        d = os.path.join(dst, item)
+        if os.path.islink(s):
+            try:
+                linkto = os.readlink(s)
+                if os.path.lexists(d):
+                    try:
+                        os.remove(d)
+                    except:
+                        pass
+                os.symlink(linkto, d)
+            except Exception:
+                continue
+        elif os.path.isdir(s):
+            copytree_ignore_broken(s, d)
+        else:
+            try:
+                if os.path.lexists(d):
+                    try:
+                        os.remove(d)
+                    except:
+                        pass
+                shutil.copy2(s, d)
+            except Exception:
+                continue
 
 
 def stop_service():
@@ -115,30 +64,40 @@ def clean_cache():
     os.system('rm -rf ~/.config/Trilium Notes/GPUCache/')
 
 
-def decompress_package(file_name):
-    print(f'decompress {file_name}')
-    if file_name.endswith('tar.xz'):
-        try:
-            os.system(f'xz -d {file_name}')
-        except:
-            pass
-        os.system(f'tar -xf {file_name[:-3]}')
-        if DO_DELETE:
-            os.system(f'rm -f {file_name[:-3]}')
-
-
-def decompress_source_package(file_name):
-    if file_name.endswith('.zip'):
-        with ZipFile(file_name, 'r') as zip:
-            # printing all the contents of the zip file
-            extracted_folder = zip.namelist()[0].split('/')[0]
-        if extracted_folder:
-            os.system(f'unzip -o {file_name}')
-            os.system('pwd')
-            if DO_DELETE:
-                os.system(f'rm -rf trilium-src.zip')
-            print(extracted_folder)
-            os.system(f'mv {extracted_folder} trilium-src')
+def prepare_from_local():
+    """从本地 trilium-plus 获取编译好的包和源码，不下载"""
+    print(f'从本地获取 trilium-plus 文件: {TRILIUM_PLUS_ROOT}')
+    
+    # 获取编译好的包
+    src_client = os.path.join(TRILIUM_PLUS_DIST, 'trilium-linux-x64')
+    if os.path.exists(src_client):
+        print(f'复制编译好的包: {src_client} -> {CLIENT_FOLDER}')
+        if os.path.exists(CLIENT_FOLDER):
+            shutil.rmtree(CLIENT_FOLDER)
+        shutil.copytree(src_client, CLIENT_FOLDER)
+    else:
+        print('未找到编译好的 trilium-linux-x64 包')
+        exit()
+    
+    # 获取源码
+    src_code_dir = None
+    for candidate in [
+        os.path.join(TRILIUM_PLUS_DIST, 'trilium-src'),
+        os.path.join(TRILIUM_PLUS_DIST, 'trilium-linux-x64-src'),
+    ]:
+        if os.path.exists(candidate):
+            src_code_dir = candidate
+            break
+    
+    if src_code_dir:
+        print(f'复制源码: {src_code_dir} -> {BASE_FOLDER}trilium-src')
+        dst_src = f'{BASE_FOLDER}trilium-src'
+        if os.path.exists(dst_src):
+            shutil.rmtree(dst_src)
+        copytree_ignore_broken(src_code_dir, dst_src)
+    else:
+        print('未找到源码目录')
+        exit()
 
 
 if __name__ == '__main__':
@@ -153,33 +112,9 @@ if __name__ == '__main__':
     print('BASE_FOLDER', BASE_FOLDER)
     os.chdir(BASE_FOLDER)
 
-    if VERSION_INFO_OVERRIDE:
-        if VERSION_INFO_OVERRIDE_BETA:
-            version_info = force_version_info_beta
-        else:
-            version_info = force_version_info
-    else:
-        version_info = get_latest_version()
-
-    print(version_info)
     stop_service()
-
-    # 翻译不生效可以尝试删除缓存
-    # If the translation doesn't work, clean the cache files may help
     clean_cache()
-    # backup_old_service()
 
-    # 下载release
-    # get release file
-    file_name = download_file(version_info['browser_download_url'])
-    print(f'file_name {file_name}')
-    decompress_package(file_name)
-
-    # 下载源码
-    # get source code
-    file_name = download_file(version_info['zipball_url'], 'trilium-src.zip')
-    file_name = 'trilium-src.zip'
-    print(f'file_name {file_name}')
-    decompress_source_package(file_name)
+    prepare_from_local()
 
     print('finished!')
