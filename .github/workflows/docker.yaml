@@ -19,9 +19,9 @@ jobs:
 
       - name: Check and download remote files
         run: |
-          wget https://github.com/Nriver/trilium-translation/releases/latest/download/trilium-cn-linux-x64-server.tar.xz 
-          tar -xf trilium-cn-linux-x64-server.tar.xz 
-          rm -f trilium-cn-linux-x64-server.tar.xz
+          wget https://github.com/Nriver/trilium-translation/releases/latest/download/trilium-linux-x64-server-0.64.0-cn.tar.xz 
+          tar -xf trilium-linux-x64-server-0.64.0-cn.tar.xz 
+          rm -f trilium-linux-x64-server-0.64.0-cn.tar.xz
           sed -i '/electron/d' ./trilium-linux-x64-server/package.json
 
       - name: Show files
