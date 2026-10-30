@@ -35,6 +35,16 @@ DO_DOWNLOAD = False
 DO_DELETE = True
 
 
+def add_lang_suffix(file_name):
+    """在原文件名基础上添加语言后缀，保留版本号信息
+    例如 trilium-linux-x64-0.60.4.tar.xz -> trilium-linux-x64-0.60.4-cn.tar.xz
+    """
+    for ext in ('.tar.xz', '.7z', '.zip'):
+        if file_name.endswith(ext):
+            return f'{file_name[:-len(ext)]}-{LANG}{ext}'
+    return f'{file_name}-{LANG}'
+
+
 def requests_get(url):
     ret = None
     try:
@@ -193,7 +203,7 @@ def patch_linux(file_name):
         os.system(f'rm -rf {asar_folder}/app/')
 
         # 打tar.xz包
-        new_name = f'trilium-{LANG}-linux-x64.tar.xz'
+        new_name = add_lang_suffix(file_name)
         print('new_name', new_name)
         os.system(f'rm -f {new_name}')
         patched_root_folder = 'trilium-linux-x64'
@@ -221,10 +231,9 @@ def patch_linux_server(file_name):
 
     if 'arm64' in file_name:
         patched_root_folder = 'trilium-linux-arm64-server'
-        new_name = f'trilium-{LANG}-linux-arm64-server.tar.xz'
     else:
         patched_root_folder = 'trilium-linux-x64-server'
-        new_name = f'trilium-{LANG}-linux-x64-server.tar.xz'
+    new_name = add_lang_suffix(file_name)
 
     # 打补丁
     # apply patch
@@ -275,7 +284,7 @@ def patch_windows(file_name):
     os.system(f'rm -rf {asar_folder}/app/')
 
     # 打7z包
-    new_name = f'trilium-{LANG}-windows-x64.7z'
+    new_name = add_lang_suffix(file_name)
     print('new_name', new_name)
     os.system(f'rm -f {new_name}')
     patched_root_folder = 'trilium-windows-x64'
@@ -323,7 +332,7 @@ def patch_mac(file_name):
     os.system(cmd)
     # 打zip包
     # make zip package
-    new_name = f'trilium-{LANG}-mac-x64.zip'
+    new_name = add_lang_suffix(file_name)
     print('new_name', new_name)
     os.system(f'rm -f {new_name}')
     patched_root_folder = 'trilium-mac-x64'
