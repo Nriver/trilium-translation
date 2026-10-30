@@ -39,7 +39,7 @@ def add_lang_suffix(file_name):
     """在原文件名基础上添加语言后缀，保留版本号信息
     例如 trilium-linux-x64-0.60.4.tar.xz -> trilium-linux-x64-0.60.4-cn.tar.xz
     """
-    for ext in ('.tar.xz', '.7z', '.zip'):
+    for ext in ('.tar.xz', '.7z', '.zip', '.deb'):
         if file_name.endswith(ext):
             return f'{file_name[:-len(ext)]}-{LANG}{ext}'
     return f'{file_name}-{LANG}'
@@ -63,6 +63,7 @@ def get_local_releases():
         'linux-server-arm64': r'trilium-linux-arm64-server-([0-9\.]+)\.tar\.xz',
         'windows': r'trilium-windows-x64-([0-9\.]+)\.7z',
         'mac': r'trilium-mac-x64-([0-9\.]+)\.zip',
+        'debian': r'trilium_([0-9\.]+)_(?:amd64|arm64|i386)\.deb',
     }
 
     releases = {}
@@ -138,6 +139,8 @@ def download_and_patch(releases, package_type):
         patch_linux_server(file_name)
     elif package_type == 'mac':
         patch_mac(file_name)
+    elif package_type == 'debian':
+        patch_debian(file_name)
 
 
 def decompress_package(file_name):
@@ -347,6 +350,70 @@ def patch_mac(file_name):
     return new_name
 
 
+def patch_debian(file_name):
+    if not file_name.endswith('.deb'):
+        print('debian 文件名有问题')
+        print('debian wrong file name')
+        exit()
+
+    file_path = TRANS_RELEASE_FOLDER + file_name
+    print('file_path', file_path)
+
+    # 解包deb
+    # extract deb package
+    deb_folder = TRANS_RELEASE_FOLDER + 'trilium-deb'
+    os.system(f'rm -rf "{deb_folder}"')
+    cmd = f'dpkg-deb -R "{file_path}" "{deb_folder}"'
+    print('cmd', cmd)
+    os.system(cmd)
+
+    if DO_DELETE:
+        # 删除复制过来的原始deb包
+        # remove the copied original deb package
+        os.system(f'rm -f "{file_path}"')
+
+    asar_folder = f'{deb_folder}/usr/lib/trilium/resources'
+    asar_path = asar_folder + '/app.asar'
+    print(asar_path)
+
+    # asar解包
+    # asar unpack
+    os.chdir(asar_folder)
+    os.system(f'"{ASAR_PATH}" extract app.asar ./app/')
+
+    # 打补丁
+    # apply patch
+    os.system(f'cp -rf {PATCH_FOLDER}* "{asar_folder}/app/"')
+
+    # asar封包
+    # asar pack
+    os.system(f'"{ASAR_PATH}" pack app/ app.asar')
+
+    if not DEBUG:
+        # 删除解包文件
+        # remove unpacked files
+        os.system(f'rm -rf "{asar_folder}/app/"')
+
+    # 回到发布目录，避免影响后续打包
+    # return to release folder to avoid affecting subsequent packaging
+    os.chdir(TRANS_RELEASE_FOLDER)
+
+    # 重新打deb包
+    # make deb package
+    new_name = add_lang_suffix(file_name)
+    print('new_name', new_name)
+    new_file_path = TRANS_RELEASE_FOLDER + new_name
+    os.system(f'rm -f "{new_file_path}"')
+    cmd = f'dpkg-deb --build --root-owner-group "{deb_folder}" "{new_file_path}"'
+    print(cmd)
+    os.system(cmd)
+
+    if DO_DELETE:
+        os.system(f'rm -rf "{deb_folder}"')
+
+    return new_name
+
+
 if __name__ == '__main__':
     print(f'DEBUG is {DEBUG}')
 
@@ -372,6 +439,10 @@ if __name__ == '__main__':
         download_and_patch(releases, 'linux')
 
     if not DEBUG:
+        # debian
+        if 'debian' in releases:
+            download_and_patch(releases, 'debian')
+
         # linux-server
         if 'linux-server' in releases:
             download_and_patch(releases, 'linux-server')
