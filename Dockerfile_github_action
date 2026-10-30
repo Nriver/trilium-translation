@@ -1,5 +1,5 @@
 # Dockerfile for build up the image
-FROM node:18.18.2-alpine
+FROM node:24.22.1-alpine
 
 LABEL MAINTAINER https://github.com/Nriver/trilium-translation
 
@@ -26,6 +26,7 @@ RUN apk add --virtual .build-dependencies \
     && apk del .build-dependencies \
     && apk add curl jq \
     && npm prune --omit=dev \
+    && mkdir -p ./node_modules/@excalidraw/excalidraw/dist/excalidraw-assets \
     && mv -f ./Virgil.ttf ./node_modules/@excalidraw/excalidraw/dist/excalidraw-assets/Virgil.woff2 \
     && rm -rf /var/cache/apk/* \
     && rm -rf /var/log
