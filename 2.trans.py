@@ -813,6 +813,7 @@ translation = [
     '>{{Actions}}<',
     '"{{Delete this backup}}"',
     '`{{Are you sure you want to delete backup "${filePath}"?}}`',
+    '{{Backup "${fileName}" has been deleted}}',
 ]
 replace_in_file(file_path, translation)
 
