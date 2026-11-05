@@ -294,6 +294,8 @@ translation = [
     '>{{Build date:}}<',
     '>{{Build revision:}}<',
     '>{{Data directory:}}<',
+    '"{{Open data directory}}"',
+    '"{{Copy data directory path}}"',
 ]
 # replace_in_file(file_path, translation, TARGET_PATH)
 replace_in_file(file_path, translation)
@@ -802,7 +804,15 @@ translation = [
     'showMessage(`{{Database has been backed up to }}',
     'showMessage("{{Options changed have been saved.}}"',
     '>{{Existing backups}}<',
-    '"{{no backup yet}}"',
+    '"{{No backups yet.}}"',
+    '>{{Current database size:}} <',
+    '>{{calculating...}}<',
+    '>{{Path}}<',
+    '>{{Backup time}}<',
+    '>{{File size}}<',
+    '>{{Actions}}<',
+    '"{{Delete this backup}}"',
+    '`{{Are you sure you want to delete backup "${filePath}"?}}`',
 ]
 replace_in_file(file_path, translation)
 
