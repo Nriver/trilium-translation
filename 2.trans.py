@@ -3385,6 +3385,24 @@ with open(dest_path, 'r') as f:
     if target_element in content:
         content = content.replace(target_element, new_element)
 
+    # ckeditor 待办列表通过中文的 【 】 触发
+    # ckeditor todo list trigger by chinese 【 】
+    target_element = r'/^\[\s?\]\s$/'
+    new_element = r'/^(?:\[\s?\]|【\s?】)\s$/'
+    if target_element in content:
+        content = content.replace(target_element, new_element)
+    else:
+        print('WARNING: ckeditor todoList autoformat patch not applied, pattern not found.')
+
+    # ckeditor 已完成待办列表通过中文的 【x】 触发
+    # ckeditor checked todo list trigger by chinese 【x】
+    target_element = r'/^\[\s?x\s?\]\s$/'
+    new_element = r'/^(?:\[\s?x\s?\]|【\s?[xXｘＸ]\s?】)\s$/'
+    if target_element in content:
+        content = content.replace(target_element, new_element)
+    else:
+        print('WARNING: ckeditor checkTodoList autoformat patch not applied, pattern not found.')
+
 with open(dest_path, 'w') as f:
     f.write(content)
 
