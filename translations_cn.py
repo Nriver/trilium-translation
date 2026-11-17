@@ -262,6 +262,7 @@ translation_dict = {
     'Restore this revision': '恢复此历史版本',
     'Delete this revision': '删除此历史版本',
     'Download': '下载',
+    '`Download "${fileName}"?`': '`确定下载 "${fileName}" 吗?`',
     'This revision was last edited on': '这个历史版本最后编辑于',
     'Do you want to restore this revision? This will overwrite current title/content of the note with this revision.': '确定要恢复这个历史版本吗? 这会覆盖掉当前版本的标题和内容.',
     'Do you want to delete this revision? This action will delete revision title and content, but still preserve revision metadata.': '确定要删除这个历史版本吗? 这会删掉历史版本的标题和内容, 但元信息会保留.',

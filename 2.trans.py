@@ -1306,6 +1306,12 @@ translation = [
 ]
 replace_in_file(file_path, translation)
 
+file_path = 'src/public/app/services/open.js'
+translation = [
+    '{{`Download "${fileName}"?`}}',
+]
+replace_in_file(file_path, translation)
+
 file_path = 'src/public/app/menus/launcher_context_menu.js'
 translation = [
     "title: '{{Add a note launcher}}",

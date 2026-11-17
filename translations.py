@@ -262,6 +262,7 @@ translation_dict = {
     'Restore this revision': '',
     'Delete this revision': '',
     'Download': '',
+    '`Download "${fileName}"?`': '',
     'This revision was last edited on': '',
     'Do you want to restore this revision? This will overwrite current title/content of the note with this revision.': '',
     'Do you want to delete this revision? This action will delete revision title and content, but still preserve revision metadata.': '',
