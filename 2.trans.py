@@ -1474,6 +1474,8 @@ translation = [
     "title: '{{Paste after}}",
     "title: '{{Convert to attachment}}'",
     "title: '{{Copy note path to clipboard}}",
+    "title: '{{Copy deep link to clipboard}}",
+    '{{Deep link copied to clipboard}}',
     # special colon
     "title: `{{Duplicate subtree}}",
     '`{{Are you sure you want to convert note selected notes into attachments of their parent notes?}}`',

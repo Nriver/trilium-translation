@@ -1561,6 +1561,8 @@ translation_dict = {
     'Promoted Attributes ribbon tab will automatically open if promoted attributes are present on the note': '如果笔记中存在升级属性，升级属性功能选项卡将自动打开',
     'Edited Notes ribbon tab will automatically open on day notes': '日记笔记自动打开编辑过的笔记选项',
     'Copy note path to clipboard': '复制笔记路径到剪贴板',
+    'Copy deep link to clipboard': '复制深层链接到剪贴板',
+    'Deep link copied to clipboard': '深层链接已复制到剪贴板',
     'Cannot move notes here.': '无法在此移动笔记。',
     ' Save revision': '保存笔记历史',
     'Upload attachments to note': '上传附件到笔记',

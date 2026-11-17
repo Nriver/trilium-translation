@@ -1587,6 +1587,8 @@ translation_dict = {
     'Promoted Attributes ribbon tab will automatically open if promoted attributes are present on the note': '',
     'Edited Notes ribbon tab will automatically open on day notes': '',
     'Copy note path to clipboard': '',
+    'Copy deep link to clipboard': '',
+    'Deep link copied to clipboard': '',
     'Cannot move notes here.': '',
     ' Save revision': '',
     'Upload attachments to note': '',
