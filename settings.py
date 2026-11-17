@@ -116,10 +116,10 @@ force_version_info_full_beta = {
     },
 }
 
-ASAR_PATH = '/home/nate/.config/nvm/versions/node/v24.22.1/bin/asar'
+ASAR_PATH = '/home/nate/.config/nvm/versions/node/v24.22.3/bin/asar'
 
 
-ASAR_PATH = '/home/nate/.config/nvm/versions/node/v24.22.1/bin/asar'
-WEBPACK_PATH = '/home/nate/.config/nvm/versions/node/v24.22.1/bin/webpack'
+ASAR_PATH = '/home/nate/.config/nvm/versions/node/v24.22.3/bin/asar'
+WEBPACK_PATH = '/home/nate/.config/nvm/versions/node/v24.22.3/bin/webpack'
 
-NVM_BIN = '/home/nate/.config/nvm/versions/node/v24.22.1/bin'
+NVM_BIN = '/home/nate/.config/nvm/versions/node/v24.22.3/bin'

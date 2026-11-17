@@ -1,5 +1,5 @@
 # Dockerfile for build up the image
-FROM node:24.22.1-alpine
+FROM node:24.22.3-alpine
 
 LABEL MAINTAINER https://github.com/Nriver/trilium-translation
 
