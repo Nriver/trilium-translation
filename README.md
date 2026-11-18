@@ -91,6 +91,9 @@ Math formular
 
 # 🐳 How to run server with docker
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/trilium-translation)
+
+
 For Trilium Notes server, you can download
 my [docker-compose.yml](https://github.com/Nriver/trilium-translation/blob/main/docker-compose.yml)
 Then run it with docker simply by executing:
