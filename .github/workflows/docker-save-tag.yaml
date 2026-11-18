@@ -101,4 +101,4 @@ jobs:
             $(printf '${{ secrets.DOCKERHUB_USERNAME }}/trilium-cn@sha256:%s ' *)
 
       - name: Inspect image
-        run: docker buildx imagetools inspect ${{ secrets.DOCKERHUB_USERNAME }}/trilium-cn:0.64.1
+        run: docker buildx imagetools inspect ${{ secrets.DOCKERHUB_USERNAME }}/trilium-cn:0.64.2
