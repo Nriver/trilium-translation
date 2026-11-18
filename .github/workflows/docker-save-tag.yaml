@@ -30,10 +30,10 @@ jobs:
 
       - name: Check and download remote files
         run: |
-          wget https://github.com/Nriver/trilium-translation/releases/download/v0.64.1_20261106/trilium-linux-x64-server-0.64.1-cn.tar.xz
-          # wget https://github.com/Nriver/trilium-translation/releases/latest/download/trilium-linux-x64-server-0.64.1-cn.tar.xz 
-          tar -xf trilium-linux-x64-server-0.64.1-cn.tar.xz 
-          rm -f trilium-linux-x64-server-0.64.1-cn.tar.xz
+          wget https://github.com/Nriver/trilium-translation/releases/download/v0.64.2_20261117/trilium-linux-x64-server-0.64.2-cn.tar.xz
+          # wget https://github.com/Nriver/trilium-translation/releases/latest/download/trilium-linux-x64-server-0.64.2-cn.tar.xz 
+          tar -xf trilium-linux-x64-server-0.64.2-cn.tar.xz 
+          rm -f trilium-linux-x64-server-0.64.2-cn.tar.xz
           sed -i '/electron/d' ./trilium-linux-x64-server/package.json
 
       - name: Show files
@@ -97,7 +97,7 @@ jobs:
       - name: Create manifest list and push
         working-directory: /tmp/digests
         run: |
-          docker buildx imagetools create -t ${{ secrets.DOCKERHUB_USERNAME }}/trilium-cn:0.64.1 \
+          docker buildx imagetools create -t ${{ secrets.DOCKERHUB_USERNAME }}/trilium-cn:0.64.2 \
             $(printf '${{ secrets.DOCKERHUB_USERNAME }}/trilium-cn@sha256:%s ' *)
 
       - name: Inspect image
