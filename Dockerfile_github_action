@@ -3,6 +3,9 @@ FROM node:24.22.3-alpine
 
 LABEL MAINTAINER https://github.com/Nriver/trilium-translation
 
+# 服务端不需要 Electron 二进制文件，避免下载
+ENV ELECTRON_SKIP_BINARY_DOWNLOAD=1
+
 ADD trilium-linux-x64-server /app
 WORKDIR /app
 
@@ -22,10 +25,11 @@ RUN apk add --virtual .build-dependencies \
     && cp ./node_modules/@excalidraw/excalidraw/dist/excalidraw-assets/Virgil.woff2 ./Virgil.ttf \
     && rm -rf ./node_modules \
     && rm -rf ./node \
-    && npm ci --production \
+    && npm install -g pnpm@11.28.4 \
+    && pnpm install --prod --no-frozen-lockfile --node-linker=hoisted \
     && apk del .build-dependencies \
     && apk add curl jq \
-    && npm prune --omit=dev \
+    && pnpm prune --prod \
     && mkdir -p ./node_modules/@excalidraw/excalidraw/dist/excalidraw-assets \
     && mv -f ./Virgil.ttf ./node_modules/@excalidraw/excalidraw/dist/excalidraw-assets/Virgil.woff2 \
     && rm -rf /var/cache/apk/* \
