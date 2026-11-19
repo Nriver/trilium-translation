@@ -1390,6 +1390,8 @@ translation_dict = {
     'Enable Line Wrap (change might need a frontend reload to take effect)': '',
     'Tray': '',
     'Enable tray (Trilium needs to be restarted for this change to take effect)': '',
+    'Close to tray (keep Trilium running in the system tray when the window is closed)': '',
+    'Start to tray (start Trilium minimized to the system tray instead of showing the main window; takes effect after restarting Trilium)': '',
     'Note revision has been created.': '',
     'Switching to desktop version': '',
     'Switching to mobile version': '',

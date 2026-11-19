@@ -947,6 +947,8 @@ file_path = 'src/public/app/widgets/type_widgets/options/other/tray.js'
 translation = [
     '>{{Tray}}<',
     '{{Enable tray (Trilium needs to be restarted for this change to take effect)}}',
+    '{{Close to tray (keep Trilium running in the system tray when the window is closed)}}',
+    '{{Start to tray (start Trilium minimized to the system tray instead of showing the main window; takes effect after restarting Trilium)}}',
 ]
 replace_in_file(file_path, translation)
 
