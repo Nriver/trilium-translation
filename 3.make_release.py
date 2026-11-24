@@ -60,6 +60,10 @@ DO_DOWNLOAD = False
 # whether delete template files
 DO_DELETE = True
 
+# 不生成压缩包，保留打成补丁后的目录，供 build-linux.sh 直接复制安装
+# skip creating archives, keep patched directories for build-linux.sh to install directly
+NO_ARCHIVE = False
+
 
 @contextlib.contextmanager
 def release_workdir():
@@ -173,13 +177,21 @@ def download_and_patch(releases, package_type):
 
         download_release(releases, package_type)
         file_name = releases[package_type]['name']
-        new_name = PACKAGE_PATCHERS[package_type](file_name)
+        result = PACKAGE_PATCHERS[package_type](file_name)
 
-        new_path = os.path.join(TRANS_RELEASE_FOLDER, new_name)
+        if NO_ARCHIVE:
+            # 不生成压缩包时，补丁函数返回的是保留下来的目录名
+            new_path = os.path.join(TRANS_RELEASE_FOLDER, result)
+            if not os.path.isdir(new_path):
+                raise RuntimeError(f'{package_type} 打包失败：没有生成目录 {new_path}')
+            print(f'[{package_type}] 目录已生成: {result}')
+            return result
+
+        new_path = os.path.join(TRANS_RELEASE_FOLDER, result)
         if not os.path.exists(new_path):
             raise RuntimeError(f'{package_type} 打包失败：没有生成 {new_path}')
-        print(f'[{package_type}] 打包完成: {new_name}')
-        return new_name
+        print(f'[{package_type}] 打包完成: {result}')
+        return result
 
 
 def decompress_package(file_name):
@@ -248,10 +260,14 @@ def patch_linux(file_name):
         # remove unpacked files before archiving
         os.system(f'rm -rf "{asar_folder}/app/"')
 
+        patched_root_folder = 'trilium-linux-x64'
+        if NO_ARCHIVE:
+            print(f'跳过压缩，保留目录: {patched_root_folder}')
+            return patched_root_folder
+
         # 打tar.xz包
         new_name = add_lang_suffix(file_name)
         print('new_name', new_name)
-        patched_root_folder = 'trilium-linux-x64'
         os.chdir(TRANS_RELEASE_FOLDER)
         os.system(f'rm -f "{new_name}"')
 
@@ -280,7 +296,6 @@ def patch_linux_server(file_name):
             patched_root_folder = 'trilium-linux-arm64-server'
         else:
             patched_root_folder = 'trilium-linux-x64-server'
-        new_name = add_lang_suffix(file_name)
 
         # 打补丁
         # apply patch
@@ -288,7 +303,12 @@ def patch_linux_server(file_name):
         print('cmd', cmd)
         os.system(cmd)
 
+        if NO_ARCHIVE:
+            print(f'跳过压缩，保留目录: {patched_root_folder}')
+            return patched_root_folder
+
         # 打tar.xz包
+        new_name = add_lang_suffix(file_name)
         print('new_name', new_name)
         os.chdir(TRANS_RELEASE_FOLDER)
         os.system(f'rm -f "{new_name}"')
@@ -331,10 +351,14 @@ def patch_windows(file_name):
         # remove unpacked files
         os.system(f'rm -rf "{asar_folder}/app/"')
 
+        patched_root_folder = 'trilium-windows-x64'
+        if NO_ARCHIVE:
+            print(f'跳过压缩，保留目录: {patched_root_folder}')
+            return patched_root_folder
+
         # 打7z包
         new_name = add_lang_suffix(file_name)
         print('new_name', new_name)
-        patched_root_folder = 'trilium-windows-x64'
         os.chdir(TRANS_RELEASE_FOLDER)
         os.system(f'rm -f "{new_name}"')
         cmd = f'7z a "{new_name}" -r {patched_root_folder}'
@@ -381,11 +405,16 @@ def patch_mac(file_name):
         cmd = f'rm -rf "{asar_folder}/app/"'
         print('cmd', cmd)
         os.system(cmd)
+
+        patched_root_folder = 'trilium-mac-x64'
+        if NO_ARCHIVE:
+            print(f'跳过压缩，保留目录: {patched_root_folder}')
+            return patched_root_folder
+
         # 打zip包
         # make zip package
         new_name = add_lang_suffix(file_name)
         print('new_name', new_name)
-        patched_root_folder = 'trilium-mac-x64'
         os.chdir(TRANS_RELEASE_FOLDER)
         os.system(f'rm -f "{new_name}"')
         cmd = f'zip -{COMPRESS_LEVEL} -y -r "{new_name}" {patched_root_folder}'
@@ -446,6 +475,10 @@ def patch_debian(file_name):
         # return to release folder to avoid affecting subsequent packaging
         os.chdir(TRANS_RELEASE_FOLDER)
 
+        if NO_ARCHIVE:
+            print('跳过压缩，保留目录: trilium-deb')
+            return 'trilium-deb'
+
         # 重新打deb包
         # make deb package
         new_name = add_lang_suffix(file_name)
@@ -485,11 +518,17 @@ PACKAGE_ROOT_FOLDERS = {
 def parse_args():
     parser = argparse.ArgumentParser(description='打包 Trilium 中文版发布文件')
     parser.add_argument('-y', '--yes', action='store_true', help='自动确认所有交互提示')
+    parser.add_argument(
+        '--no-archive',
+        action='store_true',
+        help='不生成压缩包，保留打好补丁的目录，供 build-linux.sh 直接安装',
+    )
     return parser.parse_args()
 
 
 if __name__ == '__main__':
     args = parse_args()
+    NO_ARCHIVE = args.no_archive
 
     print(f'DEBUG is {DEBUG}')
     print('本次打包列表:', PACKAGES)
