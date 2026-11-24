@@ -1,9 +1,19 @@
+import argparse
 import os
 import re
 import shutil
 
 from settings import BASE_FOLDER, PATCH_FOLDER, TRANSLATOR_URL, LANG, ASAR_PATH, WEBPACK_PATH, NVM_BIN
 from translations import translation_dict
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='应用 Trilium 中文翻译并重新编译前端')
+    parser.add_argument('-y', '--yes', action='store_true', help='自动确认所有交互提示')
+    return parser.parse_args()
+
+
+args = parse_args()
 
 script_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -3432,7 +3442,8 @@ if LANG == 'cn':
     if os.path.exists('demo-cn.zip'):
         os.system('rm -f demo-cn.zip')
     # trilium需要读取unicode格式的zip文件名, 否则会出现乱码
-    os.system('cd demo-cn && 7z -scsutf-8 a demo-cn.zip ./* && mv demo-cn.zip ../')
+    overwrite_flag = '-y ' if args.yes else ''
+    os.system(f'cd demo-cn && 7z -scsutf-8 a {overwrite_flag}demo-cn.zip ./* && mv demo-cn.zip ../')
     src_path = f'demo-cn.zip'
     dest_path = f'{PATCH_FOLDER}/db/demo.zip'
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)

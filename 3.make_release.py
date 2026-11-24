@@ -1,3 +1,4 @@
+import argparse
 import contextlib
 import os
 import re
@@ -17,7 +18,7 @@ from settings import (
 
 
 DEBUG = False
-# DEBUG = True
+DEBUG = True
 
 # 本次要打包的端（默认全部）
 # 可选值: linux / linux-server / linux-server-arm64 / windows / mac / debian
@@ -34,7 +35,7 @@ ALL_PACKAGES = [
 # 例如只测试 linux 客户端和 arm64 server:
 DEBUG_PACKAGES = [
     'linux',
-    'linux-server-arm64',
+    # 'linux-server-arm64',
 ]
 
 # DEBUG 只负责选择打包目标，不再影响是否生成最终安装包
@@ -481,7 +482,15 @@ PACKAGE_ROOT_FOLDERS = {
 }
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(description='打包 Trilium 中文版发布文件')
+    parser.add_argument('-y', '--yes', action='store_true', help='自动确认所有交互提示')
+    return parser.parse_args()
+
+
 if __name__ == '__main__':
+    args = parse_args()
+
     print(f'DEBUG is {DEBUG}')
     print('本次打包列表:', PACKAGES)
 
@@ -489,11 +498,13 @@ if __name__ == '__main__':
     if unknown:
         raise ValueError(f'未知的打包目标: {unknown}，可选值: {list(PACKAGE_PATCHERS)}')
 
-    a = input(f'Delete folder {TRANS_RELEASE_FOLDER}, continue?(y)')
-    if a not in [
-        'y',
-    ]:
-        exit()
+    if not args.yes:
+        a = input(f'Delete folder {TRANS_RELEASE_FOLDER}, continue?(y)').lower()
+        if a not in [
+            'y',
+            'yes',
+        ]:
+            exit()
 
     os.system(f'rm -rf {TRANS_RELEASE_FOLDER}')
     os.makedirs(f'{TRANS_RELEASE_FOLDER}')

@@ -1,3 +1,4 @@
+import argparse
 import os
 import re
 import shutil
@@ -21,6 +22,12 @@ CMD_STOP_SERVICE = """pkill -9 trilium"""
 
 DO_DOWNLOAD = False
 DO_DELETE = True
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='初始化 Trilium 中文版构建目录')
+    parser.add_argument('-y', '--yes', action='store_true', help='自动确认所有交互提示')
+    return parser.parse_args()
 
 
 def copytree_ignore_broken(src, dst):
@@ -105,12 +112,15 @@ def prepare_from_local():
 
 
 if __name__ == '__main__':
+    args = parse_args()
+
     if os.path.exists(BASE_FOLDER):
-        if not (input(f'BASE_FOLDER exists! DELETE {BASE_FOLDER}, continue?(y)')).lower() in [
-            'y',
-            'yes',
-        ]:
-            exit()
+        if not args.yes:
+            if not (input(f'BASE_FOLDER exists! DELETE {BASE_FOLDER}, continue?(y)')).lower() in [
+                'y',
+                'yes',
+            ]:
+                exit()
         os.system(f'rm -rf {BASE_FOLDER}')
     os.makedirs(BASE_FOLDER)
     print('BASE_FOLDER', BASE_FOLDER)
