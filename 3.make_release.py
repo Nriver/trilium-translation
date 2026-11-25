@@ -42,7 +42,7 @@ DEBUG_PACKAGES = [
 PACKAGES = DEBUG_PACKAGES if DEBUG else ALL_PACKAGES
 
 # 本地 trilium-plus 打包文件目录
-LOCAL_DIST = '/home/nate/gitRepo/trilium-plus/dist/'  # disable warning if we use proxy
+LOCAL_DIST = '/home/nate/gitRepo/trilium/trilium-plus/dist/'  # disable warning if we use proxy
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 COMPRESS_TOOL = '7z'

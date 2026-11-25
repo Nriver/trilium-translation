@@ -13,7 +13,7 @@ from settings import (
 )
 
 # 源文件路径
-TRILIUM_PLUS_ROOT = '/home/nate/gitRepo/trilium-plus/'
+TRILIUM_PLUS_ROOT = '/home/nate/gitRepo/trilium/trilium-plus/'
 TRILIUM_PLUS_DIST = os.path.join(TRILIUM_PLUS_ROOT, 'dist/')
 
 CLIENT_FOLDER = BASE_FOLDER + 'trilium-linux-x64'
