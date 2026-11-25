@@ -189,7 +189,7 @@ translation_dict = {
     'Ctrl+Enter': 'Ctrl+回车',
     'Link Map': '链接地图',
     'Markdown import': '导入Markdown',
-    "Because of browser sandbox it's not possible to directly read clipboard from JavaScript. Please paste the Markdown to import to textarea below and click on Import button": '由于使用浏览器沙箱, 因此无法直接从JavaScript读取剪贴板.',
+    "Because of browser sandbox it's not possible to directly read clipboard from JavaScript. Please paste the Markdown to import to textarea below and click on Import button": '由于使用浏览器沙箱, 因此无法直接从JavaScript读取剪贴板. 请把Markdown复制到下方文字输入框然后点击导入按钮.',
     'Import ': '导入',
     'Move notes to ...': '将笔记移至...',
     'Notes to move': '要移动的笔记',
